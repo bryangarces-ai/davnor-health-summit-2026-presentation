@@ -591,7 +591,10 @@
     if (window.CloudSync) {
       updateCloudStatus('syncing', '☁️ Connecting...');
       // 1. Push any existing local customizations so they are saved to Cloud
-      window.CloudSync.syncLocalToCloud(function () {
+      window.CloudSync.syncLocalToCloud(function (err, count) {
+        if (count > 0) {
+          showToast('☁️ Auto-synced ' + count + ' customized decks to Cloud!');
+        }
         // 2. Fetch all decks from cloud and update local cache
         window.CloudSync.fetchAllDecks(function (err, updatedKeys) {
           if (err) {
