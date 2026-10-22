@@ -4,420 +4,436 @@
     "id": 0,
     "type": "title",
     "event": "PROGRAM HEALTH SUMMIT 2026",
-    "subEvent": "Province of Davao del Norte",
     "title": "RECOGNITION OF SPECIAL AWARDS",
     "category": "GROUP AWARDEES",
-    "citation": "Honoring our Outstanding Health Partners, Hospitals, Civic Organizations, and Provincial Offices"
+    "citation": "Honoring our Outstanding Health Partners, Hospitals, Civic Organizations, and Provincial Offices",
+    "subEvent": "Province of Davao del Norte"
   },
   {
     "id": 1,
-    "number": 1,
     "type": "awardee",
     "title": "DEPARTMENT OF HEALTH DAVAO CENTER FOR HEALTH DEVELOPMENT",
-    "subtitle": "Davao Center for Health Development",
-    "category": "Regional Health Leadership"
+    "number": 1,
+    "category": "Regional Health Leadership",
+    "subtitle": "Davao Center for Health Development"
   },
   {
     "id": 2,
-    "number": 2,
     "type": "awardee",
     "title": "HEALTH SYSTEMS RESILIENCE PROJECT",
-    "subtitle": "Davao Center for Health Development",
-    "category": "Health Systems Program"
+    "number": 2,
+    "category": "Health Systems Program",
+    "subtitle": "Davao Center for Health Development"
   },
   {
     "id": 3,
-    "number": 3,
     "type": "awardee",
     "title": "DOH CHD XI",
-    "subtitle": "Health Emergency Management Staff",
-    "category": "Emergency Management Unit"
+    "number": 3,
+    "category": "Emergency Management Unit",
+    "subtitle": "Health Emergency Management Staff"
   },
   {
     "id": 4,
-    "number": 4,
     "type": "awardee",
     "title": "PROVINCIAL DEPARTMENT OF HEALTH OFFICE",
-    "subtitle": "Davao del Norte",
-    "category": "Provincial Health Office"
+    "number": 4,
+    "category": "Provincial Health Office",
+    "subtitle": "Davao del Norte"
   },
   {
     "id": 5,
-    "number": 5,
     "type": "awardee",
     "title": "NATIONAL NUTRITION COUNCIL XI",
-    "subtitle": "Retsebeth M. Laquihon, RND, MPD, MDM — Regional Nutrition Program Coordinator",
-    "category": "Nutrition Program Partner"
+    "number": 5,
+    "category": "Nutrition Program Partner",
+    "subtitle": "Retsebeth M. Laquihon, RND, MPD, MDM — Regional Nutrition Program Coordinator"
   },
   {
     "id": 6,
-    "number": 6,
     "type": "awardee",
     "title": "COMMISSION ON POPULATION AND DEVELOPMENT REGION XI",
-    "subtitle": "Jeff Y. Fuentes, MHSS — Regional Director",
-    "category": "Population Development Partner"
+    "number": 6,
+    "category": "Population Development Partner",
+    "subtitle": "Jeff Y. Fuentes, MHSS — Regional Director"
   },
   {
     "id": 7,
-    "number": 7,
     "type": "awardee",
-    "title": "DAVAO DEL NORTE HOSPITAL",
-    "subtitle": "Kapalong Zone",
-    "category": "Provincial Hospital Zone"
+    "title": "DAVAO DEL NORTE HOSPITAL KAPALONG ZONE",
+    "number": 7,
+    "category": "Provincial Hospital Zone",
+    "subtitle": "",
+    "categoryTag": ""
   },
   {
     "id": 8,
-    "number": 8,
     "type": "awardee",
-    "title": "DAVAO DEL NORTE HOSPITAL",
-    "subtitle": "Carmen Zone",
-    "category": "Provincial Hospital Zone"
+    "title": "DAVAO DEL NORTE HOSPITAL CARMEN ZONE",
+    "number": 8,
+    "category": "Provincial Hospital Zone",
+    "subtitle": "",
+    "categoryTag": ""
   },
   {
     "id": 9,
-    "number": 9,
     "type": "awardee",
-    "title": "DAVAO DEL NORTE HOSPITAL",
-    "subtitle": "Igacos Zone",
-    "category": "Provincial Hospital Zone"
+    "title": "DAVAO DEL NORTE HOSPITAL IGACOS ZONE",
+    "number": 9,
+    "category": "Provincial Hospital Zone",
+    "subtitle": "",
+    "categoryTag": ""
   },
   {
     "id": 10,
-    "number": 10,
     "type": "awardee",
-    "title": "DAVAO REGIONAL MEDICAL CENTER",
-    "subtitle": "Tertiary Health Institution",
-    "category": "Regional Medical Center"
+    "title": "DAVAO REGIONAL MEDICAL CENTER (DRMC)",
+    "number": 10,
+    "category": "Regional Medical Center",
+    "subtitle": "",
+    "categoryTag": ""
   },
   {
     "id": 11,
-    "number": 11,
     "type": "awardee",
-    "title": "DAVAO REGIONAL MEDICAL CENTER",
+    "title": "DAVAO REGIONAL MEDICAL CENTER (DRMC)",
+    "number": 11,
+    "category": "Specialized Medical Unit",
     "subtitle": "Health Emergency and Disaster Management Unit",
-    "category": "Specialized Medical Unit"
+    "categoryTag": ""
   },
   {
     "id": 12,
-    "number": 12,
     "type": "awardee",
     "title": "DAVAO REGIONAL MEDICAL CENTER",
-    "subtitle": "Surgery Department",
-    "category": "Clinical Medical Department"
+    "number": 12,
+    "category": "Clinical Medical Department",
+    "subtitle": "Surgery Department"
   },
   {
     "id": 13,
-    "number": 13,
     "type": "awardee",
     "title": "DAVAO REGIONAL MEDICAL CENTER",
-    "subtitle": "Internal Medicine Department",
-    "category": "Clinical Medical Department"
+    "number": 13,
+    "category": "Clinical Medical Department",
+    "subtitle": "Internal Medicine Department"
   },
   {
     "id": 14,
-    "number": 14,
     "type": "awardee",
     "title": "DAVAO REGIONAL MEDICAL CENTER",
-    "subtitle": "OB-GYNE Department",
-    "category": "Clinical Medical Department"
+    "number": 14,
+    "category": "Clinical Medical Department",
+    "subtitle": "OB-GYNE Department"
   },
   {
     "id": 15,
-    "number": 15,
     "type": "awardee",
     "title": "PHILIPPINE DRUG ENFORCEMENT AGENCY XI",
-    "subtitle": "Davao del Norte Provincial Office",
-    "category": "Law Enforcement & Public Health Partner"
+    "number": 15,
+    "category": "Law Enforcement & Public Health Partner",
+    "subtitle": "Davao del Norte Provincial Office"
   },
   {
     "id": 16,
-    "number": 16,
     "type": "awardee",
     "title": "BUREAU OF FIRE PROTECTION",
-    "subtitle": "Office of the Provincial Fire Marshal Davao del Norte",
-    "category": "Emergency & Safety Partner"
+    "number": 16,
+    "category": "Emergency & Safety Partner",
+    "subtitle": "Office of the Provincial Fire Marshal Davao del Norte"
   },
   {
     "id": 17,
-    "number": 17,
     "type": "awardee",
     "title": "REGIONAL MEDICAL AND DENTAL UNIT 11",
-    "subtitle": "Davao del Norte Provincial Medical and Dental Team (PNP)",
-    "category": "Police Medical & Dental Unit"
+    "number": 17,
+    "category": "Police Medical & Dental Unit",
+    "subtitle": "Davao del Norte Provincial Medical and Dental Team (PNP)"
   },
   {
     "id": 18,
-    "number": 18,
     "type": "awardee",
     "title": "PHILIPPINE RED CROSS",
-    "subtitle": "Davao del Norte Chapter",
-    "category": "Humanitarian & Blood Services Partner"
+    "number": 18,
+    "category": "Humanitarian & Blood Services Partner",
+    "subtitle": "Davao del Norte Chapter"
   },
   {
     "id": 19,
-    "number": 19,
     "type": "awardee",
     "title": "DKT FOUNDATION, INC.",
-    "subtitle": "Reproductive Health & Community Partner",
-    "category": "Civil Society Partner"
+    "number": 19,
+    "category": "Civil Society Partner",
+    "subtitle": "",
+    "categoryTag": ""
   },
   {
     "id": 20,
-    "number": 20,
     "type": "awardee",
     "title": "NORTH DAVAO DENTAL CHAPTER",
-    "subtitle": "Professional Dental Healthcare Association",
-    "category": "Professional Healthcare Association"
+    "number": 20,
+    "category": "Professional Healthcare Association",
+    "subtitle": "",
+    "categoryTag": ""
   },
   {
     "id": 21,
-    "number": 21,
     "type": "awardee",
     "title": "THE ADVOCATES ON HIV AND AIDS SOCIETY",
-    "subtitle": "Community Health Advocacy Organization",
-    "category": "Community Health Partner"
+    "number": 21,
+    "category": "Community Health Partner",
+    "subtitle": "",
+    "categoryTag": ""
   },
   {
     "id": 22,
-    "number": 22,
     "type": "awardee",
     "title": "DANGEROUS DRUGS BOARD",
-    "subtitle": "National Prevention & Policy Agency",
-    "category": "Government Partner Agency"
+    "number": 22,
+    "category": "Government Partner Agency",
+    "subtitle": "",
+    "categoryTag": ""
   },
   {
     "id": 23,
-    "number": 23,
     "type": "awardee",
     "title": "PHILIPPINE TUBERCULOSIS SOCIETY, INC.",
-    "subtitle": "TB Prevention and Control Partner",
-    "category": "Healthcare Advocacy Partner"
+    "number": 23,
+    "category": "Healthcare Advocacy Partner",
+    "subtitle": "",
+    "categoryTag": ""
   },
   {
     "id": 24,
-    "number": 24,
     "type": "awardee",
     "title": "FAMILY PLANNING ORGANIZATION OF THE PHILIPPINES",
-    "subtitle": "Family Health & Reproductive Care",
-    "category": "Family Planning Partner"
+    "number": 24,
+    "category": "Family Planning Partner",
+    "subtitle": "",
+    "categoryTag": ""
   },
   {
     "id": 25,
-    "number": 25,
     "type": "awardee",
     "title": "ROTARY CLUB OF TAGUM NORTH",
-    "subtitle": "Community Service & Healthcare Supporter",
-    "category": "Civic Organization Partner"
+    "number": 25,
+    "category": "Civic Organization Partner",
+    "subtitle": "",
+    "categoryTag": ""
   },
   {
     "id": 26,
-    "number": 26,
     "type": "awardee",
     "title": "PHILHEALTH LOCAL HEALTH INSURANCE OFFICE",
-    "subtitle": "Tagum City",
-    "category": "Social Health Insurance Partner"
+    "number": 26,
+    "category": "Social Health Insurance Partner",
+    "subtitle": "Tagum City"
   },
   {
     "id": 27,
-    "number": 27,
     "type": "awardee",
     "title": "DEPARTMENT OF EDUCATION",
-    "subtitle": "Division of Davao del Norte",
-    "category": "Education Division Partner"
+    "number": 27,
+    "category": "Education Division Partner",
+    "subtitle": "Division of Davao del Norte"
   },
   {
     "id": 28,
-    "number": 28,
     "type": "awardee",
     "title": "DEPARTMENT OF EDUCATION",
-    "subtitle": "Division of Tagum City",
-    "category": "Education Division Partner"
+    "number": 28,
+    "category": "Education Division Partner",
+    "subtitle": "Division of Tagum City"
   },
   {
     "id": 29,
-    "number": 29,
     "type": "awardee",
     "title": "DEPARTMENT OF EDUCATION",
-    "subtitle": "Division of Panabo City",
-    "category": "Education Division Partner"
+    "number": 29,
+    "category": "Education Division Partner",
+    "subtitle": "Division of Panabo City"
   },
   {
     "id": 30,
-    "number": 30,
     "type": "awardee",
     "title": "DEPARTMENT OF EDUCATION",
-    "subtitle": "Division of Island Garden City of Samal",
-    "category": "Education Division Partner"
+    "number": 30,
+    "category": "Education Division Partner",
+    "subtitle": "Division of Island Garden City of Samal"
   },
   {
     "id": 31,
-    "number": 31,
     "type": "awardee",
     "title": "DEPARTMENT OF INTERIOR AND LOCAL GOVERNMENT",
-    "subtitle": "Davao del Norte",
-    "category": "Local Governance Partner"
+    "number": 31,
+    "category": "Local Governance Partner",
+    "subtitle": "Davao del Norte"
   },
   {
     "id": 32,
-    "number": 32,
     "type": "awardee",
     "title": "PHILIPPINE PEDIATRIC SOCIETY",
-    "subtitle": "Davao Southern Mindanao Chapter",
-    "category": "Medical Specialty Society"
+    "number": 32,
+    "category": "Medical Specialty Society",
+    "subtitle": "Davao Southern Mindanao Chapter"
   },
   {
     "id": 33,
-    "number": 33,
     "type": "awardee",
     "title": "PROVINCIAL ECONOMIC ENTERPRISE & DEVELOPMENT OFFICE",
-    "subtitle": "Provincial Government of Davao del Norte",
-    "category": "Provincial Government Office"
+    "number": 33,
+    "category": "Provincial Government Office",
+    "subtitle": "Provincial Government of Davao del Norte"
   },
   {
     "id": 34,
-    "number": 34,
     "type": "awardee",
     "title": "PROVINCIAL LEGAL OFFICE",
-    "subtitle": "Provincial Government of Davao del Norte",
-    "category": "Provincial Government Office"
+    "number": 34,
+    "category": "Provincial Government Office",
+    "subtitle": "Provincial Government of Davao del Norte"
   },
   {
     "id": 35,
-    "number": 35,
     "type": "awardee",
     "title": "PROVINCIAL INFORMATION, COMMUNICATION, AND KNOWLEDGE MANAGEMENT OFFICE",
-    "subtitle": "Provincial Government of Davao del Norte",
-    "category": "Provincial Government Office"
+    "number": 35,
+    "category": "Provincial Government Office",
+    "subtitle": "Provincial Government of Davao del Norte"
   },
   {
     "id": 36,
-    "number": 36,
     "type": "awardee",
     "title": "PROVINCIAL HUMAN RESOURCE & MANAGEMENT OFFICE",
-    "subtitle": "Provincial Government of Davao del Norte",
-    "category": "Provincial Government Office"
+    "number": 36,
+    "category": "Provincial Government Office",
+    "subtitle": "Provincial Government of Davao del Norte"
   },
   {
     "id": 37,
-    "number": 37,
     "type": "awardee",
     "title": "PROVINCIAL BUDGET OFFICE",
-    "subtitle": "Provincial Government of Davao del Norte",
-    "category": "Provincial Government Office"
+    "number": 37,
+    "category": "Provincial Government Office",
+    "subtitle": "Provincial Government of Davao del Norte"
   },
   {
     "id": 38,
-    "number": 38,
     "type": "awardee",
     "title": "PROVINCIAL TREASURER'S OFFICE",
-    "subtitle": "Provincial Government of Davao del Norte",
-    "category": "Provincial Government Office"
+    "number": 38,
+    "category": "Provincial Government Office",
+    "subtitle": "Provincial Government of Davao del Norte"
   },
   {
     "id": 39,
-    "number": 39,
     "type": "awardee",
     "title": "PROVINCIAL ASSESSOR'S OFFICE",
-    "subtitle": "Provincial Government of Davao del Norte",
-    "category": "Provincial Government Office"
+    "number": 39,
+    "category": "Provincial Government Office",
+    "subtitle": "Provincial Government of Davao del Norte"
   },
   {
     "id": 40,
-    "number": 40,
     "type": "awardee",
     "title": "PROVINCIAL PLANNING AND DEVELOPMENT OFFICE",
-    "subtitle": "Provincial Government of Davao del Norte",
-    "category": "Provincial Government Office"
+    "number": 40,
+    "category": "Provincial Government Office",
+    "subtitle": "Provincial Government of Davao del Norte"
   },
   {
     "id": 41,
-    "number": 41,
     "type": "awardee",
     "title": "PROVINCIAL ENGINEERING OFFICE",
-    "subtitle": "Provincial Government of Davao del Norte",
-    "category": "Provincial Government Office"
+    "number": 41,
+    "category": "Provincial Government Office",
+    "subtitle": "Provincial Government of Davao del Norte"
   },
   {
     "id": 42,
-    "number": 42,
     "type": "awardee",
     "title": "PROVINCIAL ACCOUNTING OFFICE",
-    "subtitle": "Provincial Government of Davao del Norte",
-    "category": "Provincial Government Office"
+    "number": 42,
+    "category": "Provincial Government Office",
+    "subtitle": "Provincial Government of Davao del Norte"
   },
   {
     "id": 43,
-    "number": 43,
     "type": "awardee",
     "title": "PROVINCIAL SOCIAL WELFARE AND DEVELOPMENT OFFICE",
-    "subtitle": "Provincial Government of Davao del Norte",
-    "category": "Provincial Government Office"
+    "number": 43,
+    "category": "Provincial Government Office",
+    "subtitle": "Provincial Government of Davao del Norte"
   },
   {
     "id": 44,
-    "number": 44,
     "type": "awardee",
     "title": "PROVINCIAL ENVIRONMENT & NATURAL RESOURCES OFFICE",
-    "subtitle": "Provincial Government of Davao del Norte",
-    "category": "Provincial Government Office"
+    "number": 44,
+    "category": "Provincial Government Office",
+    "subtitle": "Provincial Government of Davao del Norte"
   },
   {
     "id": 45,
-    "number": 45,
     "type": "awardee",
     "title": "PROVINCIAL VETERINARIAN'S OFFICE",
-    "subtitle": "Provincial Government of Davao del Norte",
-    "category": "Provincial Government Office"
+    "number": 45,
+    "category": "Provincial Government Office",
+    "subtitle": "Provincial Government of Davao del Norte"
   },
   {
     "id": 46,
-    "number": 46,
     "type": "awardee",
     "title": "OFFICE OF THE SECRETARY TO THE SANGGUNIAN",
-    "subtitle": "Provincial Government of Davao del Norte",
-    "category": "Provincial Government Office"
+    "number": 46,
+    "category": "Provincial Government Office",
+    "subtitle": "Provincial Government of Davao del Norte"
   },
   {
     "id": 47,
-    "number": 47,
     "type": "awardee",
     "title": "PROVINCIAL SPORTS AND YOUTH DEVELOPMENT OFFICE",
-    "subtitle": "Provincial Government of Davao del Norte",
-    "category": "Provincial Government Office"
+    "number": 47,
+    "category": "Provincial Government Office",
+    "subtitle": "Provincial Government of Davao del Norte"
   },
   {
     "id": 48,
-    "number": 48,
     "type": "awardee",
     "title": "PROVINCIAL DISASTER RISK REDUCTION AND MANAGEMENT OFFICE",
-    "subtitle": "Provincial Government of Davao del Norte",
-    "category": "Provincial Government Office"
+    "number": 48,
+    "category": "Provincial Government Office",
+    "subtitle": "Provincial Government of Davao del Norte"
   },
   {
     "id": 49,
-    "number": 49,
     "type": "awardee",
     "title": "PROVINCIAL AGRICULTURIST'S OFFICE",
-    "subtitle": "Provincial Government of Davao del Norte",
-    "category": "Provincial Government Office"
+    "number": 49,
+    "category": "Provincial Government Office",
+    "subtitle": "Provincial Government of Davao del Norte"
   },
   {
     "id": 50,
-    "number": 50,
     "type": "awardee",
     "title": "PROVINCIAL GENERAL SERVICES OFFICE",
-    "subtitle": "Provincial Government of Davao del Norte",
-    "category": "Provincial Government Office"
+    "number": 50,
+    "category": "Provincial Government Office",
+    "subtitle": "Provincial Government of Davao del Norte"
   },
   {
     "id": 51,
     "type": "closing",
     "title": "CONGRATULATIONS TO ALL AWARDEES",
-    "subtitle": "PROGRAM HEALTH SUMMIT 2026",
-    "citation": "Thank you for your tireless dedication, exemplary service, and enduring partnership in advancing public health for the Province of Davao del Norte."
+    "category": "",
+    "citation": "Thank you for your tireless dedication, exemplary service, and enduring partnership in advancing public health for the Province of Davao del Norte.",
+    "subtitle": "HEALTH SUMMIT 2026",
+    "categoryTag": ""
   }
 ];
+
   window.SLIDES_DATA = data;
   window.DECKS_CATALOG = window.DECKS_CATALOG || {};
   window.DECKS_CATALOG['01-group'] = data;
+  window.DECKS_CATALOG['01-group-awardees'] = data;
 })();

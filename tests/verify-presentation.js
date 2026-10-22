@@ -39,7 +39,8 @@ const decks = [
   { folder: '01-group-awardees', minSlides: 50 },
   { folder: '02-individual-awardees', minSlides: 20 },
   { folder: '03-top-program-managers', minSlides: 35 },
-  { folder: '04-consolation-and-winners', minSlides: 25 }
+  { folder: '04-consolation-and-winners', minSlides: 25 },
+  { folder: '05-official-results', minSlides: 5 }
 ];
 
 decks.forEach(d => {
@@ -271,6 +272,36 @@ if (corruptedHtml.includes('awardee-subtitle')) {
   process.exit(1);
 }
 console.log(`✓ De-duplication verified: Subtitle matching joined citations is suppressed to prevent duplicated text`);
+
+// Test Deck 05 (Official Results & Scorecards)
+const d5Sandbox = { window: {} };
+vm.createContext(d5Sandbox);
+vm.runInContext(fs.readFileSync('05-official-results/slides-data.js', 'utf8'), d5Sandbox);
+const d5Slides = d5Sandbox.window.SLIDES_DATA;
+
+const cityScorecard = d5Slides.find(s => s.id === 1);
+const cityHtml = simulateSlideRender(cityScorecard, d5Slides);
+if (!cityHtml.includes('scorecard-table') || !cityHtml.includes('TAGUM CITY') || !cityHtml.includes('90.93%')) {
+  console.error('FAIL: City Scorecard Slide 1 failed to render table and podium results');
+  process.exit(1);
+}
+console.log('✓ 05 Deck Slide 1 (City Scorecard): Table, podium cards, and weights rendered correctly');
+
+const munScorecard = d5Slides.find(s => s.id === 2);
+const munHtml = simulateSlideRender(munScorecard, d5Slides);
+if (!munHtml.includes('scorecard-table') || !munHtml.includes('NEW CORELLA') || !munHtml.includes('82.40%')) {
+  console.error('FAIL: Municipality Scorecard Slide 2 failed to render table and podium results');
+  process.exit(1);
+}
+console.log('✓ 05 Deck Slide 2 (Municipality Scorecard): All 8 municipalities and scoring rendered correctly');
+
+const cityImageSlide = d5Slides.find(s => s.id === 3);
+const imgHtml = simulateSlideRender(cityImageSlide, d5Slides);
+if (!imgHtml.includes('scorecard-full-img') || !imgHtml.includes('assets/city-category.png')) {
+  console.error('FAIL: City Image Slide 3 failed to render full sheet image');
+  process.exit(1);
+}
+console.log('✓ 05 Deck Slide 3 (Official Sheet Image): Full-res validated spreadsheet sheet rendered correctly');
 
 // Check that no rendered slide contains "undefined" or "NaN"
 d4Slides.forEach(s => {

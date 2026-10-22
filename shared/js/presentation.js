@@ -9,6 +9,7 @@
     if (path.indexOf('02-individual') !== -1) return '02-individual';
     if (path.indexOf('03-top-program') !== -1) return '03-top-program';
     if (path.indexOf('04-consolation') !== -1) return '04-consolation';
+    if (path.indexOf('05-official-results') !== -1 || path.indexOf('05-results') !== -1) return '05-results';
     return 'default';
   }
 
@@ -338,6 +339,181 @@
         '      <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>',
         '    </div>',
         categoriesHtml,
+        '  </div>',
+        '</div>'
+      ].join('');
+    } else if (s.type === 'image') {
+      html = [
+        '<div class="slide active">',
+        '  <div class="award-card scorecard-card">',
+        logosHtml,
+        s.categoryTag ? '    <div class="awardee-category-tag">' + escapeHtml(s.categoryTag) + '</div>' : '',
+        '    <h1 class="awardee-name" style="font-size:clamp(1.4rem, 2.4vw, 2.2rem);">' + escapeHtml(s.title) + '</h1>',
+        s.subtitle ? '    <div class="awardee-subtitle">' + escapeHtml(s.subtitle) + '</div>' : '',
+        '    <div class="ceremonial-divider">',
+        '      <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>',
+        '    </div>',
+        '    <div class="scorecard-image-box">',
+        '      <img src="' + escapeHtml(s.image || '') + '" alt="' + escapeHtml(s.title) + '" class="scorecard-full-img" />',
+        '    </div>',
+        '  </div>',
+        '</div>'
+      ].join('');
+    } else if (s.type === 'scorecard') {
+      var bodyHtml = '';
+      if (s.programs && s.totals) {
+        var podiumHtml = [
+          '<div class="scorecard-podium-row">',
+          '  <div class="scorecard-podium-card rank-1">',
+          '    <div class="podium-rank-badge">🥇 1st Place (Champion)</div>',
+          '    <div class="podium-entity-name">TAGUM CITY</div>',
+          '    <div class="podium-score">90.93%</div>',
+          '  </div>',
+          '  <div class="scorecard-podium-card rank-2">',
+          '    <div class="podium-rank-badge">🥈 2nd Place</div>',
+          '    <div class="podium-entity-name">PANABO CITY</div>',
+          '    <div class="podium-score">88.03%</div>',
+          '  </div>',
+          '  <div class="scorecard-podium-card rank-3">',
+          '    <div class="podium-rank-badge">🥉 3rd Place</div>',
+          '    <div class="podium-entity-name">IGACOS</div>',
+          '    <div class="podium-score">74.23%</div>',
+          '  </div>',
+          '</div>'
+        ].join('');
+
+        var rowsHtml = s.programs.map(function (p) {
+          return [
+            '<tr>',
+            '  <td class="td-prog-name">' + escapeHtml(p.name) + '</td>',
+            '  <td class="td-weight">' + escapeHtml(p.weight) + '</td>',
+            '  <td>' + p.tagum.pts + '</td>',
+            '  <td style="font-weight:700; color:#1E3A8A;">' + escapeHtml(p.tagum.avg) + '</td>',
+            '  <td>' + p.panabo.pts + '</td>',
+            '  <td style="font-weight:700; color:#1E3A8A;">' + escapeHtml(p.panabo.avg) + '</td>',
+            '  <td>' + p.igacos.pts + '</td>',
+            '  <td style="font-weight:700; color:#1E3A8A;">' + escapeHtml(p.igacos.avg) + '</td>',
+            '</tr>'
+          ].join('');
+        }).join('');
+
+        var tableHtml = [
+          '<div class="scorecard-table-wrap">',
+          '<table class="scorecard-table">',
+          '  <thead>',
+          '    <tr>',
+          '      <th rowspan="2" style="width:34%;">HEALTH PROGRAMS</th>',
+          '      <th rowspan="2" class="th-weight">WEIGHT</th>',
+          '      <th colspan="2" class="th-highlight">TAGUM CITY</th>',
+          '      <th colspan="2">PANABO CITY</th>',
+          '      <th colspan="2">IGACOS</th>',
+          '    </tr>',
+          '    <tr>',
+          '      <th>POINTS</th><th>AVERAGE</th>',
+          '      <th>POINTS</th><th>AVERAGE</th>',
+          '      <th>POINTS</th><th>AVERAGE</th>',
+          '    </tr>',
+          '  </thead>',
+          '  <tbody>',
+          rowsHtml,
+          '    <tr class="tr-total">',
+          '      <td class="td-prog-name" style="font-weight:900;">FINAL TOTAL SCORE</td>',
+          '      <td>100%</td>',
+          '      <td colspan="2" style="color:#B45309; font-size:1.15em;">90.93% (1st)</td>',
+          '      <td colspan="2" style="color:#475569; font-size:1.15em;">88.03% (2nd)</td>',
+          '      <td colspan="2" style="color:#9A3412; font-size:1.15em;">74.23% (3rd)</td>',
+          '    </tr>',
+          '  </tbody>',
+          '</table>',
+          '</div>'
+        ].join('');
+
+        bodyHtml = podiumHtml + tableHtml;
+      } else if (s.municipalityPrograms && s.municipalityTotals) {
+        var munPodiumHtml = [
+          '<div class="scorecard-podium-row">',
+          '  <div class="scorecard-podium-card rank-1">',
+          '    <div class="podium-rank-badge">🥇 1st Place</div>',
+          '    <div class="podium-entity-name">NEW CORELLA</div>',
+          '    <div class="podium-score">82.40%</div>',
+          '  </div>',
+          '  <div class="scorecard-podium-card rank-2">',
+          '    <div class="podium-rank-badge">🥈 2nd Place</div>',
+          '    <div class="podium-entity-name">B.E. DUJALI</div>',
+          '    <div class="podium-score">80.48%</div>',
+          '  </div>',
+          '  <div class="scorecard-podium-card rank-3">',
+          '    <div class="podium-rank-badge">🥉 3rd Place</div>',
+          '    <div class="podium-entity-name">STO. TOMAS</div>',
+          '    <div class="podium-score">76.49%</div>',
+          '  </div>',
+          '</div>'
+        ].join('');
+
+        var munRows = s.municipalityPrograms.map(function (p) {
+          return [
+            '<tr>',
+            '  <td class="td-prog-name">' + escapeHtml(p.name) + '</td>',
+            '  <td class="td-weight">' + escapeHtml(p.weight) + '</td>',
+            '  <td style="font-weight:700; color:#B45309;">' + p.scores.newCorella + '</td>',
+            '  <td>' + p.scores.sawata + '</td>',
+            '  <td>' + p.scores.kapalong + '</td>',
+            '  <td>' + p.scores.asuncion + '</td>',
+            '  <td>' + p.scores.talaingod + '</td>',
+            '  <td style="font-weight:700; color:#475569;">' + p.scores.beDujali + '</td>',
+            '  <td>' + p.scores.carmen + '</td>',
+            '  <td style="font-weight:700; color:#9A3412;">' + p.scores.stoTomas + '</td>',
+            '</tr>'
+          ].join('');
+        }).join('');
+
+        var munTable = [
+          '<div class="scorecard-table-wrap">',
+          '<table class="scorecard-table">',
+          '  <thead>',
+          '    <tr>',
+          '      <th style="width:25%;">HEALTH PROGRAMS</th>',
+          '      <th class="th-weight">WT</th>',
+          '      <th class="th-highlight">NEW CORELLA</th>',
+          '      <th>SAWATA</th>',
+          '      <th>KAPALONG</th>',
+          '      <th>ASUNCION</th>',
+          '      <th>TALAINGOD</th>',
+          '      <th style="background:#334155; color:#FDE047;">B.E. DUJALI</th>',
+          '      <th>CARMEN</th>',
+          '      <th style="background:#78350F; color:#FDE047;">STO. TOMAS</th>',
+          '    </tr>',
+          '  </thead>',
+          '  <tbody>',
+          munRows,
+          '    <tr class="tr-total">',
+          '      <td class="td-prog-name" style="font-weight:900;">TOTAL AVERAGE</td>',
+          '      <td>100%</td>',
+          '      <td style="color:#B45309; font-weight:900;">82.40% (1st)</td>',
+          '      <td>51.07% (8th)</td>',
+          '      <td>68.78% (4th)</td>',
+          '      <td>58.42% (7th)</td>',
+          '      <td>59.24% (6th)</td>',
+          '      <td style="color:#475569; font-weight:900;">80.48% (2nd)</td>',
+          '      <td>64.07% (5th)</td>',
+          '      <td style="color:#9A3412; font-weight:900;">76.49% (3rd)</td>',
+          '    </tr>',
+          '  </tbody>',
+          '</table>',
+          '</div>'
+        ].join('');
+
+        bodyHtml = munPodiumHtml + munTable;
+      }
+
+      html = [
+        '<div class="slide active">',
+        '  <div class="award-card scorecard-card">',
+        logosHtml,
+        s.categoryTag ? '    <div class="awardee-category-tag">' + escapeHtml(s.categoryTag) + '</div>' : '',
+        '    <h1 class="awardee-name" style="font-size:clamp(1.3rem, 2.2vw, 2rem); margin-bottom:4px;">' + escapeHtml(s.title) + '</h1>',
+        s.subtitle ? '    <div class="awardee-subtitle" style="margin-bottom:6px;">' + escapeHtml(s.subtitle) + '</div>' : '',
+        bodyHtml,
         '  </div>',
         '</div>'
       ].join('');

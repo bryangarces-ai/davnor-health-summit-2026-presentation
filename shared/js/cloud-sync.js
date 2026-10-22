@@ -16,7 +16,8 @@
     '01-group',
     '02-individual',
     '03-top-program',
-    '04-consolation'
+    '04-consolation',
+    '05-results'
   ];
 
   function normalizeDeckKey(k) {
@@ -27,6 +28,7 @@
     if (str.indexOf('02-individual') !== -1) return '02-individual';
     if (str.indexOf('03-top-program') !== -1) return '03-top-program';
     if (str.indexOf('04-consolation') !== -1) return '04-consolation';
+    if (str.indexOf('05-official-results') !== -1 || str.indexOf('05-results') !== -1) return '05-results';
     return str;
   }
 

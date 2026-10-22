@@ -6,7 +6,8 @@
     { key: '01-group', name: '01 · Group Awardees', path: '../01-group-awardees/', file: 'slides-data.js' },
     { key: '02-individual', name: '02 · Individual Awardees', path: '../02-individual-awardees/', file: 'slides-data.js' },
     { key: '03-top-program', name: '03 · Top Program Managers', path: '../03-top-program-managers/', file: 'slides-data.js' },
-    { key: '04-consolation', name: '04 · Consolation & Winners', path: '../04-consolation-and-winners/', file: 'slides-data.js' }
+    { key: '04-consolation', name: '04 · Consolation & Winners', path: '../04-consolation-and-winners/', file: 'slides-data.js' },
+    { key: '05-results', name: '05 · Official Scorecards', path: '../05-official-results/', file: 'slides-data.js' }
   ];
 
   var currentDeckKey = '04-consolation';
