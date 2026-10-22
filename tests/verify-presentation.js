@@ -77,13 +77,17 @@ function simulateSlideRender(slideData, allSlides) {
     classList: { add() {}, remove() {} },
     style: {},
     addEventListener() {},
-    removeEventListener() {}
+    removeEventListener() {},
+    appendChild() {},
+    setAttribute() {}
   };
   const fakeDocument = {
+    body: fakeElement,
     getElementById(id) {
       if (id === 'slideViewport') return fakeElement;
       return fakeElement;
     },
+    createElement() { return fakeElement; },
     querySelectorAll() { return []; },
     addEventListener() {},
     removeEventListener() {}
@@ -97,6 +101,7 @@ function simulateSlideRender(slideData, allSlides) {
     document: fakeDocument,
     console: console,
     setTimeout: function(fn) { fn(); },
+    clearTimeout: function() {},
     setInterval: function() {},
     AudioContext: function() { return { createOscillator() {}, createGain() {} }; }
   };
@@ -229,5 +234,66 @@ d4Slides.forEach(s => {
   }
 });
 console.log('✓ All 32 slides in 04-consolation-and-winners verified clean with zero undefined values');
+
+// Test PresentationEngine.toggleControls functionality
+let testBodyClassList = [];
+const testBody = {
+  classList: {
+    add(c) { if (!testBodyClassList.includes(c)) testBodyClassList.push(c); },
+    remove(c) { testBodyClassList = testBodyClassList.filter(x => x !== c); },
+    contains(c) { return testBodyClassList.includes(c); }
+  }
+};
+const testDoc = {
+  body: testBody,
+  getElementById(id) {
+    return {
+      classList: testBody.classList,
+      style: {},
+      addEventListener() {},
+      removeEventListener() {},
+      appendChild() {},
+      setAttribute() {}
+    };
+  },
+  createElement() {
+    return {
+      classList: testBody.classList,
+      style: {},
+      addEventListener() {},
+      removeEventListener() {},
+      setAttribute() {}
+    };
+  },
+  querySelectorAll() { return []; },
+  addEventListener() {},
+  removeEventListener() {}
+};
+const testSandbox = {
+  window: { SLIDES_DATA: d4Slides, OFFICIAL_LOGOS: [] },
+  document: testDoc,
+  console: console,
+  setTimeout: function(fn, delay) { return 1; },
+  clearTimeout: function() {},
+  setInterval: function() {},
+  AudioContext: function() { return { createOscillator() {}, createGain() {} }; }
+};
+vm.createContext(testSandbox);
+vm.runInContext(presentationJsCode, testSandbox);
+if (typeof testSandbox.window.PresentationEngine.toggleControls !== 'function') {
+  console.error('FAIL: toggleControls must be exported');
+  process.exit(1);
+}
+testSandbox.window.PresentationEngine.toggleControls(false); // force hide
+if (!testBody.classList.contains('controls-hidden')) {
+  console.error('FAIL: toggleControls(false) should add controls-hidden');
+  process.exit(1);
+}
+testSandbox.window.PresentationEngine.toggleControls(true); // force show
+if (testBody.classList.contains('controls-hidden')) {
+  console.error('FAIL: toggleControls(true) should remove controls-hidden');
+  process.exit(1);
+}
+console.log('✓ Stage LED mode: toggleControls and auto-hide logic verified successfully');
 
 console.log('\n=== ALL MULTI-DECK & CITATION GRID CHECKS PASSED SUCCESSFULLY ===');

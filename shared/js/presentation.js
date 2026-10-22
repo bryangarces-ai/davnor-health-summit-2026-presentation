@@ -9,6 +9,9 @@
   var audioCtx = null;
   var particles = [];
   var confettiParticles = [];
+  var isControlsLockedHidden = false;
+  var controlsTimeout = null;
+  var isHoveringControls = false;
 
   function initAudio() {
     if (!audioCtx && (window.AudioContext || window.webkitAudioContext)) {
@@ -104,6 +107,8 @@
     }
 
     if (isDrawerOpen) {
+      clearTimeout(controlsTimeout);
+      if (document.body) document.body.classList.remove('controls-hidden');
       modal.classList.add('open');
       renderDrawerGrid();
       var input = document.getElementById('drawerSearch');
@@ -113,6 +118,7 @@
       }
     } else {
       modal.classList.remove('open');
+      resetControlsTimeout();
     }
   }
 
@@ -131,6 +137,59 @@
     btn.innerHTML = isSoundEnabled
       ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>'
       : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>';
+  }
+
+  function resetControlsTimeout() {
+    if (isControlsLockedHidden) return;
+    if (document.body) {
+      document.body.classList.remove('controls-hidden');
+    }
+    clearTimeout(controlsTimeout);
+    controlsTimeout = setTimeout(function () {
+      if (!isDrawerOpen && !isHoveringControls && document.body) {
+        document.body.classList.add('controls-hidden');
+      }
+    }, 2800);
+  }
+
+  function toggleControls(forceState) {
+    if (typeof forceState === 'boolean') {
+      isControlsLockedHidden = !forceState;
+    } else {
+      isControlsLockedHidden = !isControlsLockedHidden;
+    }
+
+    if (isControlsLockedHidden) {
+      clearTimeout(controlsTimeout);
+      if (document.body) {
+        document.body.classList.add('controls-hidden');
+      }
+    } else {
+      resetControlsTimeout();
+    }
+    updateHideControlsBtn();
+  }
+
+  function updateHideControlsBtn() {
+    var btn = document.getElementById('hideControlsBtn');
+    if (!btn) return;
+    btn.setAttribute('title', isControlsLockedHidden ? 'Show Controls (H)' : 'Hide Controls for LED Stage (H)');
+  }
+
+  function injectHideButton() {
+    var bar = document.getElementById('controlBar');
+    if (!bar || document.getElementById('hideControlsBtn')) return;
+    var btn = document.createElement('button');
+    btn.id = 'hideControlsBtn';
+    btn.className = 'control-btn';
+    btn.setAttribute('title', 'Hide Controls for LED Stage (H)');
+    btn.setAttribute('aria-label', 'Hide Controls');
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>';
+    btn.onclick = function (e) {
+      e.stopPropagation();
+      toggleControls(false); // hides controls
+    };
+    bar.appendChild(btn);
   }
 
   function getLogosHtml() {
@@ -566,6 +625,35 @@
           e.preventDefault();
           toggleSound();
           break;
+        case 'h':
+        case 'H':
+          e.preventDefault();
+          toggleControls();
+          break;
+      }
+    });
+
+    var controlBar = document.getElementById('controlBar');
+    if (controlBar) {
+      controlBar.addEventListener('mouseenter', function () {
+        isHoveringControls = true;
+        clearTimeout(controlsTimeout);
+      });
+      controlBar.addEventListener('mouseleave', function () {
+        isHoveringControls = false;
+        resetControlsTimeout();
+      });
+    }
+
+    document.addEventListener('mousemove', function () {
+      resetControlsTimeout();
+    });
+
+    document.addEventListener('click', function () {
+      if (isControlsLockedHidden) {
+        toggleControls(true);
+      } else {
+        resetControlsTimeout();
       }
     });
 
@@ -616,6 +704,8 @@
     setupEventListeners();
     goToSlide(getInitialSlideIndex());
     updateSoundBtn();
+    injectHideButton();
+    resetControlsTimeout();
   }
 
   if (document.readyState === 'loading') {
@@ -632,6 +722,7 @@
     toggleFullscreen: toggleFullscreen,
     toggleDrawer: toggleDrawer,
     toggleSound: toggleSound,
-    triggerConfetti: triggerConfetti
+    triggerConfetti: triggerConfetti,
+    toggleControls: toggleControls
   };
 })();
