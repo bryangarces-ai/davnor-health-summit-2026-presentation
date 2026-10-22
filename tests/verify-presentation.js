@@ -12,7 +12,11 @@ const sharedFiles = [
   'shared/assets/logos/DDN.png',
   'shared/assets/logos/PHO-Logo.png',
   'shared/assets/logos/logo-3.png',
-  'index.html'
+  'index.html',
+  'admin/index.html',
+  'admin/admin.css',
+  'admin/admin.js',
+  'vercel.json'
 ];
 
 sharedFiles.forEach(f => {
@@ -96,7 +100,9 @@ function simulateSlideRender(slideData, allSlides) {
   const sandbox = {
     window: {
       SLIDES_DATA: allSlides || [slideData],
-      OFFICIAL_LOGOS: ['shared/assets/logos/logo-3.png', 'shared/assets/logos/DDN.png', 'shared/assets/logos/PHO-Logo.png']
+      OFFICIAL_LOGOS: ['shared/assets/logos/logo-3.png', 'shared/assets/logos/DDN.png', 'shared/assets/logos/PHO-Logo.png'],
+      addEventListener() {},
+      removeEventListener() {}
     },
     document: fakeDocument,
     console: console,
@@ -270,7 +276,12 @@ const testDoc = {
   removeEventListener() {}
 };
 const testSandbox = {
-  window: { SLIDES_DATA: d4Slides, OFFICIAL_LOGOS: [] },
+  window: {
+    SLIDES_DATA: d4Slides,
+    OFFICIAL_LOGOS: [],
+    addEventListener() {},
+    removeEventListener() {}
+  },
   document: testDoc,
   console: console,
   setTimeout: function(fn, delay) { return 1; },

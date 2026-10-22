@@ -1,7 +1,37 @@
 (function () {
   'use strict';
 
-  var slides = (window.SLIDES_DATA && Array.isArray(window.SLIDES_DATA)) ? window.SLIDES_DATA : [];
+  function getDeckKey() {
+    if (window.DECK_KEY) return window.DECK_KEY;
+    var path = (window.location && window.location.pathname) ? window.location.pathname.toLowerCase() : '';
+    if (path.indexOf('00-program') !== -1) return '00-program';
+    if (path.indexOf('01-group') !== -1) return '01-group';
+    if (path.indexOf('02-individual') !== -1) return '02-individual';
+    if (path.indexOf('03-top-program') !== -1) return '03-top-program';
+    if (path.indexOf('04-consolation') !== -1) return '04-consolation';
+    return 'default';
+  }
+
+  function loadSlides() {
+    var initial = (window.SLIDES_DATA && Array.isArray(window.SLIDES_DATA)) ? window.SLIDES_DATA : [];
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        var key = 'davnor_deck_' + getDeckKey();
+        var saved = window.localStorage.getItem(key);
+        if (saved) {
+          var parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            return parsed;
+          }
+        }
+      }
+    } catch (e) {
+      console.warn('Could not load custom slides from localStorage:', e);
+    }
+    return initial;
+  }
+
+  var slides = loadSlides();
   var currentIndex = 0;
   var isDrawerOpen = false;
   var isSoundEnabled = false;
@@ -111,6 +141,23 @@
       if (document.body) document.body.classList.remove('controls-hidden');
       modal.classList.add('open');
       renderDrawerGrid();
+
+      var header = modal.querySelector('.drawer-header');
+      if (header && !header.querySelector('.drawer-admin-btn')) {
+        var adminLink = document.createElement('a');
+        adminLink.className = 'drawer-admin-btn';
+        adminLink.href = '../admin/index.html';
+        adminLink.target = '_blank';
+        adminLink.innerHTML = '⚙️ Edit in Admin';
+        adminLink.style.cssText = 'background: rgba(216,27,96,0.1); color: var(--pink-primary); border: 1px solid rgba(216,27,96,0.3); padding: 6px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; text-decoration: none; margin-left: 10px; display: inline-flex; align-items: center; gap: 6px;';
+        var closeBtn = header.querySelector('.drawer-close-btn');
+        if (closeBtn) {
+          header.insertBefore(adminLink, closeBtn);
+        } else {
+          header.appendChild(adminLink);
+        }
+      }
+
       var input = document.getElementById('drawerSearch');
       if (input) {
         input.value = '';
@@ -699,9 +746,38 @@
     return 0;
   }
 
+  function setupLiveSync() {
+    var key = getDeckKey();
+    if (typeof window !== 'undefined') {
+      if (window.BroadcastChannel) {
+        try {
+          var bc = new BroadcastChannel('davnor_deck_sync');
+          bc.onmessage = function (e) {
+            if (e.data && (e.data.deckKey === key || e.data.deckKey === 'all')) {
+              slides = loadSlides();
+              renderCurrentSlide();
+              updateControls();
+              if (isDrawerOpen) renderDrawerGrid();
+            }
+          };
+        } catch (e) {}
+      }
+
+      window.addEventListener('storage', function (e) {
+        if (e.key === 'davnor_deck_' + key) {
+          slides = loadSlides();
+          renderCurrentSlide();
+          updateControls();
+          if (isDrawerOpen) renderDrawerGrid();
+        }
+      });
+    }
+  }
+
   function init() {
     setupCanvas();
     setupEventListeners();
+    setupLiveSync();
     goToSlide(getInitialSlideIndex());
     updateSoundBtn();
     injectHideButton();
@@ -723,6 +799,16 @@
     toggleDrawer: toggleDrawer,
     toggleSound: toggleSound,
     triggerConfetti: triggerConfetti,
-    toggleControls: toggleControls
+    toggleControls: toggleControls,
+    reloadSlides: function () {
+      slides = loadSlides();
+      renderCurrentSlide();
+      updateControls();
+      if (isDrawerOpen) renderDrawerGrid();
+    },
+    getSlides: function () {
+      return slides;
+    },
+    getDeckKey: getDeckKey
   };
 })();

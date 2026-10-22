@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — Program Health Summit 2026 Presentation System</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="admin-header">
+    <div class="admin-header-inner">
+      <div class="admin-brand">
+        <div class="admin-logos">
+          <img src="../shared/assets/logos/logo-3.png" alt="DOH Logo" />
+          <img src="../shared/assets/logos/DDN.png" alt="Province of Davao del Norte Logo" />
+          <img src="../shared/assets/logos/PHO-Logo.png" alt="PHO Logo" />
+        </div>
+        <div class="admin-titles">
+          <h1>Program Health Summit 2026 · Slide Admin</h1>
+          <p>Real-Time Presentation Content Editor · Province of Davao del Norte</p>
+        </div>
+      </div>
+
+      <div class="admin-header-actions">
+        <button class="btn btn-secondary btn-sm" onclick="window.AdminApp.exportAllBackup()" title="Backup all customized slides to JSON">💾 Export All</button>
+        <button class="btn btn-secondary btn-sm" onclick="window.AdminApp.triggerImportBackup()" title="Restore slides from backup JSON">📥 Import</button>
+        <input type="file" id="importBackupFileInput" accept=".json" style="display: none;" />
+        <a href="../index.html" class="btn btn-primary btn-sm">🌸 Return to Ceremony Hub</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="admin-container">
+    <!-- Deck Selector Tabs -->
+    <nav class="deck-tabs-bar" id="deckTabsContainer" aria-label="Deck selection tabs"></nav>
+
+    <!-- Toolbar: Search, Stats, Actions -->
+    <div class="admin-toolbar">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="slideSearchInput" placeholder="Search awardee, city, municipality, indicator..." />
+      </div>
+
+      <div class="toolbar-stats" id="toolbarStats">Loading slides...</div>
+
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <button class="btn btn-secondary btn-sm" onclick="window.AdminApp.downloadCurrentDeckJs()" title="Download updated slides-data.js file to replace project source code">⬇️ Download JS</button>
+        <button class="btn btn-danger btn-sm" onclick="window.AdminApp.resetDeck()" title="Reset this deck back to original PowerPoint data">🔄 Reset to Default</button>
+      </div>
+    </div>
+
+    <!-- Slides Cards Grid -->
+    <div class="slides-grid" id="slidesGrid"></div>
+  </main>
+
+  <!-- Edit Slide Modal -->
+  <div class="modal-overlay" id="editModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2>✏️ Edit Slide Details</h2>
+        <button class="modal-close-btn" onclick="window.AdminApp.closeEditor()" aria-label="Close Modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <input type="hidden" id="editSlideId" />
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div class="form-group">
+            <label class="form-label">Slide Type</label>
+            <select id="editSlideType" class="form-select" onchange="window.AdminApp.updateLivePreview()">
+              <option value="awardee">Awardee Slide</option>
+              <option value="title">Ceremony Title Slide</option>
+              <option value="section">Category Section Divider</option>
+              <option value="closing">Closing Slide</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Category Tag (e.g. TOP PERFORMING CITY)</label>
+            <input type="text" id="editSlideCategoryTag" class="form-input" placeholder="e.g. TOP PERFORMING CITY" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Category / Distinction Heading</label>
+          <input type="text" id="editSlideCategory" class="form-input" placeholder="e.g. TOP PERFORMING CITY" oninput="window.AdminApp.updateLivePreview()" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Awardee Name / Slide Title</label>
+          <input type="text" id="editSlideTitle" class="form-input" placeholder="e.g. CITY OF TAGUM" oninput="window.AdminApp.updateLivePreview()" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Subtitle / Office / Role (for individual awardees & single subtitle slides)</label>
+          <input type="text" id="editSlideSubtitle" class="form-input" placeholder="e.g. City Health Office of Tagum" oninput="window.AdminApp.updateLivePreview()" />
+        </div>
+
+        <!-- Citations / Honors Badges Manager -->
+        <div class="form-group">
+          <label class="form-label">Award Citations & Honors (Displayed as Badges on Stage)</label>
+          <div class="citations-manager-box">
+            <div id="citationsListContainer" class="citations-list-container"></div>
+
+            <div class="add-citation-row">
+              <input type="text" id="newCitationInput" class="form-input" placeholder="Enter new citation or program indicator..." onkeydown="if(event.key==='Enter'){event.preventDefault();window.AdminApp.addCitation();}" />
+              <button type="button" class="btn btn-secondary btn-sm" onclick="window.AdminApp.addCitation()">➕ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Visual Preview -->
+        <div class="form-group">
+          <label class="form-label">Live Stage Card Preview</label>
+          <div id="slideLivePreview"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="window.AdminApp.closeEditor()">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="window.AdminApp.saveCurrentSlide()">💾 Save Slide & Broadcast</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notice -->
+  <div class="toast-notice" id="toastNotice"></div>
+
+  <!-- Load all 5 deck data catalogs so admin has instant offline access -->
+  <script src="../00-program-health-summit-2026/slides-data.js"></script>
+  <script src="../01-group-awardees/slides-data.js"></script>
+  <script src="../02-individual-awardees/slides-data.js"></script>
+  <script src="../03-top-program-managers/slides-data.js"></script>
+  <script src="../04-consolation-and-winners/slides-data.js"></script>
+
+  <!-- Admin Application Logic -->
+  <script src="admin.js"></script>
+
+</body>
+</html>

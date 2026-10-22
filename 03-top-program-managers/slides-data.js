@@ -1,5 +1,5 @@
 (function () {
-  window.SLIDES_DATA = [
+  var data = [
   {
     "id": 0,
     "type": "title",
@@ -407,4 +407,7 @@
     "citation": "Thank you for your tireless dedication, exemplary service, and enduring partnership in advancing public health for the Province of Davao del Norte."
   }
 ];
+  window.SLIDES_DATA = data;
+  window.DECKS_CATALOG = window.DECKS_CATALOG || {};
+  window.DECKS_CATALOG['03-top-program'] = data;
 })();
