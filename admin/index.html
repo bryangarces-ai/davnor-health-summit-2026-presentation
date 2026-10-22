@@ -100,13 +100,15 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label">Subtitle / Office / Role (for individual awardees & single subtitle slides)</label>
-          <input type="text" id="editSlideSubtitle" class="form-input" placeholder="e.g. City Health Office of Tagum" oninput="window.AdminApp.updateLivePreview()" />
+          <label class="form-label">Subtitle / Office / Facility / Role</label>
+          <input type="text" id="editSlideSubtitle" class="form-input" placeholder="e.g. Municipal Health Office of New Corella" oninput="window.AdminApp.updateLivePreview()" />
+          <div style="font-size: 0.78rem; color: var(--admin-slate); margin-top: 4px;">Displayed directly under the title. Will NOT be overwritten by award citations.</div>
         </div>
 
         <!-- Citations / Honors Badges Manager -->
         <div class="form-group">
           <label class="form-label">Award Citations & Honors (Displayed as Badges on Stage)</label>
+          <div style="font-size: 0.78rem; color: var(--admin-slate); margin-bottom: 6px;">Individual award badges displayed below the office/subtitle on stage (1 column for 1–3 citations, 2 columns for 4+ citations).</div>
           <div class="citations-manager-box">
             <div id="citationsListContainer" class="citations-list-container"></div>
 

@@ -21,6 +21,23 @@
         if (saved) {
           var parsed = JSON.parse(saved);
           if (Array.isArray(parsed) && parsed.length > 0) {
+            // Self-heal any subtitle that was corrupted by joined citations from earlier admin bug
+            var changed = false;
+            parsed.forEach(function (s) {
+              if (Array.isArray(s.citations) && s.citations.length > 0 && typeof s.subtitle === 'string') {
+                var joined = s.citations.join(' | ');
+                if (s.subtitle === joined) {
+                  var orig = initial.find(function (x) { return x.id === s.id; });
+                  if (orig && orig.subtitle && orig.subtitle !== joined) {
+                    s.subtitle = orig.subtitle;
+                    changed = true;
+                  }
+                }
+              }
+            });
+            if (changed) {
+              try { window.localStorage.setItem(key, JSON.stringify(parsed)); } catch (e) {}
+            }
             return parsed;
           }
         }
@@ -333,21 +350,25 @@
         citationsList = s.subtitle.split(' | ').map(function (c) { return c.trim(); }).filter(Boolean);
       }
 
-      var isMulti = citationsList.length >= 2;
+      var hasPills = hasExplicitCitations ? (citationsList.length > 0) : (citationsList.length >= 2);
       var isMany = citationsList.length >= 4;
-      var cardClass = 'award-card' + (isMany ? ' award-card--multi-awards' : (isMulti ? ' award-card--few-awards' : ''));
+      var cardClass = 'award-card' + (isMany ? ' award-card--multi-awards' : (hasPills ? ' award-card--few-awards' : ''));
       var gridClass = 'citations-grid ' + (isMany ? 'citations-grid--2col' : 'citations-grid--1col');
       var categoryTag = s.category ? '<div class="awardee-category-tag">' + escapeHtml(s.category) + '</div>' : '';
 
       var subHtml = '';
-      if (hasExplicitCitations && s.subtitle) {
-        subHtml = '<div class="awardee-subtitle" style="margin-bottom: clamp(0.6rem, 1.2vh, 1.2rem);">' + escapeHtml(s.subtitle) + '</div>';
-      } else if (!isMulti && s.subtitle) {
-        subHtml = '<div class="awardee-subtitle">' + escapeHtml(s.subtitle) + '</div>';
+      if (s.subtitle) {
+        var joinedCitations = citationsList.join(' | ');
+        var isSubtitleCitations = (s.subtitle === joinedCitations) || 
+                                  (!hasExplicitCitations && citationsList.length >= 2);
+        if (!isSubtitleCitations) {
+          var subMargin = hasPills ? 'margin-bottom: clamp(0.6rem, 1.2vh, 1.2rem);' : '';
+          subHtml = '<div class="awardee-subtitle"' + (subMargin ? ' style="' + subMargin + '"' : '') + '>' + escapeHtml(s.subtitle) + '</div>';
+        }
       }
 
       var contentHtml = '';
-      if (isMulti) {
+      if (hasPills) {
         contentHtml = [
           '<div class="' + gridClass + '">',
           citationsList.map(function (item) {

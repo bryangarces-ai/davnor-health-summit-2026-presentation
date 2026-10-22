@@ -229,7 +229,42 @@ if (embalsadoPills !== 3 || !embalsadoHtml.includes('citations-grid--1col')) {
   console.error(`FAIL: Embalsado Slide 7 expected 3 citation pills in 1-column layout, got ${embalsadoPills}`);
   process.exit(1);
 }
-console.log(`✓ 03 Deck Slide 7 (Embalsado): 3 program citation pills rendered correctly in 1-column layout`);
+if (!embalsadoHtml.includes('Municipal Health Office of New Corella')) {
+  console.error('FAIL: Embalsado Slide 7 should render the Office/Role subtitle');
+  process.exit(1);
+}
+console.log(`✓ 03 Deck Slide 7 (Embalsado): Office subtitle AND 3 program citation pills rendered correctly without conflict`);
+
+// Test Single Citation Badge + Subtitle Coexistence
+const testSingleBadge = {
+  id: 99,
+  type: 'awardee',
+  title: 'TEST AWARDEE',
+  subtitle: 'Rural Health Unit of Kapalong',
+  citations: ['EXCELLENCE IN TUBERCULOSIS CONTROL']
+};
+const singleHtml = simulateSlideRender(testSingleBadge, [testSingleBadge]);
+const singlePills = (singleHtml.match(/class="citation-pill/g) || []).length;
+if (singlePills !== 1 || !singleHtml.includes('Rural Health Unit of Kapalong') || !singleHtml.includes('EXCELLENCE IN TUBERCULOSIS CONTROL')) {
+  console.error('FAIL: Single citation badge + subtitle test failed');
+  process.exit(1);
+}
+console.log(`✓ Single Citation Badge + Subtitle verified: Office/Role and 1 citation badge render cleanly together`);
+
+// Test De-duplication when subtitle equals joined citations
+const testCorrupted = {
+  id: 98,
+  type: 'awardee',
+  title: 'TEST CORRUPTED',
+  subtitle: 'AWARD ONE | AWARD TWO',
+  citations: ['AWARD ONE', 'AWARD TWO']
+};
+const corruptedHtml = simulateSlideRender(testCorrupted, [testCorrupted]);
+if (corruptedHtml.includes('awardee-subtitle')) {
+  console.error('FAIL: Corrupted slide should not render duplicate subtitle text');
+  process.exit(1);
+}
+console.log(`✓ De-duplication verified: Subtitle matching joined citations is suppressed to prevent duplicated text`);
 
 // Check that no rendered slide contains "undefined" or "NaN"
 d4Slides.forEach(s => {

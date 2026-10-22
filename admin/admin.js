@@ -75,6 +75,24 @@
       if (saved) {
         var parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) {
+          // Self-heal any subtitle that was corrupted by joined citations from earlier admin bug
+          var defaultSlides = (window.DECKS_CATALOG && window.DECKS_CATALOG[key]) || [];
+          var changed = false;
+          parsed.forEach(function (s) {
+            if (Array.isArray(s.citations) && s.citations.length > 0 && typeof s.subtitle === 'string') {
+              var joined = s.citations.join(' | ');
+              if (s.subtitle === joined) {
+                var orig = defaultSlides.find(function (x) { return x.id === s.id; });
+                if (orig && orig.subtitle && orig.subtitle !== joined) {
+                  s.subtitle = orig.subtitle;
+                  changed = true;
+                }
+              }
+            }
+          });
+          if (changed) {
+            try { localStorage.setItem('davnor_deck_' + key, JSON.stringify(parsed)); } catch (e) {}
+          }
           return parsed;
         }
       }
@@ -181,14 +199,18 @@
       var isModified = orig && JSON.stringify(orig) !== JSON.stringify(s);
 
       var citationsList = [];
-      if (Array.isArray(s.citations) && s.citations.length > 0) {
+      var hasExplicitCitations = Array.isArray(s.citations) && s.citations.length > 0;
+      if (hasExplicitCitations) {
         citationsList = s.citations;
       } else if (typeof s.subtitle === 'string' && s.subtitle.indexOf(' | ') !== -1) {
-        citationsList = s.subtitle.split(' | ');
+        citationsList = s.subtitle.split(' | ').map(function (c) { return c.trim(); }).filter(Boolean);
       }
 
-      var citationsBadge = citationsList.length > 1
-        ? '<div class="slide-badges-count">✦ ' + citationsList.length + ' Award Citations</div>'
+      var joinedCitations = citationsList.join(' | ');
+      var displaySub = (s.subtitle && s.subtitle !== joinedCitations) ? s.subtitle : '';
+
+      var citationsBadge = citationsList.length > 0
+        ? '<div class="slide-badges-count">✦ ' + citationsList.length + (citationsList.length === 1 ? ' Citation' : ' Citations') + '</div>'
         : '';
 
       var deckConfig = DECKS.find(function (d) { return d.key === currentDeckKey; });
@@ -206,7 +228,7 @@
         '    </div>',
         s.category ? '    <div class="slide-card-cat">' + escapeHtml(s.category) + '</div>' : '',
         '    <h3 class="slide-card-title">' + escapeHtml(s.title || 'Untitled Slide') + '</h3>',
-        s.subtitle && citationsList.length <= 1 ? '    <p class="slide-card-sub">' + escapeHtml(s.subtitle) + '</p>' : '',
+        displaySub ? '    <p class="slide-card-sub">' + escapeHtml(displaySub) + '</p>' : '',
         citationsBadge,
         '  </div>',
         '  <div class="slide-card-footer">',
@@ -231,7 +253,8 @@
     editingSlide = JSON.parse(JSON.stringify(slide));
 
     // Extract citations
-    if (Array.isArray(editingSlide.citations)) {
+    var hasExplicitCitations = Array.isArray(editingSlide.citations) && editingSlide.citations.length > 0;
+    if (hasExplicitCitations) {
       editingCitations = editingSlide.citations.slice();
     } else if (typeof editingSlide.subtitle === 'string' && editingSlide.subtitle.indexOf(' | ') !== -1) {
       editingCitations = editingSlide.subtitle.split(' | ').map(function (c) { return c.trim(); }).filter(Boolean);
@@ -245,10 +268,23 @@
     document.getElementById('editSlideCategory').value = editingSlide.category || '';
     document.getElementById('editSlideCategoryTag').value = editingSlide.categoryTag || '';
 
-    // Subtitle input (hide if multi citations)
+    // Subtitle input (Office, Role, Facility, etc.)
     var subInput = document.getElementById('editSlideSubtitle');
     if (subInput) {
-      subInput.value = editingCitations.length > 0 ? (editingSlide.subtitle || '') : (editingSlide.subtitle || '');
+      var joinedCitations = editingCitations.join(' | ');
+      // If subtitle matches joined citations (from previous buggy save or legacy pipe), check default catalog
+      if (editingCitations.length > 0 && editingSlide.subtitle === joinedCitations) {
+        var defaultSlides = (window.DECKS_CATALOG && window.DECKS_CATALOG[currentDeckKey]) || [];
+        var orig = defaultSlides.find(function (x) { return x.id === editingSlide.id; });
+        if (orig && orig.subtitle && orig.subtitle !== joinedCitations) {
+          subInput.value = orig.subtitle;
+        } else {
+          // If the default slide had no separate office (pure citations), leave blank for clean editing
+          subInput.value = '';
+        }
+      } else {
+        subInput.value = editingSlide.subtitle || '';
+      }
     }
 
     renderCitationsList();
@@ -262,7 +298,7 @@
     if (!container) return;
 
     if (editingCitations.length === 0) {
-      container.innerHTML = '<div style="color:var(--admin-slate); font-size:0.85rem; padding: 8px 0;">No individual citation badges. Subtitle will render as normal text.</div>';
+      container.innerHTML = '<div style="color:var(--admin-slate); font-size:0.85rem; padding: 8px 0;">No citation badges yet. Subtitle above will render alone on stage.</div>';
       return;
     }
 
@@ -307,16 +343,19 @@
     var category = document.getElementById('editSlideCategory').value;
     var subtitle = document.getElementById('editSlideSubtitle').value;
 
+    var subHtml = '';
+    if (subtitle && subtitle.trim()) {
+      subHtml = '<div style="color:#880E4F; font-size:1.05rem; font-weight:600; margin-top:8px; margin-bottom:6px;">' + escapeHtml(subtitle.trim()) + '</div>';
+    }
+
     var pillsHtml = '';
     if (editingCitations.length > 0) {
       var is2Col = editingCitations.length >= 4;
-      pillsHtml = '<div style="display:grid; grid-template-columns:' + (is2Col ? '1fr 1fr' : '1fr') + '; gap:8px; margin-top:12px; max-width:800px; width:100%;">';
+      pillsHtml = '<div style="display:grid; grid-template-columns:' + (is2Col ? '1fr 1fr' : '1fr') + '; gap:8px; margin-top:10px; max-width:800px; width:100%;">';
       pillsHtml += editingCitations.map(function (c) {
         return '<div style="background:rgba(255,255,255,0.88); border:1px solid rgba(216,27,96,0.3); border-left:3px solid #D81B60; padding:6px 12px; border-radius:6px; font-size:0.75rem; font-weight:700; color:#0F1E36; text-align:left;">✦ ' + escapeHtml(c) + '</div>';
       }).join('');
       pillsHtml += '</div>';
-    } else if (subtitle) {
-      pillsHtml = '<div style="color:#880E4F; font-size:1.1rem; font-weight:600; margin-top:8px;">' + escapeHtml(subtitle) + '</div>';
     }
 
     preview.innerHTML = [
@@ -324,6 +363,7 @@
       '  <div style="font-size:0.75rem; font-weight:800; letter-spacing:2px; color:#1E88E5; text-transform:uppercase; margin-bottom:4px;">' + escapeHtml(category || 'CATEGORY') + '</div>',
       '  <h2 style="font-size:1.4rem; font-weight:900; color:#0F1E36; text-transform:uppercase; margin:6px 0;">' + escapeHtml(title) + '</h2>',
       '  <div style="width:120px; height:2px; background:#D4AF37; margin:8px auto;"></div>',
+      subHtml,
       pillsHtml,
       '</div>'
     ].join('');
@@ -341,15 +381,19 @@
     if (!slide) return;
 
     slide.type = document.getElementById('editSlideType').value;
-    slide.title = document.getElementById('editSlideTitle').value;
-    slide.category = document.getElementById('editSlideCategory').value;
-    slide.categoryTag = document.getElementById('editSlideCategoryTag').value;
+    slide.title = document.getElementById('editSlideTitle').value.trim();
+    slide.category = document.getElementById('editSlideCategory').value.trim();
+    slide.categoryTag = document.getElementById('editSlideCategoryTag').value.trim();
 
+    // ALWAYS save the user's typed Subtitle / Office / Role directly into slide.subtitle!
+    // NEVER overwrite it with citations!
+    var subtitleVal = document.getElementById('editSlideSubtitle').value.trim();
+    slide.subtitle = subtitleVal;
+
+    // Citations are saved independently as array
     if (editingCitations.length > 0) {
       slide.citations = editingCitations.slice();
-      slide.subtitle = editingCitations.join(' | ');
     } else {
-      slide.subtitle = document.getElementById('editSlideSubtitle').value;
       delete slide.citations;
     }
 
