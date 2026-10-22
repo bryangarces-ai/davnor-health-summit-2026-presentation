@@ -1,11 +1,10 @@
 // ==========================================================================
 // OFFICIAL LOGOS CONFIGURATION
-// To add logos to all slides, place your logo images in shared/assets/logos/
-// and uncomment/add their relative file paths below:
+// Configured in exact specified order: DDN -> PHO -> Logo 3
 // ==========================================================================
 
 window.OFFICIAL_LOGOS = [
-  // '../shared/assets/logos/doh.png',
-  // '../shared/assets/logos/province-davao-del-norte.png',
-  // '../shared/assets/logos/bagong-pilipinas.png'
+  '../shared/assets/logos/DDN.png',
+  '../shared/assets/logos/PHO-Logo.png',
+  '../shared/assets/logos/logo-3.png'
 ];
