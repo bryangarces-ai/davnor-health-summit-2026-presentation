@@ -368,16 +368,19 @@
           '    <div class="podium-rank-badge">🥇 1st Place (Champion)</div>',
           '    <div class="podium-entity-name">TAGUM CITY</div>',
           '    <div class="podium-score">90.93%</div>',
+          '    <div class="podium-pts">690 Total Points</div>',
           '  </div>',
           '  <div class="scorecard-podium-card rank-2">',
           '    <div class="podium-rank-badge">🥈 2nd Place</div>',
           '    <div class="podium-entity-name">PANABO CITY</div>',
           '    <div class="podium-score">88.03%</div>',
+          '    <div class="podium-pts">680 Total Points</div>',
           '  </div>',
           '  <div class="scorecard-podium-card rank-3">',
           '    <div class="podium-rank-badge">🥉 3rd Place</div>',
           '    <div class="podium-entity-name">IGACOS</div>',
           '    <div class="podium-score">74.23%</div>',
+          '    <div class="podium-pts">580 Total Points</div>',
           '  </div>',
           '</div>'
         ].join('');
@@ -387,12 +390,12 @@
             '<tr>',
             '  <td class="td-prog-name">' + escapeHtml(p.name) + '</td>',
             '  <td class="td-weight">' + escapeHtml(p.weight) + '</td>',
-            '  <td>' + p.tagum.pts + '</td>',
-            '  <td style="font-weight:700; color:#1E3A8A;">' + escapeHtml(p.tagum.avg) + '</td>',
-            '  <td>' + p.panabo.pts + '</td>',
-            '  <td style="font-weight:700; color:#1E3A8A;">' + escapeHtml(p.panabo.avg) + '</td>',
-            '  <td>' + p.igacos.pts + '</td>',
-            '  <td style="font-weight:700; color:#1E3A8A;">' + escapeHtml(p.igacos.avg) + '</td>',
+            '  <td class="td-col-rank-1">' + p.tagum.pts + '</td>',
+            '  <td class="td-col-rank-1" style="font-weight:700; color:#B45309;">' + escapeHtml(p.tagum.avg) + '</td>',
+            '  <td class="td-col-rank-2">' + p.panabo.pts + '</td>',
+            '  <td class="td-col-rank-2" style="font-weight:700; color:#1E293B;">' + escapeHtml(p.panabo.avg) + '</td>',
+            '  <td class="td-col-rank-3">' + p.igacos.pts + '</td>',
+            '  <td class="td-col-rank-3" style="font-weight:700; color:#9A3412;">' + escapeHtml(p.igacos.avg) + '</td>',
             '</tr>'
           ].join('');
         }).join('');
@@ -404,14 +407,14 @@
           '    <tr>',
           '      <th rowspan="2" style="width:34%;">HEALTH PROGRAMS</th>',
           '      <th rowspan="2" class="th-weight">WEIGHT</th>',
-          '      <th colspan="2" class="th-highlight">TAGUM CITY</th>',
-          '      <th colspan="2">PANABO CITY</th>',
-          '      <th colspan="2">IGACOS</th>',
+          '      <th colspan="2" class="th-rank-1">TAGUM CITY 🥇</th>',
+          '      <th colspan="2" class="th-rank-2">PANABO CITY 🥈</th>',
+          '      <th colspan="2" class="th-rank-3">IGACOS 🥉</th>',
           '    </tr>',
           '    <tr>',
-          '      <th>POINTS</th><th>AVERAGE</th>',
-          '      <th>POINTS</th><th>AVERAGE</th>',
-          '      <th>POINTS</th><th>AVERAGE</th>',
+          '      <th class="th-subhead">POINTS</th><th class="th-subhead">AVERAGE</th>',
+          '      <th class="th-subhead">POINTS</th><th class="th-subhead">AVERAGE</th>',
+          '      <th class="th-subhead">POINTS</th><th class="th-subhead">AVERAGE</th>',
           '    </tr>',
           '  </thead>',
           '  <tbody>',
@@ -419,9 +422,27 @@
           '    <tr class="tr-total">',
           '      <td class="td-prog-name" style="font-weight:900;">FINAL TOTAL SCORE</td>',
           '      <td>100%</td>',
-          '      <td colspan="2" style="color:#B45309; font-size:1.15em;">90.93% (1st)</td>',
-          '      <td colspan="2" style="color:#475569; font-size:1.15em;">88.03% (2nd)</td>',
-          '      <td colspan="2" style="color:#9A3412; font-size:1.15em;">74.23% (3rd)</td>',
+          '      <td colspan="2" class="td-total-cell td-col-rank-1 rank-1">',
+          '        <div class="score-total-dual">',
+          '          <span class="total-pts">690 pts</span>',
+          '          <span class="total-score">90.93%</span>',
+          '          <span class="total-rank">🥇 1st Place (Champion)</span>',
+          '        </div>',
+          '      </td>',
+          '      <td colspan="2" class="td-total-cell td-col-rank-2 rank-2">',
+          '        <div class="score-total-dual">',
+          '          <span class="total-pts">680 pts</span>',
+          '          <span class="total-score">88.03%</span>',
+          '          <span class="total-rank">🥈 2nd Place</span>',
+          '        </div>',
+          '      </td>',
+          '      <td colspan="2" class="td-total-cell td-col-rank-3 rank-3">',
+          '        <div class="score-total-dual">',
+          '          <span class="total-pts">580 pts</span>',
+          '          <span class="total-score">74.23%</span>',
+          '          <span class="total-rank">🥉 3rd Place</span>',
+          '        </div>',
+          '      </td>',
           '    </tr>',
           '  </tbody>',
           '</table>',
@@ -436,72 +457,108 @@
           '    <div class="podium-rank-badge">🥇 1st Place</div>',
           '    <div class="podium-entity-name">NEW CORELLA</div>',
           '    <div class="podium-score">82.40%</div>',
+          '    <div class="podium-pts">630 Total Points</div>',
           '  </div>',
           '  <div class="scorecard-podium-card rank-2">',
           '    <div class="podium-rank-badge">🥈 2nd Place</div>',
           '    <div class="podium-entity-name">B.E. DUJALI</div>',
           '    <div class="podium-score">80.48%</div>',
+          '    <div class="podium-pts">620 Total Points</div>',
           '  </div>',
           '  <div class="scorecard-podium-card rank-3">',
           '    <div class="podium-rank-badge">🥉 3rd Place</div>',
           '    <div class="podium-entity-name">STO. TOMAS</div>',
           '    <div class="podium-score">76.49%</div>',
+          '    <div class="podium-pts">580 Total Points</div>',
           '  </div>',
           '</div>'
         ].join('');
 
+        var munColumns = [
+          { key: 'newCorella', name: 'NEW CORELLA', thClass: 'th-rank-1', colClass: 'td-col-rank-1', rankClass: 'rank-1', badge: '🥇 1st' },
+          { key: 'sawata', name: 'SAWATA', thClass: '', colClass: '', rankClass: '', badge: '8th' },
+          { key: 'kapalong', name: 'KAPALONG', thClass: '', colClass: '', rankClass: '', badge: '4th' },
+          { key: 'asuncion', name: 'ASUNCION', thClass: '', colClass: '', rankClass: '', badge: '7th' },
+          { key: 'talaingod', name: 'TALAINGOD', thClass: '', colClass: '', rankClass: '', badge: '6th' },
+          { key: 'beDujali', name: 'B.E. DUJALI', thClass: 'th-rank-2', colClass: 'td-col-rank-2', rankClass: 'rank-2', badge: '🥈 2nd' },
+          { key: 'carmen', name: 'CARMEN', thClass: '', colClass: '', rankClass: '', badge: '5th' },
+          { key: 'stoTomas', name: 'STO. TOMAS', thClass: 'th-rank-3', colClass: 'td-col-rank-3', rankClass: 'rank-3', badge: '🥉 3rd' }
+        ];
+
+        var munTotalsMap = {};
+        if (Array.isArray(s.municipalityTotals)) {
+          s.municipalityTotals.forEach(function (m) {
+            if (m && m.key) munTotalsMap[m.key] = m;
+          });
+        }
+
+        function renderMunCell(cell, colClass, rankClass) {
+          if (!cell) return '<td class="' + (colClass || '') + '">-</td>';
+          if (typeof cell === 'object') {
+            var ptsText = cell.pts != null ? cell.pts + ' pts' : '';
+            var avgText = cell.avg != null ? escapeHtml(cell.avg) : '';
+            return '<td class="td-mun-score ' + (colClass || '') + '">' +
+              '<div class="score-dual-cell">' +
+              (ptsText ? '<span class="cell-pts">' + ptsText + '</span>' : '') +
+              '<span class="cell-avg' + (rankClass ? ' ' + rankClass : '') + '">' + avgText + '</span>' +
+              '</div></td>';
+          }
+          return '<td class="td-mun-score ' + (colClass || '') + '">' +
+            '<div class="score-dual-cell"><span class="cell-avg">' + escapeHtml(cell) + '</span></div></td>';
+        }
+
         var munRows = s.municipalityPrograms.map(function (p) {
-          return [
-            '<tr>',
+          var tds = [
             '  <td class="td-prog-name">' + escapeHtml(p.name) + '</td>',
-            '  <td class="td-weight">' + escapeHtml(p.weight) + '</td>',
-            '  <td style="font-weight:700; color:#B45309;">' + p.scores.newCorella + '</td>',
-            '  <td>' + p.scores.sawata + '</td>',
-            '  <td>' + p.scores.kapalong + '</td>',
-            '  <td>' + p.scores.asuncion + '</td>',
-            '  <td>' + p.scores.talaingod + '</td>',
-            '  <td style="font-weight:700; color:#475569;">' + p.scores.beDujali + '</td>',
-            '  <td>' + p.scores.carmen + '</td>',
-            '  <td style="font-weight:700; color:#9A3412;">' + p.scores.stoTomas + '</td>',
-            '</tr>'
-          ].join('');
+            '  <td class="td-weight">' + escapeHtml(p.weight) + '</td>'
+          ];
+          munColumns.forEach(function (col) {
+            var cellData = p.scores ? p.scores[col.key] : null;
+            tds.push('  ' + renderMunCell(cellData, col.colClass, col.rankClass));
+          });
+          return '<tr>\n' + tds.join('\n') + '\n</tr>';
         }).join('');
+
+        var totalCells = munColumns.map(function (col) {
+          var tot = munTotalsMap[col.key];
+          var pts = tot && tot.pts != null ? tot.pts + ' pts' : '';
+          var score = tot && tot.score ? escapeHtml(tot.score) : '';
+          var badge = tot && (tot.badge || tot.rank) ? escapeHtml(tot.badge || tot.rank) : col.badge;
+          return [
+            '  <td class="td-total-cell ' + col.colClass + ' ' + col.rankClass + '">',
+            '    <div class="score-total-dual">',
+            pts ? '      <span class="total-pts">' + pts + '</span>' : '',
+            '      <span class="total-score">' + score + '</span>',
+            '      <span class="total-rank">' + badge + '</span>',
+            '    </div>',
+            '  </td>'
+          ].join('\n');
+        }).join('\n');
 
         var munTable = [
           '<div class="scorecard-table-wrap">',
           '<table class="scorecard-table">',
           '  <thead>',
           '    <tr>',
-          '      <th style="width:25%;">HEALTH PROGRAMS</th>',
+          '      <th style="width:23%;">HEALTH PROGRAMS</th>',
           '      <th class="th-weight">WT</th>',
-          '      <th class="th-highlight">NEW CORELLA</th>',
-          '      <th>SAWATA</th>',
-          '      <th>KAPALONG</th>',
-          '      <th>ASUNCION</th>',
-          '      <th>TALAINGOD</th>',
-          '      <th style="background:#334155; color:#FDE047;">B.E. DUJALI</th>',
-          '      <th>CARMEN</th>',
-          '      <th style="background:#78350F; color:#FDE047;">STO. TOMAS</th>',
+          munColumns.map(function (col) {
+            var thBadge = col.rankClass === 'rank-1' ? ' 🥇' : (col.rankClass === 'rank-2' ? ' 🥈' : (col.rankClass === 'rank-3' ? ' 🥉' : ''));
+            return '      <th class="' + col.thClass + '">' + escapeHtml(col.name) + thBadge + '</th>';
+          }).join('\n'),
           '    </tr>',
           '  </thead>',
           '  <tbody>',
           munRows,
           '    <tr class="tr-total">',
-          '      <td class="td-prog-name" style="font-weight:900;">TOTAL AVERAGE</td>',
+          '      <td class="td-prog-name" style="font-weight:900;">FINAL TOTAL EVALUATION</td>',
           '      <td>100%</td>',
-          '      <td style="color:#B45309; font-weight:900;">82.40% (1st)</td>',
-          '      <td>51.07% (8th)</td>',
-          '      <td>68.78% (4th)</td>',
-          '      <td>58.42% (7th)</td>',
-          '      <td>59.24% (6th)</td>',
-          '      <td style="color:#475569; font-weight:900;">80.48% (2nd)</td>',
-          '      <td>64.07% (5th)</td>',
-          '      <td style="color:#9A3412; font-weight:900;">76.49% (3rd)</td>',
+          totalCells,
           '    </tr>',
           '  </tbody>',
           '</table>',
           '</div>'
-        ].join('');
+        ].join('\n');
 
         bodyHtml = munPodiumHtml + munTable;
       }

@@ -40,7 +40,7 @@ const decks = [
   { folder: '02-individual-awardees', minSlides: 20 },
   { folder: '03-top-program-managers', minSlides: 35 },
   { folder: '04-consolation-and-winners', minSlides: 25 },
-  { folder: '05-official-results', minSlides: 5 }
+  { folder: '05-official-results', minSlides: 4 }
 ];
 
 decks.forEach(d => {
@@ -281,27 +281,41 @@ const d5Slides = d5Sandbox.window.SLIDES_DATA;
 
 const cityScorecard = d5Slides.find(s => s.id === 1);
 const cityHtml = simulateSlideRender(cityScorecard, d5Slides);
-if (!cityHtml.includes('scorecard-table') || !cityHtml.includes('TAGUM CITY') || !cityHtml.includes('90.93%')) {
-  console.error('FAIL: City Scorecard Slide 1 failed to render table and podium results');
+if (!cityHtml.includes('scorecard-table') || !cityHtml.includes('TAGUM CITY') || !cityHtml.includes('90.93%') || !cityHtml.includes('690 Total Points')) {
+  console.error('FAIL: City Scorecard Slide 1 failed to render table, points, and podium results');
   process.exit(1);
 }
-console.log('✓ 05 Deck Slide 1 (City Scorecard): Table, podium cards, and weights rendered correctly');
+console.log('✓ 05 Deck Slide 1 (City Scorecard): Table, podium cards, points (690, 680, 580) and weights rendered correctly');
 
 const munScorecard = d5Slides.find(s => s.id === 2);
 const munHtml = simulateSlideRender(munScorecard, d5Slides);
-if (!munHtml.includes('scorecard-table') || !munHtml.includes('NEW CORELLA') || !munHtml.includes('82.40%')) {
-  console.error('FAIL: Municipality Scorecard Slide 2 failed to render table and podium results');
+if (!munHtml.includes('scorecard-table') || !munHtml.includes('NEW CORELLA') || !munHtml.includes('82.40%') || !munHtml.includes('630 Total Points') || !munHtml.includes('630 pts') || !munHtml.includes('110 pts')) {
+  console.error('FAIL: Municipality Scorecard Slide 2 failed to render dual points and percentages');
   process.exit(1);
 }
-console.log('✓ 05 Deck Slide 2 (Municipality Scorecard): All 8 municipalities and scoring rendered correctly');
+if (!munHtml.includes('B.E. DUJALI') || !munHtml.includes('620 pts') || !munHtml.includes('STO. TOMAS') || !munHtml.includes('580 pts')) {
+  console.error('FAIL: Municipality Scorecard Slide 2 missing podium municipalities totals');
+  process.exit(1);
+}
+console.log('✓ 05 Deck Slide 2 (Municipality Scorecard): All 8 municipalities rendered with points and weighted averages');
 
-const cityImageSlide = d5Slides.find(s => s.id === 3);
-const imgHtml = simulateSlideRender(cityImageSlide, d5Slides);
-if (!imgHtml.includes('scorecard-full-img') || !imgHtml.includes('assets/city-category.png')) {
-  console.error('FAIL: City Image Slide 3 failed to render full sheet image');
+const closingSlide = d5Slides.find(s => s.id === 3);
+const closingHtml = simulateSlideRender(closingSlide, d5Slides);
+if (!closingHtml.includes('CONGRATULATIONS TO ALL LOCAL HEALTH UNITS')) {
+  console.error('FAIL: Closing Slide 3 failed to render congratulations title');
   process.exit(1);
 }
-console.log('✓ 05 Deck Slide 3 (Official Sheet Image): Full-res validated spreadsheet sheet rendered correctly');
+console.log('✓ 05 Deck Slide 3 (Ceremonial Finale): Closing congratulations slide rendered correctly');
+
+// Check that no rendered slide in deck 05 contains "undefined" or "NaN"
+d5Slides.forEach(s => {
+  const rendered = simulateSlideRender(s, d5Slides);
+  if (rendered.includes('undefined') || rendered.includes('NaN')) {
+    console.error(`FAIL: Slide ${s.id} in deck 05 rendered with undefined or NaN`);
+    process.exit(1);
+  }
+});
+console.log('✓ All 4 slides in 05-official-results verified clean with zero undefined values');
 
 // Check that no rendered slide contains "undefined" or "NaN"
 d4Slides.forEach(s => {
