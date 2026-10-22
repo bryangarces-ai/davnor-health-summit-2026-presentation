@@ -292,28 +292,95 @@ html, body {
   max-width: 320px;
 }
 
-/* 2-Column Citations Badge Grid */
+/* Card Mode for Slides with 2 or 3 Awards (Sawata, Asuncion, Talaingod, etc.) */
+.award-card--few-awards {
+  padding-top: clamp(1.4rem, 2.6vh, 2.4rem);
+  padding-bottom: clamp(2rem, 4vh, 3.2rem);
+}
+
+.award-card--few-awards .official-logos-bar {
+  margin-bottom: clamp(0.7rem, 1.4vh, 1.2rem);
+}
+
+.award-card--few-awards .official-logo-img {
+  width: clamp(80px, 11vh, 115px);
+  height: clamp(80px, 11vh, 115px);
+}
+
+.award-card--few-awards .awardee-name {
+  font-size: clamp(1.9rem, 3.4vw, 3.4rem);
+  margin-bottom: clamp(0.6rem, 1.2vh, 1rem);
+}
+
+/* Citations Grid Base */
 .citations-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(6px, 0.8vh, 10px) clamp(10px, 1.2vw, 20px);
   width: 100%;
-  max-width: 1300px;
   margin: 0 auto;
   text-align: left;
+}
+
+/* 1-Column Layout for Small Numbers (2-3 Awards) - Centered & Prominent */
+.citations-grid--1col {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.4vh, 16px);
+  max-width: 980px;
+}
+
+.citations-grid--1col .citation-pill {
+  padding: clamp(9px, 1.3vh, 14px) clamp(18px, 1.8vw, 28px);
+  border-radius: 12px;
+}
+
+.citations-grid--1col .citation-pill .pill-star {
+  font-size: clamp(1rem, 1.3vw, 1.35rem);
+}
+
+.citations-grid--1col .citation-pill .pill-text {
+  font-size: clamp(0.96rem, 1.25vw, 1.32rem);
+  line-height: 1.35;
+}
+
+/* 2-Column Layout for Many Awards (4+ Awards) - Slightly Increased Text Size */
+.citations-grid--2col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(7px, 0.95vh, 12px) clamp(12px, 1.4vw, 24px);
+  max-width: 1380px;
+}
+
+.citations-grid--2col .citation-pill {
+  padding: clamp(7px, 0.9vh, 11px) clamp(14px, 1.3vw, 20px);
+}
+
+.citations-grid--2col .citation-pill .pill-star {
+  font-size: clamp(0.85rem, 1.05vw, 1.1rem);
+}
+
+.citations-grid--2col .citation-pill .pill-text {
+  font-size: clamp(0.82rem, 1.02vw, 1.08rem);
+  line-height: 1.3;
+}
+
+/* If odd number in 2-column grid (e.g. 5 awards), center the last award across both columns */
+.citations-grid--2col > .citation-pill:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 /* Citations Pill Badge */
 .citation-pill {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.84);
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.86);
   border: 1px solid rgba(216, 27, 96, 0.22);
-  border-left: 3px solid var(--pink-primary);
+  border-left: 4px solid var(--pink-primary);
   border-radius: 8px;
-  padding: clamp(5px, 0.7vh, 8px) clamp(10px, 1vw, 16px);
-  box-shadow: 0 2px 8px rgba(15, 30, 54, 0.05);
+  box-shadow: 0 3px 10px rgba(15, 30, 54, 0.06);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -321,21 +388,18 @@ html, body {
 
 .citation-pill:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(15, 30, 54, 0.1);
+  box-shadow: 0 5px 14px rgba(15, 30, 54, 0.1);
 }
 
 .citation-pill .pill-star {
   flex-shrink: 0;
   color: var(--gold-foil);
-  font-size: clamp(0.75rem, 0.9vw, 0.9rem);
   filter: drop-shadow(0 1px 2px rgba(212, 175, 55, 0.4));
 }
 
 .citation-pill .pill-text {
   font-family: var(--font-sans);
-  font-size: clamp(0.72rem, 0.88vw, 0.92rem);
   font-weight: 700;
-  line-height: 1.25;
   color: var(--navy-text);
   letter-spacing: 0.2px;
 }
@@ -344,7 +408,7 @@ html, body {
 .citation-pill--highlight {
   background: linear-gradient(135deg, rgba(255, 253, 240, 0.95), rgba(255, 248, 225, 0.92));
   border: 1px solid rgba(212, 175, 55, 0.6);
-  border-left: 3px solid var(--gold-foil);
+  border-left: 4px solid var(--gold-foil);
   box-shadow: 0 4px 14px rgba(212, 175, 55, 0.22);
 }
 

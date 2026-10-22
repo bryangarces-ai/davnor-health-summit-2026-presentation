@@ -123,11 +123,41 @@ if (tagumPills !== 12) {
   console.error(`FAIL: Tagum Slide 23 expected 12 citation pills, got ${tagumPills}`);
   process.exit(1);
 }
-if (!tagumHtml.includes('award-card--multi-awards')) {
-  console.error(`FAIL: Tagum Slide 23 should have award-card--multi-awards class`);
+if (!tagumHtml.includes('award-card--multi-awards') || !tagumHtml.includes('citations-grid--2col')) {
+  console.error(`FAIL: Tagum Slide 23 should have award-card--multi-awards and citations-grid--2col classes`);
   process.exit(1);
 }
-console.log(`✓ Slide 23 (Tagum): 12 citation pills rendered correctly with compact multi-award layout`);
+console.log(`✓ Slide 23 (Tagum): 12 citation pills rendered correctly in 2-column layout`);
+
+// Test Slide 9: Sawata (3 awards) -> Should be 1-column layout without blanks
+const sawataSlide = d4Slides.find(s => s.id === 9);
+const sawataHtml = simulateSlideRender(sawataSlide, d4Slides);
+const sawataPills = (sawataHtml.match(/class="citation-pill/g) || []).length;
+if (sawataPills !== 3 || !sawataHtml.includes('citations-grid--1col')) {
+  console.error(`FAIL: Sawata Slide 9 expected 3 citation pills in 1-column layout, got ${sawataPills}`);
+  process.exit(1);
+}
+console.log(`✓ Slide 9 (Sawata): 3 citation pills rendered correctly in single centered column`);
+
+// Test Slide 10: Asuncion (2 awards) -> Should be 1-column layout
+const asuncionSlide = d4Slides.find(s => s.id === 10);
+const asuncionHtml = simulateSlideRender(asuncionSlide, d4Slides);
+const asuncionPills = (asuncionHtml.match(/class="citation-pill/g) || []).length;
+if (asuncionPills !== 2 || !asuncionHtml.includes('citations-grid--1col')) {
+  console.error(`FAIL: Asuncion Slide 10 expected 2 citation pills in 1-column layout, got ${asuncionPills}`);
+  process.exit(1);
+}
+console.log(`✓ Slide 10 (Asuncion): 2 citation pills rendered correctly in single centered column`);
+
+// Test Slide 12: Carmen (5 awards) -> Should be 2-column layout
+const carmenSlide = d4Slides.find(s => s.id === 12);
+const carmenHtml = simulateSlideRender(carmenSlide, d4Slides);
+const carmenPills = (carmenHtml.match(/class="citation-pill/g) || []).length;
+if (carmenPills !== 5 || !carmenHtml.includes('citations-grid--2col')) {
+  console.error(`FAIL: Carmen Slide 12 expected 5 citation pills in 2-column layout, got ${carmenPills}`);
+  process.exit(1);
+}
+console.log(`✓ Slide 12 (Carmen): 5 citation pills rendered in 2-column layout with centered bottom pill`);
 
 // Test Slide 28: New Corella (12 awards)
 const newCorellaSlide = d4Slides.find(s => s.id === 28);
@@ -184,11 +214,11 @@ const d3Slides = d3Sandbox.window.SLIDES_DATA;
 const embalsadoSlide = d3Slides.find(s => s.id === 7);
 const embalsadoHtml = simulateSlideRender(embalsadoSlide, d3Slides);
 const embalsadoPills = (embalsadoHtml.match(/class="citation-pill/g) || []).length;
-if (embalsadoPills !== 3) {
-  console.error(`FAIL: Embalsado Slide 7 expected 3 citation pills, got ${embalsadoPills}`);
+if (embalsadoPills !== 3 || !embalsadoHtml.includes('citations-grid--1col')) {
+  console.error(`FAIL: Embalsado Slide 7 expected 3 citation pills in 1-column layout, got ${embalsadoPills}`);
   process.exit(1);
 }
-console.log(`✓ 03 Deck Slide 7 (Embalsado): 3 program citation pills rendered correctly with office subtitle`);
+console.log(`✓ 03 Deck Slide 7 (Embalsado): 3 program citation pills rendered correctly in 1-column layout`);
 
 // Check that no rendered slide contains "undefined" or "NaN"
 d4Slides.forEach(s => {

@@ -228,7 +228,9 @@
       }
 
       var isMulti = citationsList.length >= 2;
-      var cardClass = 'award-card' + (citationsList.length >= 4 ? ' award-card--multi-awards' : '');
+      var isMany = citationsList.length >= 4;
+      var cardClass = 'award-card' + (isMany ? ' award-card--multi-awards' : (isMulti ? ' award-card--few-awards' : ''));
+      var gridClass = 'citations-grid ' + (isMany ? 'citations-grid--2col' : 'citations-grid--1col');
       var categoryTag = s.category ? '<div class="awardee-category-tag">' + escapeHtml(s.category) + '</div>' : '';
 
       var subHtml = '';
@@ -241,7 +243,7 @@
       var contentHtml = '';
       if (isMulti) {
         contentHtml = [
-          '<div class="citations-grid">',
+          '<div class="' + gridClass + '">',
           citationsList.map(function (item) {
             var lower = item.toLowerCase();
             var isHighlight = lower.indexOf('harmonized') !== -1 ||
