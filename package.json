@@ -1,0 +1,10 @@
+{
+  "name": "davnor-health-summit-2026-presentation",
+  "version": "1.0.0",
+  "description": "Program Health Summit 2026 Stage Presentation & Live Admin System",
+  "private": true,
+  "scripts": {
+    "test": "node tests/verify-presentation.js",
+    "build": "node -e \"console.log('Build complete')\""
+  }
+}

@@ -247,7 +247,7 @@
     return [
       '<div class="official-logos-bar">',
       logos.map(function (src) {
-        return '<img src="' + escapeHtml(src) + '" alt="Official Logo" class="official-logo-img" onerror="this.style.display=\'none\'" />';
+        return '<img src="' + escapeHtml(src) + '" alt="Official Logo" class="official-logo-img" onerror="if(!this.dataset.retried){this.dataset.retried=1;this.src=this.src.indexOf(\'../\')!==-1?this.src.replace(\'../\',\'\'):\'../\'+this.src;}else{this.style.display=\'none\';}" />';
       }).join(''),
       '</div>'
     ].join('');
