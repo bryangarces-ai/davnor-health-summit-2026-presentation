@@ -3,119 +3,249 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Program Health Summit 2026 — Group Awardees</title>
-  <link rel="stylesheet" href="css/floral-theme.css">
+  <title>Program Health Summit 2026 — Presentation Hub</title>
+  <link rel="stylesheet" href="shared/css/floral-theme.css">
+  <style>
+    body {
+      overflow-y: auto !important;
+      background: url('shared/assets/pptx-background.png') center center / cover no-repeat, #E2EFE9;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .hub-container {
+      width: 100%;
+      max-width: 1280px;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 2px solid rgba(212, 175, 55, 0.7);
+      border-radius: 32px;
+      box-shadow: 0 25px 70px rgba(15, 30, 54, 0.16), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+      padding: clamp(2.5rem, 5vw, 4.5rem);
+      text-align: center;
+      position: relative;
+    }
+
+    .hub-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #FFF9EB, #FFE6EE);
+      border: 1.5px solid var(--gold-foil);
+      border-radius: 50px;
+      padding: 8px 24px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 14px rgba(212, 175, 55, 0.25);
+    }
+
+    .hub-badge span {
+      font-family: var(--font-display);
+      font-weight: 800;
+      color: var(--pink-primary);
+      letter-spacing: 2px;
+      font-size: 0.95rem;
+    }
+
+    .hub-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      font-weight: 800;
+      color: var(--navy-text);
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+    }
+
+    .hub-title span {
+      background: linear-gradient(135deg, #D81B60, #1E88E5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hub-sub {
+      font-family: var(--font-sans);
+      font-size: clamp(1rem, 1.3vw, 1.25rem);
+      font-weight: 700;
+      color: var(--slate-subtext);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 3rem;
+    }
+
+    .decks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-bottom: 3rem;
+    }
+
+    .deck-card {
+      background: #FFFFFF;
+      border: 2px solid rgba(212, 175, 55, 0.4);
+      border-radius: 20px;
+      padding: 28px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 24px rgba(15, 30, 54, 0.08);
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .deck-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--pink-primary);
+      box-shadow: 0 18px 40px rgba(216, 27, 96, 0.22);
+    }
+
+    .deck-tag {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--sky-blue-deep);
+      background: rgba(30, 136, 229, 0.12);
+      padding: 4px 12px;
+      border-radius: 12px;
+      margin-bottom: 14px;
+    }
+
+    .deck-card h2 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy-text);
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .deck-card p {
+      font-size: 0.88rem;
+      color: var(--slate-subtext);
+      line-height: 1.45;
+      margin-bottom: 22px;
+    }
+
+    .deck-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #D81B60, #1E88E5);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(216, 27, 96, 0.25);
+    }
+
+    .shortcuts-bar {
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      padding-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      font-size: 0.88rem;
+      color: var(--slate-subtext);
+      font-weight: 600;
+    }
+
+    .shortcut-badge {
+      display: inline-block;
+      background: #FFFFFF;
+      border: 1px solid rgba(15, 30, 54, 0.2);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-family: monospace;
+      color: var(--navy-text);
+      font-weight: 700;
+      margin-right: 4px;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Hidden SVG Botanical Sprites -->
-  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
-    <symbol id="floral-corner-sym" viewBox="0 0 200 200">
-      <!-- Outer Golden Botanical Leaves -->
-      <path d="M 0,0 C 40,10 75,30 95,65 C 105,82 110,105 105,125 C 100,100 85,80 65,70 C 45,60 20,50 0,0 Z" fill="#D4AF37" opacity="0.85" />
-      <path d="M 0,0 C 15,35 35,65 65,85 C 80,95 100,100 120,95 C 100,85 85,70 75,50 C 60,30 45,15 0,0 Z" fill="#F3E5AB" opacity="0.75" />
+  <div class="hub-container">
+    <div class="hub-badge">
+      <span>CEREMONY STAGE PORTAL</span>
+    </div>
+    <h1 class="hub-title">Program Health Summit <span>2026</span></h1>
+    <div class="hub-sub">Province of Davao del Norte — Awards Slide Decks</div>
 
-      <!-- Sky Blue Hydrangea Sprigs & Leaves -->
-      <path d="M 12,0 C 35,20 50,45 55,75 C 45,65 30,55 20,40 C 10,25 5,10 12,0 Z" fill="#81D4FA" opacity="0.9" />
-      <path d="M 0,15 C 20,38 45,55 75,60 C 65,50 55,35 40,25 C 25,15 10,8 0,15 Z" fill="#4BA3E3" opacity="0.8" />
-      <circle cx="58" cy="80" r="14" fill="#6CB8EE" opacity="0.85" />
-      <circle cx="75" cy="65" r="12" fill="#81D4FA" opacity="0.85" />
-      <circle cx="82" cy="85" r="11" fill="#4BA3E3" opacity="0.75" />
-      <circle cx="68" cy="74" r="5" fill="#FFFFFF" opacity="0.9" />
+    <div class="decks-grid">
+      <!-- Deck 1 -->
+      <a href="01-group-awardees/index.html" class="deck-card">
+        <div>
+          <span class="deck-tag">SPECIAL AWARDS</span>
+          <h2>Group Awardees</h2>
+          <p>50 Group & Agency Awardees celebrating hospitals, civic partners, PNP, and provincial departments.</p>
+        </div>
+        <div class="deck-btn">
+          Launch Presentation (52 Slides) →
+        </div>
+      </a>
 
-      <!-- Cherry Blossom & Peony Blossom Center (Pink Primary) -->
-      <!-- Center Main Petals -->
-      <path d="M 32,32 C 18,15 10,2 25,0 C 40,-2 45,18 32,32 Z" fill="#F06292" opacity="0.95" />
-      <path d="M 32,32 C 15,46 2,54 0,39 C -2,24 18,19 32,32 Z" fill="#EC407A" opacity="0.95" />
-      <path d="M 32,32 C 46,46 54,60 39,64 C 24,66 19,46 32,32 Z" fill="#F48FB1" opacity="0.95" />
-      <path d="M 32,32 C 46,18 60,10 64,25 C 66,40 46,45 32,32 Z" fill="#F8BBD0" opacity="0.95" />
-      <path d="M 32,32 C 22,22 15,35 25,48 C 35,60 48,48 32,32 Z" fill="#E91E63" opacity="0.9" />
+      <!-- Deck 2 -->
+      <a href="02-individual-awardees/index.html" class="deck-card">
+        <div>
+          <span class="deck-tag">SPECIAL AWARDS</span>
+          <h2>Individual Awardees</h2>
+          <p>Outstanding individual doctors, specialists, leadership champions, and youth healthcare servants.</p>
+        </div>
+        <div class="deck-btn">
+          Launch Presentation (26 Slides) →
+        </div>
+      </a>
 
-      <!-- Flower Center Pistil (Gold Pearl) -->
-      <circle cx="32" cy="32" r="7" fill="#FFF8E7" stroke="#D4AF37" stroke-width="2" />
-      <circle cx="32" cy="32" r="3" fill="#D4AF37" />
+      <!-- Deck 3 -->
+      <a href="03-top-program-managers/index.html" class="deck-card">
+        <div>
+          <span class="deck-tag">PERFORMANCE</span>
+          <h2>Top Program Managers</h2>
+          <p>Dedicated municipal & city program managers across nutrition, immunization, TB, and health services.</p>
+        </div>
+        <div class="deck-btn">
+          Launch Presentation (43 Slides) →
+        </div>
+      </a>
 
-      <!-- Delicate Floating Blossom Buds -->
-      <circle cx="108" cy="42" r="9" fill="#F48FB1" opacity="0.9" />
-      <circle cx="108" cy="42" r="3" fill="#FFFFFF" opacity="0.9" />
-      <path d="M 98,35 Q 108,25 118,35 Q 108,45 98,35 Z" fill="#D4AF37" opacity="0.7" />
+      <!-- Deck 4 -->
+      <a href="04-consolation-and-winners/index.html" class="deck-card">
+        <div>
+          <span class="deck-tag">FINAL RESULTS</span>
+          <h2>Consolation & Winners</h2>
+          <p>Top performing barangays, municipalities, and cities ranked by the Health Summit 2026 indicators.</p>
+        </div>
+        <div class="deck-btn">
+          Launch Presentation (32 Slides) →
+        </div>
+      </a>
+    </div>
 
-      <circle cx="42" cy="108" r="9" fill="#F06292" opacity="0.9" />
-      <circle cx="42" cy="108" r="3" fill="#FFFFFF" opacity="0.9" />
-      <path d="M 35,98 Q 25,108 35,118 Q 45,108 35,98 Z" fill="#D4AF37" opacity="0.7" />
-    </symbol>
-  </svg>
-
-  <div class="presentation-wrapper">
-    <!-- Ambient Canvas Petals Layer -->
-    <canvas id="petalsCanvas" class="petals-canvas"></canvas>
-
-    <!-- Slide Content Viewport -->
-    <main id="slideViewport" class="slide-viewport" role="region" aria-label="Slide presentation viewport"></main>
-
-    <!-- Bottom Floating Control Bar -->
-    <nav id="controlBar" class="control-bar" aria-label="Presentation controls">
-      <button class="control-btn" onclick="window.PresentationEngine.prev()" title="Previous Slide (← / ↑)" aria-label="Previous Slide">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-      </button>
-
-      <div id="slideCounter" class="slide-counter" aria-live="polite">01 / 52</div>
-
-      <button class="control-btn" onclick="window.PresentationEngine.next()" title="Next Slide (→ / Space / Enter)" aria-label="Next Slide">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-      </button>
-
-      <span style="width: 1px; height: 20px; background: rgba(212, 175, 55, 0.4); margin: 0 4px;"></span>
-
-      <button class="control-btn" onclick="window.PresentationEngine.toggleDrawer()" title="All Awardees Grid (G / Esc)" aria-label="All Awardees Grid">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-          <rect x="3" y="3" width="7" height="7"></rect>
-          <rect x="14" y="3" width="7" height="7"></rect>
-          <rect x="14" y="14" width="7" height="7"></rect>
-          <rect x="3" y="14" width="7" height="7"></rect>
-        </svg>
-      </button>
-
-      <button id="soundToggleBtn" class="control-btn" onclick="window.PresentationEngine.toggleSound()" title="Toggle Award Chime (M)" aria-label="Toggle Sound">
-        <!-- populated dynamically by JS -->
-      </button>
-
-      <button class="control-btn" onclick="window.PresentationEngine.triggerConfetti()" title="Celebratory Confetti Burst (C)" aria-label="Celebrate">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
-        </svg>
-      </button>
-
-      <button class="control-btn" onclick="window.PresentationEngine.toggleFullscreen()" title="Fullscreen (F)" aria-label="Toggle Fullscreen">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-          <polyline points="15 3 21 3 21 9"></polyline>
-          <polyline points="9 21 3 21 3 15"></polyline>
-          <line x1="21" y1="3" x2="14" y2="10"></line>
-          <line x1="3" y1="21" x2="10" y2="14"></line>
-        </svg>
-      </button>
-    </nav>
-
-    <!-- Bottom Progress Indicator -->
-    <div class="progress-bar-container">
-      <div id="progressBar" class="progress-bar"></div>
+    <div class="shortcuts-bar">
+      <div><span class="shortcut-badge">←</span> <span class="shortcut-badge">→</span> / <span class="shortcut-badge">Space</span> Navigate</div>
+      <div><span class="shortcut-badge">F</span> Fullscreen</div>
+      <div><span class="shortcut-badge">G</span> / <span class="shortcut-badge">Esc</span> Awardee Grid & Search</div>
+      <div><span class="shortcut-badge">C</span> Celebratory Confetti</div>
+      <div><span class="shortcut-badge">M</span> Audio Chime</div>
     </div>
   </div>
 
-  <!-- Slide Overview Grid Drawer Modal -->
-  <aside id="drawerModal" class="drawer-modal" role="dialog" aria-modal="true" aria-label="Slide Directory">
-    <div class="drawer-content">
-      <div class="drawer-header">
-        <div class="drawer-title">🌸 Program Health Summit 2026 — Group Awardees</div>
-        <input type="text" id="drawerSearch" class="drawer-search-input" placeholder="Search awardee, department, zone..." aria-label="Search awardee">
-        <button class="drawer-close-btn" onclick="window.PresentationEngine.toggleDrawer(false)" aria-label="Close drawer">&times;</button>
-      </div>
-      <div id="drawerGrid" class="drawer-grid"></div>
-    </div>
-  </aside>
-
-  <!-- Presentation Scripts -->
-  <script src="js/slides-data.js"></script>
-  <script src="js/presentation.js"></script>
 </body>
 </html>

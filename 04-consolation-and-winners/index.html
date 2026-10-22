@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Program Health Summit 2026 — CONSOLATION & WINNERS</title>
+  <link rel="stylesheet" href="../shared/css/floral-theme.css">
+</head>
+<body>
+
+  <!-- Hidden SVG Botanical Sprites -->
+  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="floral-corner-sym" viewBox="0 0 200 200">
+      <!-- Outer Golden Botanical Leaves -->
+      <path d="M 0,0 C 40,10 75,30 95,65 C 105,82 110,105 105,125 C 100,100 85,80 65,70 C 45,60 20,50 0,0 Z" fill="#D4AF37" opacity="0.85" />
+      <path d="M 0,0 C 15,35 35,65 65,85 C 80,95 100,100 120,95 C 100,85 85,70 75,50 C 60,30 45,15 0,0 Z" fill="#F3E5AB" opacity="0.75" />
+
+      <!-- Sky Blue Hydrangea Sprigs & Leaves -->
+      <path d="M 12,0 C 35,20 50,45 55,75 C 45,65 30,55 20,40 C 10,25 5,10 12,0 Z" fill="#81D4FA" opacity="0.9" />
+      <path d="M 0,15 C 20,38 45,55 75,60 C 65,50 55,35 40,25 C 25,15 10,8 0,15 Z" fill="#1E88E5" opacity="0.8" />
+      <circle cx="58" cy="80" r="14" fill="#64B5F6" opacity="0.85" />
+      <circle cx="75" cy="65" r="12" fill="#81D4FA" opacity="0.85" />
+      <circle cx="82" cy="85" r="11" fill="#1E88E5" opacity="0.75" />
+      <circle cx="68" cy="74" r="5" fill="#FFFFFF" opacity="0.9" />
+
+      <!-- Cherry Blossom & Peony Blossom Center (Pink Primary) -->
+      <path d="M 32,32 C 18,15 10,2 25,0 C 40,-2 45,18 32,32 Z" fill="#F06292" opacity="0.95" />
+      <path d="M 32,32 C 15,46 2,54 0,39 C -2,24 18,19 32,32 Z" fill="#D81B60" opacity="0.95" />
+      <path d="M 32,32 C 46,46 54,60 39,64 C 24,66 19,46 32,32 Z" fill="#F48FB1" opacity="0.95" />
+      <path d="M 32,32 C 46,18 60,10 64,25 C 66,40 46,45 32,32 Z" fill="#F8BBD0" opacity="0.95" />
+      <path d="M 32,32 C 22,22 15,35 25,48 C 35,60 48,48 32,32 Z" fill="#C2185B" opacity="0.9" />
+
+      <!-- Flower Center Pistil (Gold Pearl) -->
+      <circle cx="32" cy="32" r="7" fill="#FFF8E7" stroke="#D4AF37" stroke-width="2" />
+      <circle cx="32" cy="32" r="3" fill="#D4AF37" />
+
+      <!-- Delicate Floating Blossom Buds -->
+      <circle cx="108" cy="42" r="9" fill="#F48FB1" opacity="0.9" />
+      <circle cx="108" cy="42" r="3" fill="#FFFFFF" opacity="0.9" />
+      <path d="M 98,35 Q 108,25 118,35 Q 108,45 98,35 Z" fill="#D4AF37" opacity="0.7" />
+
+      <circle cx="42" cy="108" r="9" fill="#F06292" opacity="0.9" />
+      <circle cx="42" cy="108" r="3" fill="#FFFFFF" opacity="0.9" />
+      <path d="M 35,98 Q 25,108 35,118 Q 45,108 35,98 Z" fill="#D4AF37" opacity="0.7" />
+    </symbol>
+  </svg>
+
+  <div class="presentation-wrapper">
+    <!-- Ambient Canvas Petals Layer -->
+    <canvas id="petalsCanvas" class="petals-canvas"></canvas>
+
+    <!-- Slide Content Viewport -->
+    <main id="slideViewport" class="slide-viewport" role="region" aria-label="Slide presentation viewport"></main>
+
+    <!-- Bottom Floating Control Bar -->
+    <nav id="controlBar" class="control-bar" aria-label="Presentation controls">
+      <button class="control-btn" onclick="window.PresentationEngine.prev()" title="Previous Slide (← / ↑)" aria-label="Previous Slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+
+      <div id="slideCounter" class="slide-counter" aria-live="polite">01 / 52</div>
+
+      <button class="control-btn" onclick="window.PresentationEngine.next()" title="Next Slide (→ / Space / Enter)" aria-label="Next Slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+
+      <span style="width: 1px; height: 20px; background: rgba(212, 175, 55, 0.4); margin: 0 4px;"></span>
+
+      <button class="control-btn" onclick="window.PresentationEngine.toggleDrawer()" title="All Awardees Grid (G / Esc)" aria-label="All Awardees Grid">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+      </button>
+
+      <button id="soundToggleBtn" class="control-btn" onclick="window.PresentationEngine.toggleSound()" title="Toggle Award Chime (M)" aria-label="Toggle Sound">
+        <!-- populated dynamically by JS -->
+      </button>
+
+      <button class="control-btn" onclick="window.PresentationEngine.triggerConfetti()" title="Celebratory Confetti Burst (C)" aria-label="Celebrate">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+        </svg>
+      </button>
+
+      <button class="control-btn" onclick="window.PresentationEngine.toggleFullscreen()" title="Fullscreen (F)" aria-label="Toggle Fullscreen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <polyline points="9 21 3 21 3 15"></polyline>
+          <line x1="21" y1="3" x2="14" y2="10"></line>
+          <line x1="3" y1="21" x2="10" y2="14"></line>
+        </svg>
+      </button>
+
+      <a href="../index.html" class="control-btn" title="Return to Awards Hub" style="text-decoration: none;" aria-label="Awards Hub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+      </a>
+    </nav>
+
+    <!-- Bottom Progress Indicator -->
+    <div class="progress-bar-container">
+      <div id="progressBar" class="progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- Slide Overview Grid Drawer Modal -->
+  <aside id="drawerModal" class="drawer-modal" role="dialog" aria-modal="true" aria-label="Slide Directory">
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <div class="drawer-title">🌸 Program Health Summit 2026 — CONSOLATION & WINNERS</div>
+        <input type="text" id="drawerSearch" class="drawer-search-input" placeholder="Search awardee, department, zone..." aria-label="Search awardee">
+        <button class="drawer-close-btn" onclick="window.PresentationEngine.toggleDrawer(false)" aria-label="Close drawer">&times;</button>
+      </div>
+      <div id="drawerGrid" class="drawer-grid"></div>
+    </div>
+  </aside>
+
+  <!-- Presentation Scripts -->
+  <script src="slides-data.js"></script>
+  <script src="../shared/js/presentation.js"></script>
+</body>
+</html>

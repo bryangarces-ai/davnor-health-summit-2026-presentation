@@ -144,15 +144,15 @@
         '    <svg class="floral-corner bottom-right"><use href="#floral-corner-sym" /></svg>',
         '    <div class="badge-seal">',
         '      <span class="seal-number">ANNUAL GALA</span>',
-        '      <span class="seal-label">' + escapeHtml(s.event) + '</span>',
+        '      <span class="seal-label">' + escapeHtml(s.event || 'HEALTH SUMMIT 2026') + '</span>',
         '    </div>',
-        '    <div class="title-event-header">' + escapeHtml(s.subEvent) + '</div>',
+        '    <div class="title-event-header">' + escapeHtml(s.subEvent || 'Province of Davao del Norte') + '</div>',
         '    <h1 class="title-main-heading"><span>' + escapeHtml(s.title) + '</span></h1>',
         '    <div class="title-category-badge">' + escapeHtml(s.category) + '</div>',
         '    <div class="ceremonial-divider">',
         '      <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>',
         '    </div>',
-        '    <p class="title-citation">"' + escapeHtml(s.citation) + '"</p>',
+        '    <p class="title-citation">"' + escapeHtml(s.citation || '') + '"</p>',
         '  </div>',
         '</div>'
       ].join('');
@@ -166,18 +166,19 @@
         '    <svg class="floral-corner bottom-right"><use href="#floral-corner-sym" /></svg>',
         '    <div class="badge-seal">',
         '      <span class="seal-number">SALUTE & HONOR</span>',
-        '      <span class="seal-label">' + escapeHtml(s.subtitle) + '</span>',
+        '      <span class="seal-label">' + escapeHtml(s.subtitle || 'CONGRATULATIONS') + '</span>',
         '    </div>',
         '    <h1 class="closing-heading">' + escapeHtml(s.title) + '</h1>',
         '    <div class="ceremonial-divider">',
         '      <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>',
         '    </div>',
-        '    <p class="closing-citation">"' + escapeHtml(s.citation) + '"</p>',
+        '    <p class="closing-citation">"' + escapeHtml(s.citation || '') + '"</p>',
         '  </div>',
         '</div>'
       ].join('');
     } else {
-      var numStr = s.number < 10 ? '0' + s.number : '' + s.number;
+      var numStr = (s.number !== undefined) ? (s.number < 10 ? '0' + s.number : '' + s.number) : '';
+      var badgeText = numStr ? 'AWARDEE #' + numStr : 'SPECIAL RECOGNITION';
       html = [
         '<div class="slide active">',
         '  <div class="award-card">',
@@ -186,10 +187,10 @@
         '    <svg class="floral-corner bottom-left"><use href="#floral-corner-sym" /></svg>',
         '    <svg class="floral-corner bottom-right"><use href="#floral-corner-sym" /></svg>',
         '    <div class="badge-seal">',
-        '      <span class="seal-number">AWARDEE #' + numStr + '</span>',
-        '      <span class="seal-label">GROUP CATEGORY</span>',
+        '      <span class="seal-number">' + badgeText + '</span>',
+        '      <span class="seal-label">' + escapeHtml(s.categoryTag || 'HONOR ROLL') + '</span>',
         '    </div>',
-        '    <div class="awardee-category-tag">' + escapeHtml(s.category || 'Special Recognition') + '</div>',
+        (s.category ? '    <div class="awardee-category-tag">' + escapeHtml(s.category) + '</div>' : ''),
         '    <h1 class="awardee-name">' + escapeHtml(s.title) + '</h1>',
         '    <div class="ceremonial-divider">',
         '      <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>',
@@ -238,7 +239,7 @@
     }
 
     grid.innerHTML = filtered.map(function (s) {
-      var numLabel = s.type === 'title' ? 'START' : (s.type === 'closing' ? 'FINALE' : '#' + (s.number < 10 ? '0' + s.number : s.number));
+      var numLabel = s.type === 'title' ? 'START' : (s.type === 'closing' ? 'FINALE' : (s.number !== undefined ? '#' + (s.number < 10 ? '0' + s.number : s.number) : '★'));
       var isActive = s.id === currentIndex ? ' active' : '';
       return [
         '<div class="drawer-card' + isActive + '" onclick="window.PresentationEngine.goToSlide(' + s.id + '); window.PresentationEngine.toggleDrawer(false);">',
@@ -269,7 +270,7 @@
         vx: (Math.random() - 0.5) * 16,
         vy: -Math.random() * 14 - 6,
         size: Math.random() * 9 + 5,
-        color: ['#E91E63', '#3B92D1', '#D4AF37', '#F48FB1', '#81D4FA', '#FFD54F'][Math.floor(Math.random() * 6)],
+        color: ['#D81B60', '#1E88E5', '#D4AF37', '#F48FB1', '#81D4FA', '#FFD54F'][Math.floor(Math.random() * 6)],
         rotation: Math.random() * 360,
         vr: (Math.random() - 0.5) * 12,
         alpha: 1,
@@ -301,7 +302,7 @@
         speedX: Math.random() * 1 - 0.5,
         angle: Math.random() * Math.PI * 2,
         angularSpeed: Math.random() * 0.02 - 0.01,
-        color: ['rgba(240, 98, 146, 0.55)', 'rgba(248, 187, 208, 0.65)', 'rgba(108, 184, 238, 0.5)'][Math.floor(Math.random() * 3)]
+        color: ['rgba(240, 98, 146, 0.55)', 'rgba(248, 187, 208, 0.65)', 'rgba(100, 181, 246, 0.5)'][Math.floor(Math.random() * 3)]
       });
     }
 
@@ -326,7 +327,6 @@
           ctx.rotate(p.angle);
           ctx.fillStyle = p.color;
           ctx.beginPath();
-          // Draw gentle flower petal shape
           ctx.ellipse(0, 0, p.size, p.size * 0.6, 0, 0, Math.PI * 2);
           ctx.fill();
           ctx.restore();
@@ -455,7 +455,6 @@
     }
   }
 
-  // Initialize
   function init() {
     setupCanvas();
     setupEventListeners();
@@ -469,7 +468,6 @@
     init();
   }
 
-  // Export engine
   window.PresentationEngine = {
     getCurrentIndex: getCurrentIndex,
     goToSlide: goToSlide,
