@@ -274,6 +274,57 @@
     }
   }
 
+  function drawRealPetal(ctx, p) {
+    var w = p.size;
+    var h = p.size * p.aspect;
+
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.rotation);
+
+    // 3D perspective flip and roll
+    var flipScale = Math.cos(p.flipPhase);
+    var rollScale = Math.cos(p.rollPhase) * 0.85 + 0.15;
+    ctx.scale(rollScale, flipScale);
+
+    // Realistic Sakura / Blossom Petal path with notched top
+    ctx.beginPath();
+    ctx.moveTo(0, h * 0.5); // base (tapered stem attachment)
+    ctx.bezierCurveTo(-w * 0.55, h * 0.25, -w * 0.65, -h * 0.2, -w * 0.25, -h * 0.45);
+    ctx.quadraticCurveTo(0, -h * 0.38, w * 0.25, -h * 0.45); // top center petal notch
+    ctx.bezierCurveTo(w * 0.65, -h * 0.2, w * 0.55, h * 0.25, 0, h * 0.5);
+    ctx.closePath();
+
+    // Dual-tone organic petal gradient
+    var grad = ctx.createLinearGradient(0, h * 0.5, 0, -h * 0.5);
+    if (p.variant === 0) {
+      grad.addColorStop(0, 'rgba(233, 30, 99, ' + p.alpha * 0.75 + ')');   // deep rose base
+      grad.addColorStop(0.5, 'rgba(244, 143, 177, ' + p.alpha * 0.7 + ')'); // sakura pink
+      grad.addColorStop(1, 'rgba(255, 235, 240, ' + p.alpha * 0.65 + ')');  // soft tip
+    } else if (p.variant === 1) {
+      grad.addColorStop(0, 'rgba(240, 98, 146, ' + p.alpha * 0.8 + ')');
+      grad.addColorStop(0.6, 'rgba(248, 187, 208, ' + p.alpha * 0.7 + ')');
+      grad.addColorStop(1, 'rgba(255, 255, 255, ' + p.alpha * 0.75 + ')');
+    } else {
+      // Subtle sky-blue touched lilac blossom for theme harmony
+      grad.addColorStop(0, 'rgba(244, 143, 177, ' + p.alpha * 0.75 + ')');
+      grad.addColorStop(0.5, 'rgba(225, 190, 231, ' + p.alpha * 0.65 + ')');
+      grad.addColorStop(1, 'rgba(179, 229, 252, ' + p.alpha * 0.6 + ')');
+    }
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    // Subtle translucent petal spine / central vein
+    ctx.beginPath();
+    ctx.moveTo(0, h * 0.44);
+    ctx.quadraticCurveTo(w * 0.04, 0, 0, -h * 0.28);
+    ctx.strokeStyle = 'rgba(255, 255, 255, ' + p.alpha * 0.45 + ')';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    ctx.restore();
+  }
+
   function setupCanvas() {
     var canvas = document.getElementById('petalsCanvas');
     if (!canvas || !canvas.getContext) return;
@@ -286,19 +337,32 @@
     window.addEventListener('resize', resize);
     resize();
 
-    // Create 30 drifting petals
+    function createPetal(w, h, randomY) {
+      return {
+        x: Math.random() * w,
+        y: randomY ? Math.random() * h : -30,
+        size: Math.random() * 12 + 14,       // 14px to 26px
+        aspect: Math.random() * 0.35 + 1.25, // 1.25 to 1.6
+        speedY: Math.random() * 0.55 + 0.65, // base fall speed
+        driftX: Math.random() * 0.4 - 0.2,   // slow ambient wind
+        swayPhase: Math.random() * Math.PI * 2,
+        swaySpeed: Math.random() * 0.02 + 0.015,
+        swayAmp: Math.random() * 1.4 + 0.8,
+        flipPhase: Math.random() * Math.PI * 2,
+        flipSpeed: Math.random() * 0.03 + 0.02,
+        rollPhase: Math.random() * Math.PI * 2,
+        rollSpeed: Math.random() * 0.02 + 0.015,
+        rotation: Math.random() * Math.PI * 2,
+        rotationSpeed: (Math.random() - 0.5) * 0.018,
+        alpha: Math.random() * 0.35 + 0.65,
+        variant: Math.floor(Math.random() * 3)
+      };
+    }
+
+    // Create 32 realistic fluttering petals
     particles = [];
-    for (var i = 0; i < 30; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 12 + 8,
-        speedY: Math.random() * 1.2 + 0.6,
-        speedX: Math.random() * 1 - 0.5,
-        angle: Math.random() * Math.PI * 2,
-        angularSpeed: Math.random() * 0.02 - 0.01,
-        color: ['rgba(240, 98, 146, 0.55)', 'rgba(248, 187, 208, 0.65)', 'rgba(100, 181, 246, 0.5)'][Math.floor(Math.random() * 3)]
-      });
+    for (var i = 0; i < 32; i++) {
+      particles.push(createPetal(canvas.width, canvas.height, true));
     }
 
     function animate() {
@@ -306,25 +370,26 @@
 
       if (isPetalsActive) {
         particles.forEach(function (p) {
-          p.y += p.speedY;
-          p.x += Math.sin(p.angle) * 0.8 + p.speedX;
-          p.angle += p.angularSpeed;
+          p.swayPhase += p.swaySpeed;
+          p.flipPhase += p.flipSpeed;
+          p.rollPhase += p.rollSpeed;
+          p.rotation += p.rotationSpeed;
 
-          if (p.y > canvas.height + 20) {
-            p.y = -20;
-            p.x = Math.random() * canvas.width;
+          // Aerodynamic lift: petal floats slower when flat, glides down faster when edge-on
+          var flatFactor = Math.abs(Math.cos(p.flipPhase));
+          var currentSpeedY = p.speedY * (0.6 + 0.6 * (1 - flatFactor));
+          p.y += currentSpeedY;
+
+          // Lateral pendulum oscillation + ambient wind drift
+          p.x += Math.sin(p.swayPhase) * p.swayAmp + p.driftX;
+
+          if (p.y > canvas.height + 30) {
+            Object.assign(p, createPetal(canvas.width, canvas.height, false));
           }
-          if (p.x > canvas.width + 20) p.x = -20;
-          if (p.x < -20) p.x = canvas.width + 20;
+          if (p.x > canvas.width + 30) p.x = -30;
+          if (p.x < -30) p.x = canvas.width + 30;
 
-          ctx.save();
-          ctx.translate(p.x, p.y);
-          ctx.rotate(p.angle);
-          ctx.fillStyle = p.color;
-          ctx.beginPath();
-          ctx.ellipse(0, 0, p.size, p.size * 0.6, 0, 0, Math.PI * 2);
-          ctx.fill();
-          ctx.restore();
+          drawRealPetal(ctx, p);
         });
       }
 
