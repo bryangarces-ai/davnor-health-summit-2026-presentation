@@ -64,4 +64,140 @@ decks.forEach(d => {
   console.log(`✓ Deck verified: ${d.folder} (${slides.length} slides total)`);
 });
 
-console.log('=== ALL MULTI-DECK CHECKS PASSED SUCCESSFULLY ===');
+// 3. Test multi-award citation grid and slide rendering in simulated DOM environment
+console.log('\n=== TESTING MULTI-AWARD CITATION RENDERING ENGINE ===');
+
+const presentationJsCode = fs.readFileSync('shared/js/presentation.js', 'utf8');
+
+function simulateSlideRender(slideData, allSlides) {
+  let innerHtmlResult = '';
+  const fakeElement = {
+    set innerHTML(val) { innerHtmlResult = val; },
+    get innerHTML() { return innerHtmlResult; },
+    classList: { add() {}, remove() {} },
+    style: {},
+    addEventListener() {},
+    removeEventListener() {}
+  };
+  const fakeDocument = {
+    getElementById(id) {
+      if (id === 'slideViewport') return fakeElement;
+      return fakeElement;
+    },
+    querySelectorAll() { return []; },
+    addEventListener() {},
+    removeEventListener() {}
+  };
+
+  const sandbox = {
+    window: {
+      SLIDES_DATA: allSlides || [slideData],
+      OFFICIAL_LOGOS: ['shared/assets/logos/logo-3.png', 'shared/assets/logos/DDN.png', 'shared/assets/logos/PHO-Logo.png']
+    },
+    document: fakeDocument,
+    console: console,
+    setTimeout: function(fn) { fn(); },
+    setInterval: function() {},
+    AudioContext: function() { return { createOscillator() {}, createGain() {} }; }
+  };
+
+  vm.createContext(sandbox);
+  // Run presentation.js (init runs automatically)
+  vm.runInContext(presentationJsCode, sandbox);
+  sandbox.window.PresentationEngine.goToSlide(slideData.id);
+
+  return innerHtmlResult;
+}
+
+// Load deck 04 data
+const d4Sandbox = { window: {} };
+vm.createContext(d4Sandbox);
+vm.runInContext(fs.readFileSync('04-consolation-and-winners/slides-data.js', 'utf8'), d4Sandbox);
+const d4Slides = d4Sandbox.window.SLIDES_DATA;
+
+// Test Slide 23: City of Tagum (12 awards)
+const tagumSlide = d4Slides.find(s => s.id === 23);
+const tagumHtml = simulateSlideRender(tagumSlide, d4Slides);
+const tagumPills = (tagumHtml.match(/class="citation-pill/g) || []).length;
+if (tagumPills !== 12) {
+  console.error(`FAIL: Tagum Slide 23 expected 12 citation pills, got ${tagumPills}`);
+  process.exit(1);
+}
+if (!tagumHtml.includes('award-card--multi-awards')) {
+  console.error(`FAIL: Tagum Slide 23 should have award-card--multi-awards class`);
+  process.exit(1);
+}
+console.log(`✓ Slide 23 (Tagum): 12 citation pills rendered correctly with compact multi-award layout`);
+
+// Test Slide 28: New Corella (12 awards)
+const newCorellaSlide = d4Slides.find(s => s.id === 28);
+const newCorellaHtml = simulateSlideRender(newCorellaSlide, d4Slides);
+const newCorellaPills = (newCorellaHtml.match(/class="citation-pill/g) || []).length;
+if (newCorellaPills !== 12) {
+  console.error(`FAIL: New Corella Slide 28 expected 12 citation pills, got ${newCorellaPills}`);
+  process.exit(1);
+}
+console.log(`✓ Slide 28 (New Corella): 12 citation pills rendered correctly`);
+
+// Test Slide 21: Panabo (10 awards)
+const panaboSlide = d4Slides.find(s => s.id === 21);
+const panaboHtml = simulateSlideRender(panaboSlide, d4Slides);
+const panaboPills = (panaboHtml.match(/class="citation-pill/g) || []).length;
+if (panaboPills !== 10) {
+  console.error(`FAIL: Panabo Slide 21 expected 10 citation pills, got ${panaboPills}`);
+  process.exit(1);
+}
+console.log(`✓ Slide 21 (Panabo): 10 citation pills rendered correctly`);
+
+// Test Slide 19: Samal (8 awards)
+const samalSlide = d4Slides.find(s => s.id === 19);
+const samalHtml = simulateSlideRender(samalSlide, d4Slides);
+const samalPills = (samalHtml.match(/class="citation-pill/g) || []).length;
+if (samalPills !== 8) {
+  console.error(`FAIL: Samal Slide 19 expected 8 citation pills, got ${samalPills}`);
+  process.exit(1);
+}
+console.log(`✓ Slide 19 (Samal): 8 citation pills rendered correctly`);
+
+// Test Slide 1 & Slide 14: Section Header Slides
+const s1Slide = d4Slides.find(s => s.id === 1);
+const s1Html = simulateSlideRender(s1Slide, d4Slides);
+if (!s1Html.includes('section-card') || !s1Html.includes('BARANGAY CATEGORY')) {
+  console.error('FAIL: Slide 1 should render as section-card');
+  process.exit(1);
+}
+console.log('✓ Slide 1: Section divider rendered correctly with category badges');
+
+const s14Slide = d4Slides.find(s => s.id === 14);
+const s14Html = simulateSlideRender(s14Slide, d4Slides);
+if (!s14Html.includes('section-card') || !s14Html.includes('TOP 3 PERFORMING CITIES')) {
+  console.error('FAIL: Slide 14 should render as section-card');
+  process.exit(1);
+}
+console.log('✓ Slide 14: Section divider rendered correctly with category badges');
+
+// Test 03-top-program-managers Slide 7 (Mary Grace Embalsado)
+const d3Sandbox = { window: {} };
+vm.createContext(d3Sandbox);
+vm.runInContext(fs.readFileSync('03-top-program-managers/slides-data.js', 'utf8'), d3Sandbox);
+const d3Slides = d3Sandbox.window.SLIDES_DATA;
+const embalsadoSlide = d3Slides.find(s => s.id === 7);
+const embalsadoHtml = simulateSlideRender(embalsadoSlide, d3Slides);
+const embalsadoPills = (embalsadoHtml.match(/class="citation-pill/g) || []).length;
+if (embalsadoPills !== 3) {
+  console.error(`FAIL: Embalsado Slide 7 expected 3 citation pills, got ${embalsadoPills}`);
+  process.exit(1);
+}
+console.log(`✓ 03 Deck Slide 7 (Embalsado): 3 program citation pills rendered correctly with office subtitle`);
+
+// Check that no rendered slide contains "undefined" or "NaN"
+d4Slides.forEach(s => {
+  const rendered = simulateSlideRender(s, d4Slides);
+  if (rendered.includes('undefined') || rendered.includes('NaN')) {
+    console.error(`FAIL: Slide ${s.id} in deck 04 rendered with undefined or NaN`);
+    process.exit(1);
+  }
+});
+console.log('✓ All 32 slides in 04-consolation-and-winners verified clean with zero undefined values');
+
+console.log('\n=== ALL MULTI-DECK & CITATION GRID CHECKS PASSED SUCCESSFULLY ===');

@@ -59,7 +59,8 @@
     "number": 6,
     "type": "awardee",
     "title": "FOOD AND DRUG ADMINISTRATION",
-    "subtitle": "DAVAO TESTING AND QUALITY ASSURANCE LABORATORY | For the unwavering support to the Provincial Epidemiology and Health Statistics Unit of Davao del Norte",
+    "subtitle": "DAVAO TESTING AND QUALITY ASSURANCE LABORATORY",
+    "citation": "For the unwavering support to the Provincial Epidemiology and Health Statistics Unit of Davao del Norte",
     "category": "INDIVIDUAL AWARDEE",
     "categoryTag": "INDIVIDUAL AWARDEE"
   },

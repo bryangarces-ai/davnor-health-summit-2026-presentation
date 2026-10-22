@@ -260,6 +260,154 @@ html, body {
   max-width: 1100px;
 }
 
+/* Compact Card Mode for Multi-Award Slides (Tagum, Panabo, New Corella, Samal, etc.) */
+.award-card--multi-awards {
+  padding-top: clamp(1rem, 2vh, 1.8rem);
+  padding-bottom: clamp(1.2rem, 2.5vh, 2rem);
+}
+
+.award-card--multi-awards .official-logos-bar {
+  margin-bottom: clamp(0.5rem, 1vh, 0.9rem);
+  gap: clamp(16px, 2.5vw, 32px);
+}
+
+.award-card--multi-awards .official-logo-img {
+  width: clamp(65px, 8.5vh, 90px);
+  height: clamp(65px, 8.5vh, 90px);
+}
+
+.award-card--multi-awards .awardee-category-tag {
+  font-size: clamp(0.75rem, 0.95vw, 0.95rem);
+  padding: 3px 14px;
+  margin-bottom: clamp(0.3rem, 0.8vh, 0.6rem);
+}
+
+.award-card--multi-awards .awardee-name {
+  font-size: clamp(1.6rem, 2.8vw, 2.8rem);
+  margin-bottom: clamp(0.4rem, 0.8vh, 0.8rem);
+}
+
+.award-card--multi-awards .ceremonial-divider {
+  margin-bottom: clamp(0.5rem, 1vh, 0.9rem);
+  max-width: 320px;
+}
+
+/* 2-Column Citations Badge Grid */
+.citations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(6px, 0.8vh, 10px) clamp(10px, 1.2vw, 20px);
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Citations Pill Badge */
+.citation-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(216, 27, 96, 0.22);
+  border-left: 3px solid var(--pink-primary);
+  border-radius: 8px;
+  padding: clamp(5px, 0.7vh, 8px) clamp(10px, 1vw, 16px);
+  box-shadow: 0 2px 8px rgba(15, 30, 54, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.citation-pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 30, 54, 0.1);
+}
+
+.citation-pill .pill-star {
+  flex-shrink: 0;
+  color: var(--gold-foil);
+  font-size: clamp(0.75rem, 0.9vw, 0.9rem);
+  filter: drop-shadow(0 1px 2px rgba(212, 175, 55, 0.4));
+}
+
+.citation-pill .pill-text {
+  font-family: var(--font-sans);
+  font-size: clamp(0.72rem, 0.88vw, 0.92rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--navy-text);
+  letter-spacing: 0.2px;
+}
+
+/* Special High-Honor Distinction (Harmonized Health, Highest Donation Rate) */
+.citation-pill--highlight {
+  background: linear-gradient(135deg, rgba(255, 253, 240, 0.95), rgba(255, 248, 225, 0.92));
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  border-left: 3px solid var(--gold-foil);
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.22);
+}
+
+.citation-pill--highlight .pill-star {
+  color: #D4AF37;
+}
+
+.citation-pill--highlight .pill-text {
+  color: #5D4037;
+  font-weight: 800;
+}
+
+/* Section / Category Divider Slide */
+.section-badge {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: clamp(0.9rem, 1.2vw, 1.3rem);
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: var(--sky-blue-deep);
+  background: rgba(30, 136, 229, 0.1);
+  border: 1px solid rgba(30, 136, 229, 0.3);
+  padding: 6px 24px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  margin-bottom: clamp(0.8rem, 1.6vh, 1.4rem);
+}
+
+.section-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2.2rem, 4vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.15;
+  color: var(--navy-text);
+  text-transform: uppercase;
+  max-width: 1100px;
+  margin-bottom: clamp(1rem, 2vh, 1.6rem);
+  text-shadow: 0 2px 8px rgba(15, 30, 54, 0.08);
+}
+
+.section-categories-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px 20px;
+  max-width: 1050px;
+  margin-top: clamp(0.8rem, 1.5vh, 1.4rem);
+}
+
+.section-category-pill {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.4vw, 1.5rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, var(--pink-primary) 0%, var(--sky-blue-deep) 100%);
+  padding: 8px 24px;
+  border-radius: 25px;
+  letter-spacing: 1.5px;
+  box-shadow: 0 6px 18px rgba(216, 27, 96, 0.28);
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+}
+
 /* Title Slide Styles */
 .title-event-header {
   font-family: var(--font-display);

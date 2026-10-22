@@ -11,12 +11,13 @@
   },
   {
     "id": 1,
-    "number": 1,
-    "type": "awardee",
-    "title": "BARANGAY CATEGORY",
-    "subtitle": "MUNICIPALITY CATEGORY",
-    "category": "AWARDING OF CONSOLATION BARANGAYS AND MUNICIPALITIES",
-    "categoryTag": "TOP PERFORMER"
+    "type": "section",
+    "title": "AWARDING OF CONSOLATION BARANGAYS AND MUNICIPALITIES",
+    "categoryTag": "AWARDING CEREMONY",
+    "categories": [
+      "BARANGAY CATEGORY",
+      "MUNICIPALITY CATEGORY"
+    ]
   },
   {
     "id": 2,
@@ -128,12 +129,14 @@
   },
   {
     "id": 14,
-    "number": 14,
-    "type": "awardee",
-    "title": "TOP 3 PERFORMING BARANGAY",
-    "subtitle": "TOP 3 PERFORMING CITIES | TOP 3 PERFORMING MUNICIPALITIES",
-    "category": "AWARDING OF TOP PERFORMING BARANGAYS, CITIES AND MUNICIPALITIES",
-    "categoryTag": "TOP PERFORMER"
+    "type": "section",
+    "title": "AWARDING OF TOP PERFORMING BARANGAYS, CITIES AND MUNICIPALITIES",
+    "categoryTag": "AWARDING CEREMONY",
+    "categories": [
+      "TOP 3 PERFORMING BARANGAY",
+      "TOP 3 PERFORMING CITIES",
+      "TOP 3 PERFORMING MUNICIPALITIES"
+    ]
   },
   {
     "id": 15,

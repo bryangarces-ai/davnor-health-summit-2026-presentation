@@ -67,10 +67,15 @@
     "id": 7,
     "number": 7,
     "type": "awardee",
-    "title": "SPECIAL AWARD IN INTEGRATED MANAGEMENT OF CHILDHOOD ILLNESS (IMCI) PROGRAM",
-    "subtitle": "SPECIAL AWARD IN NATIONAL IMMUNIZATION PROGRAM | MARY GRACE P. EMBALSADO, RN | Municipal Health Office of New Corella",
-    "category": "TOP PERFORMING PROGRAM MANAGER IN EXCLUSIVE BREASTFEEDING PROGRAM",
-    "categoryTag": "PROGRAM MANAGER"
+    "title": "MARY GRACE P. EMBALSADO, RN",
+    "subtitle": "Municipal Health Office of New Corella",
+    "category": "PROGRAM MANAGER",
+    "categoryTag": "PROGRAM MANAGER",
+    "citations": [
+      "TOP PERFORMING PROGRAM MANAGER IN EXCLUSIVE BREASTFEEDING PROGRAM",
+      "SPECIAL AWARD IN INTEGRATED MANAGEMENT OF CHILDHOOD ILLNESS (IMCI) PROGRAM",
+      "SPECIAL AWARD IN NATIONAL IMMUNIZATION PROGRAM"
+    ]
   },
   {
     "id": 8,
@@ -85,10 +90,14 @@
     "id": 9,
     "number": 9,
     "type": "awardee",
-    "title": "SPECIAL AWARD IN EPIDEMIOLOGY AND SURVEILLANCE SYSTEM PROGRAM",
-    "subtitle": "IRWIN JOSEPH B. BATIBUT, RN, LPT | Municipal Health Office of Kapalong",
-    "category": "TOP PERFORMING PROGRAM MANAGER IN TB PREVENTION AND CONTROL PROGRAM",
-    "categoryTag": "PROGRAM MANAGER"
+    "title": "IRWIN JOSEPH B. BATIBUT, RN, LPT",
+    "subtitle": "Municipal Health Office of Kapalong",
+    "category": "PROGRAM MANAGER",
+    "categoryTag": "PROGRAM MANAGER",
+    "citations": [
+      "TOP PERFORMING PROGRAM MANAGER IN TB PREVENTION AND CONTROL PROGRAM",
+      "SPECIAL AWARD IN EPIDEMIOLOGY AND SURVEILLANCE SYSTEM PROGRAM"
+    ]
   },
   {
     "id": 10,
@@ -103,10 +112,14 @@
     "id": 11,
     "number": 11,
     "type": "awardee",
-    "title": "TOP PERFORMING PROGRAM MANAGER IN DAVAO DEL NORTE ELECTRONIC HEALTH REFERRAL SYSTEM (DEHEARS) PROGRAM",
-    "subtitle": "MARIA CLEOFE T. FLORES, RN, MAN | City Health Office of Tagum",
-    "category": "TOP PERFORMING PROGRAM MANAGER IN THE OPERATION OF BARANGAY HEALTH WORKERS (BHW) PROGRAM",
-    "categoryTag": "PROGRAM MANAGER"
+    "title": "MARIA CLEOFE T. FLORES, RN, MAN",
+    "subtitle": "City Health Office of Tagum",
+    "category": "PROGRAM MANAGER",
+    "categoryTag": "PROGRAM MANAGER",
+    "citations": [
+      "TOP PERFORMING PROGRAM MANAGER IN THE OPERATION OF BARANGAY HEALTH WORKERS (BHW) PROGRAM",
+      "TOP PERFORMING PROGRAM MANAGER IN DAVAO DEL NORTE ELECTRONIC HEALTH REFERRAL SYSTEM (DEHEARS) PROGRAM"
+    ]
   },
   {
     "id": 12,
@@ -292,10 +305,14 @@
     "id": 32,
     "number": 32,
     "type": "awardee",
-    "title": "TOP PERFORMING PROGRAM MANAGER IN RABIES PREVENTION AND CONTROL PROGRAM",
-    "subtitle": "MARICRES B. POSTANES, RN | Municipal Health Office of New Corella",
-    "category": "TOP PERFORMING PROGRAM MANAGER IN DAVAO DEL NORTE HEALTH INFORMATION AND MANAGEMENT SYSTEM (DHIMS)",
-    "categoryTag": "PROGRAM MANAGER"
+    "title": "MARICRES B. POSTANES, RN",
+    "subtitle": "Municipal Health Office of New Corella",
+    "category": "PROGRAM MANAGER",
+    "categoryTag": "PROGRAM MANAGER",
+    "citations": [
+      "TOP PERFORMING PROGRAM MANAGER IN DAVAO DEL NORTE HEALTH INFORMATION AND MANAGEMENT SYSTEM (DHIMS)",
+      "TOP PERFORMING PROGRAM MANAGER IN RABIES PREVENTION AND CONTROL PROGRAM"
+    ]
   },
   {
     "id": 33,
@@ -346,10 +363,14 @@
     "id": 38,
     "number": 38,
     "type": "awardee",
-    "title": "TOP PERFORMING PROGRAM MANAGER IN DISASTER RISK REDUCTION AND MANAGEMENT IN HEALTH (DRRM H) PROGRAM",
-    "subtitle": "LIZA C. MANUBAG, RN | Municipal Health Office of New Corella",
-    "category": "TOP PERFORMING PROGRAM MANAGER IN TOBACCO PREVENTION AND CONTROL PROGRAM",
-    "categoryTag": "PROGRAM MANAGER"
+    "title": "LIZA C. MANUBAG, RN",
+    "subtitle": "Municipal Health Office of New Corella",
+    "category": "PROGRAM MANAGER",
+    "categoryTag": "PROGRAM MANAGER",
+    "citations": [
+      "TOP PERFORMING PROGRAM MANAGER IN TOBACCO PREVENTION AND CONTROL PROGRAM",
+      "TOP PERFORMING PROGRAM MANAGER IN DISASTER RISK REDUCTION AND MANAGEMENT IN HEALTH (DRRM H) PROGRAM"
+    ]
   },
   {
     "id": 39,

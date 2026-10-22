@@ -62,6 +62,12 @@
     renderCurrentSlide();
     updateControls();
 
+    if (window.location && window.history && window.history.replaceState) {
+      try {
+        window.history.replaceState(null, '', '#' + target);
+      } catch (e) {}
+    }
+
     if (changed) {
       playChime();
     }
@@ -178,19 +184,93 @@
         '  </div>',
         '</div>'
       ].join('');
-    } else {
-      var categoryTag = s.category ? '<div class="awardee-category-tag">' + escapeHtml(s.category) + '</div>' : '';
+    } else if (s.type === 'section') {
+      var categoriesHtml = '';
+      if (s.categories && Array.isArray(s.categories)) {
+        categoriesHtml = [
+          '<div class="section-categories-row">',
+          s.categories.map(function (c) {
+            return '<div class="section-category-pill">' + escapeHtml(c) + '</div>';
+          }).join(''),
+          '</div>'
+        ].join('');
+      } else if (s.subtitle) {
+        var cats = s.subtitle.indexOf(' | ') !== -1 ? s.subtitle.split(' | ') : s.subtitle.split(' · ');
+        categoriesHtml = [
+          '<div class="section-categories-row">',
+          cats.map(function (c) {
+            return '<div class="section-category-pill">' + escapeHtml(c.trim()) + '</div>';
+          }).join(''),
+          '</div>'
+        ].join('');
+      }
 
       html = [
         '<div class="slide active">',
-        '  <div class="award-card">',
+        '  <div class="award-card section-card">',
+        logosHtml,
+        s.categoryTag ? '<div class="section-badge">' + escapeHtml(s.categoryTag) + '</div>' : '',
+        '    <h1 class="section-title">' + escapeHtml(s.title) + '</h1>',
+        '    <div class="ceremonial-divider">',
+        '      <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>',
+        '    </div>',
+        categoriesHtml,
+        '  </div>',
+        '</div>'
+      ].join('');
+    } else {
+      var citationsList = [];
+      var hasExplicitCitations = Array.isArray(s.citations) && s.citations.length > 0;
+      if (hasExplicitCitations) {
+        citationsList = s.citations;
+      } else if (typeof s.subtitle === 'string' && s.subtitle.indexOf(' | ') !== -1) {
+        citationsList = s.subtitle.split(' | ').map(function (c) { return c.trim(); }).filter(Boolean);
+      }
+
+      var isMulti = citationsList.length >= 2;
+      var cardClass = 'award-card' + (citationsList.length >= 4 ? ' award-card--multi-awards' : '');
+      var categoryTag = s.category ? '<div class="awardee-category-tag">' + escapeHtml(s.category) + '</div>' : '';
+
+      var subHtml = '';
+      if (hasExplicitCitations && s.subtitle) {
+        subHtml = '<div class="awardee-subtitle" style="margin-bottom: clamp(0.6rem, 1.2vh, 1.2rem);">' + escapeHtml(s.subtitle) + '</div>';
+      } else if (!isMulti && s.subtitle) {
+        subHtml = '<div class="awardee-subtitle">' + escapeHtml(s.subtitle) + '</div>';
+      }
+
+      var contentHtml = '';
+      if (isMulti) {
+        contentHtml = [
+          '<div class="citations-grid">',
+          citationsList.map(function (item) {
+            var lower = item.toLowerCase();
+            var isHighlight = lower.indexOf('harmonized') !== -1 ||
+                              lower.indexOf('highest donation rate') !== -1 ||
+                              lower.indexOf('high donation rate') !== -1;
+            var pillClass = 'citation-pill' + (isHighlight ? ' citation-pill--highlight' : '');
+            return '<div class="' + pillClass + '">' +
+                   '  <span class="pill-star">✦</span>' +
+                   '  <span class="pill-text">' + escapeHtml(item) + '</span>' +
+                   '</div>';
+          }).join(''),
+          '</div>'
+        ].join('');
+      }
+
+      var citationHtml = s.citation ? '<p class="title-citation" style="margin-top: clamp(0.6rem, 1.2vh, 1.2rem);">"' + escapeHtml(s.citation) + '"</p>' : '';
+
+      html = [
+        '<div class="slide active">',
+        '  <div class="' + cardClass + '">',
         logosHtml,
         categoryTag,
         '    <h1 class="awardee-name">' + escapeHtml(s.title) + '</h1>',
         '    <div class="ceremonial-divider">',
         '      <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>',
         '    </div>',
-        '    <div class="awardee-subtitle">' + escapeHtml(s.subtitle || '') + '</div>',
+        subHtml,
+        contentHtml,
+        citationHtml,
         '  </div>',
         '</div>'
       ].join('');
@@ -225,7 +305,10 @@
       var matchTitle = s.title && s.title.toLowerCase().indexOf(filter) !== -1;
       var matchSub = s.subtitle && s.subtitle.toLowerCase().indexOf(filter) !== -1;
       var matchCat = s.category && s.category.toLowerCase().indexOf(filter) !== -1;
-      return matchTitle || matchSub || matchCat;
+      var matchCitations = s.citations && Array.isArray(s.citations) && s.citations.some(function (c) {
+        return c.toLowerCase().indexOf(filter) !== -1;
+      });
+      return matchTitle || matchSub || matchCat || matchCitations;
     });
 
     if (filtered.length === 0) {
@@ -234,7 +317,8 @@
     }
 
     grid.innerHTML = filtered.map(function (s) {
-      var numLabel = s.type === 'title' ? 'START' : (s.type === 'closing' ? 'FINALE' : (s.categoryTag || 'AWARDEE'));
+      var numLabel = s.type === 'title' ? 'START' : (s.type === 'closing' ? 'FINALE' : (s.type === 'section' ? 'SECTION' : (s.categoryTag || 'AWARDEE')));
+      var subText = (s.categories && Array.isArray(s.categories) ? s.categories.join(' · ') : '') || s.subtitle || s.category || '';
       var isActive = s.id === currentIndex ? ' active' : '';
       return [
         '<div class="drawer-card' + isActive + '" onclick="window.PresentationEngine.goToSlide(' + s.id + '); window.PresentationEngine.toggleDrawer(false);">',
@@ -242,7 +326,7 @@
         '    <div class="drawer-card-num">' + numLabel + '</div>',
         '    <div class="drawer-card-title">' + escapeHtml(s.title) + '</div>',
         '  </div>',
-        '  <div class="drawer-card-sub">' + escapeHtml(s.subtitle || s.category || '') + '</div>',
+        '  <div class="drawer-card-sub">' + escapeHtml(subText) + '</div>',
         '</div>'
       ].join('');
     }).join('');
@@ -512,10 +596,23 @@
     }
   }
 
+  function getInitialSlideIndex() {
+    try {
+      if (window.location && window.location.hash) {
+        var hash = window.location.hash.replace('#', '');
+        var num = parseInt(hash, 10);
+        if (!isNaN(num) && num >= 0 && num < slides.length) {
+          return num;
+        }
+      }
+    } catch (e) {}
+    return 0;
+  }
+
   function init() {
     setupCanvas();
     setupEventListeners();
-    goToSlide(0);
+    goToSlide(getInitialSlideIndex());
     updateSoundBtn();
   }
 
