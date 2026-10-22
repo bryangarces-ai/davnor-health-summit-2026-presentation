@@ -14,6 +14,61 @@
   var editingCitations = [];
   var currentSearchQuery = '';
 
+  var ADMIN_PASSCODE = 'lhssd2026';
+  var AUTH_STORAGE_KEY = 'davnor_admin_auth_token';
+
+  function isAuthorized() {
+    try {
+      return sessionStorage.getItem(AUTH_STORAGE_KEY) === 'granted' ||
+             localStorage.getItem(AUTH_STORAGE_KEY) === 'granted';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function checkAuth() {
+    var overlay = document.getElementById('authOverlay');
+    if (!overlay) return;
+    if (isAuthorized()) {
+      overlay.style.display = 'none';
+    } else {
+      overlay.style.display = 'flex';
+      var input = document.getElementById('authPasswordInput');
+      if (input) {
+        setTimeout(function () { input.focus(); }, 150);
+      }
+    }
+  }
+
+  function verifyPassword(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    var input = document.getElementById('authPasswordInput');
+    var errMsg = document.getElementById('authErrorMsg');
+    if (!input) return;
+
+    if (input.value.trim() === ADMIN_PASSCODE) {
+      sessionStorage.setItem(AUTH_STORAGE_KEY, 'granted');
+      localStorage.setItem(AUTH_STORAGE_KEY, 'granted');
+      if (errMsg) errMsg.style.display = 'none';
+      var overlay = document.getElementById('authOverlay');
+      if (overlay) overlay.style.display = 'none';
+      showToast('🔓 Admin dashboard unlocked');
+    } else {
+      if (errMsg) errMsg.style.display = 'block';
+      input.classList.add('input-error');
+      setTimeout(function () { input.classList.remove('input-error'); }, 500);
+      input.value = '';
+      input.focus();
+    }
+  }
+
+  function logout() {
+    sessionStorage.removeItem(AUTH_STORAGE_KEY);
+    localStorage.removeItem(AUTH_STORAGE_KEY);
+    showToast('🔒 Admin session locked');
+    checkAuth();
+  }
+
   function getDeckSlides(key) {
     try {
       var saved = localStorage.getItem('davnor_deck_' + key);
@@ -44,6 +99,10 @@
   }
 
   function resetDeck(key) {
+    if (!isAuthorized()) {
+      checkAuth();
+      return;
+    }
     if (!confirm('Are you sure you want to reset this deck back to the default PowerPoint data? Any custom edits for this deck will be cleared.')) return;
     localStorage.removeItem('davnor_deck_' + key);
     broadcastSync(key);
@@ -160,6 +219,11 @@
   }
 
   function openEditor(slideId) {
+    if (!isAuthorized()) {
+      checkAuth();
+      return;
+    }
+
     var slides = getDeckSlides(currentDeckKey);
     var slide = slides.find(function (s) { return s.id === slideId; });
     if (!slide) return;
@@ -266,6 +330,10 @@
   }
 
   function saveCurrentSlide() {
+    if (!isAuthorized()) {
+      checkAuth();
+      return;
+    }
     if (!editingSlide) return;
 
     var slides = getDeckSlides(currentDeckKey);
@@ -299,6 +367,10 @@
   }
 
   function downloadCurrentDeckJs() {
+    if (!isAuthorized()) {
+      checkAuth();
+      return;
+    }
     var slides = getDeckSlides(currentDeckKey);
     var deck = DECKS.find(function (d) { return d.key === currentDeckKey; });
     var content = "(function () {\n" +
@@ -321,6 +393,10 @@
   }
 
   function exportAllBackup() {
+    if (!isAuthorized()) {
+      checkAuth();
+      return;
+    }
     var allData = {};
     DECKS.forEach(function (d) {
       allData[d.key] = getDeckSlides(d.key);
@@ -339,6 +415,10 @@
   }
 
   function triggerImportBackup() {
+    if (!isAuthorized()) {
+      checkAuth();
+      return;
+    }
     var input = document.getElementById('importBackupFileInput');
     if (input) input.click();
   }
@@ -385,6 +465,7 @@
   }
 
   function init() {
+    checkAuth();
     renderTabs();
     renderSlidesGrid();
 
@@ -432,6 +513,9 @@
     resetDeck: function () { resetDeck(currentDeckKey); },
     downloadCurrentDeckJs: downloadCurrentDeckJs,
     exportAllBackup: exportAllBackup,
-    triggerImportBackup: triggerImportBackup
+    triggerImportBackup: triggerImportBackup,
+    verifyPassword: verifyPassword,
+    logout: logout,
+    checkAuth: checkAuth
   };
 })();

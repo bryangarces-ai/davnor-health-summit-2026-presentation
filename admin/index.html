@@ -27,6 +27,7 @@
       <div class="admin-header-actions">
         <button class="btn btn-secondary btn-sm" onclick="window.AdminApp.exportAllBackup()" title="Backup all customized slides to JSON">💾 Export All</button>
         <button class="btn btn-secondary btn-sm" onclick="window.AdminApp.triggerImportBackup()" title="Restore slides from backup JSON">📥 Import</button>
+        <button class="btn btn-secondary btn-sm" onclick="window.AdminApp.logout()" title="Lock Admin Session">🔒 Lock</button>
         <input type="file" id="importBackupFileInput" accept=".json" style="display: none;" />
         <a href="../index.html" class="btn btn-primary btn-sm">🌸 Return to Ceremony Hub</a>
       </div>
@@ -132,6 +133,34 @@
 
   <!-- Toast Notice -->
   <div class="toast-notice" id="toastNotice"></div>
+
+  <!-- Security Verification Lock Screen -->
+  <div class="auth-overlay" id="authOverlay">
+    <div class="auth-card">
+      <div class="auth-logos">
+        <img src="../shared/assets/logos/logo-3.png" alt="DOH Logo" />
+        <img src="../shared/assets/logos/DDN.png" alt="DDN Logo" />
+        <img src="../shared/assets/logos/PHO-Logo.png" alt="PHO Logo" />
+      </div>
+      <div class="auth-badge">SECURITY VERIFICATION</div>
+      <h2 class="auth-title">Admin Access Required</h2>
+      <p class="auth-desc">Please enter the security passcode to access the live ceremony slide editor.</p>
+      
+      <form id="authForm" onsubmit="window.AdminApp.verifyPassword(event)">
+        <div class="form-group" style="margin-bottom: 16px;">
+          <input type="password" id="authPasswordInput" class="form-input auth-password-input" placeholder="Enter passcode..." autocomplete="current-password" autofocus />
+          <div id="authErrorMsg" class="auth-error-msg" style="display: none;">Incorrect passcode. Please try again.</div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 12px; font-size: 0.95rem;">
+          🔓 Unlock Admin Dashboard
+        </button>
+      </form>
+
+      <div style="margin-top: 20px; text-align: center;">
+        <a href="../index.html" style="font-size: 0.85rem; color: var(--admin-slate); text-decoration: none; font-weight: 600;">← Return to Ceremony Stage Hub</a>
+      </div>
+    </div>
+  </div>
 
   <!-- Load all 5 deck data catalogs so admin has instant offline access -->
   <script src="../00-program-health-summit-2026/slides-data.js"></script>
