@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAVNOR Health Summit 2026 — Program</title>
+  <link rel="stylesheet" href="../shared/css/floral-theme.css">
+</head>
+<body>
+
+  <div class="presentation-wrapper">
+    <!-- Ambient Canvas Petals Layer -->
+    <canvas id="petalsCanvas" class="petals-canvas"></canvas>
+
+    <!-- Slide Content Viewport -->
+    <main id="slideViewport" class="slide-viewport" role="region" aria-label="Slide presentation viewport"></main>
+
+    <!-- Bottom Floating Control Bar -->
+    <nav id="controlBar" class="control-bar" aria-label="Presentation controls">
+      <button class="control-btn" onclick="window.PresentationEngine.prev()" title="Previous Slide (← / ↑)" aria-label="Previous Slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+
+      <div id="slideCounter" class="slide-counter" aria-live="polite">01 / 17</div>
+
+      <button class="control-btn" onclick="window.PresentationEngine.next()" title="Next Slide (→ / Space / Enter)" aria-label="Next Slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+
+      <span style="width: 1px; height: 20px; background: rgba(212, 175, 55, 0.4); margin: 0 4px;"></span>
+
+      <button class="control-btn" onclick="window.PresentationEngine.toggleDrawer()" title="Order of Ceremony Grid (G / Esc)" aria-label="All Programme Segments">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+      </button>
+
+      <button id="soundToggleBtn" class="control-btn" onclick="window.PresentationEngine.toggleSound()" title="Toggle Chime (M)" aria-label="Toggle Sound">
+        <!-- populated dynamically by JS -->
+      </button>
+
+      <button class="control-btn" onclick="window.PresentationEngine.triggerConfetti()" title="Celebratory Confetti Burst (C)" aria-label="Celebrate">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+        </svg>
+      </button>
+
+      <button class="control-btn" onclick="window.PresentationEngine.toggleFullscreen()" title="Fullscreen (F)" aria-label="Toggle Fullscreen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <polyline points="9 21 3 21 3 15"></polyline>
+          <line x1="21" y1="3" x2="14" y2="10"></line>
+          <line x1="3" y1="21" x2="10" y2="14"></line>
+        </svg>
+      </button>
+
+      <a href="../index.html" class="control-btn" title="Return to Ceremony Hub" style="text-decoration: none;" aria-label="Ceremony Hub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+      </a>
+    </nav>
+
+    <!-- Bottom Progress Indicator -->
+    <div class="progress-bar-container">
+      <div id="progressBar" class="progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- Slide Overview Grid Drawer Modal -->
+  <aside id="drawerModal" class="drawer-modal" role="dialog" aria-modal="true" aria-label="Slide Directory">
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <div class="drawer-title">🌸 DAVNOR Health Summit 2026 — Programme Order</div>
+        <input type="text" id="drawerSearch" class="drawer-search-input" placeholder="Search speaker, segment, topic..." aria-label="Search programme">
+        <button class="drawer-close-btn" onclick="window.PresentationEngine.toggleDrawer(false)" aria-label="Close drawer">&times;</button>
+      </div>
+      <div id="drawerGrid" class="drawer-grid"></div>
+    </div>
+  </aside>
+
+  <!-- Presentation Scripts -->
+  <script src="slides-data.js"></script>
+  <script src="../shared/js/logos-config.js"></script>
+  <script src="../shared/js/presentation.js"></script>
+</body>
+</html>

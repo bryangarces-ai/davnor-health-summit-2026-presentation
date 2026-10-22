@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Program Health Summit 2026 — Presentation Hub</title>
+  <title>DAVNOR Health Summit 2026 — Presentation Portal</title>
   <link rel="stylesheet" href="shared/css/floral-theme.css">
   <style>
     body {
@@ -20,7 +20,7 @@
 
     .hub-container {
       width: 100%;
-      max-width: 1280px;
+      max-width: 1320px;
       background: rgba(255, 255, 255, 0.78);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
@@ -32,6 +32,21 @@
       position: relative;
     }
 
+    .hub-logos-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hub-logos-bar img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+    }
+
     .hub-badge {
       display: inline-flex;
       align-items: center;
@@ -40,7 +55,7 @@
       border: 1.5px solid var(--gold-foil);
       border-radius: 50px;
       padding: 8px 24px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
       box-shadow: 0 4px 14px rgba(212, 175, 55, 0.25);
     }
 
@@ -74,21 +89,87 @@
       color: var(--slate-subtext);
       text-transform: uppercase;
       letter-spacing: 3px;
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Featured Main Program Card */
+    .featured-program-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(253, 242, 245, 0.95));
+      border: 2.5px solid var(--gold-foil);
+      border-radius: 24px;
+      padding: 24px 32px;
+      margin-bottom: 2.5rem;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 12px 30px rgba(216, 27, 96, 0.18);
+      transition: all 0.35s ease;
+      text-align: left;
+    }
+
+    .featured-program-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px rgba(216, 27, 96, 0.28);
+      border-color: var(--pink-primary);
+    }
+
+    .featured-left {
+      flex: 1;
+    }
+
+    .featured-badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #FFFFFF;
+      background: linear-gradient(135deg, #D81B60, #1E88E5);
+      padding: 5px 14px;
+      border-radius: 14px;
+      margin-bottom: 8px;
+    }
+
+    .featured-title {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--navy-text);
+      margin-bottom: 4px;
+    }
+
+    .featured-desc {
+      font-size: 0.95rem;
+      color: var(--slate-subtext);
+      line-height: 1.45;
+    }
+
+    .featured-btn {
+      padding: 14px 28px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #D81B60, #1E88E5);
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      box-shadow: 0 6px 18px rgba(216, 27, 96, 0.3);
     }
 
     .decks-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-bottom: 3rem;
+      gap: 22px;
+      margin-bottom: 2.8rem;
     }
 
     .deck-card {
       background: #FFFFFF;
       border: 2px solid rgba(212, 175, 55, 0.4);
       border-radius: 20px;
-      padding: 28px 22px;
+      padding: 26px 20px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -116,7 +197,7 @@
       background: rgba(30, 136, 229, 0.12);
       padding: 4px 12px;
       border-radius: 12px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .deck-card h2 {
@@ -124,7 +205,7 @@
       font-size: 1.25rem;
       font-weight: 800;
       color: var(--navy-text);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       line-height: 1.35;
     }
 
@@ -132,7 +213,7 @@
       font-size: 0.88rem;
       color: var(--slate-subtext);
       line-height: 1.45;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .deck-btn {
@@ -155,7 +236,7 @@
 
     .shortcuts-bar {
       border-top: 1px solid rgba(212, 175, 55, 0.3);
-      padding-top: 24px;
+      padding-top: 22px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -182,12 +263,31 @@
 <body>
 
   <div class="hub-container">
+    <div class="hub-logos-bar">
+      <img src="shared/assets/logos/DDN.png" alt="Davao del Norte">
+      <img src="shared/assets/logos/PHO-Logo.png" alt="Provincial Health Office">
+      <img src="shared/assets/logos/logo-3.png" alt="Partner Logo">
+    </div>
+
     <div class="hub-badge">
       <span>CEREMONY STAGE PORTAL</span>
     </div>
     <h1 class="hub-title">Program Health Summit <span>2026</span></h1>
-    <div class="hub-sub">Province of Davao del Norte — Awards Slide Decks</div>
+    <div class="hub-sub">Carmen Gymnasium, Carmen, Davao del Norte · "One Healthy DAVNOR"</div>
 
+    <!-- Featured Main Program Deck -->
+    <a href="00-program-health-summit-2026/index.html" class="featured-program-card">
+      <div class="featured-left">
+        <span class="featured-badge">STAGE MC PROGRAMME</span>
+        <div class="featured-title">Programme & Speakers Order (Health Summit 2026)</div>
+        <div class="featured-desc">Order of ceremony for stage display as called by the Master of Ceremonies: Opening Remarks, Guest Speakers, Messages, Presentation of Criteria/Results, and Best Dressed.</div>
+      </div>
+      <div class="featured-btn">
+        Launch MC Program (17 Slides) →
+      </div>
+    </a>
+
+    <!-- 4 Award Presentation Decks -->
     <div class="decks-grid">
       <!-- Deck 1 -->
       <a href="01-group-awardees/index.html" class="deck-card">
@@ -241,7 +341,7 @@
     <div class="shortcuts-bar">
       <div><span class="shortcut-badge">←</span> <span class="shortcut-badge">→</span> / <span class="shortcut-badge">Space</span> Navigate</div>
       <div><span class="shortcut-badge">F</span> Fullscreen</div>
-      <div><span class="shortcut-badge">G</span> / <span class="shortcut-badge">Esc</span> Awardee Grid & Search</div>
+      <div><span class="shortcut-badge">G</span> / <span class="shortcut-badge">Esc</span> Order / Search Grid</div>
       <div><span class="shortcut-badge">C</span> Celebratory Confetti</div>
       <div><span class="shortcut-badge">M</span> Audio Chime</div>
     </div>

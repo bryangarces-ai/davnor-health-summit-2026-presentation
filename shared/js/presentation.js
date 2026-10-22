@@ -179,21 +179,13 @@
         '</div>'
       ].join('');
     } else {
-      var numPill = '';
-      if (s.number !== undefined) {
-        var numStr = s.number < 10 ? '0' + s.number : '' + s.number;
-        numPill = '<span class="awardee-num-pill">#' + numStr + '</span>';
-      }
-      var categoryTag = s.category ? '<span class="awardee-category-tag">' + escapeHtml(s.category) + '</span>' : '';
+      var categoryTag = s.category ? '<div class="awardee-category-tag">' + escapeHtml(s.category) + '</div>' : '';
 
       html = [
         '<div class="slide active">',
         '  <div class="award-card">',
         logosHtml,
-        '    <div class="awardee-meta-row">',
-        numPill,
         categoryTag,
-        '    </div>',
         '    <h1 class="awardee-name">' + escapeHtml(s.title) + '</h1>',
         '    <div class="ceremonial-divider">',
         '      <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>',
@@ -242,7 +234,7 @@
     }
 
     grid.innerHTML = filtered.map(function (s) {
-      var numLabel = s.type === 'title' ? 'START' : (s.type === 'closing' ? 'FINALE' : (s.number !== undefined ? '#' + (s.number < 10 ? '0' + s.number : s.number) : '★'));
+      var numLabel = s.type === 'title' ? 'START' : (s.type === 'closing' ? 'FINALE' : (s.categoryTag || 'AWARDEE'));
       var isActive = s.id === currentIndex ? ' active' : '';
       return [
         '<div class="drawer-card' + isActive + '" onclick="window.PresentationEngine.goToSlide(' + s.id + '); window.PresentationEngine.toggleDrawer(false);">',

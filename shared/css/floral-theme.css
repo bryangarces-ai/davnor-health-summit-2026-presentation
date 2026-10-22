@@ -161,17 +161,17 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(20px, 3.2vw, 42px);
-  margin-bottom: clamp(1rem, 2vh, 1.8rem);
+  gap: clamp(24px, 3.5vw, 48px);
+  margin-bottom: clamp(1rem, 2.2vh, 2rem);
   flex-wrap: wrap;
   z-index: 2;
 }
 
 .official-logo-img {
-  width: clamp(75px, 9.5vh, 105px);
-  height: clamp(75px, 9.5vh, 105px);
+  width: clamp(95px, 12.5vh, 135px);
+  height: clamp(95px, 12.5vh, 135px);
   object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(15, 30, 54, 0.18));
+  filter: drop-shadow(0 4px 14px rgba(15, 30, 54, 0.2));
   transition: transform 0.3s ease;
 }
 

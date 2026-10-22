@@ -8,6 +8,10 @@ const sharedFiles = [
   'shared/assets/pptx-background.png',
   'shared/css/floral-theme.css',
   'shared/js/presentation.js',
+  'shared/js/logos-config.js',
+  'shared/assets/logos/DDN.png',
+  'shared/assets/logos/PHO-Logo.png',
+  'shared/assets/logos/logo-3.png',
   'index.html'
 ];
 
@@ -24,8 +28,9 @@ sharedFiles.forEach(f => {
   console.log(`✓ Shared asset verified: ${f} (${size} bytes)`);
 });
 
-// 2. Check each award deck
+// 2. Check each presentation deck
 const decks = [
+  { folder: '00-program-health-summit-2026', minSlides: 15 },
   { folder: '01-group-awardees', minSlides: 50 },
   { folder: '02-individual-awardees', minSlides: 20 },
   { folder: '03-top-program-managers', minSlides: 35 },
