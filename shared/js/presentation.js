@@ -792,6 +792,35 @@
           if (isDrawerOpen) renderDrawerGrid();
         }
       });
+
+      // Supabase Cloud Live Sync
+      if (window.CloudSync) {
+        // 1. Initial fetch from Supabase Cloud
+        window.CloudSync.fetchDeck(key, function (err, cloudSlides) {
+          if (cloudSlides && Array.isArray(cloudSlides) && cloudSlides.length > 0) {
+            if (JSON.stringify(cloudSlides) !== JSON.stringify(slides)) {
+              slides = cloudSlides;
+              renderCurrentSlide();
+              updateControls();
+              if (isDrawerOpen) renderDrawerGrid();
+            }
+          }
+        });
+
+        // 2. Background polling: check every 8 seconds for live updates from admin on another computer
+        setInterval(function () {
+          window.CloudSync.fetchDeck(key, function (err, latestSlides) {
+            if (latestSlides && Array.isArray(latestSlides) && latestSlides.length > 0) {
+              if (JSON.stringify(latestSlides) !== JSON.stringify(slides)) {
+                slides = latestSlides;
+                renderCurrentSlide();
+                updateControls();
+                if (isDrawerOpen) renderDrawerGrid();
+              }
+            }
+          });
+        }, 8000);
+      }
     }
   }
 

@@ -8,6 +8,7 @@ const sharedFiles = [
   'shared/assets/pptx-background.png',
   'shared/css/floral-theme.css',
   'shared/js/presentation.js',
+  'shared/js/cloud-sync.js',
   'shared/js/logos-config.js',
   'shared/assets/logos/DDN.png',
   'shared/assets/logos/PHO-Logo.png',
@@ -47,6 +48,11 @@ decks.forEach(d => {
 
   if (!fs.existsSync(htmlPath)) {
     console.error(`FAIL: Missing ${htmlPath}`);
+    process.exit(1);
+  }
+  const htmlContent = fs.readFileSync(htmlPath, 'utf8');
+  if (!htmlContent.includes('cloud-sync.js')) {
+    console.error(`FAIL: ${htmlPath} missing cloud-sync.js`);
     process.exit(1);
   }
   if (!fs.existsSync(dataPath)) {

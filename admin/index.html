@@ -25,6 +25,12 @@
       </div>
 
       <div class="admin-header-actions">
+        <div id="cloudStatusIndicator" class="cloud-status-badge" title="Supabase Cloud Synchronization">
+          <span class="status-dot"></span>
+          <span id="cloudStatusText">Connecting...</span>
+        </div>
+        <button class="btn btn-secondary btn-sm" onclick="window.AdminApp.pullCloud()" title="Pull latest slides from Supabase Cloud">☁️ Pull Cloud</button>
+        <button class="btn btn-secondary btn-sm" onclick="window.AdminApp.pushLocalToCloud()" title="Push all current local edits to Supabase Cloud">☁️ Push to Cloud</button>
         <button class="btn btn-secondary btn-sm" onclick="window.AdminApp.exportAllBackup()" title="Backup all customized slides to JSON">💾 Export All</button>
         <button class="btn btn-secondary btn-sm" onclick="window.AdminApp.triggerImportBackup()" title="Restore slides from backup JSON">📥 Import</button>
         <button class="btn btn-secondary btn-sm" onclick="window.AdminApp.logout()" title="Lock Admin Session">🔒 Lock</button>
@@ -172,6 +178,7 @@
   <script src="../04-consolation-and-winners/slides-data.js"></script>
 
   <!-- Admin Application Logic -->
+  <script src="../shared/js/cloud-sync.js"></script>
   <script src="admin.js"></script>
 
 </body>

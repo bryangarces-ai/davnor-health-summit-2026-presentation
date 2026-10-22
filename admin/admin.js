@@ -106,11 +106,39 @@
     return !!localStorage.getItem('davnor_deck_' + key);
   }
 
+  function updateCloudStatus(status, text) {
+    var indicator = document.getElementById('cloudStatusIndicator');
+    var label = document.getElementById('cloudStatusText');
+    if (!indicator || !label) return;
+
+    indicator.className = 'cloud-status-badge ' + (status || '');
+    if (text) {
+      label.textContent = text;
+    } else if (status === 'connected') {
+      label.textContent = '☁️ Supabase Cloud Active';
+    } else if (status === 'syncing') {
+      label.textContent = '☁️ Syncing Cloud...';
+    } else if (status === 'offline') {
+      label.textContent = '⚠️ Cloud Offline (Local)';
+    }
+  }
+
   function saveDeckSlides(key, slides) {
     try {
       localStorage.setItem('davnor_deck_' + key, JSON.stringify(slides));
       broadcastSync(key);
-      showToast('✓ Saved and synced live to presentation!');
+      showToast('✓ Saved locally, syncing to Supabase Cloud...');
+      updateCloudStatus('syncing', '☁️ Uploading...');
+      if (window.CloudSync) {
+        window.CloudSync.saveDeck(key, slides, function (err, success) {
+          if (success) {
+            updateCloudStatus('connected', '☁️ Supabase Cloud Active');
+            showToast('☁️ Saved & Synced to Cloud for all computers!');
+          } else {
+            updateCloudStatus('offline', '⚠️ Cloud Sync Error');
+          }
+        });
+      }
     } catch (e) {
       alert('Failed to save to localStorage: ' + e.message);
     }
@@ -121,10 +149,16 @@
       checkAuth();
       return;
     }
-    if (!confirm('Are you sure you want to reset this deck back to the default PowerPoint data? Any custom edits for this deck will be cleared.')) return;
+    if (!confirm('Are you sure you want to reset this deck back to the default PowerPoint data? Any custom edits for this deck will be cleared on all computers.')) return;
     localStorage.removeItem('davnor_deck_' + key);
     broadcastSync(key);
-    showToast('🔄 Deck reset to original PowerPoint default');
+    if (window.CloudSync) {
+      updateCloudStatus('syncing', '☁️ Resetting...');
+      window.CloudSync.deleteDeck(key, function () {
+        updateCloudStatus('connected', '☁️ Supabase Cloud Active');
+      });
+    }
+    showToast('🔄 Deck reset to original default (Local & Cloud)');
     renderTabs();
     renderSlidesGrid();
   }
@@ -508,10 +542,70 @@
     renderSlidesGrid();
   }
 
+  function pullCloud() {
+    if (!isAuthorized()) {
+      checkAuth();
+      return;
+    }
+    if (!window.CloudSync) return;
+    updateCloudStatus('syncing', '☁️ Pulling from Supabase...');
+    showToast('☁️ Fetching latest slides from Supabase Cloud...');
+    window.CloudSync.fetchAllDecks(function (err, updatedKeys) {
+      if (err) {
+        updateCloudStatus('offline', '⚠️ Could not reach Cloud');
+        showToast('⚠️ Could not connect to Supabase Cloud');
+      } else {
+        updateCloudStatus('connected', '☁️ Supabase Cloud Active');
+        showToast('✓ Synced ' + (updatedKeys.length) + ' decks from Supabase Cloud!');
+        renderTabs();
+        renderSlidesGrid();
+      }
+    });
+  }
+
+  function pushLocalToCloud() {
+    if (!isAuthorized()) {
+      checkAuth();
+      return;
+    }
+    if (!window.CloudSync) return;
+    updateCloudStatus('syncing', '☁️ Pushing to Supabase...');
+    showToast('☁️ Pushing all local edits to Supabase Cloud...');
+    window.CloudSync.syncLocalToCloud(function (err, count) {
+      if (err) {
+        updateCloudStatus('offline', '⚠️ Cloud push failed');
+        showToast('⚠️ Failed to push to Supabase Cloud');
+      } else {
+        updateCloudStatus('connected', '☁️ Supabase Cloud Active');
+        showToast('✓ Successfully pushed ' + count + ' customized decks to Supabase Cloud!');
+      }
+    });
+  }
+
   function init() {
     checkAuth();
     renderTabs();
     renderSlidesGrid();
+
+    // Auto-sync with Supabase Cloud on load
+    if (window.CloudSync) {
+      updateCloudStatus('syncing', '☁️ Connecting...');
+      // 1. Push any existing local customizations so they are saved to Cloud
+      window.CloudSync.syncLocalToCloud(function () {
+        // 2. Fetch all decks from cloud and update local cache
+        window.CloudSync.fetchAllDecks(function (err, updatedKeys) {
+          if (err) {
+            updateCloudStatus('offline', '⚠️ Cloud Offline (Local)');
+          } else {
+            updateCloudStatus('connected', '☁️ Supabase Cloud Active');
+            if (updatedKeys && updatedKeys.length > 0) {
+              renderTabs();
+              renderSlidesGrid();
+            }
+          }
+        });
+      });
+    }
 
     var searchInput = document.getElementById('slideSearchInput');
     if (searchInput) {
@@ -560,6 +654,8 @@
     triggerImportBackup: triggerImportBackup,
     verifyPassword: verifyPassword,
     logout: logout,
-    checkAuth: checkAuth
+    checkAuth: checkAuth,
+    pullCloud: pullCloud,
+    pushLocalToCloud: pushLocalToCloud
   };
 })();
