@@ -565,3 +565,47 @@ html, body {
   color: var(--slate-subtext);
   margin-top: 6px;
 }
+
+/* Official Logos Bar (Top of Slide) */
+.official-logos-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 2.8vw, 36px);
+  margin-bottom: clamp(1rem, 2.5vh, 2rem);
+  flex-wrap: wrap;
+}
+
+.official-logo-img {
+  height: clamp(52px, 8vh, 88px);
+  max-width: clamp(90px, 14vw, 160px);
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(15, 30, 54, 0.15));
+  transition: transform 0.3s ease;
+}
+
+.official-logo-img:hover {
+  transform: scale(1.06);
+}
+
+/* Meta row for awardee number & category */
+.awardee-meta-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: clamp(1rem, 2vh, 1.8rem);
+}
+
+.awardee-num-pill {
+  font-family: var(--font-display);
+  font-size: clamp(0.85rem, 1.1vw, 1.15rem);
+  font-weight: 800;
+  color: var(--pink-primary);
+  background: rgba(216, 27, 96, 0.12);
+  border: 1px solid rgba(216, 27, 96, 0.35);
+  padding: 5px 16px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}

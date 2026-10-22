@@ -127,25 +127,33 @@
       : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>';
   }
 
+  function getLogosHtml() {
+    var logos = window.OFFICIAL_LOGOS;
+    if (!logos || !Array.isArray(logos) || logos.length === 0) {
+      return '';
+    }
+    return [
+      '<div class="official-logos-bar">',
+      logos.map(function (src) {
+        return '<img src="' + escapeHtml(src) + '" alt="Official Logo" class="official-logo-img" onerror="this.style.display=\'none\'" />';
+      }).join(''),
+      '</div>'
+    ].join('');
+  }
+
   function renderCurrentSlide() {
     var viewport = document.getElementById('slideViewport');
     if (!viewport || !slides[currentIndex]) return;
 
     var s = slides[currentIndex];
     var html = '';
+    var logosHtml = getLogosHtml();
 
     if (s.type === 'title') {
       html = [
         '<div class="slide active">',
         '  <div class="award-card">',
-        '    <svg class="floral-corner top-left"><use href="#floral-corner-sym" /></svg>',
-        '    <svg class="floral-corner top-right"><use href="#floral-corner-sym" /></svg>',
-        '    <svg class="floral-corner bottom-left"><use href="#floral-corner-sym" /></svg>',
-        '    <svg class="floral-corner bottom-right"><use href="#floral-corner-sym" /></svg>',
-        '    <div class="badge-seal">',
-        '      <span class="seal-number">ANNUAL GALA</span>',
-        '      <span class="seal-label">' + escapeHtml(s.event || 'HEALTH SUMMIT 2026') + '</span>',
-        '    </div>',
+        logosHtml,
         '    <div class="title-event-header">' + escapeHtml(s.subEvent || 'Province of Davao del Norte') + '</div>',
         '    <h1 class="title-main-heading"><span>' + escapeHtml(s.title) + '</span></h1>',
         '    <div class="title-category-badge">' + escapeHtml(s.category) + '</div>',
@@ -160,15 +168,9 @@
       html = [
         '<div class="slide active">',
         '  <div class="award-card">',
-        '    <svg class="floral-corner top-left"><use href="#floral-corner-sym" /></svg>',
-        '    <svg class="floral-corner top-right"><use href="#floral-corner-sym" /></svg>',
-        '    <svg class="floral-corner bottom-left"><use href="#floral-corner-sym" /></svg>',
-        '    <svg class="floral-corner bottom-right"><use href="#floral-corner-sym" /></svg>',
-        '    <div class="badge-seal">',
-        '      <span class="seal-number">SALUTE & HONOR</span>',
-        '      <span class="seal-label">' + escapeHtml(s.subtitle || 'CONGRATULATIONS') + '</span>',
-        '    </div>',
+        logosHtml,
         '    <h1 class="closing-heading">' + escapeHtml(s.title) + '</h1>',
+        '    <div class="closing-sub">' + escapeHtml(s.subtitle || 'CONGRATULATIONS') + '</div>',
         '    <div class="ceremonial-divider">',
         '      <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>',
         '    </div>',
@@ -177,20 +179,21 @@
         '</div>'
       ].join('');
     } else {
-      var numStr = (s.number !== undefined) ? (s.number < 10 ? '0' + s.number : '' + s.number) : '';
-      var badgeText = numStr ? 'AWARDEE #' + numStr : 'SPECIAL RECOGNITION';
+      var numPill = '';
+      if (s.number !== undefined) {
+        var numStr = s.number < 10 ? '0' + s.number : '' + s.number;
+        numPill = '<span class="awardee-num-pill">#' + numStr + '</span>';
+      }
+      var categoryTag = s.category ? '<span class="awardee-category-tag">' + escapeHtml(s.category) + '</span>' : '';
+
       html = [
         '<div class="slide active">',
         '  <div class="award-card">',
-        '    <svg class="floral-corner top-left"><use href="#floral-corner-sym" /></svg>',
-        '    <svg class="floral-corner top-right"><use href="#floral-corner-sym" /></svg>',
-        '    <svg class="floral-corner bottom-left"><use href="#floral-corner-sym" /></svg>',
-        '    <svg class="floral-corner bottom-right"><use href="#floral-corner-sym" /></svg>',
-        '    <div class="badge-seal">',
-        '      <span class="seal-number">' + badgeText + '</span>',
-        '      <span class="seal-label">' + escapeHtml(s.categoryTag || 'HONOR ROLL') + '</span>',
+        logosHtml,
+        '    <div class="awardee-meta-row">',
+        numPill,
+        categoryTag,
         '    </div>',
-        (s.category ? '    <div class="awardee-category-tag">' + escapeHtml(s.category) + '</div>' : ''),
         '    <h1 class="awardee-name">' + escapeHtml(s.title) + '</h1>',
         '    <div class="ceremonial-divider">',
         '      <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>',
@@ -291,9 +294,9 @@
     window.addEventListener('resize', resize);
     resize();
 
-    // Create 35 drifting petals
+    // Create 30 drifting petals
     particles = [];
-    for (var i = 0; i < 35; i++) {
+    for (var i = 0; i < 30; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -366,7 +369,6 @@
   }
 
   function setupEventListeners() {
-    // Keyboard navigation
     document.addEventListener('keydown', function (e) {
       var searchInput = document.getElementById('drawerSearch');
       if (document.activeElement === searchInput) {
@@ -424,7 +426,6 @@
       }
     });
 
-    // Touch swipe gestures
     var touchStartX = 0;
     var touchStartY = 0;
     document.addEventListener('touchstart', function (e) {
@@ -446,7 +447,6 @@
       }
     }, { passive: true });
 
-    // Drawer search input
     var searchInput = document.getElementById('drawerSearch');
     if (searchInput) {
       searchInput.addEventListener('input', function (e) {
