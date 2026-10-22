@@ -277,7 +277,7 @@
 
     var s = slides[currentIndex];
     var html = '';
-    var logosHtml = getLogosHtml();
+    var logosHtml = (s.hideLogos || s.type === 'scorecard') ? '' : getLogosHtml();
 
     if (s.type === 'title') {
       html = [
@@ -346,7 +346,6 @@
       html = [
         '<div class="slide active">',
         '  <div class="award-card scorecard-card">',
-        logosHtml,
         s.categoryTag ? '    <div class="awardee-category-tag">' + escapeHtml(s.categoryTag) + '</div>' : '',
         '    <h1 class="awardee-name" style="font-size:clamp(1.4rem, 2.4vw, 2.2rem);">' + escapeHtml(s.title) + '</h1>',
         s.subtitle ? '    <div class="awardee-subtitle">' + escapeHtml(s.subtitle) + '</div>' : '',
@@ -566,7 +565,6 @@
       html = [
         '<div class="slide active">',
         '  <div class="award-card scorecard-card">',
-        logosHtml,
         s.categoryTag ? '    <div class="awardee-category-tag">' + escapeHtml(s.categoryTag) + '</div>' : '',
         '    <h1 class="awardee-name" style="font-size:clamp(1.3rem, 2.2vw, 2rem); margin-bottom:4px;">' + escapeHtml(s.title) + '</h1>',
         s.subtitle ? '    <div class="awardee-subtitle" style="margin-bottom:6px;">' + escapeHtml(s.subtitle) + '</div>' : '',

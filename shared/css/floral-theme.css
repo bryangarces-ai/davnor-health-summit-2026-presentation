@@ -788,8 +788,21 @@ body.controls-hidden .progress-bar-container {
 
 /* Scorecard & Evaluation Sheet Styles */
 .scorecard-card {
-  max-width: clamp(900px, 92vw, 1550px) !important;
-  padding: clamp(14px, 2.2vh, 32px) clamp(16px, 2.5vw, 40px) !important;
+  max-width: clamp(900px, 94vw, 1580px) !important;
+  min-height: auto !important;
+  padding: clamp(10px, 1.6vh, 22px) clamp(16px, 2.5vw, 36px) clamp(14px, 2vh, 24px) !important;
+  margin-top: 0 !important;
+  margin-bottom: 40px !important;
+}
+
+.scorecard-card .awardee-name {
+  margin-top: 0 !important;
+  margin-bottom: 2px !important;
+  line-height: 1.15 !important;
+}
+
+.scorecard-card .awardee-subtitle {
+  margin-bottom: 4px !important;
 }
 
 .scorecard-podium-row {
@@ -797,7 +810,7 @@ body.controls-hidden .progress-bar-container {
   align-items: stretch;
   justify-content: center;
   gap: 12px;
-  margin: 10px 0 14px 0;
+  margin: 6px 0 10px 0;
   flex-wrap: wrap;
 }
 
@@ -805,7 +818,7 @@ body.controls-hidden .progress-bar-container {
   background: rgba(255, 255, 255, 0.95);
   border: 2px solid #E2E8F0;
   border-radius: 12px;
-  padding: 8px 16px;
+  padding: 6px 14px;
   text-align: center;
   flex: 1;
   min-width: 140px;

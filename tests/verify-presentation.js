@@ -285,7 +285,11 @@ if (!cityHtml.includes('scorecard-table') || !cityHtml.includes('TAGUM CITY') ||
   console.error('FAIL: City Scorecard Slide 1 failed to render table, points, and podium results');
   process.exit(1);
 }
-console.log('✓ 05 Deck Slide 1 (City Scorecard): Table, podium cards, points (690, 680, 580) and weights rendered correctly');
+if (cityHtml.includes('official-logos-bar')) {
+  console.error('FAIL: City Scorecard Slide 1 should not render logos bar (prevents bottom overlap)');
+  process.exit(1);
+}
+console.log('✓ 05 Deck Slide 1 (City Scorecard): Table, podium cards, points (690, 680, 580) and weights rendered correctly without logo overlap');
 
 const munScorecard = d5Slides.find(s => s.id === 2);
 const munHtml = simulateSlideRender(munScorecard, d5Slides);
@@ -297,7 +301,11 @@ if (!munHtml.includes('B.E. DUJALI') || !munHtml.includes('620 pts') || !munHtml
   console.error('FAIL: Municipality Scorecard Slide 2 missing podium municipalities totals');
   process.exit(1);
 }
-console.log('✓ 05 Deck Slide 2 (Municipality Scorecard): All 8 municipalities rendered with points and weighted averages');
+if (munHtml.includes('official-logos-bar')) {
+  console.error('FAIL: Municipality Scorecard Slide 2 should not render logos bar (prevents bottom overlap)');
+  process.exit(1);
+}
+console.log('✓ 05 Deck Slide 2 (Municipality Scorecard): All 8 municipalities rendered with points and weighted averages without logo overlap');
 
 const closingSlide = d5Slides.find(s => s.id === 3);
 const closingHtml = simulateSlideRender(closingSlide, d5Slides);
