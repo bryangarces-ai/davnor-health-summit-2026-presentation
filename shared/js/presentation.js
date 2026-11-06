@@ -709,7 +709,7 @@
         vx: (Math.random() - 0.5) * 16,
         vy: -Math.random() * 14 - 6,
         size: Math.random() * 9 + 5,
-        color: ['#D81B60', '#1E88E5', '#D4AF37', '#F48FB1', '#81D4FA', '#FFD54F'][Math.floor(Math.random() * 6)],
+        color: (function (c) { return c[Math.floor(Math.random() * c.length)]; })(window.THEME_CONFETTI || ['#D81B60', '#1E88E5', '#D4AF37', '#F48FB1', '#81D4FA', '#FFD54F']),
         rotation: Math.random() * 360,
         vr: (Math.random() - 0.5) * 12,
         alpha: 1,
@@ -741,7 +741,13 @@
 
     // Dual-tone organic petal gradient
     var grad = ctx.createLinearGradient(0, h * 0.5, 0, -h * 0.5);
-    if (p.variant === 0) {
+    var themeStops = window.THEME_PETAL_STOPS && window.THEME_PETAL_STOPS[p.variant];
+    if (themeStops) {
+      // Theme override: [[offset, 'r, g, b', alphaScale], ...]
+      themeStops.forEach(function (st) {
+        grad.addColorStop(st[0], 'rgba(' + st[1] + ', ' + p.alpha * st[2] + ')');
+      });
+    } else if (p.variant === 0) {
       grad.addColorStop(0, 'rgba(233, 30, 99, ' + p.alpha * 0.75 + ')');   // deep rose base
       grad.addColorStop(0.5, 'rgba(244, 143, 177, ' + p.alpha * 0.7 + ')'); // sakura pink
       grad.addColorStop(1, 'rgba(255, 235, 240, ' + p.alpha * 0.65 + ')');  // soft tip
@@ -803,16 +809,152 @@
       };
     }
 
-    // Create 32 realistic fluttering petals
-    particles = [];
-    for (var i = 0; i < 32; i++) {
-      particles.push(createPetal(canvas.width, canvas.height, true));
+    // Gala glitter mode (window.PARTICLE_STYLE = 'glitter'): falling gold & silver dust, flakes and sparks
+    var glitterMode = window.PARTICLE_STYLE === 'glitter';
+    var GLITTER_GOLD = ['255, 215, 120', '212, 175, 55', '247, 231, 161', '255, 196, 64'];
+    var GLITTER_SILVER = ['242, 243, 245', '200, 204, 212', '255, 255, 255'];
+
+    function createGlitter(w, h, randomY) {
+      var r = Math.random();
+      var kind = r < 0.62 ? 'dust' : (r < 0.94 ? 'flake' : 'spark');
+      var palette = Math.random() < 0.68 ? GLITTER_GOLD : GLITTER_SILVER;
+      return {
+        kind: kind,
+        x: Math.random() * w,
+        y: randomY ? Math.random() * h : -10 - Math.random() * 40,
+        size: kind === 'dust' ? Math.random() * 1.4 + 0.6 : (kind === 'flake' ? Math.random() * 2.4 + 1.6 : Math.random() * 7 + 6),
+        speedY: kind === 'dust' ? Math.random() * 0.5 + 0.25 : (kind === 'flake' ? Math.random() * 0.9 + 0.6 : Math.random() * 0.45 + 0.3),
+        driftX: Math.random() * 0.3 - 0.15,
+        swayPhase: Math.random() * Math.PI * 2,
+        swaySpeed: Math.random() * 0.02 + 0.008,
+        swayAmp: Math.random() * 0.5 + 0.15,
+        twinkle: Math.random() * Math.PI * 2,
+        twinkleSpeed: Math.random() * 0.08 + 0.03,
+        rotation: Math.random() * Math.PI * 2,
+        rotationSpeed: (Math.random() - 0.5) * 0.12,
+        color: palette[Math.floor(Math.random() * palette.length)],
+        alpha: Math.random() * 0.4 + 0.6
+      };
     }
 
-    function animate() {
+    // Pre-rendered glitter sprites: every glow/gradient is drawn ONCE here, then each frame only copies pixels (drawImage).
+    var spriteCache = {};
+    function makeSprite(kind, color) {
+      var key = kind + '|' + color;
+      if (spriteCache[key]) return spriteCache[key];
+      var size = kind === 'spark' ? 64 : 16;
+      var c = document.createElement('canvas');
+      c.width = c.height = size;
+      var x = c.getContext('2d');
+      var m = size / 2;
+      if (kind === 'dust') {
+        var gd = x.createRadialGradient(m, m, 0, m, m, m);
+        gd.addColorStop(0, 'rgba(255, 255, 255, 1)');
+        gd.addColorStop(0.3, 'rgba(' + color + ', 0.95)');
+        gd.addColorStop(1, 'rgba(' + color + ', 0)');
+        x.fillStyle = gd;
+        x.fillRect(0, 0, size, size);
+      } else if (kind === 'flake') {
+        x.shadowColor = 'rgba(' + color + ', 0.9)';
+        x.shadowBlur = 4;
+        x.fillStyle = 'rgb(' + color + ')';
+        x.fillRect(4, 5, 8, 6);
+      } else {
+        var gs = x.createRadialGradient(m, m, 0, m, m, m);
+        gs.addColorStop(0, 'rgba(255, 255, 255, 0.95)');
+        gs.addColorStop(0.18, 'rgba(' + color + ', 0.55)');
+        gs.addColorStop(1, 'rgba(' + color + ', 0)');
+        x.fillStyle = gs;
+        x.fillRect(0, 0, size, size);
+        var len = m * 0.95;
+        x.fillStyle = 'rgba(255, 250, 230, 0.95)';
+        x.beginPath();
+        x.moveTo(m, m - len); x.quadraticCurveTo(m, m, m + len, m);
+        x.quadraticCurveTo(m, m, m, m + len); x.quadraticCurveTo(m, m, m - len, m);
+        x.quadraticCurveTo(m, m, m, m - len);
+        x.fill();
+      }
+      spriteCache[key] = c;
+      return c;
+    }
+
+    function drawGlitter(ctx, g) {
+      var tw = 0.5 + 0.5 * Math.sin(g.twinkle); // 0..1 shimmer
+      var sprite = g.sprite || (g.sprite = makeSprite(g.kind, g.color));
+      if (g.kind === 'dust') {
+        var d = g.size * 3;
+        ctx.globalAlpha = g.alpha * (0.35 + 0.65 * tw);
+        ctx.drawImage(sprite, g.x - d / 2, g.y - d / 2, d, d);
+      } else if (g.kind === 'flake') {
+        // Tumbling foil: height follows the flip so the flake flashes as it catches light
+        var flash = Math.abs(Math.cos(g.rotation));
+        var w = g.size * 2, h = g.size * 2 * (0.2 + 0.8 * flash);
+        ctx.globalAlpha = g.alpha * (0.3 + 0.7 * flash);
+        ctx.drawImage(sprite, g.x - w / 2, g.y - h / 2, w, h);
+      } else {
+        var len = g.size * 2.2 * (0.55 + 0.75 * tw);
+        ctx.globalAlpha = g.alpha * (0.4 + 0.6 * tw);
+        ctx.drawImage(sprite, g.x - len / 2, g.y - len / 2, len, len);
+      }
+    }
+
+    // Budget: ~1 piece per 11,000 px² (≈150 on 1080p), fewer with reduced-motion; auto-trims on slow machines.
+    function glitterBudget() {
+      var n = Math.round((canvas.width * canvas.height) / 11000);
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) n = Math.round(n * 0.35);
+      return Math.max(50, Math.min(170, n));
+    }
+    var frameTimes = [];
+    var lastFrameTs = 0;
+    function trackPerformance(ts) {
+      if (lastFrameTs) frameTimes.push(ts - lastFrameTs);
+      lastFrameTs = ts;
+      if (frameTimes.length >= 90) {
+        var avg = frameTimes.reduce(function (a, b) { return a + b; }, 0) / frameTimes.length;
+        frameTimes = [];
+        if (avg > 26 && particles.length > 50) {
+          particles.length = Math.max(50, Math.round(particles.length * 0.7));
+        }
+      }
+    }
+    document.addEventListener('visibilitychange', function () { lastFrameTs = 0; frameTimes = []; });
+
+    particles = [];
+    if (glitterMode) {
+      var glitterCount = glitterBudget();
+      for (var gi = 0; gi < glitterCount; gi++) {
+        particles.push(createGlitter(canvas.width, canvas.height, true));
+      }
+    } else {
+      // Create 32 realistic fluttering petals
+      for (var i = 0; i < 32; i++) {
+        particles.push(createPetal(canvas.width, canvas.height, true));
+      }
+    }
+
+    function animate(ts) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      if (isPetalsActive) {
+      if (isPetalsActive && glitterMode) {
+        trackPerformance(ts || 0);
+        ctx.globalCompositeOperation = 'lighter';
+        particles.forEach(function (g) {
+          g.swayPhase += g.swaySpeed;
+          g.twinkle += g.twinkleSpeed;
+          g.rotation += g.rotationSpeed;
+          g.y += g.speedY;
+          g.x += Math.sin(g.swayPhase) * g.swayAmp + g.driftX;
+          if (g.y > canvas.height + 12) {
+            g.sprite = null;
+            Object.assign(g, createGlitter(canvas.width, canvas.height, false));
+          }
+          if (g.x > canvas.width + 12) g.x = -12;
+          if (g.x < -12) g.x = canvas.width + 12;
+          drawGlitter(ctx, g);
+        });
+        ctx.globalAlpha = 1;
+        ctx.globalCompositeOperation = 'source-over';
+      } else if (isPetalsActive) {
         particles.forEach(function (p) {
           p.swayPhase += p.swaySpeed;
           p.flipPhase += p.flipSpeed;

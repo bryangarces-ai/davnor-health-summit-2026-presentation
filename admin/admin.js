@@ -7,7 +7,8 @@
     { key: '02-individual', name: '02 · Individual Awardees', path: '../02-individual-awardees/', file: 'slides-data.js' },
     { key: '03-top-program', name: '03 · Top Program Managers', path: '../03-top-program-managers/', file: 'slides-data.js' },
     { key: '04-consolation', name: '04 · Consolation & Winners', path: '../04-consolation-and-winners/', file: 'slides-data.js' },
-    { key: '05-results', name: '05 · Official Scorecards', path: '../05-official-results/', file: 'slides-data.js' }
+    { key: '05-results', name: '05 · Official Scorecards', path: '../05-official-results/', file: 'slides-data.js' },
+    { key: 'tb-01-special-awards', name: 'TB 01 · Special Awards', path: '../tb-summit-2026/01-special-awards/', file: 'slides-data.js' }
   ];
 
   var currentDeckKey = '04-consolation';
@@ -490,7 +491,7 @@
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    showToast('💾 Exported full backup for all 5 decks!');
+    showToast('💾 Exported full backup for all decks!');
   }
 
   function triggerImportBackup() {

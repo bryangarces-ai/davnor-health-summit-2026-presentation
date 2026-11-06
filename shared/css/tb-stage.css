@@ -1,0 +1,185 @@
+/* ==========================================================================
+   CODE-DRAWN GALA STAGE — DAVNOR TB SUMMIT 2026
+   Gold satin curtains, silver sequin trim, spotlight beams and a glowing floor,
+   built from CSS gradients only (no image download). Everything here is STATIC:
+   it is painted once; only the glitter <canvas> animates on top.
+   Usage: <body class="tb-code-stage"> + the .tb-stage markup.
+   ========================================================================== */
+
+.tb-code-stage .presentation-wrapper {
+  background: radial-gradient(ellipse 70% 60% at 50% 38%, #1c1407 0%, #0b0804 55%, #030202 100%);
+}
+
+.tb-stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  contain: strict;
+}
+.tb-stage > * { position: absolute; }
+
+/* ---- Spotlight beams falling from the top centre ---- */
+.tb-beams {
+  left: 18%;
+  right: 18%;
+  top: 0;
+  height: 88%;
+  background:
+    radial-gradient(ellipse 40% 90% at 50% 0%, rgba(255, 205, 100, 0.42), rgba(255, 190, 70, 0.12) 55%, transparent 78%),
+    repeating-linear-gradient(90deg,
+      transparent 0 3.1%,
+      rgba(255, 214, 120, 0.18) 3.1% 3.45%,
+      transparent 3.5% 6.4%,
+      rgba(255, 230, 160, 0.11) 6.4% 6.8%,
+      transparent 6.9% 9.7%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.55) 55%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.55) 55%, transparent 100%);
+}
+
+/* ---- Static glitter rain in the light column (irregular tile sizes hide any repeating grid) ---- */
+.tb-dust {
+  left: 20%;
+  right: 20%;
+  top: 0;
+  height: 86%;
+  background:
+    radial-gradient(circle, rgba(255, 222, 140, 0.9) 0 1px, transparent 1.6px) 0 0 / 37px 41px,
+    radial-gradient(circle, rgba(255, 200, 90, 0.7) 0 0.8px, transparent 1.3px) 11px 17px / 53px 47px,
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 0 0.7px, transparent 1.2px) 23px 5px / 71px 67px,
+    radial-gradient(circle, rgba(255, 210, 110, 0.6) 0 1.3px, transparent 2px) 31px 29px / 89px 97px;
+  -webkit-mask-image: radial-gradient(ellipse 50% 100% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.5) 60%, transparent 100%);
+  mask-image: radial-gradient(ellipse 50% 100% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.5) 60%, transparent 100%);
+  opacity: 0.75;
+}
+
+/* ---- Bokeh light orbs near the floor ---- */
+.tb-bokeh {
+  left: 8%;
+  right: 8%;
+  bottom: 12%;
+  height: 26%;
+  background:
+    radial-gradient(circle at 8% 70%, rgba(255, 196, 80, 0.55) 0 0.55vw, transparent 0.75vw),
+    radial-gradient(circle at 13% 52%, rgba(255, 210, 110, 0.45) 0 0.45vw, transparent 0.65vw),
+    radial-gradient(circle at 18% 80%, rgba(255, 190, 70, 0.40) 0 0.7vw, transparent 0.9vw),
+    radial-gradient(circle at 24% 62%, rgba(255, 220, 140, 0.30) 0 0.35vw, transparent 0.5vw),
+    radial-gradient(circle at 31% 88%, rgba(255, 196, 80, 0.35) 0 0.5vw, transparent 0.7vw),
+    radial-gradient(circle at 66% 86%, rgba(255, 196, 80, 0.35) 0 0.5vw, transparent 0.7vw),
+    radial-gradient(circle at 74% 60%, rgba(255, 220, 140, 0.30) 0 0.4vw, transparent 0.55vw),
+    radial-gradient(circle at 81% 78%, rgba(255, 190, 70, 0.45) 0 0.65vw, transparent 0.85vw),
+    radial-gradient(circle at 87% 50%, rgba(255, 210, 110, 0.45) 0 0.45vw, transparent 0.65vw),
+    radial-gradient(circle at 93% 72%, rgba(255, 196, 80, 0.55) 0 0.55vw, transparent 0.75vw);
+  filter: blur(1.5px);
+}
+
+/* ---- Polished floor with a hot gold horizon line and reflections ---- */
+.tb-floor {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 15%;
+  background:
+    radial-gradient(ellipse 55% 9% at 50% 0%, rgba(255, 240, 190, 1), rgba(255, 200, 90, 0.7) 35%, transparent 75%),
+    radial-gradient(ellipse 62% 130% at 50% 0%, rgba(200, 145, 45, 0.6) 0%, rgba(110, 70, 15, 0.3) 40%, rgba(10, 6, 2, 0.97) 75%),
+    #0a0602;
+}
+.tb-floor::after {
+  /* broken vertical reflections of the stage lights, fading into the floor */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 2.3%, rgba(255, 210, 120, 0.16) 2.3% 2.45%, transparent 2.45% 3.7%),
+    repeating-linear-gradient(90deg, transparent 0 4.1%, rgba(255, 230, 170, 0.10) 4.1% 4.5%, transparent 4.5% 6.3%);
+  -webkit-mask-image: linear-gradient(180deg, #000, transparent 80%);
+  mask-image: linear-gradient(180deg, #000, transparent 80%);
+}
+.tb-floor::before {
+  /* thin bright horizon line */
+  content: '';
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 236, 170, 0.95) 20%, #fffbe8 50%, rgba(255, 236, 170, 0.95) 80%, transparent);
+  box-shadow: 0 0 18px 4px rgba(255, 200, 90, 0.65);
+}
+
+/* ---- Satin fold texture shared by drapes and swags ---- */
+.tb-drape {
+  background:
+    /* light from stage centre: inner edge brightest, wall side in shadow */
+    linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.08) 30%, transparent 50%, rgba(255, 236, 180, 0.3) 100%),
+    linear-gradient(180deg, rgba(255, 245, 210, 0.22) 0%, transparent 30%, transparent 70%, rgba(0, 0, 0, 0.4) 100%),
+    /* secondary, wider folds at a different period break up the regular stripe look */
+    repeating-linear-gradient(90deg,
+      rgba(0, 0, 0, 0.32) 0,
+      transparent 2.6vw,
+      rgba(255, 248, 220, 0.20) 4.1vw,
+      transparent 5.4vw,
+      rgba(0, 0, 0, 0.32) 7.7vw),
+    repeating-linear-gradient(90deg,
+      #5a3a08 0,
+      #a87818 0.8vw,
+      #e8bb4c 1.5vw,
+      #fff4c8 1.85vw,
+      #f0c75c 2.2vw,
+      #b5841f 2.9vw,
+      #6b470c 3.5vw,
+      #5a3a08 3.8vw);
+}
+
+/* Silver sequin trim: tiny white dots on a silver gradient */
+.tb-drape-trim,
+.tb-swag-trim {
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.95) 0 0.9px, transparent 1.4px) 0 0 / 5px 5px,
+    radial-gradient(circle, rgba(255, 255, 255, 0.55) 0 0.7px, transparent 1.2px) 2.5px 2.5px / 5px 5px,
+    linear-gradient(135deg, #6f737b, #d7dae0 30%, #ffffff 48%, #b9bdc6 62%, #5f636b);
+}
+
+/* ---- Side drapes, tied back: wide at the top, pinched mid-height, flaring at the floor ---- */
+.tb-drape,
+.tb-drape-trim {
+  top: 0;
+  bottom: 14.6%;
+  left: 0;
+  clip-path: polygon(0 0, 100.0% 0%, 93.7% 4%, 87.8% 8%, 82.1% 12%, 76.7% 16%, 71.6% 20%, 66.9% 24%, 62.5% 28%, 58.4% 32%, 54.8% 36%, 51.5% 40%, 48.8% 44%, 46.5% 48%, 44.8% 52%, 44.0% 56%, 44.7% 60%, 46.6% 64%, 49.4% 68%, 53.1% 72%, 57.5% 76%, 62.8% 80%, 68.8% 84%, 75.6% 88%, 83.0% 92%, 91.2% 96%, 100.0% 100%, 0 100%);
+}
+.tb-drape { width: 21vw; }
+.tb-drape-trim { width: 22.2vw; }
+.tb-right { left: auto; right: 0; transform: scaleX(-1); }
+
+/* ---- Top swags (valance) ---- */
+.tb-swag,
+.tb-swag-trim {
+  top: -16vh;
+  height: 38vh;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+}
+.tb-swag {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, transparent 40%, rgba(255, 240, 200, 0.12) 85%, rgba(0, 0, 0, 0.3) 100%),
+    repeating-radial-gradient(ellipse 120% 100% at 50% -30%,
+      #5a3a08 0,
+      #b5841f 2.4vh,
+      #f0c75c 4.2vh,
+      #fff4c8 5.2vh,
+      #e8bb4c 6.2vh,
+      #a87818 8vh,
+      #5a3a08 9.6vh);
+}
+.tb-swag-trim { height: 41.5vh; }
+.tb-swag-l,
+.tb-swag-l.tb-swag-trim { left: -9vw; width: 48vw; }
+.tb-swag-r,
+.tb-swag-r.tb-swag-trim { right: -9vw; width: 48vw; }
+
+/* Gentle vignette to pull focus to the plaque */
+.tb-vignette {
+  inset: 0;
+  background: radial-gradient(ellipse 75% 70% at 50% 45%, transparent 55%, rgba(0, 0, 0, 0.55) 100%);
+}

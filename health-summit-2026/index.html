@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>if(location.protocol!=="file:"&&!location.pathname.endsWith("/")&&!location.pathname.endsWith(".html")){location.replace(location.pathname+"/"+location.search+location.hash);}</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAVNOR Health Summit 2026 — Presentation Portal</title>
+  <link rel="stylesheet" href="../shared/css/floral-theme.css">
+  <style>
+    body {
+      overflow-y: auto !important;
+      background: url('../shared/assets/pptx-background.png') center center / cover no-repeat, #E2EFE9;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .hub-container {
+      width: 100%;
+      max-width: 1320px;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 2px solid rgba(212, 175, 55, 0.7);
+      border-radius: 32px;
+      box-shadow: 0 25px 70px rgba(15, 30, 54, 0.16), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+      padding: clamp(2.5rem, 5vw, 4.5rem);
+      text-align: center;
+      position: relative;
+    }
+
+    .hub-logos-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hub-logos-bar img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+    }
+
+    .hub-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #FFF9EB, #FFE6EE);
+      border: 1.5px solid var(--gold-foil);
+      border-radius: 50px;
+      padding: 8px 24px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 4px 14px rgba(212, 175, 55, 0.25);
+    }
+
+    .hub-badge span {
+      font-family: var(--font-display);
+      font-weight: 800;
+      color: var(--pink-primary);
+      letter-spacing: 2px;
+      font-size: 0.95rem;
+    }
+
+    .hub-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      font-weight: 800;
+      color: var(--navy-text);
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+    }
+
+    .hub-title span {
+      background: linear-gradient(135deg, #D81B60, #1E88E5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hub-sub {
+      font-family: var(--font-sans);
+      font-size: clamp(1rem, 1.3vw, 1.25rem);
+      font-weight: 700;
+      color: var(--slate-subtext);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Featured Main Program Card */
+    .featured-program-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(253, 242, 245, 0.95));
+      border: 2.5px solid var(--gold-foil);
+      border-radius: 24px;
+      padding: 24px 32px;
+      margin-bottom: 2.5rem;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 12px 30px rgba(216, 27, 96, 0.18);
+      transition: all 0.35s ease;
+      text-align: left;
+    }
+
+    .featured-program-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px rgba(216, 27, 96, 0.28);
+      border-color: var(--pink-primary);
+    }
+
+    .featured-left {
+      flex: 1;
+    }
+
+    .featured-badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #FFFFFF;
+      background: linear-gradient(135deg, #D81B60, #1E88E5);
+      padding: 5px 14px;
+      border-radius: 14px;
+      margin-bottom: 8px;
+    }
+
+    .featured-title {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--navy-text);
+      margin-bottom: 4px;
+    }
+
+    .featured-desc {
+      font-size: 0.95rem;
+      color: var(--slate-subtext);
+      line-height: 1.45;
+    }
+
+    .featured-btn {
+      padding: 14px 28px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #D81B60, #1E88E5);
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      box-shadow: 0 6px 18px rgba(216, 27, 96, 0.3);
+    }
+
+    .decks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+      margin-bottom: 2.8rem;
+    }
+
+    .deck-card {
+      background: #FFFFFF;
+      border: 2px solid rgba(212, 175, 55, 0.4);
+      border-radius: 20px;
+      padding: 26px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 24px rgba(15, 30, 54, 0.08);
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .deck-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--pink-primary);
+      box-shadow: 0 18px 40px rgba(216, 27, 96, 0.22);
+    }
+
+    .deck-tag {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--sky-blue-deep);
+      background: rgba(30, 136, 229, 0.12);
+      padding: 4px 12px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+
+    .deck-card h2 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy-text);
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .deck-card p {
+      font-size: 0.88rem;
+      color: var(--slate-subtext);
+      line-height: 1.45;
+      margin-bottom: 20px;
+    }
+
+    .deck-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #D81B60, #1E88E5);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(216, 27, 96, 0.25);
+    }
+
+    .shortcuts-bar {
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      padding-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      font-size: 0.88rem;
+      color: var(--slate-subtext);
+      font-weight: 600;
+    }
+
+    .shortcut-badge {
+      display: inline-block;
+      background: #FFFFFF;
+      border: 1px solid rgba(15, 30, 54, 0.2);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-family: monospace;
+      color: var(--navy-text);
+      font-weight: 700;
+      margin-right: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hub-container">
+    <a href="../index.html" style="position:absolute;top:22px;left:28px;font-weight:700;font-size:0.9rem;color:var(--navy-text);text-decoration:none;">← All Events</a>
+    <div class="hub-logos-bar">
+      <img src="../shared/assets/logos/logo-3.png" alt="Department of Health">
+      <img src="../shared/assets/logos/DDN.png" alt="Province of Davao del Norte">
+      <img src="../shared/assets/logos/PHO-Logo.png" alt="Provincial Health Office">
+    </div>
+
+    <div class="hub-badge">
+      <span>CEREMONY STAGE PORTAL</span>
+    </div>
+    <h1 class="hub-title">Program Health Summit <span>2026</span></h1>
+    <div class="hub-sub">Carmen Gymnasium, Carmen, Davao del Norte · "One Healthy DAVNOR"</div>
+
+    <!-- Featured Main Program Deck -->
+    <a href="../00-program-health-summit-2026/index.html" class="featured-program-card">
+      <div class="featured-left">
+        <span class="featured-badge">STAGE MC PROGRAMME</span>
+        <div class="featured-title">Programme & Speakers Order (Health Summit 2026)</div>
+        <div class="featured-desc">Order of ceremony for stage display as called by the Master of Ceremonies: Opening Remarks, Guest Speakers, Messages, Presentation of Criteria/Results, and Best Dressed.</div>
+      </div>
+      <div class="featured-btn">
+        Launch MC Program (17 Slides) →
+      </div>
+    </a>
+
+    <!-- 4 Award Presentation Decks -->
+    <div class="decks-grid">
+      <!-- Deck 1 -->
+      <a href="../01-group-awardees/index.html" class="deck-card">
+        <div>
+          <span class="deck-tag">SPECIAL AWARDS</span>
+          <h2>Group Awardees</h2>
+          <p>50 Group & Agency Awardees celebrating hospitals, civic partners, PNP, and provincial departments.</p>
+        </div>
+        <div class="deck-btn">
+          Launch Presentation (52 Slides) →
+        </div>
+      </a>
+
+      <!-- Deck 2 -->
+      <a href="../02-individual-awardees/index.html" class="deck-card">
+        <div>
+          <span class="deck-tag">SPECIAL AWARDS</span>
+          <h2>Individual Awardees</h2>
+          <p>Outstanding individual doctors, specialists, leadership champions, and youth healthcare servants.</p>
+        </div>
+        <div class="deck-btn">
+          Launch Presentation (26 Slides) →
+        </div>
+      </a>
+
+      <!-- Deck 3 -->
+      <a href="../03-top-program-managers/index.html" class="deck-card">
+        <div>
+          <span class="deck-tag">PERFORMANCE</span>
+          <h2>Top Program Managers</h2>
+          <p>Dedicated municipal & city program managers across nutrition, immunization, TB, and health services.</p>
+        </div>
+        <div class="deck-btn">
+          Launch Presentation (43 Slides) →
+        </div>
+      </a>
+
+      <!-- Deck 4 -->
+      <a href="../04-consolation-and-winners/index.html" class="deck-card">
+        <div>
+          <span class="deck-tag">FINAL RESULTS</span>
+          <h2>Consolation & Winners</h2>
+          <p>Top performing barangays, municipalities, and cities ranked by the Health Summit 2026 indicators.</p>
+        </div>
+        <div class="deck-btn">
+          Launch Presentation (32 Slides) →
+        </div>
+      </a>
+
+      <!-- Deck 5 -->
+      <a href="../05-official-results/index.html" class="deck-card" style="border-color: rgba(212, 175, 55, 0.6); background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 250, 240, 0.95));">
+        <div>
+          <span class="deck-tag" style="background: rgba(212, 175, 55, 0.18); color: #B45309;">OFFICIAL SCORECARDS</span>
+          <h2>Evaluation Results & Scorecards</h2>
+          <p>Official performance evaluation breakdown sheets and scoring tables for City and Municipality categories.</p>
+        </div>
+        <div class="deck-btn" style="background: linear-gradient(135deg, #D4AF37, #B45309);">
+          Launch Results (6 Slides) →
+        </div>
+      </a>
+    </div>
+
+    <!-- Admin & Live Editor Banner -->
+    <div style="background: rgba(255, 255, 255, 0.95); border: 2px dashed rgba(212, 175, 55, 0.7); border-radius: 16px; padding: 18px 24px; margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 4px 16px rgba(15, 30, 54, 0.06);">
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <span style="font-size: 1.8rem;">⚙️</span>
+        <div>
+          <div style="font-family: var(--font-sans); font-weight: 800; font-size: 1.05rem; color: var(--navy-text);">Live Ceremony Admin & Slide Editor</div>
+          <div style="font-size: 0.85rem; color: var(--slate-subtext);">Edit awardees, municipal citations, and order in real-time with automatic live sync to stage LED walls.</div>
+        </div>
+      </div>
+      <a href="../admin/index.html" style="background: linear-gradient(135deg, #0F1E36, #1E88E5); color: #FFFFFF; font-weight: 700; font-size: 0.9rem; padding: 10px 22px; border-radius: 10px; text-decoration: none; box-shadow: 0 4px 12px rgba(15, 30, 54, 0.2);">
+        Launch Admin Dashboard →
+      </a>
+    </div>
+
+    <div class="shortcuts-bar">
+      <div><span class="shortcut-badge">←</span> <span class="shortcut-badge">→</span> / <span class="shortcut-badge">Space</span> Navigate</div>
+      <div><span class="shortcut-badge">F</span> Fullscreen</div>
+      <div><span class="shortcut-badge">H</span> Hide Menu (LED Wall)</div>
+      <div><span class="shortcut-badge">G</span> / <span class="shortcut-badge">Esc</span> Order / Search Grid</div>
+      <div><span class="shortcut-badge">C</span> Celebratory Confetti</div>
+      <div><span class="shortcut-badge">M</span> Audio Chime</div>
+      <div><a href="../admin/index.html" style="color: var(--pink-primary); text-decoration: none; font-weight: 700;">⚙️ Admin</a></div>
+    </div>
+  </div>
+
+</body>
+</html>

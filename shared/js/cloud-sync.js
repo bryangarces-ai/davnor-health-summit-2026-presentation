@@ -17,12 +17,15 @@
     '02-individual',
     '03-top-program',
     '04-consolation',
-    '05-results'
+    '05-results',
+    'tb-01-special-awards'
   ];
 
   function normalizeDeckKey(k) {
     if (!k) return '';
     var str = String(k).toLowerCase();
+    // TB Summit 2026 decks carry their own namespace (checked first so 'tb-00-program' never collapses into '00-program')
+    if (str.indexOf('tb-') === 0) return str;
     if (str.indexOf('00-program') !== -1) return '00-program';
     if (str.indexOf('01-group') !== -1) return '01-group';
     if (str.indexOf('02-individual') !== -1) return '02-individual';

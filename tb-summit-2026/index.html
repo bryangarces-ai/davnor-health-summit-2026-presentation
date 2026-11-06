@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>if(location.protocol!=="file:"&&!location.pathname.endsWith("/")&&!location.pathname.endsWith(".html")){location.replace(location.pathname+"/"+location.search+location.hash);}</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAVNOR TB Summit 2026 — Presentation Portal</title>
+  <link rel="stylesheet" href="../shared/css/floral-theme.css">
+  <link rel="stylesheet" href="../shared/css/tb-gala-theme.css">
+  <style>
+    body {
+      overflow-y: auto !important;
+      background: url('../shared/assets/tb-stage-background.jpg') center center / cover no-repeat, #050506;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 16px;
+    }
+    .hub {
+      position: relative;
+      width: 100%;
+      max-width: 1100px;
+      background: rgba(8, 6, 4, 0.74);
+      border: 2px solid rgba(212, 175, 55, 0.75);
+      border-radius: 28px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 40px rgba(212, 175, 55, 0.15);
+      padding: clamp(2rem, 5vw, 4rem);
+      text-align: center;
+    }
+    .back { position: absolute; top: 22px; left: 28px; font-weight: 700; font-size: 0.9rem; color: #C9CDD4; text-decoration: none; }
+    .back:hover { color: #F7E7A1; }
+    .logos { display: flex; justify-content: center; gap: 24px; margin: 1rem 0 1.5rem; }
+    .logos img { width: 70px; height: 70px; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.6)); }
+    .badge { display: inline-block; font-family: var(--font-display); font-weight: 800; letter-spacing: 3px; font-size: 0.9rem; color: #0B0B0C; background: var(--tb-silver-grad); padding: 8px 24px; border-radius: 50px; margin-bottom: 1.2rem; }
+    h1 { font-family: var(--font-serif); font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; color: #F5F1E6; line-height: 1.15; margin-bottom: 0.6rem; }
+    h1 span { background: var(--tb-gold-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .sub { color: #B9BDC6; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; font-size: clamp(0.85rem, 1.2vw, 1.05rem); margin-bottom: 2.5rem; }
+    .grid { display: grid; grid-template-columns: minmax(0, 560px); justify-content: center; gap: 22px; margin-bottom: 2.5rem; }
+    .card { display: flex; flex-direction: column; justify-content: space-between; text-align: left; text-decoration: none; color: inherit; background: #121215; border: 1.5px solid rgba(192, 196, 204, 0.3); border-radius: 20px; padding: 26px 24px; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+    .card:hover { transform: translateY(-6px); border-color: #D4AF37; box-shadow: 0 18px 40px rgba(212, 175, 55, 0.2); }
+    .tag { display: inline-block; font-size: 0.75rem; font-weight: 800; letter-spacing: 2px; color: #E6C766; background: rgba(212, 175, 55, 0.12); border: 1px solid rgba(212, 175, 55, 0.4); padding: 4px 12px; border-radius: 12px; margin-bottom: 12px; }
+    .card h2 { font-family: var(--font-display); font-size: 1.35rem; color: #F5F1E6; margin-bottom: 8px; }
+    .card p { font-size: 0.9rem; color: #B9BDC6; line-height: 1.5; margin-bottom: 20px; }
+    .btn { display: block; text-align: center; padding: 12px 18px; border-radius: 12px; background: var(--tb-gold-grad); color: #0B0B0C; font-weight: 800; letter-spacing: 1px; }
+    .preview-link { grid-column: 1 / -1; justify-self: center; color: #E6C766; font-weight: 700; font-size: 0.9rem; text-decoration: none; margin-top: -6px; }
+    .preview-link:hover { color: #F7E7A1; text-decoration: underline; }
+    .admin { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; border: 1.5px dashed rgba(192, 196, 204, 0.4); border-radius: 16px; padding: 16px 22px; margin-bottom: 1.8rem; text-align: left; }
+    .admin strong { color: #F5F1E6; display: block; }
+    .admin span { color: #9CA0A9; font-size: 0.85rem; }
+    .admin a { background: var(--tb-silver-grad); color: #0B0B0C; font-weight: 800; padding: 10px 20px; border-radius: 10px; text-decoration: none; }
+    .keys { color: #9CA0A9; font-size: 0.85rem; font-weight: 600; display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; border-top: 1px solid rgba(212, 175, 55, 0.25); padding-top: 20px; }
+    .keys b { font-family: monospace; color: #F5F1E6; border: 1px solid rgba(192,196,204,0.4); border-radius: 6px; padding: 1px 7px; }
+  </style>
+</head>
+<body>
+  <div class="hub">
+    <a class="back" href="../index.html">← All Events</a>
+    <div class="logos">
+      <img src="../shared/assets/logos/logo-3.png" alt="Department of Health">
+      <img src="../shared/assets/logos/DDN.png" alt="Province of Davao del Norte">
+      <img src="../shared/assets/logos/PHO-Logo.png" alt="Provincial Health Office">
+    </div>
+    <div class="badge">CEREMONY STAGE PORTAL</div>
+    <h1>DAVNOR TB Summit <span>2026</span></h1>
+    <div class="sub">Province of Davao del Norte · Provincial Health Office</div>
+
+    <div class="grid">
+      <a class="card" href="01-special-awards/index.html">
+        <div>
+          <span class="tag">SPECIAL AWARDS</span>
+          <h2>Special Awards</h2>
+          <p>DOH-DCHD XI, PBSP, TB consultants, the TB Medical Advisory Committee, top TB notification referrers, and provincial offices.</p>
+        </div>
+        <div class="btn">Launch Presentation (20 Slides) →</div>
+      </a>
+      <a class="preview-link" href="01-special-awards/preview-code-stage.html">✦ Preview: code-drawn stage (no background image) →</a>
+    </div>
+
+    <div class="admin">
+      <div>
+        <strong>⚙️ Live Ceremony Admin &amp; Slide Editor</strong>
+        <span>Edit TB Summit slides under the "TB 01 · Special Awards" tab — syncs live to stage screens.</span>
+      </div>
+      <a href="../admin/index.html">Launch Admin Dashboard →</a>
+    </div>
+
+    <div class="keys">
+      <div><b>←</b> <b>→</b> / <b>Space</b> Navigate</div>
+      <div><b>F</b> Fullscreen</div>
+      <div><b>H</b> Hide Menu (LED Wall)</div>
+      <div><b>G</b> / <b>Esc</b> Slide Grid</div>
+      <div><b>C</b> Confetti</div>
+      <div><b>M</b> Chime</div>
+    </div>
+  </div>
+</body>
+</html>
