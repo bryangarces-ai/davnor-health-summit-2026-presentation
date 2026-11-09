@@ -1,0 +1,524 @@
+/* ==========================================================================
+   Presenter Console View — DAVNOR Health Summit 2026 Presentation System
+   Matches PowerPoint Presenter View layout (Advance.presentation.png)
+   ========================================================================== */
+
+:root {
+  --pres-bg: #0D0F13;
+  --pres-panel: #161920;
+  --pres-panel-hover: #1F232D;
+  --pres-border: rgba(212, 175, 55, 0.35);
+  --pres-border-focus: #D4AF37;
+  --pres-text-main: #F4F6F9;
+  --pres-text-muted: #9AA0AC;
+  --pres-gold: #D4AF37;
+  --pres-gold-bright: #F7E7A1;
+  --pres-live: #E53935;
+  --pres-font-mono: "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--pres-bg);
+  color: var(--pres-text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.presenter-shell {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at 50% 20%, #151821 0%, #0D0F13 100%);
+}
+
+/* ==========================================================================
+   Top Header Bar
+   ========================================================================== */
+.presenter-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  background: rgba(18, 21, 28, 0.95);
+  border-bottom: 1.5px solid var(--pres-border);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+  flex-shrink: 0;
+}
+
+.topbar-left, .topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.topbar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #E2E6EE;
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.topbar-btn:hover {
+  background: rgba(212, 175, 55, 0.18);
+  border-color: var(--pres-gold);
+  color: #FFF;
+  transform: translateY(-1px);
+}
+
+.topbar-btn-primary {
+  background: linear-gradient(135deg, #A88426, #D4AF37);
+  border-color: #F7E7A1;
+  color: #0A0D12;
+  font-weight: 700;
+}
+
+.topbar-btn-primary:hover {
+  background: linear-gradient(135deg, #B99537, #E5C352);
+  color: #000;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);
+}
+
+.topbar-clocks {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.clock-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.clock-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--pres-text-muted);
+  font-weight: 700;
+}
+
+.clock-value {
+  font-family: var(--pres-font-mono);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+  font-variant-numeric: tabular-nums;
+}
+
+.timer-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.timer-btn {
+  background: none;
+  border: none;
+  color: var(--pres-text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s;
+}
+
+.timer-btn:hover {
+  color: var(--pres-gold);
+}
+
+/* ==========================================================================
+   Main Body: 2 Columns (Current Stage + Next Stage & Search)
+   ========================================================================== */
+.presenter-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(360px, 1fr);
+  gap: 24px;
+  padding: 20px 24px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Left Pane: Current Live Slide */
+.presenter-live-pane {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.pane-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.pane-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--pres-text-muted);
+}
+
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(229, 57, 53, 0.18);
+  border: 1px solid rgba(229, 57, 53, 0.6);
+  border-radius: 50px;
+  color: #FF6B6B;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  animation: pulse-live 2s infinite ease-in-out;
+}
+
+.live-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background-color: var(--pres-live);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px var(--pres-live);
+}
+
+@keyframes pulse-live {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.presenter-live-preview {
+  flex: 1;
+  width: 100%;
+  background: #000;
+  border: 2px solid var(--pres-border);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #000;
+  pointer-events: none;
+}
+
+/* Right Pane: Next Slide Preview & Search Console */
+.presenter-right-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Search Box (As drawn on Advance.presentation.png) */
+.presenter-search-box {
+  position: relative;
+  width: 100%;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  background: var(--pres-panel);
+  border: 2px solid var(--pres-border);
+  border-radius: 12px;
+  padding: 10px 16px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.search-input-wrapper:focus-within {
+  border-color: var(--pres-border-focus);
+  background: #1B1F28;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--pres-gold);
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.presenter-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #FFFFFF;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.presenter-search-input::placeholder {
+  color: #7A8190;
+  font-weight: 500;
+}
+
+.search-clear-btn {
+  background: none;
+  border: none;
+  color: #7A8190;
+  cursor: pointer;
+  padding: 4px;
+  display: none;
+}
+
+.search-clear-btn:hover {
+  color: #FFF;
+}
+
+/* Search Results Popover / Drawer */
+.search-results-list {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  max-height: 380px;
+  background: #161A22;
+  border: 1.5px solid var(--pres-border);
+  border-radius: 14px;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.75);
+  overflow-y: auto;
+  z-index: 200;
+  padding: 8px;
+}
+
+.search-results-list.active {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.search-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.search-item:hover, .search-item.highlighted {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: rgba(212, 175, 55, 0.4);
+  transform: translateX(4px);
+}
+
+.search-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  overflow: hidden;
+}
+
+.search-item-title {
+  color: #FFF;
+  font-size: 0.92rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-item-meta {
+  color: var(--pres-text-muted);
+  font-size: 0.78rem;
+  display: flex;
+  gap: 8px;
+}
+
+.search-item-badge {
+  color: var(--pres-gold-bright);
+  font-family: var(--pres-font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: rgba(212, 175, 55, 0.2);
+  padding: 3px 8px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+/* Next Slide Preview Box */
+.presenter-next-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.presenter-next-preview {
+  flex: 1;
+  width: 100%;
+  background: #000;
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  opacity: 0.88;
+  transition: opacity 0.2s;
+}
+
+.presenter-next-preview:hover {
+  opacity: 1;
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+/* Slide Notes / Details Panel */
+.presenter-notes-panel {
+  height: 110px;
+  background: var(--pres-panel);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 12px 16px;
+  overflow-y: auto;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: #CBD0DC;
+}
+
+.notes-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--pres-gold);
+  margin-bottom: 4px;
+}
+
+/* ==========================================================================
+   Bottom Navigation Bar
+   ========================================================================== */
+.presenter-bottombar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: rgba(18, 21, 28, 0.95);
+  border-top: 1.5px solid var(--pres-border);
+  z-index: 100;
+  flex-shrink: 0;
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover:not(:disabled) {
+  background: var(--pres-gold);
+  border-color: var(--pres-gold-bright);
+  color: #0A0D12;
+  transform: scale(1.06);
+}
+
+.nav-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.slide-counter {
+  font-family: var(--pres-font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+}
+
+.action-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #E2E6EE;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.action-btn:hover {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: var(--pres-gold);
+  color: #FFF;
+}
+
+.hotkeys-hint {
+  font-size: 0.75rem;
+  color: #7A8190;
+  display: flex;
+  gap: 12px;
+}
+
+.hotkey-tag {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #B5BCC8;
+  font-family: var(--pres-font-mono);
+}
