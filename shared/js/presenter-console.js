@@ -14,6 +14,7 @@
     if (path.indexOf('03-top-program') !== -1) return '03-top-program';
     if (path.indexOf('04-consolation') !== -1) return '04-consolation';
     if (path.indexOf('05-official-results') !== -1 || path.indexOf('05-results') !== -1) return '05-results';
+    if (path.indexOf('special-awards') !== -1 || path.indexOf('tb-summit') !== -1) return 'tb-01-special-awards';
     return 'default';
   }
 

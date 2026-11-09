@@ -7,7 +7,8 @@ const decks = [
   '02-individual-awardees',
   '03-top-program-managers',
   '04-consolation-and-winners',
-  '05-official-results'
+  '05-official-results',
+  'tb-summit-2026/01-special-awards'
 ];
 
 decks.forEach(deck => {
