@@ -182,17 +182,38 @@
   function renderPreviews() {
     if (typeof document === 'undefined') return;
 
+    var nextIndex = currentIndex + 1;
+
     var curFrame = document.getElementById('currentSlideFrame');
     if (curFrame) {
-      curFrame.src = 'index.html?mode=projector#' + currentIndex;
+      try {
+        if (curFrame.contentWindow && curFrame.contentWindow.PresentationEngine && typeof curFrame.contentWindow.PresentationEngine.goToSlide === 'function') {
+          curFrame.contentWindow.PresentationEngine.goToSlide(currentIndex);
+        } else if (curFrame.contentWindow && curFrame.contentWindow.postMessage) {
+          curFrame.contentWindow.postMessage({ type: 'RENDER_SLIDE', slideIndex: currentIndex }, '*');
+        } else {
+          curFrame.src = 'index.html?mode=preview#' + currentIndex;
+        }
+      } catch (e) {
+        curFrame.src = 'index.html?mode=preview#' + currentIndex;
+      }
     }
 
     var nextFrame = document.getElementById('nextSlideFrame');
-    var nextIndex = currentIndex + 1;
     if (nextFrame) {
       if (nextIndex < slides.length) {
         nextFrame.style.display = 'block';
-        nextFrame.src = 'index.html?mode=projector#' + nextIndex;
+        try {
+          if (nextFrame.contentWindow && nextFrame.contentWindow.PresentationEngine && typeof nextFrame.contentWindow.PresentationEngine.goToSlide === 'function') {
+            nextFrame.contentWindow.PresentationEngine.goToSlide(nextIndex);
+          } else if (nextFrame.contentWindow && nextFrame.contentWindow.postMessage) {
+            nextFrame.contentWindow.postMessage({ type: 'RENDER_SLIDE', slideIndex: nextIndex }, '*');
+          } else {
+            nextFrame.src = 'index.html?mode=preview#' + nextIndex;
+          }
+        } catch (e) {
+          nextFrame.src = 'index.html?mode=preview#' + nextIndex;
+        }
       } else {
         nextFrame.style.display = 'none';
       }
@@ -346,6 +367,28 @@
 
     setupChannel();
     renderPreviews();
+
+    var curFrame = document.getElementById('currentSlideFrame');
+    var nextFrame = document.getElementById('nextSlideFrame');
+    if (curFrame) {
+      curFrame.addEventListener('load', function () {
+        try {
+          if (curFrame.contentWindow && curFrame.contentWindow.PresentationEngine) {
+            curFrame.contentWindow.PresentationEngine.goToSlide(currentIndex);
+          }
+        } catch (e) {}
+      });
+    }
+    if (nextFrame) {
+      nextFrame.addEventListener('load', function () {
+        try {
+          var nIdx = currentIndex + 1;
+          if (nextFrame.contentWindow && nextFrame.contentWindow.PresentationEngine) {
+            nextFrame.contentWindow.PresentationEngine.goToSlide(nIdx);
+          }
+        } catch (e) {}
+      });
+    }
 
     // Clocks
     startTimer();

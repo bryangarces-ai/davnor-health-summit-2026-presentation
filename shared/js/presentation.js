@@ -60,7 +60,14 @@
   var isControlsLockedHidden = false;
   var controlsTimeout = null;
   var isHoveringControls = false;
-  var isProjectorMode = (typeof window !== 'undefined' && window.location && typeof window.location.search === 'string' && window.location.search.indexOf('mode=projector') !== -1);
+  var isIframe = (function () {
+    try {
+      return (typeof window !== 'undefined' && window.self !== window.top);
+    } catch (e) {
+      return true;
+    }
+  })();
+  var isProjectorMode = isIframe || (typeof window !== 'undefined' && window.location && typeof window.location.search === 'string' && (window.location.search.indexOf('mode=projector') !== -1 || window.location.search.indexOf('mode=preview') !== -1));
   var projectorBc = null;
   var isHandlingRemoteSync = false;
 
@@ -1087,6 +1094,18 @@
       }
     });
 
+    if (typeof window !== 'undefined') {
+      window.addEventListener('message', function (e) {
+        if (e.data && e.data.type === 'RENDER_SLIDE' && typeof e.data.slideIndex === 'number') {
+          goToSlide(e.data.slideIndex);
+        }
+      });
+
+      window.addEventListener('hashchange', function () {
+        goToSlide(getInitialSlideIndex());
+      });
+    }
+
     var controlBar = document.getElementById('controlBar');
     if (controlBar) {
       controlBar.addEventListener('mouseenter', function () {
@@ -1110,6 +1129,18 @@
         resetControlsTimeout();
       }
     });
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('message', function (e) {
+        if (e.data && e.data.type === 'RENDER_SLIDE' && typeof e.data.slideIndex === 'number') {
+          goToSlide(e.data.slideIndex);
+        }
+      });
+
+      window.addEventListener('hashchange', function () {
+        goToSlide(getInitialSlideIndex());
+      });
+    }
 
     var touchStartX = 0;
     var touchStartY = 0;
@@ -1169,39 +1200,41 @@
           };
         } catch (e) {}
 
-        try {
-          projectorBc = new BroadcastChannel('davnor_projector_sync');
-          projectorBc.onmessage = function (e) {
-            if (!e.data || e.data.deckKey !== key) return;
-            var action = e.data.action;
-            if (action === 'GOTO_SLIDE' && typeof e.data.slideIndex === 'number') {
-              isHandlingRemoteSync = true;
-              goToSlide(e.data.slideIndex);
-              isHandlingRemoteSync = false;
-            } else if (action === 'NEXT_SLIDE') {
-              isHandlingRemoteSync = true;
-              next();
-              isHandlingRemoteSync = false;
-            } else if (action === 'PREV_SLIDE') {
-              isHandlingRemoteSync = true;
-              prev();
-              isHandlingRemoteSync = false;
-            } else if (action === 'TRIGGER_CONFETTI') {
-              triggerConfetti();
-            } else if (action === 'TRIGGER_SOUND') {
-              playChime();
-            } else if (action === 'SYNC_REQUEST') {
-              try {
-                projectorBc.postMessage({
-                  action: 'SYNC_RESPONSE',
-                  slideIndex: currentIndex,
-                  deckKey: key,
-                  timestamp: Date.now()
-                });
-              } catch (err) {}
-            }
-          };
-        } catch (e) {}
+        if (!isIframe) {
+          try {
+            projectorBc = new BroadcastChannel('davnor_projector_sync');
+            projectorBc.onmessage = function (e) {
+              if (!e.data || e.data.deckKey !== key) return;
+              var action = e.data.action;
+              if (action === 'GOTO_SLIDE' && typeof e.data.slideIndex === 'number') {
+                isHandlingRemoteSync = true;
+                goToSlide(e.data.slideIndex);
+                isHandlingRemoteSync = false;
+              } else if (action === 'NEXT_SLIDE') {
+                isHandlingRemoteSync = true;
+                next();
+                isHandlingRemoteSync = false;
+              } else if (action === 'PREV_SLIDE') {
+                isHandlingRemoteSync = true;
+                prev();
+                isHandlingRemoteSync = false;
+              } else if (action === 'TRIGGER_CONFETTI') {
+                triggerConfetti();
+              } else if (action === 'TRIGGER_SOUND') {
+                playChime();
+              } else if (action === 'SYNC_REQUEST') {
+                try {
+                  projectorBc.postMessage({
+                    action: 'SYNC_RESPONSE',
+                    slideIndex: currentIndex,
+                    deckKey: key,
+                    timestamp: Date.now()
+                  });
+                } catch (err) {}
+              }
+            };
+          } catch (e) {}
+        }
       }
 
       window.addEventListener('storage', function (e) {
