@@ -7,16 +7,25 @@
   <title>DAVNOR Health Summit 2026 — Presentation Portal</title>
   <link rel="stylesheet" href="../shared/css/floral-theme.css">
   <style>
-    body {
+    html {
+      height: auto !important;
+      min-height: 100% !important;
       overflow-y: auto !important;
+      overflow-x: hidden !important;
+    }
+
+    body {
+      height: auto !important;
+      min-height: 100vh !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
       background: url('../shared/assets/pptx-background.png') center center / cover no-repeat, #E2EFE9;
       background-attachment: fixed;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
+      justify-content: flex-start;
+      padding: clamp(20px, 4vw, 40px) clamp(12px, 3vw, 20px) 80px;
     }
 
     .hub-container {
