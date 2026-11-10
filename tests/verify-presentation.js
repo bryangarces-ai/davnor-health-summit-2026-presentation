@@ -40,7 +40,18 @@ const decks = [
   { folder: '02-individual-awardees', minSlides: 20 },
   { folder: '03-top-program-managers', minSlides: 35 },
   { folder: '04-consolation-and-winners', minSlides: 25 },
-  { folder: '05-official-results', minSlides: 4 }
+  { folder: '05-official-results', minSlides: 4 },
+  { folder: 'tb-summit-2026/01-special-awards', minSlides: 18 },
+  { folder: 'tb-summit-2026/02-referring-facilities', minSlides: 20 },
+  { folder: 'tb-summit-2026/03-individual-awards', minSlides: 20 },
+  { folder: 'tb-summit-2026/04-tb-providers', minSlides: 10 },
+  { folder: 'tb-summit-2026/05-top-health-centers', minSlides: 10 },
+  { folder: 'tb-summit-2026/06-top-bhw-10-4', minSlides: 3 },
+  { folder: 'tb-summit-2026/07-top-barangay-10-4', minSlides: 3 },
+  { folder: 'tb-summit-2026/08-consolation-tb-providers', minSlides: 3 },
+  { folder: 'tb-summit-2026/09-top-bhw-3-1', minSlides: 3 },
+  { folder: 'tb-summit-2026/10-top-barangay-3-1', minSlides: 3 },
+  { folder: 'tb-summit-2026/11-top-tb-providers-3-1', minSlides: 3 }
 ];
 
 decks.forEach(d => {

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>if(location.protocol!=="file:"&&!location.pathname.endsWith("/")&&!location.pathname.endsWith(".html")){location.replace(location.pathname+"/"+location.search+location.hash);}</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAVNOR TB Summit 2026 — Top Performing Barangay (Rank 10–4)</title>
+  <link rel="stylesheet" href="../../shared/css/floral-theme.css">
+  <link rel="stylesheet" href="../../shared/css/tb-gala-theme.css">
+</head>
+<body>
+
+  <div class="presentation-wrapper">
+    <!-- Ambient Canvas Petals / Glitter Layer -->
+    <canvas id="petalsCanvas" class="petals-canvas"></canvas>
+
+    <!-- Slide Content Viewport -->
+    <main id="slideViewport" class="slide-viewport" role="region" aria-label="Slide presentation viewport"></main>
+
+    <!-- Bottom Floating Control Bar -->
+    <nav id="controlBar" class="control-bar" aria-label="Presentation controls">
+      <button class="control-btn" onclick="window.PresentationEngine.prev()" title="Previous Slide (← / ↑)" aria-label="Previous Slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+
+      <div id="slideCounter" class="slide-counter" aria-live="polite">01 / 03</div>
+
+      <button class="control-btn" onclick="window.PresentationEngine.next()" title="Next Slide (→ / Space / Enter)" aria-label="Next Slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+
+      <span style="width: 1px; height: 20px; background: rgba(212, 175, 55, 0.4); margin: 0 4px;"></span>
+
+      <button class="control-btn" onclick="window.PresentationEngine.toggleDrawer()" title="Order of Ceremony Grid (G / Esc)" aria-label="All Programme Segments">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+      </button>
+
+      <button id="soundToggleBtn" class="control-btn" onclick="window.PresentationEngine.toggleSound()" title="Toggle Chime (M)" aria-label="Toggle Sound">
+        <!-- populated dynamically by JS -->
+      </button>
+
+      <button class="control-btn" onclick="window.PresentationEngine.triggerConfetti()" title="Celebratory Confetti Burst (C)" aria-label="Celebrate">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+        </svg>
+      </button>
+
+      <button class="control-btn" onclick="window.PresentationEngine.toggleFullscreen()" title="Fullscreen (F)" aria-label="Toggle Fullscreen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <polyline points="9 21 3 21 3 15"></polyline>
+          <line x1="21" y1="3" x2="14" y2="10"></line>
+          <line x1="3" y1="21" x2="10" y2="14"></line>
+        </svg>
+      </button>
+
+      <a href="presenter.html" target="_blank" class="control-btn" title="Open Presenter View (P)" aria-label="Presenter View" style="text-decoration: none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
+          <circle cx="7" cy="8" r="1"></circle>
+          <line x1="11" y1="8" x2="17" y2="8"></line>
+        </svg>
+      </a>
+
+      <a href="../index.html" class="control-btn" title="Return to TB Summit Hub" style="text-decoration: none;" aria-label="Ceremony Hub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+      </a>
+    </nav>
+
+    <!-- Bottom Progress Indicator -->
+    <div class="progress-bar-container">
+      <div id="progressBar" class="progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- Slide Overview Grid Drawer Modal -->
+  <aside id="drawerModal" class="drawer-modal" role="dialog" aria-modal="true" aria-label="Slide Directory">
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <div class="drawer-title">✦ DAVNOR TB Summit 2026 — Top Performing Barangay (Rank 10–4)</div>
+        <input type="text" id="drawerSearch" class="drawer-search-input" placeholder="Search awardee, facility, category..." aria-label="Search programme">
+        <button class="drawer-close-btn" onclick="window.PresentationEngine.toggleDrawer(false)" aria-label="Close drawer">&times;</button>
+      </div>
+      <div id="drawerGrid" class="drawer-grid"></div>
+    </div>
+  </aside>
+
+  <!-- Presentation Scripts -->
+  <script>
+    window.DECK_KEY = 'tb-07-top-barangay-10-4';
+    window.OFFICIAL_LOGOS = ['../../shared/assets/logos/logo-3.png', '../../shared/assets/logos/DDN.png', '../../shared/assets/logos/PHO-Logo.png'];
+    window.THEME_PETAL_STOPS = [
+      [[0, '140, 106, 28', 0.8], [0.5, '212, 175, 55', 0.75], [1, '247, 231, 161', 0.7]],
+      [[0, '125, 130, 140', 0.75], [0.5, '192, 196, 204', 0.7], [1, '242, 243, 245', 0.7]],
+      [[0, '184, 145, 42', 0.75], [0.5, '230, 199, 102', 0.65], [1, '255, 255, 255', 0.6]]
+    ];
+    window.PARTICLE_STYLE = 'glitter';
+    window.THEME_CONFETTI = ['#D4AF37', '#F7E7A1', '#B8912A', '#C0C4CC', '#F2F3F5', '#7D828C'];
+  </script>
+  <script src="slides-data.js"></script>
+  <script src="../../shared/js/cloud-sync.js"></script>
+  <script src="../../shared/js/presentation.js"></script>
+</body>
+</html>

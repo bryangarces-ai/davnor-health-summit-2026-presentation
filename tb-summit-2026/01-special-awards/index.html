@@ -11,7 +11,7 @@
 <body>
 
   <div class="presentation-wrapper">
-    <!-- Ambient Canvas Petals Layer -->
+    <!-- Ambient Canvas Petals / Glitter Layer -->
     <canvas id="petalsCanvas" class="petals-canvas"></canvas>
 
     <!-- Slide Content Viewport -->
@@ -23,7 +23,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
       </button>
 
-      <div id="slideCounter" class="slide-counter" aria-live="polite">01 / 20</div>
+      <div id="slideCounter" class="slide-counter" aria-live="polite">01 / 19</div>
 
       <button class="control-btn" onclick="window.PresentationEngine.next()" title="Next Slide (→ / Space / Enter)" aria-label="Next Slide">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
@@ -88,7 +88,7 @@
     <div class="drawer-content">
       <div class="drawer-header">
         <div class="drawer-title">✦ DAVNOR TB Summit 2026 — Special Awards</div>
-        <input type="text" id="drawerSearch" class="drawer-search-input" placeholder="Search awardee, office, specialty..." aria-label="Search programme">
+        <input type="text" id="drawerSearch" class="drawer-search-input" placeholder="Search awardee, facility, category..." aria-label="Search programme">
         <button class="drawer-close-btn" onclick="window.PresentationEngine.toggleDrawer(false)" aria-label="Close drawer">&times;</button>
       </div>
       <div id="drawerGrid" class="drawer-grid"></div>
@@ -97,7 +97,6 @@
 
   <!-- Presentation Scripts -->
   <script>
-    // DAVNOR TB Summit 2026 deck config (black · gold · silver)
     window.DECK_KEY = 'tb-01-special-awards';
     window.OFFICIAL_LOGOS = ['../../shared/assets/logos/logo-3.png', '../../shared/assets/logos/DDN.png', '../../shared/assets/logos/PHO-Logo.png'];
     window.THEME_PETAL_STOPS = [

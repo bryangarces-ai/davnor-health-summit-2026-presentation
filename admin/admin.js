@@ -8,7 +8,17 @@
     { key: '03-top-program', name: '03 · Top Program Managers', path: '../03-top-program-managers/', file: 'slides-data.js' },
     { key: '04-consolation', name: '04 · Consolation & Winners', path: '../04-consolation-and-winners/', file: 'slides-data.js' },
     { key: '05-results', name: '05 · Official Scorecards', path: '../05-official-results/', file: 'slides-data.js' },
-    { key: 'tb-01-special-awards', name: 'TB 01 · Special Awards', path: '../tb-summit-2026/01-special-awards/', file: 'slides-data.js' }
+    { key: 'tb-01-special-awards', name: 'TB 01 · Special Awards', path: '../tb-summit-2026/01-special-awards/', file: 'slides-data.js' },
+    { key: 'tb-02-referring-facilities', name: 'TB 02 · Referring Facilities', path: '../tb-summit-2026/02-referring-facilities/', file: 'slides-data.js' },
+    { key: 'tb-03-individual-awards', name: 'TB 03 · Individual Awards', path: '../tb-summit-2026/03-individual-awards/', file: 'slides-data.js' },
+    { key: 'tb-04-tb-providers', name: 'TB 04 · TB Providers', path: '../tb-summit-2026/04-tb-providers/', file: 'slides-data.js' },
+    { key: 'tb-05-top-health-centers', name: 'TB 05 · Top Health Centers', path: '../tb-summit-2026/05-top-health-centers/', file: 'slides-data.js' },
+    { key: 'tb-06-top-bhw-10-4', name: 'TB 06 · Top BHW 10-4', path: '../tb-summit-2026/06-top-bhw-10-4/', file: 'slides-data.js' },
+    { key: 'tb-07-top-barangay-10-4', name: 'TB 07 · Top Barangay 10-4', path: '../tb-summit-2026/07-top-barangay-10-4/', file: 'slides-data.js' },
+    { key: 'tb-08-consolation-tb-providers', name: 'TB 08 · Consolation TB Providers', path: '../tb-summit-2026/08-consolation-tb-providers/', file: 'slides-data.js' },
+    { key: 'tb-09-top-bhw-3-1', name: 'TB 09 · Top BHW 3-1', path: '../tb-summit-2026/09-top-bhw-3-1/', file: 'slides-data.js' },
+    { key: 'tb-10-top-barangay-3-1', name: 'TB 10 · Top Barangay 3-1', path: '../tb-summit-2026/10-top-barangay-3-1/', file: 'slides-data.js' },
+    { key: 'tb-11-top-tb-providers-3-1', name: 'TB 11 · Top TB Providers 3-1', path: '../tb-summit-2026/11-top-tb-providers-3-1/', file: 'slides-data.js' }
   ];
 
   var currentDeckKey = '04-consolation';

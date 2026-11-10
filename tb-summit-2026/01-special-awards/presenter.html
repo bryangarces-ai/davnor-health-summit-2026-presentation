@@ -60,63 +60,71 @@
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <input type="text" id="presenterSearch" class="presenter-search-input" placeholder="Search awardee, municipality, indicator... (Press /)" autocomplete="off" spellcheck="false" />
-            <button id="searchClearBtn" class="search-clear-btn" title="Clear Search">✕</button>
+            <input type="text" id="presenterSearchInput" class="presenter-search-input" placeholder="Jump to slide / search awardee..." aria-label="Jump to slide">
+            <button id="clearSearchBtn" class="clear-search-btn" onclick="window.PresenterConsoleApp.clearSearch()" style="display: none;" aria-label="Clear search">&times;</button>
           </div>
-
-          <div id="searchResultsList" class="search-results-list" role="listbox"></div>
+          <div id="searchResultsList" class="search-results-dropdown" style="display: none;"></div>
         </div>
 
-        <div class="presenter-next-wrapper">
+        <div class="presenter-next-pane">
           <div class="pane-header">
             <span class="pane-title">Next Slide</span>
+            <span id="nextSlideLabel" class="next-label">Slide 2</span>
           </div>
           <div class="presenter-next-preview">
-            <iframe id="nextSlideFrame" class="slide-frame" src="index.html?mode=preview#1" title="Next Slide Preview"></iframe>
+            <iframe id="nextSlideFrame" class="slide-frame" src="index.html?mode=preview#1" title="Next Upcoming Slide"></iframe>
           </div>
         </div>
 
-        <div class="presenter-notes-panel">
-          <div class="notes-title">Current Details & Citations</div>
-          <div id="slideNotesContent">Loading slide details...</div>
+        <div class="presenter-notes-pane">
+          <div class="pane-header">
+            <span class="pane-title">Speaker &amp; Stage Notes</span>
+            <div class="notes-zoom-controls">
+              <button class="zoom-btn" onclick="window.PresenterConsoleApp.adjustNotesZoom(-1)" title="Decrease font size">A-</button>
+              <button class="zoom-btn" onclick="window.PresenterConsoleApp.adjustNotesZoom(1)" title="Increase font size">A+</button>
+            </div>
+          </div>
+          <div id="presenterNotesBody" class="presenter-notes-content">
+            <div class="notes-placeholder">No notes for this slide.</div>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer class="presenter-bottombar">
-      <div class="nav-controls">
-        <button id="prevSlideBtn" class="nav-btn" onclick="window.PresenterConsoleApp.prev()" title="Previous Slide (← / ↑)">
+    <footer class="presenter-nav-bar">
+      <div class="nav-left">
+        <button id="navPrevBtn" class="nav-action-btn" onclick="window.PresenterConsoleApp.navigatePrev()" title="Previous Slide (← / PageUp)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
         </button>
-        <span id="slideCounter" class="slide-counter">Slide 1 of --</span>
-        <button id="nextSlideBtn" class="nav-btn" onclick="window.PresenterConsoleApp.next()" title="Next Slide (→ / Space / Enter)">
+
+        <div class="slide-position-box">
+          <span id="currentSlideNum">1</span>
+          <span class="slide-divider">/</span>
+          <span id="totalSlidesNum">19</span>
+        </div>
+
+        <button id="navNextBtn" class="nav-action-btn nav-action-btn-primary" onclick="window.PresenterConsoleApp.navigateNext()" title="Next Slide (→ / Space / PageDown)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </button>
       </div>
 
-      <div class="action-controls">
-        <button class="action-btn" onclick="window.PresenterConsoleApp.triggerConfetti()" title="Trigger Celebration Confetti (C)">
-          🎉 Confetti
-        </button>
-        <button class="action-btn" onclick="window.PresenterConsoleApp.triggerSound()" title="Play Award Chime (M)">
-          🔔 Chime
-        </button>
+      <div class="nav-center-title">
+        <span class="deck-indicator-badge">TB 2026</span>
+        <span id="currentSlideTitle" class="current-slide-heading">Special Awards</span>
       </div>
 
-      <div class="hotkeys-hint">
-        <span><span class="hotkey-tag">← / →</span> Navigate</span>
-        <span><span class="hotkey-tag">/</span> Search</span>
-        <span><span class="hotkey-tag">C</span> Confetti</span>
-        <span><span class="hotkey-tag">M</span> Chime</span>
+      <div class="nav-right-tools">
+        <button id="blackoutBtn" class="tool-btn" onclick="window.PresenterConsoleApp.toggleBlackout()" title="Blackout Stage Screen (B)">
+          <span class="tool-icon">⬛</span> Black Screen
+        </button>
+        <button id="confettiBtn" class="tool-btn" onclick="window.PresenterConsoleApp.triggerConfetti()" title="Trigger Confetti on Stage (C)">
+          <span class="tool-icon">🎉</span> Confetti
+        </button>
       </div>
     </footer>
   </div>
 
-  <script>
-    window.DECK_KEY = 'tb-01-special-awards';
-  </script>
   <script src="slides-data.js"></script>
-  <script src="../../shared/js/cloud-sync.js"></script>
   <script src="../../shared/js/presenter-console.js"></script>
 </body>
 </html>
