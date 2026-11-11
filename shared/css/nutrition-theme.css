@@ -1,0 +1,245 @@
+/* ==========================================================================
+   2026 PROVINCIAL NUTRITION CONGRESS AND AWARDING CEREMONY THEME
+   Warm Roasted Espresso, Mandaya Dagmay Weave, Gold Foil & Ivory Champagne
+   Loaded after floral-theme.css; re-skins the presentation engine.
+   ========================================================================== */
+
+:root {
+  /* Palette re-mapping */
+  --nutrition-espresso: #080302;
+  --nutrition-cacao: #1F0D07;
+  --nutrition-chocolate: #3A1C12;
+  --nutrition-crimson: #8A0D0D;
+  --nutrition-gold: #FAC611;
+  --nutrition-gold-dark: #D49000;
+  --nutrition-ochre: #C6591B;
+  --nutrition-champagne: #FFDF85;
+  --nutrition-ivory: #FFF8E7;
+  --nutrition-sand: #DFC4AA;
+
+  /* Theme tokens */
+  --pink-primary: #FAC611;
+  --pink-soft: #FFDF85;
+  --pink-blossom: #FFF6DE;
+  --pink-mist: #24110A;
+
+  --sky-blue-primary: #D49000;
+  --sky-blue-light: #FFE699;
+  --sky-blue-subtle: #1A0C06;
+  --sky-blue-deep: #DFC4AA;
+
+  --gold-foil: #FAC611;
+  --gold-rich: #D49000;
+  --gold-light: #3A1C12;
+  --gold-glow: rgba(250, 198, 17, 0.45);
+
+  --navy-text: #FFF8E7;
+  --slate-subtext: #DFC4AA;
+  --berry-accent: #FFDF85;
+
+  --surface-card: rgba(26, 12, 6, 0.86);
+  --surface-card-border: rgba(250, 198, 17, 0.85);
+  --surface-glow: rgba(250, 198, 17, 0.15);
+
+  --nutrition-gold-grad: linear-gradient(135deg, #995000 0%, #D49000 25%, #FAC611 50%, #FFEAA0 75%, #D49000 100%);
+  --nutrition-ivory-grad: linear-gradient(180deg, #FFFFFF 0%, #FFF8E7 50%, #FFDF85 100%);
+  --nutrition-badge-grad: linear-gradient(135deg, #FAC611 0%, #E5A51A 50%, #C6591B 100%);
+  --nutrition-crimson-grad: linear-gradient(135deg, #8A0D0D 0%, #C6591B 100%);
+}
+
+html, body {
+  background-color: #080302;
+  color: var(--navy-text);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.presentation-wrapper {
+  background: url('../nutrition-assets/nutrition-stage-bg.svg') center center / 100% 100% no-repeat, #080302 !important;
+}
+
+/* Plaque / Award Card Styling */
+.award-card {
+  background: linear-gradient(180deg, rgba(28, 13, 7, 0.88) 0%, rgba(14, 6, 3, 0.94) 100%) !important;
+  border: 2px solid rgba(250, 198, 17, 0.75) !important;
+  border-radius: 24px;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.85),
+    0 0 45px rgba(250, 198, 17, 0.22),
+    inset 0 0 0 1px rgba(255, 223, 133, 0.3) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: clamp(1.8rem, 4vw, 3.2rem) !important;
+}
+
+.award-card::before {
+  border: 1px solid rgba(250, 198, 17, 0.35) !important;
+  border-radius: 20px;
+}
+
+/* Logos & Headers */
+.official-logo-img {
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.75));
+}
+
+.title-event-header {
+  color: #FAC611 !important;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.title-main-heading {
+  color: #FFF8E7 !important;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.title-main-heading span {
+  background: var(--nutrition-gold-grad) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.title-category-badge {
+  color: #1A0C06 !important;
+  background: var(--nutrition-gold-grad) !important;
+  border: 1px solid rgba(255, 234, 160, 0.8) !important;
+  box-shadow: 0 8px 25px rgba(250, 198, 17, 0.35) !important;
+  font-weight: 800 !important;
+  letter-spacing: 2px;
+}
+
+.title-citation, .closing-citation {
+  color: #DFC4AA !important;
+  font-size: clamp(0.95rem, 1.4vw, 1.25rem);
+}
+
+/* Awardee Typography */
+.awardee-name {
+  color: #FFF8E7 !important;
+  font-family: var(--font-serif);
+  font-weight: 800;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.85);
+  line-height: 1.15;
+}
+
+.awardee-category-tag,
+.section-badge {
+  color: #1F0D07 !important;
+  background: var(--nutrition-gold-grad) !important;
+  border: 1px solid rgba(255, 234, 160, 0.7) !important;
+  font-weight: 800 !important;
+  letter-spacing: 2px;
+}
+
+.awardee-num-pill {
+  color: #FAC611 !important;
+  background: rgba(250, 198, 17, 0.14) !important;
+  border: 1.5px solid rgba(250, 198, 17, 0.5) !important;
+  font-weight: 800;
+}
+
+.awardee-subtitle {
+  color: #DFC4AA !important;
+  font-weight: 600;
+}
+
+.awardee-department {
+  color: #FFDF85;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Contenders Grid & Winner Reveal Styling */
+.contenders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.contender-item {
+  background: rgba(42, 20, 12, 0.65);
+  border: 1px solid rgba(250, 198, 17, 0.35);
+  border-radius: 12px;
+  padding: 14px 18px;
+  text-align: center;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.contender-item:hover {
+  transform: translateY(-3px);
+  border-color: #FAC611;
+}
+
+.contender-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #FFF8E7;
+}
+
+.contender-lgu {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #FAC611;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 4px;
+}
+
+/* BNS Loyalty Badge */
+.bns-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--nutrition-badge-grad);
+  color: #1F0D07;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(250, 198, 17, 0.3);
+}
+
+/* Service Milestone Tags */
+.milestone-30 { background: linear-gradient(135deg, #FFD700, #FFA500); }
+.milestone-20 { background: linear-gradient(135deg, #E6C766, #D4AF37); }
+.milestone-10 { background: linear-gradient(135deg, #C0C4CC, #F2F3F5); color: #0B0B0C; }
+
+/* Control Bar Theme */
+.control-bar {
+  background: rgba(22, 10, 5, 0.88) !important;
+  border: 1px solid rgba(250, 198, 17, 0.5) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(250, 198, 17, 0.15) !important;
+}
+
+.control-btn {
+  color: #DFC4AA !important;
+}
+
+.control-btn:hover {
+  color: #FAC611 !important;
+  background: rgba(250, 198, 17, 0.15) !important;
+}
+
+.slide-counter {
+  color: #FAC611 !important;
+  font-weight: 800 !important;
+}
+
+/* Drawer / Grid View */
+.drawer-backdrop {
+  background: rgba(8, 3, 2, 0.94) !important;
+}
+
+.drawer-slide-thumb {
+  border: 2px solid rgba(250, 198, 17, 0.4) !important;
+  background: #140804 !important;
+}
+
+.drawer-slide-thumb.active {
+  border-color: #FAC611 !important;
+  box-shadow: 0 0 25px rgba(250, 198, 17, 0.5) !important;
+}

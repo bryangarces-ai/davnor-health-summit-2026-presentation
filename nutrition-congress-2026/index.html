@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>if(location.protocol!=="file:"&&!location.pathname.endsWith("/")&&!location.pathname.endsWith(".html")){location.replace(location.pathname+"/"+location.search+location.hash);}</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 Provincial Nutrition Congress — Presentation Portal</title>
+  <link rel="stylesheet" href="../shared/css/floral-theme.css">
+  <link rel="stylesheet" href="../shared/css/nutrition-theme.css">
+  <style>
+    html {
+      height: auto !important;
+      min-height: 100% !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+      scroll-behavior: smooth;
+    }
+    body {
+      height: auto !important;
+      min-height: 100vh !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      padding: clamp(20px, 4vw, 48px) clamp(12px, 3vw, 24px) 80px !important;
+      background: url('../shared/nutrition-assets/nutrition-stage-bg.svg') center center / cover no-repeat, #080302 !important;
+      background-attachment: fixed !important;
+    }
+    .hub {
+      position: relative;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      background: rgba(22, 10, 5, 0.90);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 2px solid rgba(250, 198, 17, 0.75);
+      border-radius: clamp(16px, 3vw, 28px);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85), 0 0 45px rgba(250, 198, 17, 0.2);
+      padding: clamp(1.5rem, 4vw, 3.5rem);
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .back { 
+      position: absolute; 
+      top: 22px; 
+      left: 28px; 
+      font-weight: 700; 
+      font-size: 0.9rem; 
+      color: #DFC4AA; 
+      text-decoration: none; 
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s ease;
+    }
+    .back:hover { color: #FAC611; }
+    .logos { display: flex; justify-content: center; gap: clamp(14px, 3vw, 24px); margin: 0.8rem 0 1.2rem; }
+    .logos img { width: clamp(52px, 6vw, 68px); height: clamp(52px, 6vw, 68px); object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.8)); }
+    .badge { display: inline-block; font-family: var(--font-display); font-weight: 800; letter-spacing: 3px; font-size: clamp(0.75rem, 1.2vw, 0.9rem); color: #1F0D07; background: var(--nutrition-badge-grad); padding: 7px 20px; border-radius: 50px; margin-bottom: 0.8rem; box-shadow: 0 4px 15px rgba(250, 198, 17, 0.3); }
+    h1 { font-family: var(--font-serif); font-size: clamp(1.9rem, 4.5vw, 3.6rem); font-weight: 900; color: #FFF8E7; line-height: 1.15; margin-bottom: 0.5rem; text-shadow: 0 4px 20px rgba(0,0,0,0.8); }
+    h1 span { background: var(--nutrition-gold-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .theme-quote { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(0.95rem, 1.4vw, 1.2rem); color: #FFDF85; font-weight: 700; margin-bottom: 0.4rem; }
+    .sub { color: #DFC4AA; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: clamp(0.78rem, 1.1vw, 0.95rem); margin-bottom: 2rem; }
+    
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 2.2rem 0 1.2rem;
+      text-align: left;
+    }
+    .section-divider span {
+      font-family: var(--font-display);
+      font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #FAC611;
+      white-space: nowrap;
+    }
+    .section-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(250, 198, 17, 0.6), transparent);
+    }
+
+    .grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); 
+      gap: clamp(14px, 2vw, 22px); 
+      margin-bottom: 1.5rem; 
+    }
+    .card { 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: space-between; 
+      text-align: left; 
+      text-decoration: none; 
+      color: inherit; 
+      background: rgba(35, 16, 9, 0.82); 
+      border: 1.5px solid rgba(250, 198, 17, 0.35); 
+      border-radius: 20px; 
+      padding: clamp(18px, 2.5vw, 24px) clamp(16px, 2vw, 22px); 
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; 
+      box-sizing: border-box;
+    }
+    .card:hover { 
+      transform: translateY(-5px); 
+      border-color: #FAC611; 
+      box-shadow: 0 18px 40px rgba(250, 198, 17, 0.25); 
+    }
+
+    .tag-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .tag { display: inline-block; font-size: 0.72rem; font-weight: 800; letter-spacing: 2px; color: #1F0D07; background: var(--nutrition-badge-grad); padding: 4px 10px; border-radius: 8px; }
+    .slide-badge { font-size: 0.78rem; font-weight: 700; color: #DFC4AA; }
+
+    .card h2 { font-family: var(--font-display); font-size: clamp(1.1rem, 1.4vw, 1.3rem); color: #FFF8E7; margin-bottom: 8px; line-height: 1.25; font-weight: 800; }
+    .card p { font-size: 0.88rem; color: #DFC4AA; line-height: 1.45; margin-bottom: 20px; }
+
+    .btn-row { display: flex; gap: 8px; }
+    .btn { flex: 1; text-align: center; padding: 11px 14px; border-radius: 10px; background: var(--nutrition-gold-grad); color: #1F0D07; font-weight: 900; letter-spacing: 0.5px; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; transition: filter 0.2s ease; }
+    .btn:hover { filter: brightness(1.15); }
+    .btn-presenter { padding: 11px 14px; border-radius: 10px; background: rgba(250, 198, 17, 0.15); border: 1px solid rgba(250, 198, 17, 0.45); color: #FFDF85; font-weight: 700; font-size: 0.82rem; text-decoration: none; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; transition: background 0.2s ease, color 0.2s ease; }
+    .btn-presenter:hover { background: rgba(250, 198, 17, 0.35); color: #FFF; }
+
+    .keys { color: #DFC4AA; font-size: 0.85rem; font-weight: 600; display: flex; flex-wrap: wrap; gap: clamp(10px, 2vw, 18px); justify-content: center; border-top: 1px solid rgba(250, 198, 17, 0.25); padding-top: 20px; margin-top: 1.5rem; }
+    .keys b { font-family: monospace; color: #FFF8E7; background: rgba(250, 198, 17, 0.15); border: 1px solid rgba(250, 198, 17, 0.4); border-radius: 6px; padding: 2px 8px; }
+
+    @media (max-width: 768px) {
+      body { padding: 16px 10px 60px !important; }
+      .hub { padding: 20px 14px; border-radius: 18px; }
+      .back { position: static; margin-bottom: 12px; }
+      .grid { grid-template-columns: 1fr; gap: 14px; }
+      .btn-row { flex-direction: column; }
+      .btn, .btn-presenter { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hub">
+    <a class="back" href="../index.html">← All Events</a>
+    <div class="logos">
+      <img src="../shared/assets/logos/logo-3.png" alt="Department of Health">
+      <img src="../shared/assets/logos/DDN.png" alt="Province of Davao del Norte">
+      <img src="../shared/assets/logos/PHO-Logo.png" alt="Provincial Health Office">
+    </div>
+    <div class="badge">PROVINCIAL HEALTH OFFICE · CEREMONY PORTAL</div>
+    <h1>2026 PROVINCIAL NUTRITION CONGRESS <span>&amp; AWARDS</span></h1>
+    <div class="theme-quote">“Himsog nga Katawhan, Himsog nga Kinaiyahan: Panaghiusa Alang sa Malungtarong Nutrisyon”</div>
+    <div class="sub">November 20, 2026 · DavNor Gymnasium, DNSTC, Mankilam, Tagum City</div>
+
+    <!-- PART I: Ceremonies & Special Initiatives -->
+    <div class="section-divider">
+      <span>Part I · Ceremony Flow &amp; Special Initiatives</span>
+    </div>
+    <div class="grid">
+      <!-- 00 Program Flow -->
+      <div class="card">
+        <div>
+          <div class="tag-row">
+            <span class="tag">DECK 00</span>
+            <span class="slide-badge">16 Slides</span>
+          </div>
+          <h2>Program &amp; Opening Ceremonies</h2>
+          <p>Invocation, Philippine National Anthem, Welcome Address by Dr. Lacerona, Gov. Jubahib Keynote, DOH technical address, and intermission highlights.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn" href="00-program-flow/index.html">Launch Stage View →</a>
+          <a class="btn-presenter" href="00-program-flow/presenter.html" target="_blank">Presenter Console ↗</a>
+        </div>
+      </div>
+
+      <!-- 01 Pangga Ko Si Sam -->
+      <div class="card">
+        <div>
+          <div class="tag-row">
+            <span class="tag">DECK 01</span>
+            <span class="slide-badge">8 Slides</span>
+          </div>
+          <h2>Pangga Ko Si Sam Partners</h2>
+          <p>Plaques of Appreciation for Vice Gov. Office, DavNor Zone Hospitals (Kapalong, Carmen, IGACOS), DRMC, and Marsman Drysdale Foundation.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn" href="01-pangga-ko-si-sam/index.html">Launch Stage View →</a>
+          <a class="btn-presenter" href="01-pangga-ko-si-sam/presenter.html" target="_blank">Presenter Console ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART II: Major Awards & Focal Points -->
+    <div class="section-divider">
+      <span>Part II · Major Honors &amp; Focal Points</span>
+    </div>
+    <div class="grid">
+      <!-- 02 Outstanding LGU -->
+      <div class="card">
+        <div>
+          <div class="tag-row">
+            <span class="tag">DECK 02</span>
+            <span class="slide-badge">4 Slides</span>
+          </div>
+          <h2>Outstanding LGU in Nutrition Monitoring</h2>
+          <p>Official contenders from 10 LGUs across Davao del Norte, followed by the dramatic winner reveal: Municipality of Asuncion.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn" href="02-outstanding-lgu/index.html">Launch Stage View →</a>
+          <a class="btn-presenter" href="02-outstanding-lgu/presenter.html" target="_blank">Presenter Console ↗</a>
+        </div>
+      </div>
+
+      <!-- 03 Outstanding LNFP -->
+      <div class="card">
+        <div>
+          <div class="tag-row">
+            <span class="tag">DECK 03</span>
+            <span class="slide-badge">13 Slides</span>
+          </div>
+          <h2>Outstanding Local Nutrition Focal Points</h2>
+          <p>Contenders and Outstanding CNAO, MNAO, CNPC, MNPC, and Barangay Nutrition Scholars (City &amp; Municipal levels).</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn" href="03-outstanding-lnfp/index.html">Launch Stage View →</a>
+          <a class="btn-presenter" href="03-outstanding-lnfp/presenter.html" target="_blank">Presenter Console ↗</a>
+        </div>
+      </div>
+
+      <!-- 04 Special Awards -->
+      <div class="card">
+        <div>
+          <div class="tag-row">
+            <span class="tag">DECK 04</span>
+            <span class="slide-badge">12 Slides</span>
+          </div>
+          <h2>Special Awards — Tinguha Awardees</h2>
+          <p>CY 2025 and CY 2026 performance milestones: Lowest prevalence of Wasting, Stunting, Underweight, Obesity, and Highest OPT Coverage.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn" href="04-special-awards/index.html">Launch Stage View →</a>
+          <a class="btn-presenter" href="04-special-awards/presenter.html" target="_blank">Presenter Console ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART III: Institutional Synergy & Frontline Heroes -->
+    <div class="section-divider">
+      <span>Part III · Institutional Synergy &amp; Frontline Heroes</span>
+    </div>
+    <div class="grid">
+      <!-- 05 Regional & PNC -->
+      <div class="card">
+        <div>
+          <div class="tag-row">
+            <span class="tag">DECK 05</span>
+            <span class="slide-badge">21 Slides</span>
+          </div>
+          <h2>Regional Partners &amp; PNC Offices</h2>
+          <p>Appreciation plaques for NNC, DOH-XI, HSRP, DRMC, plus certificates of appreciation for 15 Provincial Nutrition Committee department offices.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn" href="05-regional-and-pnc/index.html">Launch Stage View →</a>
+          <a class="btn-presenter" href="05-regional-and-pnc/presenter.html" target="_blank">Presenter Console ↗</a>
+        </div>
+      </div>
+
+      <!-- 06 PNET Recognition -->
+      <div class="card">
+        <div>
+          <div class="tag-row">
+            <span class="tag">DECK 06</span>
+            <span class="slide-badge">15 Slides</span>
+          </div>
+          <h2>Recognition of PNET Evaluators</h2>
+          <p>Certificates of recognition for 17 evaluators across 10 provincial departments forming the Provincial Nutrition Evaluation Team.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn" href="06-pnet-recognition/index.html">Launch Stage View →</a>
+          <a class="btn-presenter" href="06-pnet-recognition/presenter.html" target="_blank">Presenter Console ↗</a>
+        </div>
+      </div>
+
+      <!-- 07 BNS Loyalty Awards -->
+      <div class="card">
+        <div>
+          <div class="tag-row">
+            <span class="tag">DECK 07</span>
+            <span class="slide-badge">18 Slides</span>
+          </div>
+          <h2>BNS Loyalty Awards (10+ Years)</h2>
+          <p>Dungog sa Malungtarong Serbisyo Award: Honoring 83 Barangay Nutrition Scholars with 10 to 35+ years of dedicated service across all LGUs.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn" href="07-bns-loyalty-awards/index.html">Launch Stage View →</a>
+          <a class="btn-presenter" href="07-bns-loyalty-awards/presenter.html" target="_blank">Presenter Console ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Stage Keyboard Controls -->
+    <div class="keys">
+      <span><b>←</b> / <b>→</b> Navigate Slides</span>
+      <span><b>Space</b> Next Slide</span>
+      <span><b>F</b> Fullscreen</span>
+      <span><b>M</b> Toggle Fanfare Chime</span>
+      <span><b>C</b> Festive Confetti</span>
+      <span><b>G</b> Slide Drawer / Jump Grid</span>
+      <span><b>P</b> Presenter Console</span>
+    </div>
+  </div>
+</body>
+</html>
