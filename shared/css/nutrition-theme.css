@@ -5,7 +5,7 @@
    ========================================================================== */
 
 :root {
-  /* Palette re-mapping */
+  /* Palette tokens */
   --nutrition-espresso: #080302;
   --nutrition-cacao: #1F0D07;
   --nutrition-chocolate: #3A1C12;
@@ -37,9 +37,9 @@
   --slate-subtext: #DFC4AA;
   --berry-accent: #FFDF85;
 
-  --surface-card: rgba(26, 12, 6, 0.86);
+  --surface-card: rgba(26, 12, 6, 0.90);
   --surface-card-border: rgba(250, 198, 17, 0.85);
-  --surface-glow: rgba(250, 198, 17, 0.15);
+  --surface-glow: rgba(250, 198, 17, 0.20);
 
   --nutrition-gold-grad: linear-gradient(135deg, #995000 0%, #D49000 25%, #FAC611 50%, #FFEAA0 75%, #D49000 100%);
   --nutrition-ivory-grad: linear-gradient(180deg, #FFFFFF 0%, #FFF8E7 50%, #FFDF85 100%);
@@ -59,15 +59,15 @@ html, body {
 
 /* Plaque / Award Card Styling */
 .award-card {
-  background: linear-gradient(180deg, rgba(28, 13, 7, 0.88) 0%, rgba(14, 6, 3, 0.94) 100%) !important;
+  background: linear-gradient(180deg, rgba(28, 13, 7, 0.92) 0%, rgba(14, 6, 3, 0.96) 100%) !important;
   border: 2px solid rgba(250, 198, 17, 0.75) !important;
   border-radius: 24px;
   box-shadow:
     0 30px 80px rgba(0, 0, 0, 0.85),
     0 0 45px rgba(250, 198, 17, 0.22),
     inset 0 0 0 1px rgba(255, 223, 133, 0.3) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: clamp(1.8rem, 4vw, 3.2rem) !important;
 }
 
@@ -78,7 +78,7 @@ html, body {
 
 /* Logos & Headers */
 .official-logo-img {
-  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.75));
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.85));
 }
 
 .title-event-header {
@@ -90,7 +90,8 @@ html, body {
 
 .title-main-heading {
   color: #FFF8E7 !important;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  font-weight: 900 !important;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
 }
 
 .title-main-heading span {
@@ -114,12 +115,12 @@ html, body {
   font-size: clamp(0.95rem, 1.4vw, 1.25rem);
 }
 
-/* Awardee Typography */
+/* Single Awardee Typography */
 .awardee-name {
   color: #FFF8E7 !important;
   font-family: var(--font-serif);
-  font-weight: 800;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.85);
+  font-weight: 900 !important;
+  text-shadow: 0 3px 24px rgba(0, 0, 0, 0.95);
   line-height: 1.15;
 }
 
@@ -127,27 +128,90 @@ html, body {
 .section-badge {
   color: #1F0D07 !important;
   background: var(--nutrition-gold-grad) !important;
-  border: 1px solid rgba(255, 234, 160, 0.7) !important;
-  font-weight: 800 !important;
+  border: 1px solid rgba(255, 234, 160, 0.85) !important;
+  font-weight: 900 !important;
   letter-spacing: 2px;
 }
 
 .awardee-num-pill {
   color: #FAC611 !important;
-  background: rgba(250, 198, 17, 0.14) !important;
-  border: 1.5px solid rgba(250, 198, 17, 0.5) !important;
-  font-weight: 800;
+  background: rgba(250, 198, 17, 0.16) !important;
+  border: 1.5px solid rgba(250, 198, 17, 0.6) !important;
+  font-weight: 900;
 }
 
 .awardee-subtitle {
-  color: #DFC4AA !important;
-  font-weight: 600;
+  color: #FFDF85 !important;
+  font-weight: 750 !important;
+  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 .awardee-department {
-  color: #FFDF85;
+  color: #DFC4AA !important;
   font-weight: 700;
   letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   CITATION PILLS & MULTI-AWARDEE ROSTER BADGES
+   Fixes contrast issue: dark cacao background with crisp ivory-white text & gold trim
+   ========================================================================== */
+.citations-grid {
+  width: 100%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.citation-pill {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  background: linear-gradient(135deg, rgba(38, 18, 10, 0.95) 0%, rgba(20, 9, 4, 0.97) 100%) !important;
+  border: 1.5px solid rgba(250, 198, 17, 0.5) !important;
+  border-left: 5px solid #FAC611 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 223, 133, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
+  padding: clamp(10px, 1.4vh, 16px) clamp(16px, 1.6vw, 24px) !important;
+}
+
+.citation-pill:hover {
+  transform: translateY(-2px) !important;
+  background: linear-gradient(135deg, rgba(54, 25, 14, 0.98) 0%, rgba(28, 12, 6, 0.98) 100%) !important;
+  border-color: #FAC611 !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.8), 0 0 20px rgba(250, 198, 17, 0.3) !important;
+}
+
+.citation-pill .pill-star {
+  color: #FAC611 !important;
+  font-size: clamp(1rem, 1.25vw, 1.35rem) !important;
+  filter: drop-shadow(0 2px 6px rgba(250, 198, 17, 0.75)) !important;
+  flex-shrink: 0 !important;
+}
+
+.citation-pill .pill-text {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: clamp(1.05rem, 1.3vw, 1.32rem) !important;
+  color: #FFF8E7 !important; /* Crisp, ultra-readable warm ivory */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95) !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0.3px !important;
+}
+
+.citation-pill--highlight {
+  background: linear-gradient(135deg, rgba(62, 28, 14, 0.98) 0%, rgba(32, 14, 6, 0.98) 100%) !important;
+  border: 1.5px solid #FAC611 !important;
+  border-left: 6px solid #FAC611 !important;
+  box-shadow: 0 8px 25px rgba(250, 198, 17, 0.3) !important;
+}
+
+.citation-pill--highlight .pill-text {
+  color: #FFDF85 !important;
+  font-weight: 900 !important;
 }
 
 /* Contenders Grid & Winner Reveal Styling */
@@ -160,8 +224,8 @@ html, body {
 }
 
 .contender-item {
-  background: rgba(42, 20, 12, 0.65);
-  border: 1px solid rgba(250, 198, 17, 0.35);
+  background: rgba(38, 18, 10, 0.85);
+  border: 1.5px solid rgba(250, 198, 17, 0.45);
   border-radius: 12px;
   padding: 14px 18px;
   text-align: center;
@@ -171,6 +235,7 @@ html, body {
 .contender-item:hover {
   transform: translateY(-3px);
   border-color: #FAC611;
+  box-shadow: 0 8px 22px rgba(250, 198, 17, 0.25);
 }
 
 .contender-name {
@@ -180,8 +245,8 @@ html, body {
 }
 
 .contender-lgu {
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0.88rem;
+  font-weight: 800;
   color: #FAC611;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -210,7 +275,7 @@ html, body {
 
 /* Control Bar Theme */
 .control-bar {
-  background: rgba(22, 10, 5, 0.88) !important;
+  background: rgba(22, 10, 5, 0.92) !important;
   border: 1px solid rgba(250, 198, 17, 0.5) !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(250, 198, 17, 0.15) !important;
 }
@@ -229,17 +294,67 @@ html, body {
   font-weight: 800 !important;
 }
 
+.progress-bar-container {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.progress-bar {
+  background: var(--nutrition-gold-grad) !important;
+}
+
 /* Drawer / Grid View */
-.drawer-backdrop {
-  background: rgba(8, 3, 2, 0.94) !important;
+.drawer-modal {
+  background: rgba(8, 3, 2, 0.88) !important;
 }
 
-.drawer-slide-thumb {
-  border: 2px solid rgba(250, 198, 17, 0.4) !important;
+.drawer-content {
   background: #140804 !important;
+  border: 2px solid #FAC611 !important;
 }
 
-.drawer-slide-thumb.active {
+.drawer-header {
+  background: linear-gradient(135deg, #1F0D07, #2D140A) !important;
+  border-bottom: 1.5px solid rgba(250, 198, 17, 0.4) !important;
+}
+
+.drawer-title, .drawer-close-btn {
+  color: #FFF8E7 !important;
+}
+
+.drawer-search-input {
+  background: #241007 !important;
+  color: #FFF8E7 !important;
+  border: 1.5px solid rgba(250, 198, 17, 0.5) !important;
+}
+
+.drawer-search-input:focus {
   border-color: #FAC611 !important;
-  box-shadow: 0 0 25px rgba(250, 198, 17, 0.5) !important;
+  box-shadow: 0 0 0 3px rgba(250, 198, 17, 0.3) !important;
+}
+
+.drawer-card {
+  background: #1F0D07 !important;
+  border: 1px solid rgba(250, 198, 17, 0.3) !important;
+}
+
+.drawer-card:hover {
+  border-color: #FAC611 !important;
+  box-shadow: 0 10px 20px rgba(250, 198, 17, 0.25) !important;
+}
+
+.drawer-card.active {
+  background: #3A1C12 !important;
+  border-color: #FAC611 !important;
+}
+
+.drawer-card-num {
+  color: #FAC611 !important;
+}
+
+.drawer-card-title {
+  color: #FFF8E7 !important;
+}
+
+.drawer-card-sub {
+  color: #DFC4AA !important;
 }
