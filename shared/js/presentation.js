@@ -165,6 +165,25 @@
     }
   }
 
+  function openPresenterView(e) {
+    if (e && e.preventDefault) {
+      e.preventDefault();
+    }
+    var targetUrl = 'presenter.html#' + currentIndex;
+    var win = null;
+    try {
+      win = window.open(targetUrl, '_blank');
+      if (win && win.focus) {
+        win.focus();
+      }
+    } catch (err) {
+      if (typeof window !== 'undefined' && window.location) {
+        window.location.href = targetUrl;
+      }
+    }
+    return win;
+  }
+
   function toggleDrawer(forceState) {
     var modal = document.getElementById('drawerModal');
     if (!modal) return;
@@ -291,6 +310,79 @@
       '</div>'
     ].join('');
   }
+
+  function findLguLogo(text) {
+    if (!text || typeof text !== 'string') return null;
+    var upper = text.toUpperCase().trim();
+    if (upper.indexOf('ASUNCION') !== -1) return { png: 'asuncion.png', jfif: 'Asuncion.jfif' };
+    if (upper.indexOf('CARMEN') !== -1) return { png: 'carmen.png', jfif: 'Carmen.png' };
+    if (upper.indexOf('DUJALI') !== -1 || upper.indexOf('DUALI') !== -1) return { png: 'dujali.png', jfif: 'Braulio_E._Duali_Municipal.png' };
+    if (upper.indexOf('KAPALONG') !== -1) return { png: 'kapalong.png', jfif: 'kapalong.jfif' };
+    if (upper.indexOf('NEW CORELLA') !== -1) return { png: 'new-corella.png', jfif: 'new corella.jfif' };
+    if (upper.indexOf('PANABO') !== -1) return { png: 'panabo.png', jfif: 'panabo.jfif' };
+    if (upper.indexOf('SAWATA') !== -1) return { png: 'sawata.png', jfif: 'sawata.jfif' };
+    if (upper.indexOf('SANTO TOMAS') !== -1 || upper.indexOf('STO. TOMAS') !== -1 || upper.indexOf('STO TOMAS') !== -1) return { png: 'sto-tomas.png', jfif: 'Sto tomas.jfif' };
+    if (upper.indexOf('TAGUM') !== -1) return { png: 'tagum.png', jfif: 'tagum City.png' };
+    if (upper.indexOf('TALAINGOD') !== -1) return { png: 'talaingod.png', jfif: 'Talaingod.jfif' };
+    if (upper.indexOf('SAMAL') !== -1 || upper.indexOf('IGACOS') !== -1) return { png: 'igacos.png', jfif: 'igacos.jfif' };
+    return null;
+  }
+
+  function isOnlyLguSlide(s) {
+    if (!s || s.type !== 'awardee') return false;
+    var title = (s.title || '').trim().toUpperCase();
+    if (!findLguLogo(title)) return false;
+
+    // Disqualify if title indicates a person, committee, facility, or compound entry
+    var nonLguKeywords = ['DR.', 'HON.', 'RN', 'MD', 'RND', 'MPH', 'LPT', 'MMPA', 'TEAM', 'HOSPITAL', 'CHORALE', 'ENSEMBLE', 'BARANGAY', 'BNS', 'CONTENDERS:', 'OFFICIAL CONTENDERS', 'CONGRATULATIONS'];
+    for (var i = 0; i < nonLguKeywords.length; i++) {
+      if (title.indexOf(nonLguKeywords[i]) !== -1) return false;
+    }
+
+    // Must not have an extensive list of citations
+    if (Array.isArray(s.citations) && s.citations.length > 0) return false;
+    if (typeof s.subtitle === 'string' && s.subtitle.indexOf(' | ') !== -1) {
+      var parts = s.subtitle.split(' | ');
+      if (parts.length >= 2) return false;
+    }
+
+    return true;
+  }
+
+  window.resolveImageFallback = function (img) {
+    if (!img) return;
+    var step = parseInt(img.dataset.step || '0', 10);
+    var rawSrc = img.getAttribute('src') || '';
+    var filename = rawSrc.split('/').pop().split('\\').pop();
+    var decoded = decodeURIComponent(filename);
+
+    var isNestedDeck = (typeof window !== 'undefined' && window.location && typeof window.location.pathname === 'string' && (window.location.pathname.indexOf('/tb-summit-2026/') !== -1 || window.location.pathname.indexOf('/nutrition-congress-2026/') !== -1));
+    var p1 = isNestedDeck ? '../../' : '../';
+    var p2 = isNestedDeck ? '../' : '../../';
+
+    var fallbacks = [
+      p1 + 'shared/assets/lgu-logos/' + decoded,
+      p1 + 'images/LGU Logo/' + decoded,
+      p1 + 'images/LGU Logo/New folder/' + decoded,
+      p2 + 'shared/assets/lgu-logos/' + decoded,
+      p2 + 'images/LGU Logo/' + decoded,
+      p2 + 'images/LGU Logo/New folder/' + decoded,
+      p1 + 'shared/assets/speakers/' + decoded,
+      p1 + 'images/' + decoded,
+      p2 + 'shared/assets/speakers/' + decoded,
+      p2 + 'images/' + decoded
+    ];
+
+    if (step < fallbacks.length) {
+      img.dataset.step = (step + 1).toString();
+      img.src = fallbacks[step];
+    } else {
+      img.style.display = 'none';
+      if (img.parentElement && img.parentElement.classList.contains('awardee-photo-frame')) {
+        img.parentElement.style.display = 'none';
+      }
+    }
+  };
 
   function renderCurrentSlide() {
     var viewport = document.getElementById('slideViewport');
@@ -602,11 +694,37 @@
         citationsList = s.subtitle.split(' | ').map(function (c) { return c.trim(); }).filter(Boolean);
       }
 
+      var logoInfo = findLguLogo(s.title);
+      var isLguOnly = isOnlyLguSlide(s);
+      var displayImage = s.image;
+
+      var isNestedDeck = (typeof window !== 'undefined' && window.location && typeof window.location.pathname === 'string' && (window.location.pathname.indexOf('/tb-summit-2026/') !== -1 || window.location.pathname.indexOf('/nutrition-congress-2026/') !== -1));
+      var depthPrefix = isNestedDeck ? '../../' : '../';
+
+      if (!displayImage && isLguOnly && logoInfo) {
+        displayImage = depthPrefix + 'shared/assets/lgu-logos/' + logoInfo.png;
+      }
+
+      var isLogo = s.isLogo || (displayImage && (displayImage.indexOf('lgu-logos') !== -1 || displayImage.indexOf('LGU Logo') !== -1)) || isLguOnly;
+
       var hasPills = hasExplicitCitations ? (citationsList.length > 0) : (citationsList.length >= 2);
       var isMany = citationsList.length >= 4;
-      var cardClass = 'award-card' + (isMany ? ' award-card--multi-awards' : (hasPills ? ' award-card--few-awards' : ''));
+      var cardClass = 'award-card' + 
+                      (displayImage ? (isLogo ? ' award-card--with-photo award-card--with-logo' : ' award-card--with-photo') : '') + 
+                      (isMany ? ' award-card--multi-awards' : (hasPills ? ' award-card--few-awards' : ''));
       var gridClass = 'citations-grid ' + (isMany ? 'citations-grid--2col' : 'citations-grid--1col');
       var categoryTag = s.category ? '<div class="awardee-category-tag">' + escapeHtml(s.category) + '</div>' : '';
+
+      var photoHtml = '';
+      if (displayImage) {
+        var frameClass = isLogo ? 'awardee-photo-frame awardee-logo-frame' : 'awardee-photo-frame';
+        var imgClass = isLogo ? 'awardee-photo-img awardee-logo-img' : 'awardee-photo-img';
+        photoHtml = [
+          '<div class="' + frameClass + '">',
+          '  <img src="' + escapeHtml(displayImage) + '" alt="' + escapeHtml(s.title || (isLogo ? 'LGU Logo' : 'Speaker')) + '" class="' + imgClass + '" onerror="window.resolveImageFallback(this);" />',
+          '</div>'
+        ].join('');
+      }
 
       var subHtml = '';
       if (s.subtitle) {
@@ -618,6 +736,8 @@
           subHtml = '<div class="awardee-subtitle"' + (subMargin ? ' style="' + subMargin + '"' : '') + '>' + escapeHtml(s.subtitle) + '</div>';
         }
       }
+
+      var deptHtml = s.department ? '<div class="awardee-department">' + escapeHtml(s.department) + '</div>' : '';
 
       var contentHtml = '';
       if (hasPills) {
@@ -640,21 +760,44 @@
 
       var citationHtml = s.citation ? '<p class="title-citation" style="margin-top: clamp(0.6rem, 1.2vh, 1.2rem);">"' + escapeHtml(s.citation) + '"</p>' : '';
 
-      html = [
-        '<div class="slide active">',
-        '  <div class="' + cardClass + '">',
-        logosHtml,
-        categoryTag,
-        '    <h1 class="awardee-name">' + escapeHtml(s.title) + '</h1>',
-        '    <div class="ceremonial-divider">',
-        '      <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>',
-        '    </div>',
-        subHtml,
-        contentHtml,
-        citationHtml,
-        '  </div>',
-        '</div>'
-      ].join('');
+      var isSpeakerCard = displayImage && !isLogo;
+      if (isSpeakerCard) {
+        html = [
+          '<div class="slide active">',
+          '  <div class="' + cardClass + '">',
+          logosHtml,
+          categoryTag,
+          photoHtml,
+          '    <h1 class="awardee-name">' + escapeHtml(s.title) + '</h1>',
+          '    <div class="ceremonial-divider">',
+          '      <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>',
+          '    </div>',
+          subHtml,
+          deptHtml,
+          contentHtml,
+          citationHtml,
+          '  </div>',
+          '</div>'
+        ].join('');
+      } else {
+        html = [
+          '<div class="slide active">',
+          '  <div class="' + cardClass + '">',
+          logosHtml,
+          categoryTag,
+          '    <h1 class="awardee-name">' + escapeHtml(s.title) + '</h1>',
+          '    <div class="ceremonial-divider">',
+          '      <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>',
+          '    </div>',
+          photoHtml,
+          subHtml,
+          deptHtml,
+          contentHtml,
+          citationHtml,
+          '  </div>',
+          '</div>'
+        ].join('');
+      }
     }
 
     viewport.innerHTML = html;
@@ -689,7 +832,8 @@
       var matchCitations = s.citations && Array.isArray(s.citations) && s.citations.some(function (c) {
         return c.toLowerCase().indexOf(filter) !== -1;
       });
-      return matchTitle || matchSub || matchCat || matchCitations;
+      var matchDept = s.department && s.department.toLowerCase().indexOf(filter) !== -1;
+      return matchTitle || matchSub || matchCat || matchCitations || matchDept;
     });
 
     if (filtered.length === 0) {
@@ -1071,6 +1215,11 @@
           e.preventDefault();
           toggleFullscreen();
           break;
+        case 'p':
+        case 'P':
+          e.preventDefault();
+          openPresenterView();
+          break;
         case 'g':
         case 'G':
         case 'Escape':
@@ -1205,7 +1354,12 @@
           try {
             projectorBc = new BroadcastChannel('davnor_projector_sync');
             projectorBc.onmessage = function (e) {
-              if (!e.data || e.data.deckKey !== key) return;
+              if (!e.data) return;
+              if (e.data.action === 'NAVIGATE_DECK' && e.data.targetUrl) {
+                window.location.href = e.data.targetUrl;
+                return;
+              }
+              if (e.data.deckKey !== key) return;
               var action = e.data.action;
               if (action === 'GOTO_SLIDE' && typeof e.data.slideIndex === 'number') {
                 isHandlingRemoteSync = true;
@@ -1239,6 +1393,15 @@
       }
 
       window.addEventListener('storage', function (e) {
+        if (e.key === 'davnor_projector_sync_msg' && e.newValue) {
+          try {
+            var payload = JSON.parse(e.newValue);
+            if (payload && payload.action === 'NAVIGATE_DECK' && payload.targetUrl) {
+              window.location.href = payload.targetUrl;
+              return;
+            }
+          } catch (err) {}
+        }
         if (e.key === 'davnor_deck_' + key) {
           slides = loadSlides();
           renderCurrentSlide();
@@ -1323,6 +1486,8 @@
     next: next,
     prev: prev,
     toggleFullscreen: toggleFullscreen,
+    openPresenterView: openPresenterView,
+    openPresenter: openPresenterView,
     toggleDrawer: toggleDrawer,
     toggleSound: toggleSound,
     triggerConfetti: triggerConfetti,

@@ -6,8 +6,8 @@
     "type": "title",
     "event": "2026 PROVINCIAL NUTRITION CONGRESS",
     "subEvent": "Province of Davao del Norte \u00b7 Provincial Health Office",
-    "title": "RECOGNITION OF THE PROVINCIAL NUTRITION EVALUATION TEAM (PNET)",
-    "category": "PNET RECOGNITION",
+    "title": "RECOGNITION OF PROVINCIAL NUTRITION EVALUATION TEAM & TECHNICAL WORKING GROUP",
+    "category": "PNET & TWG RECOGNITION",
     "citation": "Honoring the rigorous assessment, field evaluations, and dedicated monitoring of nutrition programs"
   },
   {
@@ -83,23 +83,23 @@
   {
     "id": 8,
     "type": "awardee",
-    "title": "JHON LYN MOSQUEDA",
+    "title": "PROVINCIAL SOCIAL WELFARE AND DEVELOPMENT OFFICE",
     "number": 8,
-    "category": "CERTIFICATE OF RECOGNITION",
-    "subtitle": "Provincial Social Welfare and Development Office (PSWDO)",
-    "categoryTag": "PNET EVALUATOR"
-  },
-  {
-    "id": 9,
-    "type": "awardee",
-    "title": "PROVINCIAL HUMAN RESOURCE MANAGEMENT OFFICE",
-    "number": 9,
     "category": "CERTIFICATE OF RECOGNITION",
     "citations": [
       "FEVELYN M. MARFE, RSW, MPA, MSSW",
       "NOVELYN Y. CADABONA, RSW"
     ],
-    "categoryTag": "PNET EVALUATOR"
+    "categoryTag": "PNET & TWG"
+  },
+  {
+    "id": 9,
+    "type": "awardee",
+    "title": "MS. JHON LYN MOSQUEDA",
+    "number": 9,
+    "category": "CERTIFICATE OF RECOGNITION",
+    "subtitle": "Provincial Human Resource Management Office (PHRMO)",
+    "categoryTag": "PNET & TWG"
   },
   {
     "id": 10,

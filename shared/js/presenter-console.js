@@ -5,6 +5,140 @@
 (function () {
   'use strict';
 
+  var SUITE_SEQUENCES = {
+    'nutrition-congress-2026': [
+      { folder: '00-program-flow', title: 'Deck 00 · Program Flow', shortTitle: 'Deck 00 · Program Flow', deckNum: '00' },
+      { folder: '01-pangga-ko-si-sam', title: 'Deck 01 · Pangga Ko Si Sam Special Feature', shortTitle: 'Deck 01 · Pangga Ko Si Sam', deckNum: '01' },
+      { folder: '02-outstanding-lgu', title: 'Deck 02 · Outstanding LGU Awards', shortTitle: 'Deck 02 · Outstanding LGU', deckNum: '02' },
+      { folder: '03-outstanding-lnfp', title: 'Deck 03 · Outstanding LNFP Awards', shortTitle: 'Deck 03 · Outstanding LNFP', deckNum: '03' },
+      { folder: '04-special-awards', title: 'Deck 04 · Special & Contender Awards', shortTitle: 'Deck 04 · Special Awards', deckNum: '04' },
+      { folder: '05-regional-and-pnc', title: 'Deck 05 · Regional Champions & PNC', shortTitle: 'Deck 05 · Regional & PNC', deckNum: '05' },
+      { folder: '06-pnet-recognition', title: 'Deck 06 · PNET Recognition & Fellowship', shortTitle: 'Deck 06 · PNET Recognition', deckNum: '06' },
+      { folder: '07-bns-loyalty-awards', title: 'Deck 07 · BNS Loyalty & Closing Ceremony', shortTitle: 'Deck 07 · BNS Loyalty Awards', deckNum: '07' }
+    ],
+    'tb-summit-2026': [
+      { folder: '01-special-awards', title: 'Deck 01 · Special Awards', shortTitle: 'Deck 01 · Special Awards', deckNum: '01' },
+      { folder: '02-referring-facilities', title: 'Deck 02 · Referring Facilities', shortTitle: 'Deck 02 · Referring Facilities', deckNum: '02' },
+      { folder: '03-individual-awards', title: 'Deck 03 · Individual Awards', shortTitle: 'Deck 03 · Individual Awards', deckNum: '03' },
+      { folder: '04-tb-providers', title: 'Deck 04 · TB Providers', shortTitle: 'Deck 04 · TB Providers', deckNum: '04' },
+      { folder: '05-top-health-centers', title: 'Deck 05 · Top Health Centers', shortTitle: 'Deck 05 · Top Health Centers', deckNum: '05' },
+      { folder: '06-top-bhw-10-4', title: 'Deck 06 · Top BHW (10-4)', shortTitle: 'Deck 06 · Top BHW 10-4', deckNum: '06' },
+      { folder: '07-top-barangay-10-4', title: 'Deck 07 · Top Barangay (10-4)', shortTitle: 'Deck 07 · Top Barangay 10-4', deckNum: '07' },
+      { folder: '08-consolation-tb-providers', title: 'Deck 08 · Consolation TB Providers', shortTitle: 'Deck 08 · Consolation', deckNum: '08' },
+      { folder: '09-top-bhw-3-1', title: 'Deck 09 · Top BHW (3-1)', shortTitle: 'Deck 09 · Top BHW 3-1', deckNum: '09' },
+      { folder: '10-top-barangay-3-1', title: 'Deck 10 · Top Barangay (3-1)', shortTitle: 'Deck 10 · Top Barangay 3-1', deckNum: '10' },
+      { folder: '11-top-tb-providers-3-1', title: 'Deck 11 · Top TB Providers (3-1)', shortTitle: 'Deck 11 · Top TB Providers', deckNum: '11' }
+    ],
+    'root': [
+      { folder: '00-program-health-summit-2026', title: 'Deck 00 · Health Summit Preliminaries', shortTitle: 'Deck 00 · Preliminaries', deckNum: '00' },
+      { folder: '01-group-awardees', title: 'Deck 01 · Group Awardees', shortTitle: 'Deck 01 · Group Awardees', deckNum: '01' },
+      { folder: '02-individual-awardees', title: 'Deck 02 · Individual Awardees', shortTitle: 'Deck 02 · Individual Awardees', deckNum: '02' },
+      { folder: '03-top-program-managers', title: 'Deck 03 · Top Performing Program Managers', shortTitle: 'Deck 03 · Top Program Managers', deckNum: '03' },
+      { folder: '04-consolation-and-winners', title: 'Deck 04 · Consolation & Winners', shortTitle: 'Deck 04 · Consolation & Winners', deckNum: '04' },
+      { folder: '05-official-results', title: 'Deck 05 · Official Results', shortTitle: 'Deck 05 · Official Results', deckNum: '05' }
+    ]
+  };
+
+  function getCurrentDeckLocation() {
+    var path = (typeof window !== 'undefined' && window.location && window.location.pathname) ? window.location.pathname.replace(/\\/g, '/') : '';
+    var parts = path.split('/').filter(Boolean);
+    var currentFolder = '';
+    var suiteKey = 'root';
+
+    for (var i = parts.length - 1; i >= 0; i--) {
+      var p = parts[i];
+      if (p.toLowerCase().indexOf('.html') !== -1 || p.toLowerCase().indexOf('.htm') !== -1) {
+        continue;
+      }
+      if (!currentFolder) {
+        currentFolder = p;
+        continue;
+      }
+      if (p.toLowerCase().indexOf('nutrition') !== -1) {
+        suiteKey = 'nutrition-congress-2026';
+        break;
+      }
+      if (p.toLowerCase().indexOf('tb-summit') !== -1) {
+        suiteKey = 'tb-summit-2026';
+        break;
+      }
+    }
+    if (path.indexOf('nutrition-congress-2026') !== -1) suiteKey = 'nutrition-congress-2026';
+    else if (path.indexOf('tb-summit-2026') !== -1) suiteKey = 'tb-summit-2026';
+
+    return { suiteKey: suiteKey, currentFolder: currentFolder };
+  }
+
+  function getNextDeckInfo() {
+    var loc = getCurrentDeckLocation();
+    var list = SUITE_SEQUENCES[loc.suiteKey] || SUITE_SEQUENCES['root'];
+    var curIdx = -1;
+
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].folder.toLowerCase() === loc.currentFolder.toLowerCase()) {
+        curIdx = i;
+        break;
+      }
+    }
+
+    if (curIdx === -1 && loc.currentFolder) {
+      var numPrefix = loc.currentFolder.split('-')[0];
+      if (numPrefix) {
+        for (var j = 0; j < list.length; j++) {
+          if (list[j].deckNum === numPrefix || list[j].folder.indexOf(numPrefix + '-') === 0) {
+            curIdx = j;
+            break;
+          }
+        }
+      }
+    }
+
+    if (curIdx !== -1 && curIdx + 1 < list.length) {
+      var nextDeck = list[curIdx + 1];
+      return {
+        folder: nextDeck.folder,
+        title: nextDeck.title,
+        shortTitle: nextDeck.shortTitle,
+        deckNum: nextDeck.deckNum,
+        previewUrl: '../' + nextDeck.folder + '/index.html?mode=preview#0',
+        projectorUrl: '../' + nextDeck.folder + '/index.html?mode=projector#0',
+        presenterUrl: '../' + nextDeck.folder + '/presenter.html#0',
+        btnLabel: nextDeck.shortTitle
+      };
+    }
+    return null;
+  }
+
+  function advanceToNextDeck(nextDeck) {
+    if (!nextDeck) return;
+
+    // 1. Send broadcast message so projector window navigates seamlessly
+    syncToProjector('NAVIGATE_DECK', {
+      targetUrl: nextDeck.projectorUrl,
+      nextDeckKey: nextDeck.folder,
+      currentDeckKey: getDeckKey()
+    });
+
+    // 2. Also navigate directly if handle exists
+    try {
+      if (projectorWindow && !projectorWindow.closed) {
+        projectorWindow.location.href = nextDeck.projectorUrl;
+      }
+    } catch (e) {}
+
+    // 3. Save active deck folder to localStorage
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        window.localStorage.setItem('davnor_active_deck_folder', nextDeck.folder);
+      }
+    } catch (e) {}
+
+    // 4. Smoothly navigate the presenter console window
+    if (typeof window !== 'undefined') {
+      window.location.href = nextDeck.presenterUrl;
+    }
+  }
+
   function getDeckKey() {
     if (typeof window !== 'undefined' && window.DECK_KEY) return window.DECK_KEY;
     var path = (typeof window !== 'undefined' && window.location && window.location.pathname) ? window.location.pathname.toLowerCase() : '';
@@ -92,6 +226,7 @@
       var subtitle = (s.subtitle || '').toLowerCase();
       var municipality = (s.municipality || '').toLowerCase();
       var category = (s.category || '').toLowerCase();
+      var deptStr = (s.department || '').toLowerCase();
       var citationsStr = Array.isArray(s.citations) ? s.citations.join(' ').toLowerCase() : '';
 
       var matched = false;
@@ -113,7 +248,7 @@
         matched = true;
         score += 30;
       }
-      if (subtitle.indexOf(q) !== -1 || citationsStr.indexOf(q) !== -1) {
+      if (subtitle.indexOf(q) !== -1 || citationsStr.indexOf(q) !== -1 || deptStr.indexOf(q) !== -1) {
         matched = true;
         score += 20;
       }
@@ -164,6 +299,13 @@
   }
 
   function next() {
+    if (currentIndex >= slides.length - 1) {
+      var nextDeck = getNextDeckInfo();
+      if (nextDeck) {
+        advanceToNextDeck(nextDeck);
+        return;
+      }
+    }
     jumpToSlide(currentIndex + 1);
   }
 
@@ -204,19 +346,38 @@
     if (nextFrame) {
       if (nextIndex < slides.length) {
         nextFrame.style.display = 'block';
-        try {
-          if (nextFrame.contentWindow && nextFrame.contentWindow.PresentationEngine && typeof nextFrame.contentWindow.PresentationEngine.goToSlide === 'function') {
-            nextFrame.contentWindow.PresentationEngine.goToSlide(nextIndex);
-          } else if (nextFrame.contentWindow && nextFrame.contentWindow.postMessage) {
-            nextFrame.contentWindow.postMessage({ type: 'RENDER_SLIDE', slideIndex: nextIndex }, '*');
-          } else {
+        if (typeof nextFrame.getAttribute === 'function' && nextFrame.getAttribute('data-is-next-deck')) {
+          if (typeof nextFrame.removeAttribute === 'function') {
+            nextFrame.removeAttribute('data-is-next-deck');
+          }
+          nextFrame.src = 'index.html?mode=preview#' + nextIndex;
+        } else {
+          try {
+            if (nextFrame.contentWindow && nextFrame.contentWindow.PresentationEngine && typeof nextFrame.contentWindow.PresentationEngine.goToSlide === 'function') {
+              nextFrame.contentWindow.PresentationEngine.goToSlide(nextIndex);
+            } else if (nextFrame.contentWindow && nextFrame.contentWindow.postMessage) {
+              nextFrame.contentWindow.postMessage({ type: 'RENDER_SLIDE', slideIndex: nextIndex }, '*');
+            } else {
+              nextFrame.src = 'index.html?mode=preview#' + nextIndex;
+            }
+          } catch (e) {
             nextFrame.src = 'index.html?mode=preview#' + nextIndex;
           }
-        } catch (e) {
-          nextFrame.src = 'index.html?mode=preview#' + nextIndex;
         }
       } else {
-        nextFrame.style.display = 'none';
+        var nextDeck = getNextDeckInfo();
+        if (nextDeck) {
+          nextFrame.style.display = 'block';
+          var isLoaded = (typeof nextFrame.getAttribute === 'function') ? nextFrame.getAttribute('data-is-next-deck') : null;
+          if (isLoaded !== nextDeck.folder) {
+            if (typeof nextFrame.setAttribute === 'function') {
+              nextFrame.setAttribute('data-is-next-deck', nextDeck.folder);
+            }
+            nextFrame.src = nextDeck.previewUrl;
+          }
+        } else {
+          nextFrame.style.display = 'none';
+        }
       }
     }
 
@@ -225,23 +386,119 @@
       counter.textContent = 'Slide ' + (currentIndex + 1) + ' of ' + slides.length;
     }
 
+    var curNum = document.getElementById('currentSlideNum');
+    if (curNum) {
+      curNum.textContent = (currentIndex + 1);
+    }
+    var totalNum = document.getElementById('totalSlidesNum');
+    if (totalNum) {
+      totalNum.textContent = slides.length;
+    }
+
     var prevBtn = document.getElementById('prevSlideBtn');
     if (prevBtn) {
       prevBtn.disabled = (currentIndex === 0);
     }
+
     var nextBtn = document.getElementById('nextSlideBtn');
-    if (nextBtn) {
-      nextBtn.disabled = (currentIndex >= slides.length - 1);
+    var navNext = document.getElementById('navNextBtn');
+
+    if (nextIndex < slides.length) {
+      if (nextBtn) {
+        nextBtn.disabled = false;
+        nextBtn.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>';
+        nextBtn.style.width = '';
+        nextBtn.title = 'Next Slide (→ / Space / Enter)';
+      }
+      if (navNext) {
+        navNext.disabled = false;
+      }
+    } else {
+      var nextDeckInfo = getNextDeckInfo();
+      if (nextDeckInfo) {
+        if (nextBtn) {
+          nextBtn.disabled = false;
+          nextBtn.innerHTML = '<span style="display:inline-flex; align-items:center; gap:6px; font-weight:700; font-size:0.85rem; padding:0 10px; white-space:nowrap;">Next: ' + nextDeckInfo.shortTitle + ' <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></span>';
+          nextBtn.style.width = 'auto';
+          nextBtn.title = 'Advance to ' + nextDeckInfo.title + ' (→ / Space / Enter)';
+        }
+        if (navNext) {
+          navNext.disabled = false;
+        }
+      } else {
+        if (nextBtn) {
+          nextBtn.disabled = true;
+          nextBtn.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>';
+          nextBtn.style.width = '';
+          nextBtn.title = 'End of Ceremony';
+        }
+        if (navNext) {
+          navNext.disabled = true;
+        }
+      }
     }
 
-    var notes = document.getElementById('slideNotesContent');
+    var navPrev = document.getElementById('navPrevBtn');
+    if (navPrev) {
+      navPrev.disabled = (currentIndex === 0);
+    }
+
+    var curHeading = document.getElementById('currentSlideTitle');
+    if (curHeading && slides[currentIndex]) {
+      curHeading.textContent = slides[currentIndex].title || ('Slide ' + (currentIndex + 1));
+    }
+
+    var nextLbl = document.getElementById('nextSlideLabel');
+    if (!nextLbl) {
+      var nextHeader = document.querySelector('.presenter-next-wrapper .pane-header');
+      if (nextHeader) {
+        nextLbl = document.createElement('span');
+        nextLbl.id = 'nextSlideLabel';
+        nextLbl.className = 'live-badge';
+        nextHeader.appendChild(nextLbl);
+      }
+    }
+
+    if (nextLbl) {
+      if (nextIndex < slides.length) {
+        nextLbl.textContent = 'Slide ' + (nextIndex + 1);
+        nextLbl.style.background = '';
+        nextLbl.style.color = '';
+        nextLbl.style.borderColor = '';
+      } else {
+        var upcomingDeck = getNextDeckInfo();
+        if (upcomingDeck) {
+          nextLbl.textContent = 'Next Deck · ' + upcomingDeck.shortTitle;
+          nextLbl.style.background = 'rgba(74, 222, 128, 0.2)';
+          nextLbl.style.color = '#4ade80';
+          nextLbl.style.border = '1px solid rgba(74, 222, 128, 0.5)';
+        } else {
+          nextLbl.textContent = 'End of Ceremony';
+          nextLbl.style.background = 'rgba(239, 68, 68, 0.2)';
+          nextLbl.style.color = '#f87171';
+          nextLbl.style.border = '1px solid rgba(239, 68, 68, 0.4)';
+        }
+      }
+    }
+
+    var notes = document.getElementById('slideNotesContent') || document.getElementById('presenterNotesBody');
     if (notes && slides[currentIndex]) {
       var cur = slides[currentIndex];
       var html = '<strong>' + (cur.title || 'Slide ' + (currentIndex + 1)) + '</strong>';
-      if (cur.category) html += '<br><span style="color:var(--pres-gold);">' + cur.category + '</span>';
+      if (cur.category) html += '<br><span style="color:var(--pres-gold, #FAC611);">' + cur.category + '</span>';
       if (cur.subtitle) html += '<br><span style="color:#A0A6B5;">' + cur.subtitle + '</span>';
+      if (cur.department) html += '<br><span style="color:#D49000; font-size:0.85rem;">' + cur.department + '</span>';
       if (Array.isArray(cur.citations) && cur.citations.length > 0) {
         html += '<br><div style="margin-top:4px; font-size:0.8rem; color:#CCD1DE;">Citations: ' + cur.citations.join(' · ') + '</div>';
+      }
+      if (nextIndex >= slides.length) {
+        var nextDeckNotice = getNextDeckInfo();
+        if (nextDeckNotice) {
+          html += '<div style="margin-top:14px; padding:10px 12px; background:rgba(74, 222, 128, 0.12); border:1px solid rgba(74, 222, 128, 0.4); border-radius:8px; color:#4ade80; font-size:0.84rem; line-height:1.4;">' +
+            '<strong>⏩ CONTINUITY READY:</strong> Final slide of this deck.<br>' +
+            '<span style="color:#CCD1DE;">Pressing <strong>Next (→)</strong> will seamlessly advance Presenter Console & Projector to <strong>' + nextDeckNotice.title + '</strong>.</span>' +
+          '</div>';
+        }
       }
       notes.innerHTML = html;
     }
@@ -384,8 +641,15 @@
       nextFrame.addEventListener('load', function () {
         try {
           var nIdx = currentIndex + 1;
-          if (nextFrame.contentWindow && nextFrame.contentWindow.PresentationEngine) {
-            nextFrame.contentWindow.PresentationEngine.goToSlide(nIdx);
+          if (nIdx < slides.length) {
+            if (nextFrame.contentWindow && nextFrame.contentWindow.PresentationEngine) {
+              nextFrame.contentWindow.PresentationEngine.goToSlide(nIdx);
+            }
+          } else {
+            // Next deck preview loads at slide 0
+            if (nextFrame.contentWindow && nextFrame.contentWindow.PresentationEngine) {
+              nextFrame.contentWindow.PresentationEngine.goToSlide(0);
+            }
           }
         } catch (e) {}
       });
@@ -503,6 +767,23 @@
     syncToProjector('TRIGGER_SOUND');
   }
 
+  function clearSearch() {
+    closeSearch();
+  }
+
+  function toggleBlackout() {
+    syncToProjector('TOGGLE_BLACKOUT');
+  }
+
+  function adjustNotesZoom(delta) {
+    if (typeof window === 'undefined') return;
+    var notes = document.getElementById('presenterNotesBody') || document.getElementById('slideNotesContent');
+    if (notes) {
+      var currentSize = parseFloat(window.getComputedStyle ? window.getComputedStyle(notes).fontSize : '16') || 16;
+      notes.style.fontSize = Math.max(12, Math.min(32, currentSize + (delta || 1) * 2)) + 'px';
+    }
+  }
+
   if (typeof document !== 'undefined') {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', init);
@@ -519,13 +800,22 @@
     jumpToSlide: jumpToSlide,
     next: next,
     prev: prev,
+    navigateNext: next,
+    navigatePrev: prev,
+    clearSearch: clearSearch,
+    toggleBlackout: toggleBlackout,
+    adjustNotesZoom: adjustNotesZoom,
     openProjectorWindow: openProjectorWindow,
     toggleTimer: toggleTimer,
     resetTimer: resetTimer,
     triggerConfetti: triggerConfetti,
     triggerSound: triggerSound,
     getCurrentIndex: function () { return currentIndex; },
-    getSlides: function () { return slides; }
+    getSlides: function () { return slides; },
+    getCurrentDeckLocation: getCurrentDeckLocation,
+    getNextDeckInfo: getNextDeckInfo,
+    advanceToNextDeck: advanceToNextDeck,
+    SUITE_SEQUENCES: SUITE_SEQUENCES
   };
 
   if (typeof window !== 'undefined') {

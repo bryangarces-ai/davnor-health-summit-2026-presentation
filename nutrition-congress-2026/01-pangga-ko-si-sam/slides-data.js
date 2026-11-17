@@ -40,7 +40,7 @@
   {
     "id": 4,
     "type": "awardee",
-    "title": "DAVAO DEL NORTE HOSPITAL IGACOS ZONE",
+    "title": "DAVAO DEL NORTE HOSPITAL IGCS ZONE",
     "number": 4,
     "category": "PLAQUE OF APPRECIATION",
     "subtitle": "Provincial Hospital Network \u00b7 Davao del Norte",
@@ -58,7 +58,7 @@
   {
     "id": 6,
     "type": "awardee",
-    "title": "MARSMAN DRYSDALE FOUNDATION INC. (MDFI)",
+    "title": "MARSMAN DRYSDALE FOUNDATION INC.",
     "number": 6,
     "category": "PLAQUE OF APPRECIATION",
     "subtitle": "Non-Government Organization Partner",
@@ -66,6 +66,68 @@
   },
   {
     "id": 7,
+    "type": "awardee",
+    "title": "J BITES CATERING SERVICES",
+    "number": 7,
+    "category": "PLAQUE OF APPRECIATION",
+    "subtitle": "Private Sector Partner",
+    "categoryTag": "PANGGA KO SI SAM PARTNER"
+  },
+  {
+    "id": 8,
+    "type": "awardee",
+    "title": "BEAN & BARREL & VERAX PHARMACY",
+    "number": 8,
+    "category": "PLAQUE OF APPRECIATION",
+    "subtitle": "Private Sector Partners",
+    "categoryTag": "PANGGA KO SI SAM PARTNERS"
+  },
+  {
+    "id": 9,
+    "type": "awardee",
+    "title": "KAAGAPAY",
+    "number": 9,
+    "category": "PLAQUE OF APPRECIATION",
+    "subtitle": "Civil Society Partner \u00b7 Davao del Norte",
+    "categoryTag": "PANGGA KO SI SAM PARTNER"
+  },
+  {
+    "id": 10,
+    "type": "awardee",
+    "title": "PRINCESS M. ALCAZAR",
+    "number": 10,
+    "category": "PLAQUE OF APPRECIATION",
+    "subtitle": "Nutrition Partner & Champion",
+    "categoryTag": "PANGGA KO SI SAM PARTNER"
+  },
+  {
+    "id": 11,
+    "type": "awardee",
+    "title": "DONNA-LI FUENTES",
+    "number": 11,
+    "category": "PLAQUE OF APPRECIATION",
+    "subtitle": "Nutrition Partner & Champion",
+    "categoryTag": "PANGGA KO SI SAM PARTNER"
+  },
+  {
+    "id": 12,
+    "type": "awardee",
+    "title": "CENIZA SANVICENTE",
+    "number": 12,
+    "category": "PLAQUE OF APPRECIATION",
+    "subtitle": "Nutrition Partner & Champion",
+    "categoryTag": "PANGGA KO SI SAM PARTNER"
+  },
+  {
+    "id": 13,
+    "type": "awardee",
+    "title": "RAFFLES AND DOOR PRIZES",
+    "category": "SPECIAL FELLOWSHIP",
+    "subtitle": "Exciting Prizes for our Dedicated Nutrition Workers",
+    "categoryTag": "LUCKY DRAW \u00b7 BATCH 1"
+  },
+  {
+    "id": 14,
     "type": "closing",
     "event": "2026 PROVINCIAL NUTRITION CONGRESS",
     "title": "CONGRATULATIONS TO OUR PARTNERS!",

@@ -102,10 +102,72 @@
   },
   {
     "id": 11,
+    "type": "awardee",
+    "title": "ANESIA F. BABOR",
+    "category": "LEGACY OF LEADERSHIP IN NUTRITION AWARD",
+    "subtitle": "Former Municipal Nutrition Program Coordinator \u00b7 Municipality of Carmen",
+    "department": "Leadership Honoree",
+    "categoryTag": "LEGACY OF LEADERSHIP"
+  },
+  {
+    "id": 12,
+    "type": "awardee",
+    "title": "NELIA M. RODILLAS, RND",
+    "category": "LEGACY OF LEADERSHIP IN NUTRITION AWARD",
+    "subtitle": "Former City Nutrition Program Coordinator \u00b7 Island Garden City of Samal (IGACOS)",
+    "department": "Leadership Honoree",
+    "categoryTag": "LEGACY OF LEADERSHIP"
+  },
+  {
+    "id": 13,
+    "type": "awardee",
+    "title": "DR. MA. SUSAN B. GANTUANGCO",
+    "category": "LEGACY OF LEADERSHIP IN NUTRITION AWARD",
+    "subtitle": "Former City Nutrition Program Coordinator \u00b7 City of Tagum",
+    "department": "Leadership Honoree",
+    "categoryTag": "LEGACY OF LEADERSHIP"
+  },
+  {
+    "id": 14,
+    "type": "awardee",
+    "title": "MAYFLOR PERALTA-ESPIRITU, RND",
+    "category": "PILLAR OF NUTRITION EDUCATION AWARD",
+    "subtitle": "Nutrition Program Manager \u00b7 Department of Health - Davao Region (DOH-CHD XI)",
+    "department": "Nutrition Education Pillar",
+    "categoryTag": "PILLAR OF EDUCATION"
+  },
+  {
+    "id": 15,
+    "type": "awardee",
+    "title": "DR. CATHERINE A. LOZARITO",
+    "category": "PILLAR OF NUTRITION EDUCATION AWARD",
+    "subtitle": "Junior Consultant \u00b7 Medical Nutrition Department \u00b7 Davao Regional Medical Center",
+    "department": "Nutrition Education Pillar",
+    "categoryTag": "PILLAR OF EDUCATION"
+  },
+  {
+    "id": 16,
+    "type": "awardee",
+    "title": "DR. STEPHANIE ALVA P. RISONAR",
+    "category": "PILLAR OF NUTRITION EDUCATION AWARD",
+    "subtitle": "Rural Health Physician \u00b7 Samal District",
+    "department": "Nutrition Education Pillar",
+    "categoryTag": "PILLAR OF EDUCATION"
+  },
+  {
+    "id": 17,
+    "type": "awardee",
+    "title": "RAFFLES AND DOOR PRIZES",
+    "category": "SPECIAL FELLOWSHIP",
+    "subtitle": "Exciting Prizes for our Dedicated Nutrition Workers",
+    "categoryTag": "LUCKY DRAW \u00b7 BATCH 3"
+  },
+  {
+    "id": 18,
     "type": "closing",
     "event": "2026 PROVINCIAL NUTRITION CONGRESS",
-    "title": "CONGRATULATIONS TINGUHA AWARDEES!",
-    "subTitle": "Excellence in Malnutrition Reduction & High Coverage",
+    "title": "CONGRATULATIONS TINGUHA AWARDEES & SPECIAL HONOREES!",
+    "subTitle": "Excellence in Malnutrition Reduction, Leadership & Education",
     "citation": "Setting the benchmark for nutritional health and well-being throughout Davao del Norte."
   }
 ];

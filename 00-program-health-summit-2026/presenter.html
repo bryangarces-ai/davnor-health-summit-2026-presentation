@@ -69,6 +69,7 @@
         <div class="presenter-next-wrapper">
           <div class="pane-header">
             <span class="pane-title">Next Slide</span>
+            <span id="nextSlideLabel" class="live-badge" style="background: rgba(250, 198, 17, 0.2); color: #FAC611; border: 1px solid rgba(250, 198, 17, 0.5);">Slide 2</span>
           </div>
           <div class="presenter-next-preview">
             <iframe id="nextSlideFrame" class="slide-frame" src="index.html?mode=preview#1" title="Next Slide Preview"></iframe>
@@ -111,6 +112,9 @@
     </footer>
   </div>
 
+  <script>
+    window.DECK_KEY = '00-program';
+  </script>
   <script src="slides-data.js"></script>
   <script src="../shared/js/logos-config.js"></script>
   <script src="../shared/js/cloud-sync.js"></script>

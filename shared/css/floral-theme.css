@@ -260,6 +260,65 @@ html, body {
   max-width: 1100px;
 }
 
+.awardee-department {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.45vw, 1.45rem);
+  font-weight: 700;
+  color: var(--gold-rich, #B45309);
+  line-height: 1.35;
+  max-width: 1100px;
+  margin-top: clamp(0.35rem, 0.7vh, 0.75rem);
+  letter-spacing: 0.5px;
+}
+
+/* Speaker / Dignitary Photo Card Layout */
+.award-card--with-photo {
+  padding-top: clamp(1.2rem, 2.2vh, 2.2rem);
+  padding-bottom: clamp(1.6rem, 2.8vh, 2.8rem);
+}
+
+.award-card--with-photo .awardee-name {
+  font-size: clamp(1.6rem, 2.8vw, 3.2rem);
+  margin-bottom: clamp(0.4rem, 0.8vh, 0.8rem);
+  line-height: 1.2;
+}
+
+.award-card--with-photo .ceremonial-divider {
+  margin-bottom: clamp(0.4rem, 0.8vh, 0.8rem);
+}
+
+.awardee-photo-frame {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: clamp(0.3rem, 0.8vh, 0.8rem) auto clamp(0.6rem, 1.2vh, 1.2rem);
+  border-radius: 20px;
+  padding: 5px;
+  background: linear-gradient(135deg, #FAC611 0%, #D49000 35%, #FFDF85 70%, #C6591B 100%);
+  box-shadow: 
+    0 14px 38px rgba(15, 30, 54, 0.28),
+    0 4px 16px rgba(212, 175, 55, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.awardee-photo-frame:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    0 18px 46px rgba(15, 30, 54, 0.36),
+    0 0 28px rgba(250, 198, 17, 0.5);
+}
+
+.awardee-photo-img {
+  width: clamp(140px, 18vh, 220px);
+  height: clamp(170px, 23vh, 275px);
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 16px;
+  display: block;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(235, 240, 248, 0.95) 100%);
+}
+
 /* Compact Card Mode for Multi-Award Slides (Tagum, Panabo, New Corella, Samal, etc.) */
 .award-card--multi-awards {
   padding-top: clamp(1rem, 2vh, 1.8rem);
@@ -1088,4 +1147,39 @@ body.controls-hidden .progress-bar-container {
   max-height: 65vh;
   object-fit: contain;
   border-radius: 8px;
+}
+
+/* LGU Official Seal / Logo Frame on Stage */
+.award-card--with-logo .awardee-logo-frame {
+  width: clamp(140px, 20vh, 220px) !important;
+  height: clamp(140px, 20vh, 220px) !important;
+  border-radius: clamp(20px, 2.5vw, 32px) !important;
+  padding: 6px !important;
+  background: linear-gradient(135deg, #FAC611 0%, #D49000 35%, #FFDF85 70%, #C6591B 100%) !important;
+  box-shadow: 
+    0 16px 45px rgba(0, 0, 0, 0.7),
+    0 0 32px rgba(250, 198, 17, 0.45) !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: clamp(0.2rem, 0.6vh, 0.6rem) auto clamp(0.5rem, 1vh, 1rem) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.award-card--with-logo .awardee-logo-frame:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 
+    0 22px 50px rgba(0, 0, 0, 0.8),
+    0 0 42px rgba(250, 198, 17, 0.65) !important;
+}
+
+.award-card--with-logo .awardee-logo-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  border-radius: clamp(16px, 2vw, 26px) !important;
+  background: radial-gradient(circle at center, rgba(15, 30, 54, 0.85) 0%, rgba(7, 14, 28, 0.95) 100%) !important;
+  box-sizing: border-box;
+  padding: clamp(6px, 1vh, 10px);
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.5));
 }

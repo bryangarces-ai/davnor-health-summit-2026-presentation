@@ -30,14 +30,14 @@ def test_nutrition_suite():
 
     # 3. Verify Decks
     expected_decks = [
-        ("00-program-flow", 16),
-        ("01-pangga-ko-si-sam", 8),
-        ("02-outstanding-lgu", 4),
-        ("03-outstanding-lnfp", 13),
-        ("04-special-awards", 12),
-        ("05-regional-and-pnc", 21),
+        ("00-program-flow", 17),
+        ("01-pangga-ko-si-sam", 15),
+        ("02-outstanding-lgu", 13),
+        ("03-outstanding-lnfp", 24),
+        ("04-special-awards", 19),
+        ("05-regional-and-pnc", 20),
         ("06-pnet-recognition", 15),
-        ("07-bns-loyalty-awards", 18)
+        ("07-bns-loyalty-awards", 22)
     ]
 
     total_slides = 0

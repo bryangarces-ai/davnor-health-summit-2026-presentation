@@ -264,11 +264,46 @@
   },
   {
     "id": 17,
+    "type": "awardee",
+    "title": "RAFFLES AND DOOR PRIZES",
+    "category": "SPECIAL FELLOWSHIP",
+    "subtitle": "Grand Raffle Draw \u00b7 Exciting Prizes for our Dedicated Nutrition Workers",
+    "categoryTag": "LUCKY DRAW \u00b7 BATCH 4"
+  },
+  {
+    "id": 18,
+    "type": "awardee",
+    "title": "JOSEPHINE THERESE P. PARRE\u00d1AS, RN, MD",
+    "category": "CLOSING REMARKS",
+    "subtitle": "Provincial Health Officer I",
+    "department": "Provincial Health Office \u00b7 Province of Davao del Norte",
+    "categoryTag": "CLOSING PROGRAM"
+  },
+  {
+    "id": 19,
+    "type": "awardee",
+    "title": "LESLEY CADUA, RN",
+    "category": "CLOSING PRAYER",
+    "subtitle": "Nurse III",
+    "department": "Provincial Health Office \u00b7 Province of Davao del Norte",
+    "categoryTag": "CLOSING PROGRAM"
+  },
+  {
+    "id": 20,
+    "type": "awardee",
+    "title": "MR. CHRISTOPHER DAN T. CARIAGA, RN",
+    "category": "MASTERS OF CEREMONY",
+    "subtitle": "Master of Ceremony",
+    "department": "2026 Provincial Nutrition Congress & Awarding Ceremony",
+    "categoryTag": "CEREMONY HOST"
+  },
+  {
+    "id": 21,
     "type": "closing",
     "event": "2026 PROVINCIAL NUTRITION CONGRESS",
-    "title": "SALUTE TO OUR LOYALTY AWARDEES!",
-    "subTitle": "Dungog sa Malungtarong Serbisyo",
-    "citation": "A heartfelt salute to 83 Barangay Nutrition Scholars whose decades of selfless service have nourished Davao del Norte."
+    "title": "DAGHANG SALAMAT SA TANAN!",
+    "subTitle": "Himsog nga Katawhan, Himsog nga Kinaiyahan: Panaghiusa Alang sa Malungtarong Nutrisyon",
+    "citation": "A heartfelt salute to 94 Barangay Nutrition Scholars and all Nutrition Champions whose selfless service nourishes Davao del Norte!"
   }
 ];
 

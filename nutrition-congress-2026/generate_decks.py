@@ -26,9 +26,9 @@ DECKS_CONFIG = [
             {
                 "id": 1,
                 "type": "awardee",
-                "title": "INVOCATION",
+                "title": "PRAYER",
                 "category": "ORDER OF CEREMONY",
-                "subtitle": "DAVNOR PROVINCIAL CAPITOL CHOIR",
+                "subtitle": "SOTERIA CHORALE",
                 "categoryTag": "PART I · 8:00 AM"
             },
             {
@@ -36,31 +36,33 @@ DECKS_CONFIG = [
                 "type": "awardee",
                 "title": "PHILIPPINE NATIONAL ANTHEM",
                 "category": "ORDER OF CEREMONY",
-                "subtitle": "DAVNOR PROVINCIAL CAPITOL CHOIR",
+                "subtitle": "SOTERIA CHORALE",
                 "categoryTag": "PART I · 8:00 AM"
             },
             {
                 "id": 3,
                 "type": "awardee",
-                "title": "INTRODUCTION OF PARTICIPANTS",
-                "category": "ACKNOWLEDGEMENT",
-                "subtitle": "SUNSHINE ANGELIE S. BANTILAN, RND",
-                "department": "Acting Provincial Nutrition Program Coordinator",
-                "categoryTag": "PART I · 8:00 AM"
+                "title": "SUNSHINE ANGELIE S. BANTILAN, RND",
+                "category": "INTRODUCTION OF THE PARTICIPANTS",
+                "subtitle": "Acting Provincial Nutrition Program Coordinator",
+                "department": "Provincial Health Office · Province of Davao del Norte",
+                "categoryTag": "PART I · 8:00 AM",
+                "image": "../../shared/assets/speakers/sunshine angelie bantilan.png"
             },
             {
                 "id": 4,
                 "type": "awardee",
-                "title": "WELCOME ADDRESS",
-                "category": "OPENING REMARKS",
-                "subtitle": "ALFREDO A. LACERONA, MD",
-                "department": "Provincial Health Officer II · DavNor PHO",
-                "categoryTag": "PART I · 8:00 AM"
+                "title": "ALFREDO A. LACERONA, MD",
+                "category": "WELCOME ADDRESS",
+                "subtitle": "Provincial Health Officer II / PNAO",
+                "department": "Provincial Health Office · Province of Davao del Norte",
+                "categoryTag": "PART I · 8:00 AM",
+                "image": "../../shared/assets/speakers/ALFREDO A. LACERONA.png"
             },
             {
                 "id": 5,
                 "type": "awardee",
-                "title": "CULTURAL INTERMISSION",
+                "title": "INTERMISSION NUMBER",
                 "category": "PERFORMANCE",
                 "subtitle": "GANDINGAN CULTURAL AND KULINTANG ENSEMBLE",
                 "categoryTag": "INTERMISSION NUMBER"
@@ -69,34 +71,39 @@ DECKS_CONFIG = [
                 "id": 6,
                 "type": "awardee",
                 "title": "HON. EDWIN I. JUBAHIB, MMPA",
-                "category": "KEYNOTE SPEAKER",
+                "category": "KEYNOTE ADDRESS",
                 "subtitle": "Provincial Governor · Province of Davao del Norte",
-                "categoryTag": "KEYNOTE ADDRESS"
+                "department": "Province of Davao del Norte",
+                "categoryTag": "KEYNOTE SPEAKER",
+                "image": "../../shared/assets/speakers/edwin jubahib.png"
             },
             {
                 "id": 7,
                 "type": "awardee",
-                "title": "EMPOWERING COMMUNITIES THROUGH SUSTAINABLE NUTRITION INTERVENTIONS",
+                "title": "RETSEBETH M. LAQUIHON, RND, MPD, MDM",
                 "category": "KEYNOTE PRESENTATION",
-                "subtitle": "MAYFLOR PERALTA-ESPIRITU, RND",
-                "department": "DOH-XI Nutrition Program Manager · Nutritionist Dietitian IV",
-                "categoryTag": "TECHNICAL SESSION"
+                "subtitle": "Strengthening Local Nutrition Governance: Key Updates, Strategic Directions and Implementation Priorities",
+                "department": "Regional Nutrition Program Coordinator · National Nutrition Council XI",
+                "categoryTag": "STRATEGIC DIRECTIONS",
+                "image": "../../shared/assets/speakers/RETSEBETH M LAQUIHON.jpg"
             },
             {
                 "id": 8,
                 "type": "awardee",
-                "title": "LGU BEST PRACTICES",
-                "category": "AUDIO-VISUAL PRESENTATION",
-                "subtitle": "Inspiring Stories & Milestones of Davao del Norte LGUs",
-                "categoryTag": "AVP SHOWCASE"
+                "title": "INTERMISSION DANCE NUMBER",
+                "category": "PERFORMANCE",
+                "subtitle": "ST. MARY'S COLLEGE",
+                "categoryTag": "INTERMISSION NUMBER"
             },
             {
                 "id": 9,
                 "type": "awardee",
-                "title": "LUNCH BREAK & FELLOWSHIP",
-                "category": "PROGRAM RECESS",
-                "subtitle": "Ceremony Resumes Promptly at 1:00 PM for Part II",
-                "categoryTag": "12:00 PM - 1:00 PM"
+                "title": "MAYFLOR PERALTA-ESPIRITU, RND",
+                "category": "TECHNICAL SESSION",
+                "subtitle": "Empowering Communities Through Sustainable Nutrition Interventions",
+                "department": "DOH-XI Nutrition Program Manager · Nutritionist Dietitian IV",
+                "categoryTag": "KEYNOTE PRESENTATION",
+                "image": "../../shared/assets/speakers/MAYFLOR PERALTA.png"
             },
             {
                 "id": 10,
@@ -104,19 +111,36 @@ DECKS_CONFIG = [
                 "title": "INTERMISSION DANCE NUMBER",
                 "category": "PERFORMANCE",
                 "subtitle": "ST. MARY'S COLLEGE",
-                "categoryTag": "PART II · 1:00 PM"
+                "categoryTag": "INTERMISSION NUMBER"
             },
             {
                 "id": 11,
                 "type": "awardee",
-                "title": "PANGGA KO SI SAM: DAVNOR'S INNOVATIVE INITIATIVE IN THE MANAGEMENT OF SEVERE ACUTE MALNUTRITION",
-                "category": "SPECIAL FEATURE",
-                "subtitle": "HON. CLARICE JUBAHIB",
-                "department": "Provincial Vice Governor · Province of Davao del Norte",
-                "categoryTag": "INITIATIVE SPOTLIGHT"
+                "title": "LGU BEST PRACTICES",
+                "category": "AUDIO-VISUAL PRESENTATION",
+                "subtitle": "Inspiring Stories & Milestones of Davao del Norte LGUs",
+                "categoryTag": "AVP SHOWCASE"
             },
             {
                 "id": 12,
+                "type": "awardee",
+                "title": "INTERMISSION NUMBER",
+                "category": "PERFORMANCE",
+                "subtitle": "QUARTESSENCE",
+                "categoryTag": "PART II · 1:00 PM"
+            },
+            {
+                "id": 13,
+                "type": "awardee",
+                "title": "HON. CLARICE JUBAHIB",
+                "category": "PANGGA KO SI SAM: SPECIAL FEATURE",
+                "subtitle": "DavNor's Innovative Initiative in the Management of Severe Acute Malnutrition",
+                "department": "Provincial Vice Governor · Province of Davao del Norte",
+                "categoryTag": "INITIATIVE SPOTLIGHT",
+                "image": "../../shared/assets/speakers/HON. CLARICE JUBAHIB.jpg"
+            },
+            {
+                "id": 14,
                 "type": "awardee",
                 "title": "PANGGA KO SI SAM AVP",
                 "category": "AUDIO-VISUAL PRESENTATION",
@@ -124,7 +148,7 @@ DECKS_CONFIG = [
                 "categoryTag": "AVP FEATURE"
             },
             {
-                "id": 13,
+                "id": 15,
                 "type": "awardee",
                 "title": "RAFFLES AND DOOR PRIZES",
                 "category": "SPECIAL FELLOWSHIP",
@@ -132,15 +156,7 @@ DECKS_CONFIG = [
                 "categoryTag": "LUCKY DRAW"
             },
             {
-                "id": 14,
-                "type": "awardee",
-                "title": "INTERMISSION NUMBER",
-                "category": "PERFORMANCE",
-                "subtitle": "QUARTESSENCE",
-                "categoryTag": "MUSICAL NUMBER"
-            },
-            {
-                "id": 15,
+                "id": 16,
                 "type": "closing",
                 "event": "2026 PROVINCIAL NUTRITION CONGRESS",
                 "title": "PADAYON SA MALUNGTARONG NUTRISYON!",
@@ -199,7 +215,7 @@ DECKS_CONFIG = [
             {
                 "id": 4,
                 "type": "awardee",
-                "title": "DAVAO DEL NORTE HOSPITAL IGACOS ZONE",
+                "title": "DAVAO DEL NORTE HOSPITAL IGCS ZONE",
                 "number": 4,
                 "category": "PLAQUE OF APPRECIATION",
                 "subtitle": "Provincial Hospital Network · Davao del Norte",
@@ -217,7 +233,7 @@ DECKS_CONFIG = [
             {
                 "id": 6,
                 "type": "awardee",
-                "title": "MARSMAN DRYSDALE FOUNDATION INC. (MDFI)",
+                "title": "MARSMAN DRYSDALE FOUNDATION INC.",
                 "number": 6,
                 "category": "PLAQUE OF APPRECIATION",
                 "subtitle": "Non-Government Organization Partner",
@@ -225,6 +241,68 @@ DECKS_CONFIG = [
             },
             {
                 "id": 7,
+                "type": "awardee",
+                "title": "J BITES CATERING SERVICES",
+                "number": 7,
+                "category": "PLAQUE OF APPRECIATION",
+                "subtitle": "Private Sector Partner",
+                "categoryTag": "PANGGA KO SI SAM PARTNER"
+            },
+            {
+                "id": 8,
+                "type": "awardee",
+                "title": "BEAN & BARREL & VERAX PHARMACY",
+                "number": 8,
+                "category": "PLAQUE OF APPRECIATION",
+                "subtitle": "Private Sector Partners",
+                "categoryTag": "PANGGA KO SI SAM PARTNERS"
+            },
+            {
+                "id": 9,
+                "type": "awardee",
+                "title": "KAAGAPAY",
+                "number": 9,
+                "category": "PLAQUE OF APPRECIATION",
+                "subtitle": "Civil Society Partner · Davao del Norte",
+                "categoryTag": "PANGGA KO SI SAM PARTNER"
+            },
+            {
+                "id": 10,
+                "type": "awardee",
+                "title": "PRINCESS M. ALCAZAR",
+                "number": 10,
+                "category": "PLAQUE OF APPRECIATION",
+                "subtitle": "Nutrition Partner & Champion",
+                "categoryTag": "PANGGA KO SI SAM PARTNER"
+            },
+            {
+                "id": 11,
+                "type": "awardee",
+                "title": "DONNA-LI FUENTES",
+                "number": 11,
+                "category": "PLAQUE OF APPRECIATION",
+                "subtitle": "Nutrition Partner & Champion",
+                "categoryTag": "PANGGA KO SI SAM PARTNER"
+            },
+            {
+                "id": 12,
+                "type": "awardee",
+                "title": "CENIZA SANVICENTE",
+                "number": 12,
+                "category": "PLAQUE OF APPRECIATION",
+                "subtitle": "Nutrition Partner & Champion",
+                "categoryTag": "PANGGA KO SI SAM PARTNER"
+            },
+            {
+                "id": 13,
+                "type": "awardee",
+                "title": "RAFFLES AND DOOR PRIZES",
+                "category": "SPECIAL FELLOWSHIP",
+                "subtitle": "Exciting Prizes for our Dedicated Nutrition Workers",
+                "categoryTag": "LUCKY DRAW · BATCH 1"
+            },
+            {
+                "id": 14,
                 "type": "closing",
                 "event": "2026 PROVINCIAL NUTRITION CONGRESS",
                 "title": "CONGRATULATIONS TO OUR PARTNERS!",
@@ -256,35 +334,116 @@ DECKS_CONFIG = [
             {
                 "id": 1,
                 "type": "awardee",
-                "title": "OFFICIAL CONTENDERS",
+                "title": "MUNICIPALITY OF BRAULIO E. DUJALI",
                 "category": "CERTIFICATE OF RECOGNITION",
                 "subtitle": "Provincial Outstanding LGU in Nutrition Monitoring",
-                "citations": [
-                    "MUNICIPALITY OF BRAULIO E. DUJALI",
-                    "MUNICIPALITY OF CARMEN",
-                    "MUNICIPALITY OF KAPALONG",
-                    "MUNICIPALITY OF NEW CORELLA",
-                    "MUNICIPALITY OF SAWATA",
-                    "MUNICIPALITY OF SANTO TOMAS",
-                    "MUNICIPALITY OF TALAINGOD",
-                    "ISLAND GARDEN CITY OF SAMAL (IGACOS)",
-                    "CITY OF PANABO",
-                    "CITY OF TAGUM"
-                ],
-                "categoryTag": "CONTENDERS ROSTER"
+                "department": "Official Contender · Province of Davao del Norte",
+                "categoryTag": "OFFICIAL CONTENDER",
+                "image": "../../shared/assets/lgu-logos/dujali.png"
             },
             {
                 "id": 2,
+                "type": "awardee",
+                "title": "MUNICIPALITY OF CARMEN",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "Provincial Outstanding LGU in Nutrition Monitoring",
+                "department": "Official Contender · Province of Davao del Norte",
+                "categoryTag": "OFFICIAL CONTENDER",
+                "image": "../../shared/assets/lgu-logos/carmen.png"
+            },
+            {
+                "id": 3,
+                "type": "awardee",
+                "title": "MUNICIPALITY OF KAPALONG",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "Provincial Outstanding LGU in Nutrition Monitoring",
+                "department": "Official Contender · Province of Davao del Norte",
+                "categoryTag": "OFFICIAL CONTENDER",
+                "image": "../../shared/assets/lgu-logos/kapalong.png"
+            },
+            {
+                "id": 4,
+                "type": "awardee",
+                "title": "MUNICIPALITY OF NEW CORELLA",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "Provincial Outstanding LGU in Nutrition Monitoring",
+                "department": "Official Contender · Province of Davao del Norte",
+                "categoryTag": "OFFICIAL CONTENDER",
+                "image": "../../shared/assets/lgu-logos/new-corella.png"
+            },
+            {
+                "id": 5,
+                "type": "awardee",
+                "title": "MUNICIPALITY OF SAWATA",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "Provincial Outstanding LGU in Nutrition Monitoring",
+                "department": "Official Contender · Province of Davao del Norte",
+                "categoryTag": "OFFICIAL CONTENDER",
+                "image": "../../shared/assets/lgu-logos/sawata.png"
+            },
+            {
+                "id": 6,
+                "type": "awardee",
+                "title": "MUNICIPALITY OF SANTO TOMAS",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "Provincial Outstanding LGU in Nutrition Monitoring",
+                "department": "Official Contender · Province of Davao del Norte",
+                "categoryTag": "OFFICIAL CONTENDER",
+                "image": "../../shared/assets/lgu-logos/sto-tomas.png"
+            },
+            {
+                "id": 7,
+                "type": "awardee",
+                "title": "MUNICIPALITY OF TALAINGOD",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "Provincial Outstanding LGU in Nutrition Monitoring",
+                "department": "Official Contender · Province of Davao del Norte",
+                "categoryTag": "OFFICIAL CONTENDER",
+                "image": "../../shared/assets/lgu-logos/talaingod.png"
+            },
+            {
+                "id": 8,
+                "type": "awardee",
+                "title": "ISLAND GARDEN CITY OF SAMAL (IGACOS)",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "Provincial Outstanding LGU in Nutrition Monitoring",
+                "department": "Official Contender · Province of Davao del Norte",
+                "categoryTag": "OFFICIAL CONTENDER",
+                "image": "../../shared/assets/lgu-logos/igacos.png"
+            },
+            {
+                "id": 9,
+                "type": "awardee",
+                "title": "CITY OF PANABO",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "Provincial Outstanding LGU in Nutrition Monitoring",
+                "department": "Official Contender · Province of Davao del Norte",
+                "categoryTag": "OFFICIAL CONTENDER",
+                "image": "../../shared/assets/lgu-logos/panabo.png"
+            },
+            {
+                "id": 10,
+                "type": "awardee",
+                "title": "CITY OF TAGUM",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "Provincial Outstanding LGU in Nutrition Monitoring",
+                "department": "Official Contender · Province of Davao del Norte",
+                "categoryTag": "OFFICIAL CONTENDER",
+                "image": "../../shared/assets/lgu-logos/tagum.png"
+            },
+            {
+                "id": 11,
                 "type": "awardee",
                 "title": "MUNICIPALITY OF ASUNCION",
                 "number": 1,
                 "category": "PROVINCIAL OUTSTANDING LGU (WINNER)",
                 "subtitle": "Provincial Outstanding LGU in Nutrition Monitoring · CY 2026",
                 "categoryTag": "PLAQUE OF EXCELLENCE",
-                "department": "Province of Davao del Norte"
+                "department": "Province of Davao del Norte",
+                "image": "../../shared/assets/lgu-logos/asuncion.png"
             },
             {
-                "id": 3,
+                "id": 12,
                 "type": "closing",
                 "event": "2026 PROVINCIAL NUTRITION CONGRESS",
                 "title": "CONGRATULATIONS MUNICIPALITY OF ASUNCION!",
@@ -313,125 +472,206 @@ DECKS_CONFIG = [
                 "category": "LNFP AWARDS",
                 "citation": "Honoring our frontline Nutrition Action Officers, Program Coordinators, and Barangay Nutrition Scholars"
             },
-            # CNAO Category
+            # 1. ACTION OFFICERS: CONTENDERS
             {
                 "id": 1,
                 "type": "awardee",
-                "title": "CONTENDER: CITY NUTRITION ACTION OFFICER",
+                "title": "JO-ANNE RELAMPAGOS-CAPUYAN",
                 "category": "CERTIFICATE OF RECOGNITION",
-                "subtitle": "JO-ANNE RELAMPAGOS-CAPUYAN",
+                "subtitle": "CONTENDER: CITY NUTRITION ACTION OFFICER",
                 "department": "City of Panabo",
                 "categoryTag": "CNAO CONTENDER"
             },
             {
                 "id": 2,
                 "type": "awardee",
+                "title": "SIGRID PORTIA MACASA, MD",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "CONTENDER: MUNICIPAL NUTRITION ACTION OFFICER",
+                "department": "Municipality of Kapalong",
+                "categoryTag": "MNAO CONTENDER"
+            },
+            {
+                "id": 3,
+                "type": "awardee",
+                "title": "CHERRY T. DEMA-ALA, MD",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "CONTENDER: MUNICIPAL NUTRITION ACTION OFFICER",
+                "department": "Municipality of Braulio E. Dujali",
+                "categoryTag": "MNAO CONTENDER"
+            },
+            {
+                "id": 4,
+                "type": "awardee",
+                "title": "ROBECCA B. SIMBAJON",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "CONTENDER: MUNICIPAL NUTRITION ACTION OFFICER",
+                "department": "Municipality of New Corella",
+                "categoryTag": "MNAO CONTENDER"
+            },
+            {
+                "id": 5,
+                "type": "awardee",
+                "title": "JAYLEN M. GAJE",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "CONTENDER: MUNICIPAL NUTRITION ACTION OFFICER",
+                "department": "Municipality of Sawata",
+                "categoryTag": "MNAO CONTENDER"
+            },
+            {
+                "id": 6,
+                "type": "awardee",
+                "title": "ARTUR L. PINABUDLANG",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "CONTENDER: MUNICIPAL NUTRITION ACTION OFFICER",
+                "department": "Municipality of Talaingod",
+                "categoryTag": "MNAO CONTENDER"
+            },
+            # ACTION OFFICERS: WINNERS
+            {
+                "id": 7,
+                "type": "awardee",
                 "title": "GUILLERMO E. OLDEN",
                 "category": "PROVINCIAL OUTSTANDING CITY NUTRITION ACTION OFFICER",
                 "subtitle": "Island Garden City of Samal (IGACOS)",
                 "categoryTag": "PLAQUE WINNER"
             },
-            # MNAO Category
             {
-                "id": 3,
-                "type": "awardee",
-                "title": "CONTENDERS: MUNICIPAL NUTRITION ACTION OFFICER",
-                "category": "CERTIFICATE OF RECOGNITION",
-                "subtitle": "Official Contenders Roster",
-                "citations": [
-                    "SIGRID PORTIA MACASA, MD — Kapalong",
-                    "CHERRY T. DEMA-ALA, MD — Braulio E. Dujali",
-                    "ROBECCA B. SIMBAJON — New Corella",
-                    "JAYLEN M. GAJE — Sawata",
-                    "ARTUR L. PINABUDLANG — Talaingod"
-                ],
-                "categoryTag": "MNAO CONTENDERS"
-            },
-            {
-                "id": 4,
+                "id": 8,
                 "type": "awardee",
                 "title": "JOEL M. ANDOY, LPT, MMPA",
                 "category": "PROVINCIAL OUTSTANDING MUNICIPAL NUTRITION ACTION OFFICER",
                 "subtitle": "Municipality of Asuncion",
                 "categoryTag": "PLAQUE WINNER"
             },
-            # CNPC Category
+            # 2. COORDINATORS: CONTENDERS
             {
-                "id": 5,
+                "id": 9,
+                "type": "awardee",
+                "title": "LIZA M. LAVEGA",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "CONTENDER: MUNICIPAL NUTRITION PROGRAM COORDINATOR",
+                "department": "Municipality of Asuncion",
+                "categoryTag": "MNPC CONTENDER"
+            },
+            {
+                "id": 10,
+                "type": "awardee",
+                "title": "MERCIDITA P. RODULFA",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "CONTENDER: MUNICIPAL NUTRITION PROGRAM COORDINATOR",
+                "department": "Municipality of Braulio E. Dujali",
+                "categoryTag": "MNPC CONTENDER"
+            },
+            {
+                "id": 11,
+                "type": "awardee",
+                "title": "CANDY MEA T. DELA CRUZ",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "CONTENDER: MUNICIPAL NUTRITION PROGRAM COORDINATOR",
+                "department": "Municipality of New Corella",
+                "categoryTag": "MNPC CONTENDER"
+            },
+            {
+                "id": 12,
+                "type": "awardee",
+                "title": "ANALYN SERONDO",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "CONTENDER: MUNICIPAL NUTRITION PROGRAM COORDINATOR",
+                "department": "Municipality of Sawata",
+                "categoryTag": "MNPC CONTENDER"
+            },
+            # COORDINATORS: WINNERS
+            {
+                "id": 13,
                 "type": "awardee",
                 "title": "LOVELLA Y. FONTANILLA, RND",
                 "category": "PROVINCIAL OUTSTANDING CITY NUTRITION PROGRAM COORDINATOR",
                 "subtitle": "City of Panabo",
                 "categoryTag": "PLAQUE WINNER"
             },
-            # MNPC Category
             {
-                "id": 6,
-                "type": "awardee",
-                "title": "CONTENDERS: MUNICIPAL NUTRITION PROGRAM COORDINATOR",
-                "category": "CERTIFICATE OF RECOGNITION",
-                "subtitle": "Official Contenders Roster",
-                "citations": [
-                    "LIZA M. LAVEGA — Asuncion",
-                    "MERCIDITA P. RODULFA — Braulio E. Dujali",
-                    "CANDY MEA T. DELA CRUZ — New Corella",
-                    "ANALYN SERONDO — Sawata"
-                ],
-                "categoryTag": "MNPC CONTENDERS"
-            },
-            {
-                "id": 7,
+                "id": 14,
                 "type": "awardee",
                 "title": "CHARISSE O. CABUSAS, RN, LPT",
                 "category": "PROVINCIAL OUTSTANDING MUNICIPAL NUTRITION PROGRAM COORDINATOR",
                 "subtitle": "Municipality of Kapalong",
                 "categoryTag": "PLAQUE WINNER"
             },
-            # BNS City Level
+            # 3. BARANGAY NUTRITION SCHOLARS: CONTENDERS
             {
-                "id": 8,
+                "id": 15,
                 "type": "awardee",
-                "title": "CONTENDERS: BARANGAY NUTRITION SCHOLAR (CITY LEVEL)",
+                "title": "MARY JANE M. NOVABOS",
                 "category": "CERTIFICATE OF RECOGNITION",
-                "subtitle": "Official Contenders Roster",
-                "citations": [
-                    "MARY JANE M. NOVABOS — San Miguel, IGACOS",
-                    "HAZEL MAE C. FLORESCA — San Miguel, Tagum City"
-                ],
-                "categoryTag": "BNS CITY CONTENDERS"
+                "subtitle": "CONTENDER: BARANGAY NUTRITION SCHOLAR",
+                "department": "Barangay San Miguel, Island Garden City of Samal",
+                "categoryTag": "BNS CONTENDER (CITY)"
             },
             {
-                "id": 9,
+                "id": 16,
+                "type": "awardee",
+                "title": "HAZEL MAE C. FLORESCA",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "CONTENDER: BARANGAY NUTRITION SCHOLAR",
+                "department": "Barangay San Miguel, Tagum City",
+                "categoryTag": "BNS CONTENDER (CITY)"
+            },
+            {
+                "id": 17,
+                "type": "awardee",
+                "title": "ROSITA V. ADE",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "CONTENDER: BARANGAY NUTRITION SCHOLAR",
+                "department": "Barangay Cambanugoy, Municipality of Asuncion",
+                "categoryTag": "BNS CONTENDER (MUNICIPAL)"
+            },
+            {
+                "id": 18,
+                "type": "awardee",
+                "title": "MARISSA R. PAMUNAG",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "CONTENDER: BARANGAY NUTRITION SCHOLAR",
+                "department": "Barangay New Casay, Municipality of Braulio E. Dujali",
+                "categoryTag": "BNS CONTENDER (MUNICIPAL)"
+            },
+            {
+                "id": 19,
+                "type": "awardee",
+                "title": "DARLINE R. OLALO",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "CONTENDER: BARANGAY NUTRITION SCHOLAR",
+                "department": "Barangay Kipalili, Municipality of Sawata",
+                "categoryTag": "BNS CONTENDER (MUNICIPAL)"
+            },
+            # BARANGAY NUTRITION SCHOLARS: WINNERS
+            {
+                "id": 20,
                 "type": "awardee",
                 "title": "LINETH M. CAMANA",
                 "category": "PROVINCIAL OUTSTANDING BNS (CITY LEVEL)",
                 "subtitle": "Barangay New Visayas, City of Panabo",
                 "categoryTag": "PLAQUE WINNER"
             },
-            # BNS Municipal Level
             {
-                "id": 10,
-                "type": "awardee",
-                "title": "CONTENDERS: BARANGAY NUTRITION SCHOLAR (MUNICIPAL LEVEL)",
-                "category": "CERTIFICATE OF RECOGNITION",
-                "subtitle": "Official Contenders Roster",
-                "citations": [
-                    "ROSITA V. ADE — Cambanugoy, Asuncion",
-                    "MARISSA R. PAMUNAG — New Casay, Braulio E. Dujali",
-                    "DARLINE R. OLALO — Kipalili, Sawata"
-                ],
-                "categoryTag": "BNS MUNICIPAL CONTENDERS"
-            },
-            {
-                "id": 11,
+                "id": 21,
                 "type": "awardee",
                 "title": "ANNA LEE J. REVITA",
                 "category": "PROVINCIAL OUTSTANDING BNS (MUNICIPAL LEVEL)",
                 "subtitle": "Barangay Sto. Niño, Municipality of New Corella",
                 "categoryTag": "PLAQUE WINNER"
             },
+            # RAFFLES & DOOR PRIZES (BATCH 2)
             {
-                "id": 12,
+                "id": 22,
+                "type": "awardee",
+                "title": "RAFFLES AND DOOR PRIZES",
+                "category": "SPECIAL FELLOWSHIP",
+                "subtitle": "Exciting Prizes for our Dedicated Nutrition Workers",
+                "categoryTag": "LUCKY DRAW · BATCH 2"
+            },
+            {
+                "id": 23,
                 "type": "closing",
                 "event": "2026 PROVINCIAL NUTRITION CONGRESS",
                 "title": "SALUTE TO OUR LOCAL NUTRITION FOCAL POINTS!",
@@ -552,12 +792,76 @@ DECKS_CONFIG = [
                 "department": "OPT Coverage: 87.6%",
                 "categoryTag": "TINGUHA AWARDEE"
             },
+            # Legacy of Leadership in Nutrition Award (3 Plaques)
             {
                 "id": 11,
+                "type": "awardee",
+                "title": "ANESIA F. BABOR",
+                "category": "LEGACY OF LEADERSHIP IN NUTRITION AWARD",
+                "subtitle": "Former Municipal Nutrition Program Coordinator · Municipality of Carmen",
+                "department": "Leadership Honoree",
+                "categoryTag": "LEGACY OF LEADERSHIP"
+            },
+            {
+                "id": 12,
+                "type": "awardee",
+                "title": "NELIA M. RODILLAS, RND",
+                "category": "LEGACY OF LEADERSHIP IN NUTRITION AWARD",
+                "subtitle": "Former City Nutrition Program Coordinator · Island Garden City of Samal (IGACOS)",
+                "department": "Leadership Honoree",
+                "categoryTag": "LEGACY OF LEADERSHIP"
+            },
+            {
+                "id": 13,
+                "type": "awardee",
+                "title": "DR. MA. SUSAN B. GANTUANGCO",
+                "category": "LEGACY OF LEADERSHIP IN NUTRITION AWARD",
+                "subtitle": "Former City Nutrition Program Coordinator · City of Tagum",
+                "department": "Leadership Honoree",
+                "categoryTag": "LEGACY OF LEADERSHIP"
+            },
+            # Pillar of Nutrition Education Awards (3 Plaques)
+            {
+                "id": 14,
+                "type": "awardee",
+                "title": "MAYFLOR PERALTA-ESPIRITU, RND",
+                "category": "PILLAR OF NUTRITION EDUCATION AWARD",
+                "subtitle": "Nutrition Program Manager · Department of Health - Davao Region (DOH-CHD XI)",
+                "department": "Nutrition Education Pillar",
+                "categoryTag": "PILLAR OF EDUCATION"
+            },
+            {
+                "id": 15,
+                "type": "awardee",
+                "title": "DR. CATHERINE A. LOZARITO",
+                "category": "PILLAR OF NUTRITION EDUCATION AWARD",
+                "subtitle": "Junior Consultant · Medical Nutrition Department · Davao Regional Medical Center",
+                "department": "Nutrition Education Pillar",
+                "categoryTag": "PILLAR OF EDUCATION"
+            },
+            {
+                "id": 16,
+                "type": "awardee",
+                "title": "DR. STEPHANIE ALVA P. RISONAR",
+                "category": "PILLAR OF NUTRITION EDUCATION AWARD",
+                "subtitle": "Rural Health Physician · Samal District",
+                "department": "Nutrition Education Pillar",
+                "categoryTag": "PILLAR OF EDUCATION"
+            },
+            {
+                "id": 17,
+                "type": "awardee",
+                "title": "RAFFLES AND DOOR PRIZES",
+                "category": "SPECIAL FELLOWSHIP",
+                "subtitle": "Exciting Prizes for our Dedicated Nutrition Workers",
+                "categoryTag": "LUCKY DRAW · BATCH 3"
+            },
+            {
+                "id": 18,
                 "type": "closing",
                 "event": "2026 PROVINCIAL NUTRITION CONGRESS",
-                "title": "CONGRATULATIONS TINGUHA AWARDEES!",
-                "subTitle": "Excellence in Malnutrition Reduction & High Coverage",
+                "title": "CONGRATULATIONS TINGUHA AWARDEES & SPECIAL HONOREES!",
+                "subTitle": "Excellence in Malnutrition Reduction, Leadership & Education",
                 "citation": "Setting the benchmark for nutritional health and well-being throughout Davao del Norte."
             }
         ]
@@ -582,7 +886,7 @@ DECKS_CONFIG = [
                 "category": "APPRECIATION AWARDS",
                 "citation": "Expressing profound gratitude for multi-sectoral leadership, technical guidance, and institutional synergy"
             },
-            # Regional Partners
+            # Regional Partners (3 Plaques)
             {
                 "id": 1,
                 "type": "awardee",
@@ -610,153 +914,144 @@ DECKS_CONFIG = [
                 "subtitle": "Technical & Development Partner",
                 "categoryTag": "REGIONAL PARTNER"
             },
+            # PNC Department Offices (15 Certificates)
             {
                 "id": 4,
                 "type": "awardee",
-                "title": "DR. CATHERINE LOZARITO",
-                "number": 4,
-                "category": "SPECIAL APPRECIATION AWARD",
-                "subtitle": "Davao Regional Medical Center (DRMC)",
-                "categoryTag": "CLINICAL CHAMPION"
-            },
-            # PNC Department Offices
-            {
-                "id": 5,
-                "type": "awardee",
                 "title": "PROVINCIAL HEALTH OFFICE",
-                "number": 5,
+                "number": 1,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
             },
             {
-                "id": 6,
+                "id": 5,
                 "type": "awardee",
                 "title": "PROVINCIAL DISASTER RISK REDUCTION AND MANAGEMENT OFFICE",
-                "number": 6,
+                "number": 2,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PDRRMO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
             },
             {
-                "id": 7,
+                "id": 6,
                 "type": "awardee",
                 "title": "PROVINCIAL ENVIRONMENT AND NATURAL RESOURCES OFFICE",
-                "number": 7,
+                "number": 3,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PENRO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
             },
             {
-                "id": 8,
+                "id": 7,
                 "type": "awardee",
                 "title": "PROVINCIAL AGRICULTURE OFFICE",
-                "number": 8,
+                "number": 4,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PAGRO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
             },
             {
-                "id": 9,
+                "id": 8,
                 "type": "awardee",
                 "title": "PROVINCIAL VETERINARY OFFICE",
-                "number": 9,
+                "number": 5,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PVET · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
             },
             {
-                "id": 10,
+                "id": 9,
                 "type": "awardee",
                 "title": "PROVINCIAL ENGINEER'S OFFICE",
-                "number": 10,
+                "number": 6,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PEO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
             },
             {
-                "id": 11,
+                "id": 10,
                 "type": "awardee",
                 "title": "PROVINCIAL PUBLIC EMPLOYMENT SERVICE OFFICE",
-                "number": 11,
+                "number": 7,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PESO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
             },
             {
-                "id": 12,
+                "id": 11,
                 "type": "awardee",
                 "title": "PROVINCIAL SOCIAL WELFARE AND DEVELOPMENT OFFICE",
-                "number": 12,
+                "number": 8,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PSWDO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
             },
             {
-                "id": 13,
+                "id": 12,
                 "type": "awardee",
                 "title": "PROVINCIAL HUMAN RESOURCE MANAGEMENT OFFICE",
-                "number": 13,
+                "number": 9,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PHRMO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
             },
             {
-                "id": 14,
+                "id": 13,
                 "type": "awardee",
                 "title": "PROVINCIAL BUDGET OFFICE",
-                "number": 14,
+                "number": 10,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PBO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
             },
             {
-                "id": 15,
+                "id": 14,
                 "type": "awardee",
                 "title": "SANGGUNIANG PANLALAWIGAN COMMITTEE ON HEALTH",
-                "number": 15,
+                "number": 11,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "Legislative Partner · Davao del Norte",
                 "categoryTag": "PNC MEMBER"
             },
             {
-                "id": 16,
+                "id": 15,
                 "type": "awardee",
                 "title": "PROVINCIAL PLANNING AND DEVELOPMENT OFFICE",
-                "number": 16,
+                "number": 12,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PPDO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
             },
             {
-                "id": 17,
+                "id": 16,
                 "type": "awardee",
                 "title": "PROVINCIAL INFORMATION, COMMUNICATION AND KNOWLEDGE MANAGEMENT OFFICE",
-                "number": 17,
+                "number": 13,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PIKMO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
             },
             {
-                "id": 18,
+                "id": 17,
                 "type": "awardee",
                 "title": "PROVINCIAL DEPARTMENT OF HEALTH OFFICE",
-                "number": 18,
+                "number": 14,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PDOHO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
             },
             {
-                "id": 19,
+                "id": 18,
                 "type": "awardee",
                 "title": "DEPARTMENT OF EDUCATION - DIVISION OF DAVAO DEL NORTE",
-                "number": 19,
+                "number": 15,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "DepEd Davao del Norte · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
             },
             {
-                "id": 20,
+                "id": 19,
                 "type": "closing",
                 "event": "2026 PROVINCIAL NUTRITION CONGRESS",
                 "title": "SALUTE TO OUR INSTITUTIONAL PARTNERS!",
@@ -772,17 +1067,17 @@ DECKS_CONFIG = [
     {
         "folder": "06-pnet-recognition",
         "key": "nutrition-06-pnet-recognition",
-        "title": "Recognition of PNET Evaluators",
-        "category": "PNET RECOGNITION",
-        "subTitle": "Recognition of the Provincial Nutrition Evaluation Team (Certificates)",
+        "title": "Recognition of PNET Evaluators & TWG",
+        "category": "PNET & TWG RECOGNITION",
+        "subTitle": "Recognition of the Provincial Nutrition Evaluation Team and Technical Working Group",
         "slides": [
             {
                 "id": 0,
                 "type": "title",
                 "event": "2026 PROVINCIAL NUTRITION CONGRESS",
                 "subEvent": "Province of Davao del Norte · Provincial Health Office",
-                "title": "RECOGNITION OF THE PROVINCIAL NUTRITION EVALUATION TEAM (PNET)",
-                "category": "PNET RECOGNITION",
+                "title": "RECOGNITION OF PROVINCIAL NUTRITION EVALUATION TEAM & TECHNICAL WORKING GROUP",
+                "category": "PNET & TWG RECOGNITION",
                 "citation": "Honoring the rigorous assessment, field evaluations, and dedicated monitoring of nutrition programs"
             },
             {
@@ -858,23 +1153,23 @@ DECKS_CONFIG = [
             {
                 "id": 8,
                 "type": "awardee",
-                "title": "JHON LYN MOSQUEDA",
+                "title": "PROVINCIAL SOCIAL WELFARE AND DEVELOPMENT OFFICE",
                 "number": 8,
-                "category": "CERTIFICATE OF RECOGNITION",
-                "subtitle": "Provincial Social Welfare and Development Office (PSWDO)",
-                "categoryTag": "PNET EVALUATOR"
-            },
-            {
-                "id": 9,
-                "type": "awardee",
-                "title": "PROVINCIAL HUMAN RESOURCE MANAGEMENT OFFICE",
-                "number": 9,
                 "category": "CERTIFICATE OF RECOGNITION",
                 "citations": [
                     "FEVELYN M. MARFE, RSW, MPA, MSSW",
                     "NOVELYN Y. CADABONA, RSW"
                 ],
-                "categoryTag": "PNET EVALUATOR"
+                "categoryTag": "PNET & TWG"
+            },
+            {
+                "id": 9,
+                "type": "awardee",
+                "title": "MS. JHON LYN MOSQUEDA",
+                "number": 9,
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "Provincial Human Resource Management Office (PHRMO)",
+                "categoryTag": "PNET & TWG"
             },
             {
                 "id": 10,
@@ -935,7 +1230,7 @@ DECKS_CONFIG = [
         "key": "nutrition-07-bns-loyalty-awards",
         "title": "BNS Loyalty Awards (10+ Years)",
         "category": "BNS LOYALTY AWARDS",
-        "subTitle": "Dungog sa Malungtarong Serbisyo Award — Honoring 83 BNS with 10 to 35+ Years of Dedicated Service",
+        "subTitle": "Dungog sa Malungtarong Serbisyo Award — Honoring 94 BNS with 10 to 35+ Years of Dedicated Service",
         "slides": [
             {
                 "id": 0,
@@ -1213,11 +1508,46 @@ DECKS_CONFIG = [
             },
             {
                 "id": 17,
+                "type": "awardee",
+                "title": "RAFFLES AND DOOR PRIZES",
+                "category": "SPECIAL FELLOWSHIP",
+                "subtitle": "Grand Raffle Draw · Exciting Prizes for our Dedicated Nutrition Workers",
+                "categoryTag": "LUCKY DRAW · BATCH 4"
+            },
+            {
+                "id": 18,
+                "type": "awardee",
+                "title": "JOSEPHINE THERESE P. PARREÑAS, RN, MD",
+                "category": "CLOSING REMARKS",
+                "subtitle": "Provincial Health Officer I",
+                "department": "Provincial Health Office · Province of Davao del Norte",
+                "categoryTag": "CLOSING PROGRAM"
+            },
+            {
+                "id": 19,
+                "type": "awardee",
+                "title": "LESLEY CADUA, RN",
+                "category": "CLOSING PRAYER",
+                "subtitle": "Nurse III",
+                "department": "Provincial Health Office · Province of Davao del Norte",
+                "categoryTag": "CLOSING PROGRAM"
+            },
+            {
+                "id": 20,
+                "type": "awardee",
+                "title": "MR. CHRISTOPHER DAN T. CARIAGA, RN",
+                "category": "MASTERS OF CEREMONY",
+                "subtitle": "Master of Ceremony",
+                "department": "2026 Provincial Nutrition Congress & Awarding Ceremony",
+                "categoryTag": "CEREMONY HOST"
+            },
+            {
+                "id": 21,
                 "type": "closing",
                 "event": "2026 PROVINCIAL NUTRITION CONGRESS",
-                "title": "SALUTE TO OUR LOYALTY AWARDEES!",
-                "subTitle": "Dungog sa Malungtarong Serbisyo",
-                "citation": "A heartfelt salute to 83 Barangay Nutrition Scholars whose decades of selfless service have nourished Davao del Norte."
+                "title": "DAGHANG SALAMAT SA TANAN!",
+                "subTitle": "Himsog nga Katawhan, Himsog nga Kinaiyahan: Panaghiusa Alang sa Malungtarong Nutrisyon",
+                "citation": "A heartfelt salute to 94 Barangay Nutrition Scholars and all Nutrition Champions whose selfless service nourishes Davao del Norte!"
             }
         ]
     }
@@ -1285,7 +1615,7 @@ def make_index_html(cfg):
         </svg>
       </button>
 
-      <a href="presenter.html" target="_blank" class="control-btn" title="Open Presenter View (P)" aria-label="Presenter View" style="text-decoration: none;">
+      <a href="presenter.html" target="_blank" onclick="window.PresentationEngine.openPresenterView(event)" class="control-btn" title="Open Presenter View (P)" aria-label="Presenter View" style="text-decoration: none;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
           <rect x="2" y="3" width="20" height="14" rx="2"></rect>
           <line x1="8" y1="21" x2="16" y2="21"></line>
@@ -1405,71 +1735,64 @@ def make_presenter_html(cfg):
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <input type="text" id="presenterSearchInput" class="presenter-search-input" placeholder="Jump to slide / search awardee..." aria-label="Jump to slide">
-            <button id="clearSearchBtn" class="clear-search-btn" onclick="window.PresenterConsoleApp.clearSearch()" style="display: none;" aria-label="Clear search">&times;</button>
+            <input type="text" id="presenterSearch" class="presenter-search-input" placeholder="Search awardee, municipality, indicator... (Press /)" autocomplete="off" spellcheck="false" />
+            <button id="searchClearBtn" class="search-clear-btn" title="Clear Search">✕</button>
           </div>
-          <div id="searchResultsList" class="search-results-dropdown" style="display: none;"></div>
+
+          <div id="searchResultsList" class="search-results-list" role="listbox"></div>
         </div>
 
-        <div class="presenter-next-pane">
+        <div class="presenter-next-wrapper">
           <div class="pane-header">
             <span class="pane-title">Next Slide</span>
-            <span id="nextSlideLabel" class="next-label">Slide 2</span>
+            <span id="nextSlideLabel" class="live-badge" style="background: rgba(250, 198, 17, 0.2); color: #FAC611; border: 1px solid rgba(250, 198, 17, 0.5);">Slide 2</span>
           </div>
           <div class="presenter-next-preview">
-            <iframe id="nextSlideFrame" class="slide-frame" src="index.html?mode=preview#1" title="Next Upcoming Slide"></iframe>
+            <iframe id="nextSlideFrame" class="slide-frame" src="index.html?mode=preview#1" title="Next Slide Preview"></iframe>
           </div>
         </div>
 
-        <div class="presenter-notes-pane">
-          <div class="pane-header">
-            <span class="pane-title">Speaker &amp; Stage Notes</span>
-            <div class="notes-zoom-controls">
-              <button class="zoom-btn" onclick="window.PresenterConsoleApp.adjustNotesZoom(-1)" title="Decrease font size">A-</button>
-              <button class="zoom-btn" onclick="window.PresenterConsoleApp.adjustNotesZoom(1)" title="Increase font size">A+</button>
-            </div>
-          </div>
-          <div id="presenterNotesBody" class="presenter-notes-content">
-            <div class="notes-placeholder">No notes for this slide.</div>
-          </div>
+        <div class="presenter-notes-panel">
+          <div class="notes-title">Current Details & Citations</div>
+          <div id="slideNotesContent">Loading slide details...</div>
         </div>
       </section>
     </main>
 
-    <footer class="presenter-nav-bar">
-      <div class="nav-left">
-        <button id="navPrevBtn" class="nav-action-btn" onclick="window.PresenterConsoleApp.navigatePrev()" title="Previous Slide (← / PageUp)">
+    <footer class="presenter-bottombar">
+      <div class="nav-controls">
+        <button id="prevSlideBtn" class="nav-btn" onclick="window.PresenterConsoleApp.prev()" title="Previous Slide (← / ↑)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
         </button>
-
-        <div class="slide-position-box">
-          <span id="currentSlideNum">1</span>
-          <span class="slide-divider">/</span>
-          <span id="totalSlidesNum">{total}</span>
-        </div>
-
-        <button id="navNextBtn" class="nav-action-btn nav-action-btn-primary" onclick="window.PresenterConsoleApp.navigateNext()" title="Next Slide (→ / Space / PageDown)">
+        <span id="slideCounter" class="slide-counter">Slide 1 of --</span>
+        <button id="nextSlideBtn" class="nav-btn" onclick="window.PresenterConsoleApp.next()" title="Next Slide (→ / Space / Enter)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </button>
       </div>
 
-      <div class="nav-center-title">
-        <span class="deck-indicator-badge">NUTRITION 2026</span>
-        <span id="currentSlideTitle" class="current-slide-heading">{cfg['title']}</span>
+      <div class="action-controls">
+        <button class="action-btn" onclick="window.PresenterConsoleApp.triggerConfetti()" title="Trigger Celebration Confetti (C)">
+          🎉 Confetti
+        </button>
+        <button class="action-btn" onclick="window.PresenterConsoleApp.triggerSound()" title="Play Award Chime (M)">
+          🔔 Chime
+        </button>
       </div>
 
-      <div class="nav-right-tools">
-        <button id="blackoutBtn" class="tool-btn" onclick="window.PresenterConsoleApp.toggleBlackout()" title="Blackout Stage Screen (B)">
-          <span class="tool-icon">⬛</span> Black Screen
-        </button>
-        <button id="confettiBtn" class="tool-btn" onclick="window.PresenterConsoleApp.triggerConfetti()" title="Trigger Confetti on Stage (C)">
-          <span class="tool-icon">🎉</span> Confetti
-        </button>
+      <div class="hotkeys-hint">
+        <span><span class="hotkey-tag">← / →</span> Navigate</span>
+        <span><span class="hotkey-tag">/</span> Search</span>
+        <span><span class="hotkey-tag">C</span> Confetti</span>
+        <span><span class="hotkey-tag">M</span> Chime</span>
       </div>
     </footer>
   </div>
 
+  <script>
+    window.DECK_KEY = '{cfg["key"]}';
+  </script>
   <script src="slides-data.js"></script>
+  <script src="../../shared/js/cloud-sync.js"></script>
   <script src="../../shared/js/presenter-console.js"></script>
 </body>
 </html>
