@@ -5,7 +5,7 @@
     "id": 0,
     "type": "title",
     "event": "DAVNOR TB SUMMIT 2026",
-    "subEvent": "Province of Davao del Norte \u00b7 Provincial Health Office",
+    "subEvent": "Province of Davao del Norte · Provincial Health Office",
     "title": "RECOGNITION OF SPECIAL AWARDS",
     "category": "DAVNOR TB SUMMIT 2026",
     "citation": "Honoring our partners, consultants, and champions in the fight to end Tuberculosis in Davao del Norte"
@@ -25,7 +25,7 @@
     "title": "HANSEL V. AMOGUIS, MD, MPM",
     "number": 2,
     "category": "SPECIAL AWARD",
-    "subtitle": "Head - Infectious Cluster \u00b7 DOH-DCHD XI",
+    "subtitle": "Head - Infectious Cluster · DOH-DCHD XI",
     "categoryTag": "SPECIAL AWARD"
   },
   {
@@ -34,7 +34,7 @@
     "title": "EVELYN UY-GELITO, RN, MPH",
     "number": 3,
     "category": "SPECIAL AWARD",
-    "subtitle": "NTP Program Manager \u00b7 DOH-DCHD XI",
+    "subtitle": "NTP Program Manager · DOH-DCHD XI",
     "categoryTag": "SPECIAL AWARD"
   },
   {
@@ -43,7 +43,7 @@
     "title": "JORDAN F. KINTANAR, RMT",
     "number": 4,
     "category": "SPECIAL AWARD",
-    "subtitle": "NTP Med Tech Coordinator \u00b7 DOH-DCHD XI",
+    "subtitle": "NTP Med Tech Coordinator · DOH-DCHD XI",
     "categoryTag": "SPECIAL AWARD"
   },
   {
@@ -54,12 +54,12 @@
     "category": "SPECIAL AWARD",
     "subtitle": "Project Team",
     "citations": [
-      "VIVIAN S. ANTONIO \u2014 Program Officer",
-      "PRINCESS SALCEDO-CORIAS, RN \u2014 TB Technical Officer",
-      "ELAINE GRACE N. ALIMES, RN \u2014 Regional Project Officer",
-      "JOBELLE L. FRANCO, RN \u2014 Program Officer",
-      "ELLEN G. GERMAN, RN \u2014 PMDT Nurse DRMC",
-      "KEZIA P. CABRERA, RMT \u2014 GenXpert Technician DRMC"
+      "VIVIAN S. ANTONIO — Program Officer",
+      "PRINCESS SALCEDO-CORIAS, RN — TB Technical Officer",
+      "ELAINE GRACE N. ALIMES, RN — Regional Project Officer",
+      "JOBELLE L. FRANCO, RN — Program Officer",
+      "ELLEN G. GERMAN, RN — PMDT Nurse DRMC",
+      "KEZIA P. CABRERA, RMT — GenXpert Technician DRMC"
     ],
     "categoryTag": "SPECIAL AWARD"
   },
@@ -69,7 +69,7 @@
     "title": "HON. LOU C. SUAYBAGUIO, REE, RN",
     "number": 6,
     "category": "SPECIAL AWARD",
-    "subtitle": "Board Member District I \u00b7 Chairperson - Committee on Health",
+    "subtitle": "Board Member District I · Chairperson - Committee on Health",
     "categoryTag": "SPECIAL AWARD"
   },
   {
@@ -78,7 +78,7 @@
     "title": "GLENN A. PONO, MD FPCP, FPCCP",
     "number": 7,
     "category": "SPECIAL AWARD",
-    "subtitle": "Internal Medicine / Pulmonologist \u00b7 Davao del Norte TB Consultant",
+    "subtitle": "Internal Medicine / Pulmonologist · Davao del Norte TB Consultant",
     "categoryTag": "SPECIAL AWARD"
   },
   {
@@ -87,7 +87,7 @@
     "title": "JANICE G. ESPARAGOZA, MD, FPCR, FUSP",
     "number": 8,
     "category": "SPECIAL AWARD",
-    "subtitle": "Radiologist \u00b7 Davao del Norte TB Consultant",
+    "subtitle": "Radiologist · Davao del Norte TB Consultant",
     "categoryTag": "SPECIAL AWARD"
   },
   {
@@ -98,8 +98,8 @@
     "category": "SPECIAL AWARD",
     "subtitle": "Specialist Consultants",
     "citations": [
-      "MARIA VICTORIA L. LEGASPI, MD, FPCP, FPCCP, FCCP \u2014 Internal Medicine/Pulmonologist",
-      "JEORGIE ARVIN S. LEGASPI, MD, DPCOM, FPSMS, MAHA \u2014 Internal Medicine/Occupational Medicine"
+      "MARIA VICTORIA L. LEGASPI, MD, FPCP, FPCCP, FCCP — Internal Medicine/Pulmonologist",
+      "JEORGIE ARVIN S. LEGASPI, MD, DPCOM, FPSMS, MAHA — Internal Medicine/Occupational Medicine"
     ],
     "categoryTag": "SPECIAL AWARD"
   },
@@ -109,7 +109,7 @@
     "title": "JOEBELLE MAY GALANG-DELA CRUZ, MD, MPM, FPAFP",
     "number": 10,
     "category": "SPECIAL AWARD",
-    "subtitle": "Vice Chairperson \u00b7 Davao del Norte TB Medical Advisory Committee \u00b7 DRMC",
+    "subtitle": "Vice Chairperson · Davao del Norte TB Medical Advisory Committee · DRMC",
     "categoryTag": "SPECIAL AWARD"
   },
   {
@@ -118,7 +118,7 @@
     "title": "VIKKI DARL R. RODRIGUEZ, MD, FPCP, DPSMID",
     "number": 11,
     "category": "SPECIAL AWARD",
-    "subtitle": "Member \u00b7 Davao del Norte TB Medical Advisory Committee \u00b7 DRMC",
+    "subtitle": "Member · Davao del Norte TB Medical Advisory Committee · DRMC",
     "categoryTag": "SPECIAL AWARD"
   },
   {
@@ -127,7 +127,7 @@
     "title": "LOUELYN H. EXALA, MD, DBCOM",
     "number": 12,
     "category": "SPECIAL AWARD",
-    "subtitle": "Member \u00b7 Davao del Norte TB Medical Advisory Committee \u00b7 RHU Kapalong",
+    "subtitle": "Member · Davao del Norte TB Medical Advisory Committee · RHU Kapalong",
     "categoryTag": "SPECIAL AWARD"
   },
   {
@@ -136,7 +136,7 @@
     "title": "SHARIFF AMILOARI S. MANIBPEL, MD, FPCP",
     "number": 13,
     "category": "HIGHEST REFERRALS FOR TB MANDATORY NOTIFICATION",
-    "subtitle": "Internal Medicine / Pulmonologist \u00b7 Tagum City",
+    "subtitle": "Internal Medicine / Pulmonologist · Tagum City",
     "categoryTag": "SPECIAL AWARD"
   },
   {
@@ -145,7 +145,7 @@
     "title": "ERLYN D. LOPEZ, MD FPCR, FPCCP",
     "number": 14,
     "category": "HIGHEST REFERRALS FOR TB MANDATORY NOTIFICATION",
-    "subtitle": "Pulmonologist \u00b7 Panabo City",
+    "subtitle": "Pulmonologist · Panabo City",
     "categoryTag": "SPECIAL AWARD"
   },
   {
@@ -156,11 +156,11 @@
     "category": "SPECIAL AWARD",
     "subtitle": "Davao del Norte",
     "citations": [
-      "VERGEL JAY T. BAUTISTA, MD, MPM \u2014 Development Management Officer V / Provincial Health Team Leader",
-      "LORENA M. ORILLA, ChE, MPA \u2014 Development Management Officer IV",
-      "JENNIFER D. HINGGO, MPA \u2014 Development Management Officer IV",
-      "IAN PATRICK M. VIDAL, RMT \u2014 Development Management Officer IV",
-      "DARLENE DOROTHY C. ARAMASA, RMT \u2014 Development Management Officer III"
+      "VERGEL JAY T. BAUTISTA, MD, MPM — Development Management Officer V / Provincial Health Team Leader",
+      "LORENA M. ORILLA, ChE, MPA — Development Management Officer IV",
+      "JENNIFER D. HINGGO, MPA — Development Management Officer IV",
+      "IAN PATRICK M. VIDAL, RMT — Development Management Officer IV",
+      "DARLENE DOROTHY C. ARAMASA, RMT — Development Management Officer III"
     ],
     "categoryTag": "SPECIAL AWARD"
   },
@@ -170,7 +170,7 @@
     "title": "PROVINCIAL ECONOMIC ENTERPRISE DEVELOPMENT OFFICE",
     "number": 16,
     "category": "SPECIAL AWARD",
-    "subtitle": "DOMINIC R. BASALO, MD, MPM \u00b7 P. G. Dept. Head",
+    "subtitle": "DOMINIC R. BASALO, MD, MPM · P. G. Dept. Head",
     "categoryTag": "SPECIAL AWARD"
   },
   {
@@ -179,7 +179,7 @@
     "title": "PROVINCIAL SOCIAL WELFARE DEVELOPMENT OFFICE",
     "number": 17,
     "category": "SPECIAL AWARD",
-    "subtitle": "ROSALINDA O. RAPISTA, RSW, MPA \u00b7 P. G. Dept. Head",
+    "subtitle": "ROSALINDA O. RAPISTA, RSW, MPA · P. G. Dept. Head",
     "categoryTag": "SPECIAL AWARD"
   },
   {

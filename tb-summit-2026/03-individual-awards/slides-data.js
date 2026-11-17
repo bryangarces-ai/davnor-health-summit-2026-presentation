@@ -5,7 +5,7 @@
     "id": 0,
     "type": "title",
     "event": "DAVNOR TB SUMMIT 2026",
-    "subEvent": "Province of Davao del Norte \u00b7 Provincial Health Office",
+    "subEvent": "Province of Davao del Norte · Provincial Health Office",
     "title": "RECOGNITION OF INDIVIDUAL AWARDS",
     "category": "DAVNOR TB SUMMIT 2026",
     "citation": "Honoring community volunteers, specimen transport riders, engagement officers, and laboratory technicians in Davao del Norte"
@@ -114,7 +114,7 @@
     "type": "awardee",
     "title": "ELLEN G. GERMAN, RN",
     "number": 12,
-    "category": "DRMC \u2014 PMDT CLINICAL TEAM",
+    "category": "DRMC — PMDT CLINICAL TEAM",
     "subtitle": "Davao Regional Medical Center",
     "categoryTag": "DRMC PMDT"
   },
@@ -123,7 +123,7 @@
     "type": "awardee",
     "title": "MANASIS M. DIAMANTE, RN",
     "number": 13,
-    "category": "DRMC \u2014 PMDT CLINICAL TEAM",
+    "category": "DRMC — PMDT CLINICAL TEAM",
     "subtitle": "Davao Regional Medical Center",
     "categoryTag": "DRMC PMDT"
   },

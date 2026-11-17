@@ -5,8 +5,8 @@
     "id": 0,
     "type": "title",
     "event": "DAVNOR TB SUMMIT 2026",
-    "subEvent": "Province of Davao del Norte \u00b7 Provincial Health Office",
-    "title": "TOP PERFORMING BARANGAY HEALTH WORKERS (RANK 10\u20134)",
+    "subEvent": "Province of Davao del Norte · Provincial Health Office",
+    "title": "TOP PERFORMING BARANGAY HEALTH WORKERS (RANK 10–4)",
     "category": "DAVNOR TB SUMMIT 2026",
     "citation": "Saluting our outstanding Barangay Health Workers ranking 10th to 4th in TB surveillance and DOTS support"
   },
@@ -15,10 +15,10 @@
     "type": "awardee",
     "title": "OFFICIAL TABULATION IN PROGRESS",
     "number": 1,
-    "category": "TOP PERFORMING BHW (RANK 10\u20134)",
+    "category": "TOP PERFORMING BHW (RANK 10–4)",
     "subtitle": "Awaiting Final Verification by the Awards Committee",
     "citations": [
-      "Slide placeholders ready \u2014 final awardees will appear here once official validation completes."
+      "Slide placeholders ready — final awardees will appear here once official validation completes."
     ],
     "categoryTag": "TABULATION IN PROGRESS"
   },

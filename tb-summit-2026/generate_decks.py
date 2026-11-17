@@ -883,7 +883,7 @@ DECKS_CONFIG = [
                 "type": "awardee",
                 "title": "MUNICIPAL HEALTH OFFICE OF KAPALONG",
                 "number": 3,
-                "category": "HIGHEST TB TREATMENT COVERAGE RATE",
+                "category": "HIGHEST TB TREATMENT COVERAGE RATE (90.2%)",
                 "subtitle": "90.28% Treatment Coverage in 2025",
                 "citations": ["90.28% in 2025 · Exceeding National 90% Target Benchmark"],
                 "categoryTag": "TREATMENT COVERAGE"
@@ -921,12 +921,12 @@ DECKS_CONFIG = [
             {
                 "id": 7,
                 "type": "awardee",
-                "title": "DAVAO DEL NORTE HOSPITAL — SAMAL ZONE",
+                "title": "MUNICIPAL HEALTH OFFICE OF SAWATA",
                 "number": 7,
                 "category": "HIGHEST DS-TB CURE RATE",
-                "subtitle": "100% DS-TB Cure Rate in 2025 (Cohort 2024)",
-                "citations": ["100% in 2025 (Cohort 2024) · Perfect Microbiological Cure Record"],
-                "categoryTag": "100% CURE RATE"
+                "subtitle": "97% in 2025 (Cohort 2024)",
+                "citations": ["97% in 2025 (Cohort 2024) · High Cure Rate Performance"],
+                "categoryTag": "97% CURE RATE"
             },
             {
                 "id": 8,
@@ -950,6 +950,56 @@ DECKS_CONFIG = [
             },
             {
                 "id": 10,
+                "type": "awardee",
+                "title": "MUNICIPAL HEALTH OFFICE OF KAPALONG",
+                "number": 10,
+                "category": "100% PICT COVERAGE RATE WITH HIGHEST NUMBER TESTED FOR HIV",
+                "subtitle": "435 Cases in 2025",
+                "citations": ["435 Cases in 2025 · 100% Provider-Initiated Counseling & Testing"],
+                "categoryTag": "PICT HIV COVERAGE"
+            },
+            {
+                "id": 11,
+                "type": "awardee",
+                "title": "PHILIPPINE TUBERCULOSIS SOCIETY, INC. — TAGUM CITY BRANCH",
+                "number": 11,
+                "category": "HIGHEST NUMBER OF ELIGIBLE TB PATIENTS TESTED FOR DIABETES",
+                "subtitle": "555 Patients Tested in 2025",
+                "citations": ["555 Cases in 2025 · Comprehensive Comorbidity Screening"],
+                "categoryTag": "DIABETES TESTING"
+            },
+            {
+                "id": 12,
+                "type": "awardee",
+                "title": "CITY HEALTH OFFICE OF PANABO",
+                "number": 12,
+                "category": "HIGHEST NUMBER OF SPUTUM-SMEARED TESTED",
+                "subtitle": "864 Sputum Smear Tests in 2025",
+                "citations": ["864 Cases in 2025 · High-Impact Laboratory Case Finding"],
+                "categoryTag": "SPUTUM MICROSCOPY"
+            },
+            {
+                "id": 13,
+                "type": "awardee",
+                "title": "CITY HEALTH OFFICE OF TAGUM",
+                "number": 13,
+                "category": "TOP PERFORMING RAPID TB DIAGNOSTIC LABORATORY (RTDL) IN DAVAO DEL NORTE",
+                "subtitle": "3,369 Presumptive TB Patients Tested in 2025",
+                "citations": ["3,369 Presumptive Patients Tested in 2025 · High-Volume Diagnostic Hub"],
+                "categoryTag": "TOP PERFORMING RTDL"
+            },
+            {
+                "id": 14,
+                "type": "awardee",
+                "title": "DAVAO REGIONAL MEDICAL CENTER",
+                "number": 14,
+                "category": "OUTSTANDING RAPID TB DIAGNOSTIC LABORATORY (RTDL) SERVICE AWARD",
+                "subtitle": "Tertiary Referral & Advanced Diagnostic Center",
+                "citations": ["Exemplary Diagnostic Excellence · Referral & Molecular Hub of Davao del Norte"],
+                "categoryTag": "OUTSTANDING RTDL SERVICE"
+            },
+            {
+                "id": 15,
                 "type": "closing",
                 "title": "CONGRATULATIONS TO ALL TOP PERFORMING HEALTH CENTERS",
                 "citation": "Celebrating benchmark clinical standards, visionary leadership, and relentless commitment to saving lives.",
@@ -1046,17 +1096,199 @@ DECKS_CONFIG = [
             {
                 "id": 1,
                 "type": "awardee",
-                "title": "OFFICIAL TABULATION IN PROGRESS",
+                "title": "MUNICIPAL HEALTH OFFICE OF NEW CORELLA",
                 "number": 1,
-                "category": "CONSOLATION AWARDS",
-                "subtitle": "Awaiting Final Verification by the Awards Committee",
-                "citations": ["Slide placeholders ready — final facility awardees will appear here once official validation completes."],
-                "categoryTag": "TABULATION IN PROGRESS"
+                "category": "CONSOLATION AWARDEE — TB PROVIDING FACILITY",
+                "subtitle": "Municipality of New Corella",
+                "citations": [
+                    "DR. NANCY CACAYORIN — TB Medical Coordinator",
+                    "DR. JULIUS CLOYDE A. JALA — Assistant Municipal Health Officer",
+                    "MARITES M. BELLOSA, RM, BSM — TB Coordinator",
+                    "INGRID J. CUÑADO, RMT — TB Med Tech Coordinator",
+                    "LIZA C. MANUBAG, RN — HEPO",
+                    "JOY E. OMBILAYAN — TB Community Health Worker (CHW)",
+                    "JEANNIFER C. HANGAD — CHW",
+                    "RECEL S. BALILI — CHW"
+                ],
+                "categoryTag": "CONSOLATION AWARDEE"
             },
             {
                 "id": 2,
+                "type": "awardee",
+                "title": "CITY HEALTH OFFICE OF PANABO",
+                "number": 2,
+                "category": "CONSOLATION AWARDEE — TB PROVIDING FACILITY",
+                "subtitle": "City of Panabo",
+                "citations": [
+                    "DR. ALGAE ROSE S. HECHANOVA — City Health Officer",
+                    "DR. RAYAN JAE A. DEOCAMPO — TB Medical Coordinator",
+                    "MARY DIVINE GRACE T. HOFILEÑA, RN — TB Nurse Coordinator",
+                    "NADINE GEMMA S. ESTAQUIO, RMT — TB Med Tech Coordinator",
+                    "CHERI S. LENDIO, RN — HEPO II",
+                    "LEONIDA D. BASOBAS — Lab Aide",
+                    "JENEFER N. ANTON — TB Community Health Worker (CHW)",
+                    "NERISSA B. GORRE — CHW",
+                    "SHAA B. MAMAD — CHW",
+                    "MARDEL S. LUMAAD — CHW"
+                ],
+                "categoryTag": "CONSOLATION AWARDEE"
+            },
+            {
+                "id": 3,
+                "type": "awardee",
+                "title": "MUNICIPAL HEALTH OFFICE OF CARMEN",
+                "number": 3,
+                "category": "CONSOLATION AWARDEE — TB PROVIDING FACILITY",
+                "subtitle": "Municipality of Carmen",
+                "citations": [
+                    "DR. HANNAH KATRINA P. SEVILLA, DBPA, FPSA, FPSMSG — MHO",
+                    "DR. THOMPSON C. UY — TB Consultant",
+                    "JANE S. APUACA, RM, BSM — TB Coordinator",
+                    "CHERISH MADEL B. ELLECO, RMT — TB Med Tech Coordinator",
+                    "ROY P. SANTILLAN, RN — HEPO",
+                    "FEMER B. DABALOS — TB Community Health Worker (CHW)",
+                    "ANNALOU A. BASOT — CHW",
+                    "GEMMA L. BAJAO — CHW",
+                    "ELSIE S. VERGARA — CHW"
+                ],
+                "categoryTag": "CONSOLATION AWARDEE"
+            },
+            {
+                "id": 4,
+                "type": "awardee",
+                "title": "MUNICIPAL HEALTH OFFICE OF BRAULIO E. DUJALI",
+                "number": 4,
+                "category": "CONSOLATION AWARDEE — TB PROVIDING FACILITY",
+                "subtitle": "Municipality of Braulio E. Dujali",
+                "citations": [
+                    "DR. CHHERY T. DEMAALA — TB Medical Coordinator",
+                    "JOVELYN A. DUMALUAN, RN — TB Nurse Coordinator",
+                    "BETTY L. CALAMAY, RM — TB Focal Person",
+                    "SHARON ROSE B. LACORDA, RMT — TB Med Tech Coordinator",
+                    "FRENALIE D. BESAGAS — Lab Aide",
+                    "CHERYL R. GENTALLAN — TB Community Health Worker (CHW)",
+                    "NENA C. PLAGA — CHW",
+                    "NOIME A. FLORES — CHW"
+                ],
+                "categoryTag": "CONSOLATION AWARDEE"
+            },
+            {
+                "id": 5,
+                "type": "awardee",
+                "title": "MUNICIPAL HEALTH OFFICE OF ASUNCION",
+                "number": 5,
+                "category": "CONSOLATION AWARDEE — TB PROVIDING FACILITY",
+                "subtitle": "Municipality of Asuncion",
+                "citations": [
+                    "DR. JOHN C. BATACAN — Municipal Health Officer",
+                    "DR. JUSTIN LOUIE RYAN S. YUMANG — Medical Officer IV",
+                    "RUEBEN L. IMBANG, RN — TB Nurse Coordinator",
+                    "KRIZZIA MAE A. SABUDAN, RMT — TB Med Tech Coordinator",
+                    "JENNIE F. AVENIDO — TB Community Health Worker (CHW)",
+                    "DAISY L. ESCALA — CHW",
+                    "WENDY S. TAUNGAAN — CHW",
+                    "EVELYN M. ECHALAS — CHW / Community Volunteer"
+                ],
+                "categoryTag": "CONSOLATION AWARDEE"
+            },
+            {
+                "id": 6,
+                "type": "awardee",
+                "title": "MUNICIPAL HEALTH OFFICE OF SAWATA",
+                "number": 6,
+                "category": "CONSOLATION AWARDEE — TB PROVIDING FACILITY",
+                "subtitle": "Municipality of San Isidro (Sawata)",
+                "citations": [
+                    "DR. MERCY ASUNCION U. MACASERO, MD — TB Medical Coordinator",
+                    "DR. KESSEL T. DOMINGUEZ, MD — DTTB",
+                    "JAY RYAN G. VALIAO, RN — TB Nurse Coordinator",
+                    "JOHN RUMEL N. JADRAQUE, RMT — TB Med Tech Coordinator",
+                    "JAY M. CARMELOTES — ITIS Encoder",
+                    "JOELITA B. TUYOR — TB Community Health Worker (CHW)",
+                    "ELSEVITA P. FERNANDEZ — CHW",
+                    "EVA GRACE J. MANILA — CHW"
+                ],
+                "categoryTag": "CONSOLATION AWARDEE"
+            },
+            {
+                "id": 7,
+                "type": "awardee",
+                "title": "MUNICIPAL HEALTH OFFICE OF TALAINGOD",
+                "number": 7,
+                "category": "CONSOLATION AWARDEE — TB PROVIDING FACILITY",
+                "subtitle": "Municipality of Talaingod",
+                "citations": [
+                    "DR. RICAR P. APAS, MD — TB Medical Coordinator",
+                    "MARIA LIZA R. MONTERO, RN — TB Nurse Coordinator",
+                    "CHRISTINE DENNISE P. OLAYAN, RMT — TB Med Tech Coordinator",
+                    "JOSEPHINE S. BANTAO, RM — HEPO",
+                    "JESSA B. VILLANUEVA — TB Community Health Worker (CHW)",
+                    "MARILYN D. ASI-AN — CHW",
+                    "SONIA B. COLE — CHW"
+                ],
+                "categoryTag": "CONSOLATION AWARDEE"
+            },
+            {
+                "id": 8,
+                "type": "awardee",
+                "title": "BABAK DISTRICT HEALTH OFFICE",
+                "number": 8,
+                "category": "CONSOLATION AWARDEE — TB PROVIDING FACILITY",
+                "subtitle": "IGACOS · Babak District",
+                "citations": [
+                    "DR. JOSE BERNARD D. YAP — TB Medical Coordinator (Babak Dist.)",
+                    "TEDORO C. MEJIAS JR., RN — PHN",
+                    "AIZA MATAS, RMT — Medical Technologist",
+                    "ZENITH JANE T. SAMBILAD — ITIS Encoder",
+                    "MARITESS F. SUSAS — TB Community Health Worker (CHW)",
+                    "MEREJINE B. SUAREZ — CHW",
+                    "RUDITH V. JOVEN — CHW"
+                ],
+                "categoryTag": "CONSOLATION AWARDEE"
+            },
+            {
+                "id": 9,
+                "type": "awardee",
+                "title": "KAPUTIAN DISTRICT HEALTH OFFICE",
+                "number": 9,
+                "category": "CONSOLATION AWARDEE — TB PROVIDING FACILITY",
+                "subtitle": "IGACOS · Kaputian District",
+                "citations": [
+                    "DR. DENNIS CARLOS D. FLORES — City Health Officer",
+                    "ANA MARIE E. MACABENTA, RN — HEPO",
+                    "TELY GRACE P. LUCERO, RN, MAN — Admin Officer",
+                    "DR. FRITZ GERARD M. LLANOS — TB Medical Coordinator",
+                    "SWEET DAFFODIL N. ROBLE, RN, MAN — TB Nurse Coordinator",
+                    "ELIAZAR L. GUALDAJARA JR., RMT — Medical Technologist",
+                    "ALJON B. OLIVEROS — ITIS Encoder",
+                    "JELYN S. PAGALAN — CHW",
+                    "JENNY B. MONTEJO — CHW",
+                    "MARIBEL M. CORTEZ — CHW"
+                ],
+                "categoryTag": "CONSOLATION AWARDEE"
+            },
+            {
+                "id": 10,
+                "type": "awardee",
+                "title": "SAMAL DISTRICT HEALTH OFFICE",
+                "number": 10,
+                "category": "CONSOLATION AWARDEE — TB PROVIDING FACILITY",
+                "subtitle": "IGACOS · Samal District",
+                "citations": [
+                    "DR. STEPHANIE ALVAR R. PARREÑO — TB Medical Coordinator",
+                    "WENFREDO L. LAVADOR, RN — PHN",
+                    "CLARICE FAYE C. CAMANZO, RMT — Medical Technologist",
+                    "DEN MARK V. ROMO — ITIS Encoder",
+                    "JO-ANN L. TANGINAN — CHW",
+                    "JACKYLOU C. SERRANO — CHW",
+                    "MARY GRACE L. VILLAHERMOSA — CHW"
+                ],
+                "categoryTag": "CONSOLATION AWARDEE"
+            },
+            {
+                "id": 11,
                 "type": "closing",
-                "title": "SALUTE TO ALL PARTICIPATING TB FACILITIES",
+                "title": "SALUTE TO ALL CONSOLATION TB PROVIDING FACILITIES",
                 "citation": "Thank you for your dedicated service to every patient on the path to recovery.",
                 "subtitle": "DAVNOR TB SUMMIT 2026"
             }
@@ -1151,15 +1383,122 @@ DECKS_CONFIG = [
             {
                 "id": 1,
                 "type": "awardee",
-                "title": "OFFICIAL TABULATION IN PROGRESS",
-                "number": 1,
-                "category": "TOP PERFORMING TB PROVIDER (RANK 3–1)",
-                "subtitle": "Podium Announcement Awaiting Final Official Tally",
-                "citations": ["Top 3, 2, and 1 champion podium slides ready — will populate upon committee release."],
-                "categoryTag": "PODIUM FINALISTS"
+                "title": "MUNICIPAL HEALTH OFFICE OF STO. TOMAS",
+                "number": 3,
+                "category": "THIRD PLACE · TOP PERFORMING TB PROVIDING FACILITY",
+                "subtitle": "Municipality of Sto. Tomas · Bronze Podium",
+                "citations": [
+                    "DR. JUNE P. LIM, RMT, MD, MPM — TB Medical Coordinator",
+                    "RAYCHELE M. ABUDA, RN — TB Nurse Coordinator",
+                    "ANNALOU O. OLANDRIA, RMT — TB Med Tech Coordinator",
+                    "GEMMA M. DURAN — HEPO",
+                    "MARIBEL A. OBEAL — TB Community Health Worker (CHW)",
+                    "JANETTE B. MEDINA — CHW",
+                    "ROSIE S. SIBAY — CHW",
+                    "HELEN P. VELARDE — CHW"
+                ],
+                "categoryTag": "THIRD PLACE · BRONZE"
             },
             {
                 "id": 2,
+                "type": "awardee",
+                "title": "CITY HEALTH OFFICE OF TAGUM",
+                "number": 2,
+                "category": "SECOND PLACE · TOP PERFORMING TB PROVIDING FACILITY",
+                "subtitle": "City of Tagum · Healthcare Leadership & Technical Team",
+                "citations": [
+                    "DR. MUHAMMAD HISHAM B. MACKNO, MD — TB Medical Coordinator",
+                    "JOHAN CALVIN P. CHIENG, RN — TB Nurse Coordinator",
+                    "CRISITINA A. FERNNADEZ, RMT — TB Med Tech Coordinator",
+                    "JOSEPH JASON SOLIS — ITIS Encoder",
+                    "EVALY FAITH V. EUGENIO, RMT — Supervising Health Officer IV",
+                    "RAE KATHERINE APURA, RN — HEPO III",
+                    "LORENA S. PEÑAS — Laboratory Aide"
+                ],
+                "categoryTag": "SECOND PLACE · SILVER"
+            },
+            {
+                "id": 3,
+                "type": "awardee",
+                "title": "CITY HEALTH OFFICE OF TAGUM",
+                "number": 2,
+                "category": "SECOND PLACE · COMMUNITY HEALTH WORKERS (PART 1)",
+                "subtitle": "City of Tagum · Frontline Community Health Workers",
+                "citations": [
+                    "ALMERA R. ABELLANA — TB Community Health Worker (CHW)",
+                    "MARIANITA A. ABUCAY — CHW",
+                    "MA. LUNA G. AMBITO — CHW / Community Volunteer",
+                    "MARITESS B. ANACAYA — CHW",
+                    "MIGUELITA C. AQUINO — CHW / Community Volunteer",
+                    "JOAN L. ARAÑO — CHW",
+                    "JOSELYN L. BAYA — CHW",
+                    "RUBY L. BITANGCOL — CHW",
+                    "CRISTINE JOY P. BUAYA — CHW",
+                    "DATCHES B. BUNAYAN — CHW",
+                    "AMELIA A. CATUBIG — CHW",
+                    "HAYDELISA C. CONCON — CHW",
+                    "LORIEBETH D. DAYAG — CHW",
+                    "MARIA CEILO D. DEOCARES — CHW",
+                    "CARMELITA C. FAMILAR — CHW",
+                    "TERESITA S. FERNANDEZ — CHW",
+                    "NICANORA M. FUNESTO — CHW"
+                ],
+                "categoryTag": "SECOND PLACE · CHW TEAM 1"
+            },
+            {
+                "id": 4,
+                "type": "awardee",
+                "title": "CITY HEALTH OFFICE OF TAGUM",
+                "number": 2,
+                "category": "SECOND PLACE · COMMUNITY HEALTH WORKERS (PART 2)",
+                "subtitle": "City of Tagum · Frontline Community Health Workers",
+                "citations": [
+                    "GRACE A. GAUM — CHW",
+                    "MILAGROSA C. HINAY — CHW",
+                    "FE L. MACIAS — CHW",
+                    "MILDRED C. MAGDADARO — CHW",
+                    "KARENA B. MAYOR — CHW",
+                    "EDNA C. MMOMONGAN — CHW",
+                    "MARIA ELITA Q. ONONG — CHW",
+                    "BABYLYN C. PANGONA — CHW",
+                    "AZENITH M. PAYBANO — CHW",
+                    "ROSALIA PUNO — CHW",
+                    "JINA Q. RABE — CHW",
+                    "EVELYN J. RAZONABLE — CHW / Community Volunteer",
+                    "SHEILA C. ROLLO — CHW",
+                    "VIRGENIA G. SAREÑANA — CHW",
+                    "GEMIMA A. VELA — CHW",
+                    "MARYJEAN C. BUSTAMANTE — CHW",
+                    "AILYN O. NATURAL — CHW"
+                ],
+                "categoryTag": "SECOND PLACE · CHW TEAM 2"
+            },
+            {
+                "id": 5,
+                "type": "awardee",
+                "title": "MUNICIPAL HEALTH OFFICE OF KAPALONG",
+                "number": 1,
+                "category": "FIRST PLACE · GRAND CHAMPION TB PROVIDING FACILITY",
+                "subtitle": "Municipality of Kapalong · Grand Champion",
+                "citations": [
+                    "DR. LOUELYN H. EXALA, MD, DBCOM — TB Medical Coordinator",
+                    "IRWIN JOSEPH B. BATIBUT, RN — TB Nurse Coordinator",
+                    "RENATO C. NAVARRO JR., RMT — TB Med Tech Coordinator",
+                    "AL BARRAY T. PERALTA — ITIS Encoder",
+                    "RIZALYN C. RAMIREZ — TB Admin Support",
+                    "SHAIRA FAITH G. LIGANSO, RM, BSM — HEPO",
+                    "TITING D. PAYNAG — Community Volunteer",
+                    "DELIA S. OBENIETA — TB Community Health Worker (CHW)",
+                    "MARIEL M. OYDA — CHW",
+                    "MARY S. LALUMA — CHW",
+                    "LIEZEL C. MASALOON — CHW",
+                    "BABIE M. DAGANSINA — CHW",
+                    "JOLLY ANN M. MANGUAN — CHW"
+                ],
+                "categoryTag": "GRAND CHAMPION · GOLD"
+            },
+            {
+                "id": 6,
                 "type": "closing",
                 "title": "CONGRATULATIONS TO OUR PODIUM CHAMPION PROVIDERS!",
                 "citation": "Delivering peerless medical excellence, patient survival, and hope in ending Tuberculosis.",
@@ -1422,7 +1761,7 @@ def make_presenter_html(cfg):
 def make_slides_data_js(cfg):
     js_content = f"""(function () {{
   // Source: TB SUMMIT LIST OF AWARDS.xlsx (DAVNOR TB Summit 2026)
-  var data = {json.dumps(cfg['slides'], indent=2)};
+  var data = {json.dumps(cfg['slides'], indent=2, ensure_ascii=False)};
 
   window.SLIDES_DATA = data;
   window.DECKS_CATALOG = window.DECKS_CATALOG || {{}};

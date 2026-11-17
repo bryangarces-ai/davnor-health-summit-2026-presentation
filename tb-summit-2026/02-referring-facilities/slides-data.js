@@ -5,8 +5,8 @@
     "id": 0,
     "type": "title",
     "event": "DAVNOR TB SUMMIT 2026",
-    "subEvent": "Province of Davao del Norte \u00b7 Provincial Health Office",
-    "title": "SPECIAL AWARDS \u2014 REFERRING FACILITIES",
+    "subEvent": "Province of Davao del Norte · Provincial Health Office",
+    "title": "SPECIAL AWARDS — REFERRING FACILITIES",
     "category": "DAVNOR TB SUMMIT 2026",
     "citation": "Recognizing referring hospitals, medical clinics, and custodial facilities actively notifying TB cases in Davao del Norte"
   },
@@ -18,7 +18,7 @@
     "category": "REFERRING FACILITY",
     "subtitle": "Tagum City",
     "citations": [
-      "RONA B. ADOL-ANG, RN \u2014 TB Nurse Coordinator"
+      "RONA B. ADOL-ANG, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
@@ -30,7 +30,7 @@
     "category": "REFERRING FACILITY",
     "subtitle": "Tagum City",
     "citations": [
-      "JOESERIL T. FRUCTOSO, RN \u2014 TB Nurse Coordinator"
+      "JOESERIL T. FRUCTOSO, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
@@ -42,7 +42,7 @@
     "category": "REFERRING FACILITY",
     "subtitle": "Tagum City",
     "citations": [
-      "KHAYE RHE P. NAVACILLA, RN \u2014 TB Nurse Coordinator"
+      "KHAYE RHE P. NAVACILLA, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
@@ -54,7 +54,7 @@
     "category": "REFERRING FACILITY",
     "subtitle": "Tagum City",
     "citations": [
-      "NICOLLE A. CUESTAS, RN \u2014 TB Nurse Coordinator"
+      "NICOLLE A. CUESTAS, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
@@ -66,7 +66,7 @@
     "category": "REFERRING FACILITY",
     "subtitle": "Tagum City",
     "citations": [
-      "MARI-TESSA O. SURIGAO, RN \u2014 TB Nurse Coordinator"
+      "MARI-TESSA O. SURIGAO, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
@@ -78,7 +78,7 @@
     "category": "REFERRING FACILITY",
     "subtitle": "Panabo City",
     "citations": [
-      "CYRIAN MAE JAVIER-NAVIGAR, RN \u2014 TB Nurse Coordinator"
+      "CYRIAN MAE JAVIER-NAVIGAR, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
@@ -90,7 +90,7 @@
     "category": "REFERRING FACILITY",
     "subtitle": "Panabo City",
     "citations": [
-      "AMABELLA C. MALIA, RN \u2014 TB Nurse Coordinator"
+      "AMABELLA C. MALIA, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
@@ -102,7 +102,7 @@
     "category": "REFERRING FACILITY",
     "subtitle": "Panabo City",
     "citations": [
-      "JOANNE D. NOVELA, RN \u2014 TB Nurse Coordinator"
+      "JOANNE D. NOVELA, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
@@ -114,21 +114,21 @@
     "category": "REFERRING FACILITY",
     "subtitle": "Carmen, Davao del Norte",
     "citations": [
-      "CHELAMAE CLAIRE P. JACOT, RN \u2014 TB Nurse Coordinator"
+      "CHELAMAE CLAIRE P. JACOT, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 10,
     "type": "awardee",
-    "title": "DAVAO DEL NORTE HOSPITAL \u2014 CARMEN ZONE",
+    "title": "DAVAO DEL NORTE HOSPITAL — CARMEN ZONE",
     "number": 10,
     "category": "REFERRING FACILITY",
     "subtitle": "Carmen, Davao del Norte",
     "citations": [
-      "RUCHILLE S. ARROCENA, MD, FPSMSI, MAHA \u2014 OIC - Chief of Hospital",
-      "KARREN MAE R. BARCENA, RN \u2014 TB Nurse Coordinator",
-      "JENNIFER R. BRECIO, RMT \u2014 RTDL Medical Technologist",
+      "RUCHILLE S. ARROCENA, MD, FPSMSI, MAHA — OIC - Chief of Hospital",
+      "KARREN MAE R. BARCENA, RN — TB Nurse Coordinator",
+      "JENNIFER R. BRECIO, RMT — RTDL Medical Technologist",
       "Radiology Department"
     ],
     "categoryTag": "REFERRING FACILITY"
@@ -141,7 +141,7 @@
     "category": "REFERRING FACILITY",
     "subtitle": "Davao del Norte",
     "citations": [
-      "SHILLA MEE M. MALABAGO, RN \u2014 TB Nurse Coordinator"
+      "SHILLA MEE M. MALABAGO, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
@@ -153,7 +153,7 @@
     "category": "REFERRING FACILITY",
     "subtitle": "Davao del Norte",
     "citations": [
-      "NIMFA G. NACIS, RN \u2014 TB Nurse Coordinator"
+      "NIMFA G. NACIS, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
@@ -165,7 +165,7 @@
     "category": "REFERRING FACILITY",
     "subtitle": "Davao del Norte",
     "citations": [
-      "JUDITH L. DEOCAMPO, RN \u2014 TB Nurse Coordinator"
+      "JUDITH L. DEOCAMPO, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
@@ -177,7 +177,7 @@
     "category": "REFERRING FACILITY",
     "subtitle": "Davao del Norte",
     "citations": [
-      "JESSE MARI T. CARLON, RN \u2014 TB Nurse Coordinator"
+      "JESSE MARI T. CARLON, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
@@ -189,7 +189,7 @@
     "category": "REFERRING FACILITY",
     "subtitle": "Davao del Norte",
     "citations": [
-      "RICHE A. DADULA, RN \u2014 TB Nurse Coordinator"
+      "RICHE A. DADULA, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
@@ -201,21 +201,21 @@
     "category": "REFERRING FACILITY",
     "subtitle": "Davao del Norte",
     "citations": [
-      "DARYL V. TEVES, RN \u2014 TB Nurse Coordinator"
+      "DARYL V. TEVES, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 17,
     "type": "awardee",
-    "title": "DAVAO DEL NORTE HOSPITAL \u2014 KAPALONG ZONE",
+    "title": "DAVAO DEL NORTE HOSPITAL — KAPALONG ZONE",
     "number": 17,
     "category": "REFERRING FACILITY",
     "subtitle": "Kapalong, Davao del Norte",
     "citations": [
-      "JESSIE T. BELGA, MD, FPSMSI, MSPH-HA \u2014 Chief of Hospital II",
-      "ZHEENA MAE C. NALUPA, RN, MAN \u2014 TB Nurse Coordinator",
-      "LEONA S. OLILA, RMT \u2014 RTDL Medical Technologist",
+      "JESSIE T. BELGA, MD, FPSMSI, MSPH-HA — Chief of Hospital II",
+      "ZHEENA MAE C. NALUPA, RN, MAN — TB Nurse Coordinator",
+      "LEONA S. OLILA, RMT — RTDL Medical Technologist",
       "Radiology Department"
     ],
     "categoryTag": "REFERRING FACILITY"
@@ -228,31 +228,31 @@
     "category": "REFERRING FACILITY",
     "subtitle": "Davao Regional Medical Center",
     "citations": [
-      "MYLENE V. TORCULAS, RN \u2014 TB Nurse Coordinator"
+      "MYLENE V. TORCULAS, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 19,
     "type": "awardee",
-    "title": "TAGUM CITY DISTRICT JAIL \u2014 MALE DORMITORY",
+    "title": "TAGUM CITY DISTRICT JAIL — MALE DORMITORY",
     "number": 19,
     "category": "REFERRING FACILITY",
     "subtitle": "Bureau of Jail Management and Penology",
     "citations": [
-      "SJO4 JONATHAN D. ALMONARES, RN \u2014 TB Nurse Coordinator"
+      "SJO4 JONATHAN D. ALMONARES, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 20,
     "type": "awardee",
-    "title": "TAGUM CITY DISTRICT JAIL \u2014 FEMALE DORMITORY",
+    "title": "TAGUM CITY DISTRICT JAIL — FEMALE DORMITORY",
     "number": 20,
     "category": "REFERRING FACILITY",
     "subtitle": "Bureau of Jail Management and Penology",
     "citations": [
-      "JO2 JENNY ANN C. MELENDREZ, RN \u2014 TB Nurse Coordinator"
+      "JO2 JENNY ANN C. MELENDREZ, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
@@ -264,7 +264,7 @@
     "category": "REFERRING FACILITY",
     "subtitle": "Bureau of Jail Management and Penology",
     "citations": [
-      "SJO4 HENRY S. AGUISANDO, RN \u2014 TB Nurse Coordinator"
+      "SJO4 HENRY S. AGUISANDO, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
@@ -276,7 +276,7 @@
     "category": "REFERRING FACILITY",
     "subtitle": "Bureau of Jail Management and Penology",
     "citations": [
-      "JO2 KARLAND DALE C. BALON, RN \u2014 TB Nurse Coordinator"
+      "JO2 KARLAND DALE C. BALON, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },
@@ -288,7 +288,7 @@
     "category": "REFERRING FACILITY",
     "subtitle": "Province of Davao del Norte",
     "citations": [
-      "PS TRISTAN C. AGAG, RN \u2014 TB Nurse Coordinator"
+      "PS TRISTAN C. AGAG, RN — TB Nurse Coordinator"
     ],
     "categoryTag": "REFERRING FACILITY"
   },

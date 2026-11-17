@@ -5,8 +5,8 @@
     "id": 0,
     "type": "title",
     "event": "DAVNOR TB SUMMIT 2026",
-    "subEvent": "Province of Davao del Norte \u00b7 Provincial Health Office",
-    "title": "TOP 3\u20131 PERFORMING BARANGAYS",
+    "subEvent": "Province of Davao del Norte · Provincial Health Office",
+    "title": "TOP 3–1 PERFORMING BARANGAYS",
     "category": "DAVNOR TB SUMMIT 2026",
     "citation": "Grand podium announcement of the Top 3, Top 2, and Champion Barangays of Davao del Norte"
   },
@@ -15,10 +15,10 @@
     "type": "awardee",
     "title": "OFFICIAL TABULATION IN PROGRESS",
     "number": 1,
-    "category": "TOP PERFORMING BARANGAY (RANK 3\u20131)",
+    "category": "TOP PERFORMING BARANGAY (RANK 3–1)",
     "subtitle": "Podium Announcement Awaiting Final Official Tally",
     "citations": [
-      "Top 3, 2, and 1 champion podium slides ready \u2014 will populate upon committee release."
+      "Top 3, 2, and 1 champion podium slides ready — will populate upon committee release."
     ],
     "categoryTag": "PODIUM FINALISTS"
   },
