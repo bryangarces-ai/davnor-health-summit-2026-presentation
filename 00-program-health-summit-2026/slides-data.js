@@ -31,7 +31,8 @@
     "title": "DR. ALFREDO A. LACERONA",
     "subtitle": "Provincial Health Officer II · Province of Davao del Norte",
     "category": "OPENING REMARKS",
-    "categoryTag": "SPEAKER"
+    "categoryTag": "SPEAKER",
+    "image": "../shared/assets/speakers/ALFREDO A. LACERONA.png"
   },
   {
     "id": 4,
@@ -39,7 +40,8 @@
     "title": "HON. CLARICE T. JUBAHIB",
     "subtitle": "Vice Governor · Province of Davao del Norte",
     "category": "GUEST SPEAKER",
-    "categoryTag": "GUEST SPEAKER"
+    "categoryTag": "GUEST SPEAKER",
+    "image": "../shared/assets/speakers/HON. CLARICE JUBAHIB.jpg"
   },
   {
     "id": 5,
@@ -103,7 +105,8 @@
     "title": "HON. EDWIN I. JUBAHIB, MMPA",
     "subtitle": "Governor · Province of Davao del Norte",
     "category": "MESSAGE",
-    "categoryTag": "MESSAGE"
+    "categoryTag": "MESSAGE",
+    "image": "../shared/assets/speakers/edwin jubahib.png"
   },
   {
     "id": 13,

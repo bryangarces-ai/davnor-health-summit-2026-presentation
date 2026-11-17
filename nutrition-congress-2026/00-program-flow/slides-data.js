@@ -13,9 +13,9 @@
   {
     "id": 1,
     "type": "awardee",
-    "title": "INVOCATION",
+    "title": "PRAYER",
     "category": "ORDER OF CEREMONY",
-    "subtitle": "DAVNOR PROVINCIAL CAPITOL CHOIR",
+    "subtitle": "SOTERIA CHORALE",
     "categoryTag": "PART I \u00b7 8:00 AM"
   },
   {
@@ -23,31 +23,33 @@
     "type": "awardee",
     "title": "PHILIPPINE NATIONAL ANTHEM",
     "category": "ORDER OF CEREMONY",
-    "subtitle": "DAVNOR PROVINCIAL CAPITOL CHOIR",
+    "subtitle": "SOTERIA CHORALE",
     "categoryTag": "PART I \u00b7 8:00 AM"
   },
   {
     "id": 3,
     "type": "awardee",
-    "title": "INTRODUCTION OF PARTICIPANTS",
-    "category": "ACKNOWLEDGEMENT",
-    "subtitle": "SUNSHINE ANGELIE S. BANTILAN, RND",
-    "department": "Acting Provincial Nutrition Program Coordinator",
-    "categoryTag": "PART I \u00b7 8:00 AM"
+    "title": "SUNSHINE ANGELIE S. BANTILAN, RND",
+    "category": "INTRODUCTION OF THE PARTICIPANTS",
+    "subtitle": "Acting Provincial Nutrition Program Coordinator",
+    "department": "Provincial Health Office \u00b7 Province of Davao del Norte",
+    "categoryTag": "PART I \u00b7 8:00 AM",
+    "image": "../../shared/assets/speakers/sunshine angelie bantilan.png"
   },
   {
     "id": 4,
     "type": "awardee",
-    "title": "WELCOME ADDRESS",
-    "category": "OPENING REMARKS",
-    "subtitle": "ALFREDO A. LACERONA, MD",
-    "department": "Provincial Health Officer II \u00b7 DavNor PHO",
-    "categoryTag": "PART I \u00b7 8:00 AM"
+    "title": "ALFREDO A. LACERONA, MD",
+    "category": "WELCOME ADDRESS",
+    "subtitle": "Provincial Health Officer II / PNAO",
+    "department": "Provincial Health Office \u00b7 Province of Davao del Norte",
+    "categoryTag": "PART I \u00b7 8:00 AM",
+    "image": "../../shared/assets/speakers/ALFREDO A. LACERONA.png"
   },
   {
     "id": 5,
     "type": "awardee",
-    "title": "CULTURAL INTERMISSION",
+    "title": "INTERMISSION NUMBER",
     "category": "PERFORMANCE",
     "subtitle": "GANDINGAN CULTURAL AND KULINTANG ENSEMBLE",
     "categoryTag": "INTERMISSION NUMBER"
@@ -56,34 +58,39 @@
     "id": 6,
     "type": "awardee",
     "title": "HON. EDWIN I. JUBAHIB, MMPA",
-    "category": "KEYNOTE SPEAKER",
+    "category": "KEYNOTE ADDRESS",
     "subtitle": "Provincial Governor \u00b7 Province of Davao del Norte",
-    "categoryTag": "KEYNOTE ADDRESS"
+    "department": "Province of Davao del Norte",
+    "categoryTag": "KEYNOTE SPEAKER",
+    "image": "../../shared/assets/speakers/edwin jubahib.png"
   },
   {
     "id": 7,
     "type": "awardee",
-    "title": "EMPOWERING COMMUNITIES THROUGH SUSTAINABLE NUTRITION INTERVENTIONS",
+    "title": "RETSEBETH M. LAQUIHON, RND, MPD, MDM",
     "category": "KEYNOTE PRESENTATION",
-    "subtitle": "MAYFLOR PERALTA-ESPIRITU, RND",
-    "department": "DOH-XI Nutrition Program Manager \u00b7 Nutritionist Dietitian IV",
-    "categoryTag": "TECHNICAL SESSION"
+    "subtitle": "Strengthening Local Nutrition Governance: Key Updates, Strategic Directions and Implementation Priorities",
+    "department": "Regional Nutrition Program Coordinator \u00b7 National Nutrition Council XI",
+    "categoryTag": "STRATEGIC DIRECTIONS",
+    "image": "../../shared/assets/speakers/RETSEBETH M LAQUIHON.jpg"
   },
   {
     "id": 8,
     "type": "awardee",
-    "title": "LGU BEST PRACTICES",
-    "category": "AUDIO-VISUAL PRESENTATION",
-    "subtitle": "Inspiring Stories & Milestones of Davao del Norte LGUs",
-    "categoryTag": "AVP SHOWCASE"
+    "title": "INTERMISSION DANCE NUMBER",
+    "category": "PERFORMANCE",
+    "subtitle": "ST. MARY'S COLLEGE",
+    "categoryTag": "INTERMISSION NUMBER"
   },
   {
     "id": 9,
     "type": "awardee",
-    "title": "LUNCH BREAK & FELLOWSHIP",
-    "category": "PROGRAM RECESS",
-    "subtitle": "Ceremony Resumes Promptly at 1:00 PM for Part II",
-    "categoryTag": "12:00 PM - 1:00 PM"
+    "title": "MAYFLOR PERALTA-ESPIRITU, RND",
+    "category": "TECHNICAL SESSION",
+    "subtitle": "Empowering Communities Through Sustainable Nutrition Interventions",
+    "department": "DOH-XI Nutrition Program Manager \u00b7 Nutritionist Dietitian IV",
+    "categoryTag": "KEYNOTE PRESENTATION",
+    "image": "../../shared/assets/speakers/MAYFLOR PERALTA.png"
   },
   {
     "id": 10,
@@ -91,19 +98,36 @@
     "title": "INTERMISSION DANCE NUMBER",
     "category": "PERFORMANCE",
     "subtitle": "ST. MARY'S COLLEGE",
-    "categoryTag": "PART II \u00b7 1:00 PM"
+    "categoryTag": "INTERMISSION NUMBER"
   },
   {
     "id": 11,
     "type": "awardee",
-    "title": "PANGGA KO SI SAM: DAVNOR'S INNOVATIVE INITIATIVE IN THE MANAGEMENT OF SEVERE ACUTE MALNUTRITION",
-    "category": "SPECIAL FEATURE",
-    "subtitle": "HON. CLARICE JUBAHIB",
-    "department": "Provincial Vice Governor \u00b7 Province of Davao del Norte",
-    "categoryTag": "INITIATIVE SPOTLIGHT"
+    "title": "LGU BEST PRACTICES",
+    "category": "AUDIO-VISUAL PRESENTATION",
+    "subtitle": "Inspiring Stories & Milestones of Davao del Norte LGUs",
+    "categoryTag": "AVP SHOWCASE"
   },
   {
     "id": 12,
+    "type": "awardee",
+    "title": "INTERMISSION NUMBER",
+    "category": "PERFORMANCE",
+    "subtitle": "QUARTESSENCE",
+    "categoryTag": "PART II \u00b7 1:00 PM"
+  },
+  {
+    "id": 13,
+    "type": "awardee",
+    "title": "HON. CLARICE JUBAHIB",
+    "category": "PANGGA KO SI SAM: SPECIAL FEATURE",
+    "subtitle": "DavNor's Innovative Initiative in the Management of Severe Acute Malnutrition",
+    "department": "Provincial Vice Governor \u00b7 Province of Davao del Norte",
+    "categoryTag": "INITIATIVE SPOTLIGHT",
+    "image": "../../shared/assets/speakers/HON. CLARICE JUBAHIB.jpg"
+  },
+  {
+    "id": 14,
     "type": "awardee",
     "title": "PANGGA KO SI SAM AVP",
     "category": "AUDIO-VISUAL PRESENTATION",
@@ -111,7 +135,7 @@
     "categoryTag": "AVP FEATURE"
   },
   {
-    "id": 13,
+    "id": 15,
     "type": "awardee",
     "title": "RAFFLES AND DOOR PRIZES",
     "category": "SPECIAL FELLOWSHIP",
@@ -119,15 +143,7 @@
     "categoryTag": "LUCKY DRAW"
   },
   {
-    "id": 14,
-    "type": "awardee",
-    "title": "INTERMISSION NUMBER",
-    "category": "PERFORMANCE",
-    "subtitle": "QUARTESSENCE",
-    "categoryTag": "MUSICAL NUMBER"
-  },
-  {
-    "id": 15,
+    "id": 16,
     "type": "closing",
     "event": "2026 PROVINCIAL NUTRITION CONGRESS",
     "title": "PADAYON SA MALUNGTARONG NUTRISYON!",
