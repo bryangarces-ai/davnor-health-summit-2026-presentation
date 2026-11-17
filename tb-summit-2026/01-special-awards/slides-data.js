@@ -96,10 +96,10 @@
     "title": "MARIA VICTORIA L. LEGASPI, MD & JEORGIE ARVIN S. LEGASPI, MD",
     "number": 9,
     "category": "SPECIAL AWARD",
-    "subtitle": "Specialist Consultants",
+    "subtitle": "Specialist Consultants · Davao del Norte TB Consultants",
     "citations": [
-      "MARIA VICTORIA L. LEGASPI, MD, FPCP, FPCCP, FCCP — Internal Medicine/Pulmonologist",
-      "JEORGIE ARVIN S. LEGASPI, MD, DPCOM, FPSMS, MAHA — Internal Medicine/Occupational Medicine"
+      "Internal Medicine / Pulmonologist (FPCP, FPCCP, FCCP)",
+      "Internal Medicine / Occupational Medicine (DPCOM, FPSMS, MAHA)"
     ],
     "categoryTag": "SPECIAL AWARD"
   },
