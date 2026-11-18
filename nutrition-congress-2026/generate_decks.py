@@ -295,19 +295,19 @@ DECKS_CONFIG = [
             },
             {
                 "id": 13,
-                "type": "awardee",
-                "title": "RAFFLES AND DOOR PRIZES",
-                "category": "SPECIAL FELLOWSHIP",
-                "subtitle": "Exciting Prizes for our Dedicated Nutrition Workers",
-                "categoryTag": "LUCKY DRAW · BATCH 1"
-            },
-            {
-                "id": 14,
                 "type": "closing",
                 "event": "2026 PROVINCIAL NUTRITION CONGRESS",
                 "title": "CONGRATULATIONS TO OUR PARTNERS!",
                 "subTitle": "Pangga Ko Si Sam Initiative",
                 "citation": "Thank you for your invaluable commitment to ending severe acute malnutrition in our children."
+            },
+            {
+                "id": 14,
+                "type": "awardee",
+                "title": "RAFFLES AND DOOR PRIZES",
+                "category": "SPECIAL FELLOWSHIP",
+                "subtitle": "Exciting Prizes for our Dedicated Nutrition Workers",
+                "categoryTag": "LUCKY DRAW · BATCH 1"
             }
         ]
     },
@@ -512,6 +512,15 @@ DECKS_CONFIG = [
             {
                 "id": 5,
                 "type": "awardee",
+                "title": "CHERRY T. DEMA-ALA, MD",
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "CONTENDER: MUNICIPAL NUTRITION ACTION OFFICER",
+                "department": "Municipality of Braulio E. Dujali",
+                "categoryTag": "MNAO CONTENDER"
+            },
+            {
+                "id": 6,
+                "type": "awardee",
                 "title": "JAYLEN M. GAJE",
                 "category": "CERTIFICATE OF RECOGNITION",
                 "subtitle": "CONTENDER: MUNICIPAL NUTRITION ACTION OFFICER",
@@ -519,7 +528,7 @@ DECKS_CONFIG = [
                 "categoryTag": "MNAO CONTENDER"
             },
             {
-                "id": 6,
+                "id": 7,
                 "type": "awardee",
                 "title": "ARTUR L. PINABUDLANG",
                 "category": "CERTIFICATE OF RECOGNITION",
@@ -529,15 +538,16 @@ DECKS_CONFIG = [
             },
             # ACTION OFFICERS: WINNERS
             {
-                "id": 7,
+                "id": 8,
                 "type": "awardee",
                 "title": "GUILLERMO E. OLDEN",
                 "category": "PROVINCIAL OUTSTANDING CITY NUTRITION ACTION OFFICER",
                 "subtitle": "Island Garden City of Samal (IGACOS)",
-                "categoryTag": "PLAQUE WINNER"
+                "categoryTag": "PLAQUE WINNER",
+                "image": "../../shared/assets/speakers/Guillermo Olden.jfif"
             },
             {
-                "id": 8,
+                "id": 9,
                 "type": "awardee",
                 "title": "JOEL M. ANDOY, LPT, MMPA",
                 "category": "PROVINCIAL OUTSTANDING MUNICIPAL NUTRITION ACTION OFFICER",
@@ -546,7 +556,7 @@ DECKS_CONFIG = [
             },
             # 2. COORDINATORS: CONTENDERS
             {
-                "id": 9,
+                "id": 10,
                 "type": "awardee",
                 "title": "LIZA M. LAVEGA",
                 "category": "CERTIFICATE OF RECOGNITION",
@@ -555,7 +565,7 @@ DECKS_CONFIG = [
                 "categoryTag": "MNPC CONTENDER"
             },
             {
-                "id": 10,
+                "id": 11,
                 "type": "awardee",
                 "title": "MERCIDITA P. RODULFA",
                 "category": "CERTIFICATE OF RECOGNITION",
@@ -564,7 +574,7 @@ DECKS_CONFIG = [
                 "categoryTag": "MNPC CONTENDER"
             },
             {
-                "id": 11,
+                "id": 12,
                 "type": "awardee",
                 "title": "CANDY MEA T. DELA CRUZ",
                 "category": "CERTIFICATE OF RECOGNITION",
@@ -573,7 +583,7 @@ DECKS_CONFIG = [
                 "categoryTag": "MNPC CONTENDER"
             },
             {
-                "id": 12,
+                "id": 13,
                 "type": "awardee",
                 "title": "ANALYN SERONDO",
                 "category": "CERTIFICATE OF RECOGNITION",
@@ -583,7 +593,7 @@ DECKS_CONFIG = [
             },
             # COORDINATORS: WINNERS
             {
-                "id": 13,
+                "id": 14,
                 "type": "awardee",
                 "title": "LOVELLA Y. FONTANILLA, RND",
                 "category": "PROVINCIAL OUTSTANDING CITY NUTRITION PROGRAM COORDINATOR",
@@ -591,7 +601,7 @@ DECKS_CONFIG = [
                 "categoryTag": "PLAQUE WINNER"
             },
             {
-                "id": 14,
+                "id": 15,
                 "type": "awardee",
                 "title": "CHARISSE O. CABUSAS, RN, LPT",
                 "category": "PROVINCIAL OUTSTANDING MUNICIPAL NUTRITION PROGRAM COORDINATOR",
@@ -600,7 +610,7 @@ DECKS_CONFIG = [
             },
             # 3. BARANGAY NUTRITION SCHOLARS: CONTENDERS
             {
-                "id": 15,
+                "id": 16,
                 "type": "awardee",
                 "title": "MARY JANE M. NOVABOS",
                 "category": "CERTIFICATE OF RECOGNITION",
@@ -609,7 +619,7 @@ DECKS_CONFIG = [
                 "categoryTag": "BNS CONTENDER (CITY)"
             },
             {
-                "id": 16,
+                "id": 17,
                 "type": "awardee",
                 "title": "HAZEL MAE C. FLORESCA",
                 "category": "CERTIFICATE OF RECOGNITION",
@@ -618,7 +628,7 @@ DECKS_CONFIG = [
                 "categoryTag": "BNS CONTENDER (CITY)"
             },
             {
-                "id": 17,
+                "id": 18,
                 "type": "awardee",
                 "title": "ROSITA V. ADE",
                 "category": "CERTIFICATE OF RECOGNITION",
@@ -627,7 +637,7 @@ DECKS_CONFIG = [
                 "categoryTag": "BNS CONTENDER (MUNICIPAL)"
             },
             {
-                "id": 18,
+                "id": 19,
                 "type": "awardee",
                 "title": "MARISSA R. PAMUNAG",
                 "category": "CERTIFICATE OF RECOGNITION",
@@ -636,7 +646,7 @@ DECKS_CONFIG = [
                 "categoryTag": "BNS CONTENDER (MUNICIPAL)"
             },
             {
-                "id": 19,
+                "id": 20,
                 "type": "awardee",
                 "title": "DARLINE R. OLALO",
                 "category": "CERTIFICATE OF RECOGNITION",
@@ -646,7 +656,7 @@ DECKS_CONFIG = [
             },
             # BARANGAY NUTRITION SCHOLARS: WINNERS
             {
-                "id": 20,
+                "id": 21,
                 "type": "awardee",
                 "title": "LINETH M. CAMANA",
                 "category": "PROVINCIAL OUTSTANDING BNS (CITY LEVEL)",
@@ -654,29 +664,29 @@ DECKS_CONFIG = [
                 "categoryTag": "PLAQUE WINNER"
             },
             {
-                "id": 21,
+                "id": 22,
                 "type": "awardee",
                 "title": "ANNA LEE J. REVITA",
                 "category": "PROVINCIAL OUTSTANDING BNS (MUNICIPAL LEVEL)",
                 "subtitle": "Barangay Sto. Niño, Municipality of New Corella",
                 "categoryTag": "PLAQUE WINNER"
             },
+            {
+                "id": 23,
+                "type": "closing",
+                "event": "2026 PROVINCIAL NUTRITION CONGRESS",
+                "title": "CONGRATULATIONS TO OUR LOCAL NUTRITION FOCAL POINTS!",
+                "subTitle": "Davao del Norte Champions of Health & Nutrition",
+                "citation": "Your unwavering diligence in every barangay and community transforms lives every single day."
+            },
             # RAFFLES & DOOR PRIZES (BATCH 2)
             {
-                "id": 22,
+                "id": 24,
                 "type": "awardee",
                 "title": "RAFFLES AND DOOR PRIZES",
                 "category": "SPECIAL FELLOWSHIP",
                 "subtitle": "Exciting Prizes for our Dedicated Nutrition Workers",
                 "categoryTag": "LUCKY DRAW · BATCH 2"
-            },
-            {
-                "id": 23,
-                "type": "closing",
-                "event": "2026 PROVINCIAL NUTRITION CONGRESS",
-                "title": "SALUTE TO OUR LOCAL NUTRITION FOCAL POINTS!",
-                "subTitle": "Davao del Norte Champions of Health & Nutrition",
-                "citation": "Your unwavering diligence in every barangay and community transforms lives every single day."
             }
         ]
     },
@@ -850,19 +860,19 @@ DECKS_CONFIG = [
             },
             {
                 "id": 17,
-                "type": "awardee",
-                "title": "RAFFLES AND DOOR PRIZES",
-                "category": "SPECIAL FELLOWSHIP",
-                "subtitle": "Exciting Prizes for our Dedicated Nutrition Workers",
-                "categoryTag": "LUCKY DRAW · BATCH 3"
-            },
-            {
-                "id": 18,
                 "type": "closing",
                 "event": "2026 PROVINCIAL NUTRITION CONGRESS",
                 "title": "CONGRATULATIONS TINGUHA AWARDEES & SPECIAL HONOREES!",
                 "subTitle": "Excellence in Malnutrition Reduction, Leadership & Education",
                 "citation": "Setting the benchmark for nutritional health and well-being throughout Davao del Norte."
+            },
+            {
+                "id": 18,
+                "type": "awardee",
+                "title": "RAFFLES AND DOOR PRIZES",
+                "category": "SPECIAL FELLOWSHIP",
+                "subtitle": "Exciting Prizes for our Dedicated Nutrition Workers",
+                "categoryTag": "LUCKY DRAW · BATCH 3"
             }
         ]
     },
@@ -1054,7 +1064,7 @@ DECKS_CONFIG = [
                 "id": 19,
                 "type": "closing",
                 "event": "2026 PROVINCIAL NUTRITION CONGRESS",
-                "title": "SALUTE TO OUR INSTITUTIONAL PARTNERS!",
+                "title": "CONGRATULATIONS & SALUTE TO OUR INSTITUTIONAL PARTNERS!",
                 "subTitle": "Provincial Nutrition Committee",
                 "citation": "Multi-sectoral unity and commitment drive sustainable nutrition for all DavNor families."
             }
@@ -1083,45 +1093,46 @@ DECKS_CONFIG = [
             {
                 "id": 1,
                 "type": "awardee",
-                "title": "PROVINCIAL HEALTH OFFICE",
-                "number": 1,
-                "category": "CERTIFICATE OF RECOGNITION",
-                "citations": [
-                    "SUNSHINE ANGELIE S. BANTILAN, RND",
-                    "NEIDEL FEAH A. FERIDO, RM, BSM",
-                    "SNOVY MISA"
-                ],
-                "categoryTag": "PNET EVALUATOR"
-            },
-            {
-                "id": 2,
-                "type": "awardee",
                 "title": "CORAZON S. PERO",
-                "number": 2,
+                "number": 1,
                 "category": "CERTIFICATE OF RECOGNITION",
                 "subtitle": "Provincial Disaster Risk Reduction and Management Office (PDRRMO)",
                 "categoryTag": "PNET EVALUATOR"
             },
             {
-                "id": 3,
+                "id": 2,
                 "type": "awardee",
                 "title": "MARY JOY O. FONTANILLA, LPT",
-                "number": 3,
+                "number": 2,
                 "category": "CERTIFICATE OF RECOGNITION",
                 "subtitle": "Provincial Environment and Natural Resources Office (PENRO)",
                 "categoryTag": "PNET EVALUATOR"
             },
             {
-                "id": 4,
+                "id": 3,
                 "type": "awardee",
-                "title": "PROVINCIAL AGRICULTURE OFFICE",
-                "number": 4,
+                "title": "PROVINCIAL AGRICULTURE OFFICE (PAGRO)",
+                "number": 3,
                 "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "Provincial Nutrition Evaluation Team (PNET) Evaluators",
                 "citations": [
                     "ENGR. RENILDA T. BANGOY, RPABE, MSAG",
-                    "MARITES NACITO, RA"
+                    "MS. MARITES B. NACITO, RA"
                 ],
-                "categoryTag": "PNET EVALUATOR"
+                "categoryTag": "PNET EVALUATORS"
+            },
+            {
+                "id": 4,
+                "type": "awardee",
+                "title": "PROVINCIAL SOCIAL WELFARE AND DEVELOPMENT OFFICE (PSWDO)",
+                "number": 4,
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "Provincial Nutrition Evaluation Team & TWG",
+                "citations": [
+                    "FEVELYN M. MARFE, RSW, MPA, MSSW",
+                    "NOVELYN Y. CADABONA, RSW"
+                ],
+                "categoryTag": "PNET & TWG"
             },
             {
                 "id": 5,
@@ -1153,69 +1164,72 @@ DECKS_CONFIG = [
             {
                 "id": 8,
                 "type": "awardee",
-                "title": "PROVINCIAL SOCIAL WELFARE AND DEVELOPMENT OFFICE",
-                "number": 8,
-                "category": "CERTIFICATE OF RECOGNITION",
-                "citations": [
-                    "FEVELYN M. MARFE, RSW, MPA, MSSW",
-                    "NOVELYN Y. CADABONA, RSW"
-                ],
-                "categoryTag": "PNET & TWG"
-            },
-            {
-                "id": 9,
-                "type": "awardee",
                 "title": "MS. JHON LYN MOSQUEDA",
-                "number": 9,
+                "number": 8,
                 "category": "CERTIFICATE OF RECOGNITION",
                 "subtitle": "Provincial Human Resource Management Office (PHRMO)",
                 "categoryTag": "PNET & TWG"
             },
             {
-                "id": 10,
+                "id": 9,
                 "type": "awardee",
                 "title": "ALLAN L. AMANTE JR.",
-                "number": 10,
+                "number": 9,
                 "category": "CERTIFICATE OF RECOGNITION",
                 "subtitle": "Provincial Planning and Development Office (PPDO)",
                 "categoryTag": "PNET EVALUATOR"
             },
             {
-                "id": 11,
+                "id": 10,
                 "type": "awardee",
                 "title": "REDEEMER C. ANUNCIADO",
-                "number": 11,
+                "number": 10,
                 "category": "CERTIFICATE OF RECOGNITION",
                 "subtitle": "Provincial Information, Communication and Knowledge Management Office (PIKMO)",
                 "categoryTag": "PNET EVALUATOR"
             },
             {
-                "id": 12,
-                "type": "awardee",
-                "title": "PROVINCIAL DEPARTMENT OF HEALTH OFFICE",
-                "number": 12,
-                "category": "CERTIFICATE OF RECOGNITION",
-                "citations": [
-                    "GABRIELLE ANGELO M. PLAZA, RND",
-                    "KIMBERLEY B. ALATON, RND",
-                    "CLAUDINE E. SAMSON, RND"
-                ],
-                "categoryTag": "PNET EVALUATOR"
-            },
-            {
-                "id": 13,
+                "id": 11,
                 "type": "awardee",
                 "title": "JOCELYN C. CARDINAL, RN",
-                "number": 13,
+                "number": 11,
                 "category": "CERTIFICATE OF RECOGNITION",
                 "subtitle": "Department of Education - Division of Davao del Norte",
                 "categoryTag": "PNET EVALUATOR"
             },
             {
+                "id": 12,
+                "type": "awardee",
+                "title": "PROVINCIAL HEALTH OFFICE (PHO)",
+                "number": 12,
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "Provincial Nutrition Evaluation Team (PNET) Evaluators",
+                "citations": [
+                    "MS. SUNSHINE ANGELIE S. BANTILAN, RND",
+                    "MS. NEIDEL FEAH A. FERIDO, RM, BSM",
+                    "MS. SNOVY Q. MISA"
+                ],
+                "categoryTag": "PNET EVALUATORS"
+            },
+            {
+                "id": 13,
+                "type": "awardee",
+                "title": "PROVINCIAL DEPARTMENT OF HEALTH OFFICE (PDOHO)",
+                "number": 13,
+                "category": "CERTIFICATE OF RECOGNITION",
+                "subtitle": "Provincial Nutrition Evaluation Team (PNET) Evaluators",
+                "citations": [
+                    "GABRIELLE ANGELO M. PLAZA, RND",
+                    "KIMBERLEY B. ALATON, RND",
+                    "CLAUDINE E. SAMSON, RND"
+                ],
+                "categoryTag": "PNET EVALUATORS"
+            },
+            {
                 "id": 14,
                 "type": "closing",
                 "event": "2026 PROVINCIAL NUTRITION CONGRESS",
-                "title": "SALUTE TO OUR PNET EVALUATORS!",
+                "title": "CONGRATULATIONS & SALUTE TO OUR PNET EVALUATORS!",
                 "subTitle": "Provincial Nutrition Evaluation Team",
                 "citation": "Your thorough assessments and objective evaluations ensure quality nutrition programs across Davao del Norte."
             }
@@ -1508,6 +1522,14 @@ DECKS_CONFIG = [
             },
             {
                 "id": 17,
+                "type": "closing",
+                "event": "2026 PROVINCIAL NUTRITION CONGRESS",
+                "title": "CONGRATULATIONS TO OUR BNS LOYALTY AWARDEES!",
+                "subTitle": "Dungog sa Malungtarong Serbisyo Award",
+                "citation": "Saluting 94 dedicated Barangay Nutrition Scholars with 10+ years of steadfast service nourishing Davao del Norte communities."
+            },
+            {
+                "id": 18,
                 "type": "awardee",
                 "title": "RAFFLES AND DOOR PRIZES",
                 "category": "SPECIAL FELLOWSHIP",
@@ -1515,16 +1537,17 @@ DECKS_CONFIG = [
                 "categoryTag": "LUCKY DRAW · BATCH 4"
             },
             {
-                "id": 18,
+                "id": 19,
                 "type": "awardee",
                 "title": "JOSEPHINE THERESE P. PARREÑAS, RN, MD",
                 "category": "CLOSING REMARKS",
                 "subtitle": "Provincial Health Officer I",
                 "department": "Provincial Health Office · Province of Davao del Norte",
-                "categoryTag": "CLOSING PROGRAM"
+                "categoryTag": "CLOSING PROGRAM",
+                "image": "../../shared/assets/speakers/OSEPHINE THERESE P. PARREÑAS.png"
             },
             {
-                "id": 19,
+                "id": 20,
                 "type": "awardee",
                 "title": "LESLEY CADUA, RN",
                 "category": "CLOSING PRAYER",
@@ -1533,7 +1556,7 @@ DECKS_CONFIG = [
                 "categoryTag": "CLOSING PROGRAM"
             },
             {
-                "id": 20,
+                "id": 21,
                 "type": "awardee",
                 "title": "MR. CHRISTOPHER DAN T. CARIAGA, RN",
                 "category": "MASTERS OF CEREMONY",
@@ -1542,7 +1565,7 @@ DECKS_CONFIG = [
                 "categoryTag": "CEREMONY HOST"
             },
             {
-                "id": 21,
+                "id": 22,
                 "type": "closing",
                 "event": "2026 PROVINCIAL NUTRITION CONGRESS",
                 "title": "DAGHANG SALAMAT SA TANAN!",

@@ -156,19 +156,19 @@
   },
   {
     "id": 17,
-    "type": "awardee",
-    "title": "RAFFLES AND DOOR PRIZES",
-    "category": "SPECIAL FELLOWSHIP",
-    "subtitle": "Exciting Prizes for our Dedicated Nutrition Workers",
-    "categoryTag": "LUCKY DRAW \u00b7 BATCH 3"
-  },
-  {
-    "id": 18,
     "type": "closing",
     "event": "2026 PROVINCIAL NUTRITION CONGRESS",
     "title": "CONGRATULATIONS TINGUHA AWARDEES & SPECIAL HONOREES!",
     "subTitle": "Excellence in Malnutrition Reduction, Leadership & Education",
     "citation": "Setting the benchmark for nutritional health and well-being throughout Davao del Norte."
+  },
+  {
+    "id": 18,
+    "type": "awardee",
+    "title": "RAFFLES AND DOOR PRIZES",
+    "category": "SPECIAL FELLOWSHIP",
+    "subtitle": "Exciting Prizes for our Dedicated Nutrition Workers",
+    "categoryTag": "LUCKY DRAW \u00b7 BATCH 3"
   }
 ];
 

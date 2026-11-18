@@ -13,45 +13,46 @@
   {
     "id": 1,
     "type": "awardee",
-    "title": "PROVINCIAL HEALTH OFFICE",
-    "number": 1,
-    "category": "CERTIFICATE OF RECOGNITION",
-    "citations": [
-      "SUNSHINE ANGELIE S. BANTILAN, RND",
-      "NEIDEL FEAH A. FERIDO, RM, BSM",
-      "SNOVY MISA"
-    ],
-    "categoryTag": "PNET EVALUATOR"
-  },
-  {
-    "id": 2,
-    "type": "awardee",
     "title": "CORAZON S. PERO",
-    "number": 2,
+    "number": 1,
     "category": "CERTIFICATE OF RECOGNITION",
     "subtitle": "Provincial Disaster Risk Reduction and Management Office (PDRRMO)",
     "categoryTag": "PNET EVALUATOR"
   },
   {
-    "id": 3,
+    "id": 2,
     "type": "awardee",
     "title": "MARY JOY O. FONTANILLA, LPT",
-    "number": 3,
+    "number": 2,
     "category": "CERTIFICATE OF RECOGNITION",
     "subtitle": "Provincial Environment and Natural Resources Office (PENRO)",
     "categoryTag": "PNET EVALUATOR"
   },
   {
-    "id": 4,
+    "id": 3,
     "type": "awardee",
-    "title": "PROVINCIAL AGRICULTURE OFFICE",
-    "number": 4,
+    "title": "PROVINCIAL AGRICULTURE OFFICE (PAGRO)",
+    "number": 3,
     "category": "CERTIFICATE OF RECOGNITION",
+    "subtitle": "Provincial Nutrition Evaluation Team (PNET) Evaluators",
     "citations": [
       "ENGR. RENILDA T. BANGOY, RPABE, MSAG",
-      "MARITES NACITO, RA"
+      "MS. MARITES B. NACITO, RA"
     ],
-    "categoryTag": "PNET EVALUATOR"
+    "categoryTag": "PNET EVALUATORS"
+  },
+  {
+    "id": 4,
+    "type": "awardee",
+    "title": "PROVINCIAL SOCIAL WELFARE AND DEVELOPMENT OFFICE (PSWDO)",
+    "number": 4,
+    "category": "CERTIFICATE OF RECOGNITION",
+    "subtitle": "Provincial Nutrition Evaluation Team & TWG",
+    "citations": [
+      "FEVELYN M. MARFE, RSW, MPA, MSSW",
+      "NOVELYN Y. CADABONA, RSW"
+    ],
+    "categoryTag": "PNET & TWG"
   },
   {
     "id": 5,
@@ -83,69 +84,72 @@
   {
     "id": 8,
     "type": "awardee",
-    "title": "PROVINCIAL SOCIAL WELFARE AND DEVELOPMENT OFFICE",
-    "number": 8,
-    "category": "CERTIFICATE OF RECOGNITION",
-    "citations": [
-      "FEVELYN M. MARFE, RSW, MPA, MSSW",
-      "NOVELYN Y. CADABONA, RSW"
-    ],
-    "categoryTag": "PNET & TWG"
-  },
-  {
-    "id": 9,
-    "type": "awardee",
     "title": "MS. JHON LYN MOSQUEDA",
-    "number": 9,
+    "number": 8,
     "category": "CERTIFICATE OF RECOGNITION",
     "subtitle": "Provincial Human Resource Management Office (PHRMO)",
     "categoryTag": "PNET & TWG"
   },
   {
-    "id": 10,
+    "id": 9,
     "type": "awardee",
     "title": "ALLAN L. AMANTE JR.",
-    "number": 10,
+    "number": 9,
     "category": "CERTIFICATE OF RECOGNITION",
     "subtitle": "Provincial Planning and Development Office (PPDO)",
     "categoryTag": "PNET EVALUATOR"
   },
   {
-    "id": 11,
+    "id": 10,
     "type": "awardee",
     "title": "REDEEMER C. ANUNCIADO",
-    "number": 11,
+    "number": 10,
     "category": "CERTIFICATE OF RECOGNITION",
     "subtitle": "Provincial Information, Communication and Knowledge Management Office (PIKMO)",
     "categoryTag": "PNET EVALUATOR"
   },
   {
-    "id": 12,
-    "type": "awardee",
-    "title": "PROVINCIAL DEPARTMENT OF HEALTH OFFICE",
-    "number": 12,
-    "category": "CERTIFICATE OF RECOGNITION",
-    "citations": [
-      "GABRIELLE ANGELO M. PLAZA, RND",
-      "KIMBERLEY B. ALATON, RND",
-      "CLAUDINE E. SAMSON, RND"
-    ],
-    "categoryTag": "PNET EVALUATOR"
-  },
-  {
-    "id": 13,
+    "id": 11,
     "type": "awardee",
     "title": "JOCELYN C. CARDINAL, RN",
-    "number": 13,
+    "number": 11,
     "category": "CERTIFICATE OF RECOGNITION",
     "subtitle": "Department of Education - Division of Davao del Norte",
     "categoryTag": "PNET EVALUATOR"
   },
   {
+    "id": 12,
+    "type": "awardee",
+    "title": "PROVINCIAL HEALTH OFFICE (PHO)",
+    "number": 12,
+    "category": "CERTIFICATE OF RECOGNITION",
+    "subtitle": "Provincial Nutrition Evaluation Team (PNET) Evaluators",
+    "citations": [
+      "MS. SUNSHINE ANGELIE S. BANTILAN, RND",
+      "MS. NEIDEL FEAH A. FERIDO, RM, BSM",
+      "MS. SNOVY Q. MISA"
+    ],
+    "categoryTag": "PNET EVALUATORS"
+  },
+  {
+    "id": 13,
+    "type": "awardee",
+    "title": "PROVINCIAL DEPARTMENT OF HEALTH OFFICE (PDOHO)",
+    "number": 13,
+    "category": "CERTIFICATE OF RECOGNITION",
+    "subtitle": "Provincial Nutrition Evaluation Team (PNET) Evaluators",
+    "citations": [
+      "GABRIELLE ANGELO M. PLAZA, RND",
+      "KIMBERLEY B. ALATON, RND",
+      "CLAUDINE E. SAMSON, RND"
+    ],
+    "categoryTag": "PNET EVALUATORS"
+  },
+  {
     "id": 14,
     "type": "closing",
     "event": "2026 PROVINCIAL NUTRITION CONGRESS",
-    "title": "SALUTE TO OUR PNET EVALUATORS!",
+    "title": "CONGRATULATIONS & SALUTE TO OUR PNET EVALUATORS!",
     "subTitle": "Provincial Nutrition Evaluation Team",
     "citation": "Your thorough assessments and objective evaluations ensure quality nutrition programs across Davao del Norte."
   }

@@ -12,8 +12,8 @@
       { folder: '02-outstanding-lgu', title: 'Deck 02 · Outstanding LGU Awards', shortTitle: 'Deck 02 · Outstanding LGU', deckNum: '02' },
       { folder: '03-outstanding-lnfp', title: 'Deck 03 · Outstanding LNFP Awards', shortTitle: 'Deck 03 · Outstanding LNFP', deckNum: '03' },
       { folder: '04-special-awards', title: 'Deck 04 · Special & Contender Awards', shortTitle: 'Deck 04 · Special Awards', deckNum: '04' },
-      { folder: '05-regional-and-pnc', title: 'Deck 05 · Regional Champions & PNC', shortTitle: 'Deck 05 · Regional & PNC', deckNum: '05' },
-      { folder: '06-pnet-recognition', title: 'Deck 06 · PNET Recognition & Fellowship', shortTitle: 'Deck 06 · PNET Recognition', deckNum: '06' },
+      { folder: '05-regional-and-pnc', title: 'Deck 05 · Nutrition Partners & PNC Committee', shortTitle: 'Deck 05 · Partners & PNC', deckNum: '05' },
+      { folder: '06-pnet-recognition', title: 'Deck 06 · PNET Recognition & TWG', shortTitle: 'Deck 06 · PNET Recognition', deckNum: '06' },
       { folder: '07-bns-loyalty-awards', title: 'Deck 07 · BNS Loyalty & Closing Ceremony', shortTitle: 'Deck 07 · BNS Loyalty Awards', deckNum: '07' }
     ],
     'tb-summit-2026': [
@@ -109,6 +109,46 @@
     return null;
   }
 
+  function getPrevDeckInfo() {
+    var loc = getCurrentDeckLocation();
+    var list = SUITE_SEQUENCES[loc.suiteKey] || SUITE_SEQUENCES['root'];
+    var curIdx = -1;
+
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].folder.toLowerCase() === loc.currentFolder.toLowerCase()) {
+        curIdx = i;
+        break;
+      }
+    }
+
+    if (curIdx === -1 && loc.currentFolder) {
+      var numPrefix = loc.currentFolder.split('-')[0];
+      if (numPrefix) {
+        for (var j = 0; j < list.length; j++) {
+          if (list[j].deckNum === numPrefix || list[j].folder.indexOf(numPrefix + '-') === 0) {
+            curIdx = j;
+            break;
+          }
+        }
+      }
+    }
+
+    if (curIdx > 0) {
+      var prevDeck = list[curIdx - 1];
+      return {
+        folder: prevDeck.folder,
+        title: prevDeck.title,
+        shortTitle: prevDeck.shortTitle,
+        deckNum: prevDeck.deckNum,
+        previewUrl: '../' + prevDeck.folder + '/index.html?mode=preview#last',
+        projectorUrl: '../' + prevDeck.folder + '/index.html?mode=projector#last',
+        presenterUrl: '../' + prevDeck.folder + '/presenter.html#last',
+        btnLabel: prevDeck.shortTitle
+      };
+    }
+    return null;
+  }
+
   function advanceToNextDeck(nextDeck) {
     if (!nextDeck) return;
 
@@ -136,6 +176,36 @@
     // 4. Smoothly navigate the presenter console window
     if (typeof window !== 'undefined') {
       window.location.href = nextDeck.presenterUrl;
+    }
+  }
+
+  function advanceToPrevDeck(prevDeck) {
+    if (!prevDeck) return;
+
+    // 1. Send broadcast message so projector window navigates seamlessly
+    syncToProjector('NAVIGATE_DECK', {
+      targetUrl: prevDeck.projectorUrl,
+      nextDeckKey: prevDeck.folder,
+      currentDeckKey: getDeckKey()
+    });
+
+    // 2. Also navigate directly if handle exists
+    try {
+      if (projectorWindow && !projectorWindow.closed) {
+        projectorWindow.location.href = prevDeck.projectorUrl;
+      }
+    } catch (e) {}
+
+    // 3. Save active deck folder to localStorage
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        window.localStorage.setItem('davnor_active_deck_folder', prevDeck.folder);
+      }
+    } catch (e) {}
+
+    // 4. Smoothly navigate the presenter console window
+    if (typeof window !== 'undefined') {
+      window.location.href = prevDeck.presenterUrl;
     }
   }
 
@@ -310,6 +380,13 @@
   }
 
   function prev() {
+    if (currentIndex <= 0) {
+      var prevDeck = getPrevDeckInfo();
+      if (prevDeck) {
+        advanceToPrevDeck(prevDeck);
+        return;
+      }
+    }
     jumpToSlide(currentIndex - 1);
   }
 
@@ -396,8 +473,41 @@
     }
 
     var prevBtn = document.getElementById('prevSlideBtn');
-    if (prevBtn) {
-      prevBtn.disabled = (currentIndex === 0);
+    var navPrev = document.getElementById('navPrevBtn');
+
+    if (currentIndex > 0) {
+      if (prevBtn) {
+        prevBtn.disabled = false;
+        prevBtn.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>';
+        prevBtn.style.width = '';
+        prevBtn.title = 'Previous Slide (← / PageUp / ↑)';
+      }
+      if (navPrev) {
+        navPrev.disabled = false;
+      }
+    } else {
+      var prevDeckInfo = getPrevDeckInfo();
+      if (prevDeckInfo) {
+        if (prevBtn) {
+          prevBtn.disabled = false;
+          prevBtn.innerHTML = '<span style="display:inline-flex; align-items:center; gap:6px; font-weight:700; font-size:0.85rem; padding:0 10px; white-space:nowrap;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg> Prev: ' + prevDeckInfo.shortTitle + '</span>';
+          prevBtn.style.width = 'auto';
+          prevBtn.title = 'Return to ' + prevDeckInfo.title + ' (← / PageUp / ↑)';
+        }
+        if (navPrev) {
+          navPrev.disabled = false;
+        }
+      } else {
+        if (prevBtn) {
+          prevBtn.disabled = true;
+          prevBtn.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>';
+          prevBtn.style.width = '';
+          prevBtn.title = 'Start of Ceremony';
+        }
+        if (navPrev) {
+          navPrev.disabled = true;
+        }
+      }
     }
 
     var nextBtn = document.getElementById('nextSlideBtn');
@@ -436,11 +546,6 @@
           navNext.disabled = true;
         }
       }
-    }
-
-    var navPrev = document.getElementById('navPrevBtn');
-    if (navPrev) {
-      navPrev.disabled = (currentIndex === 0);
     }
 
     var curHeading = document.getElementById('currentSlideTitle');
@@ -490,6 +595,15 @@
       if (cur.department) html += '<br><span style="color:#D49000; font-size:0.85rem;">' + cur.department + '</span>';
       if (Array.isArray(cur.citations) && cur.citations.length > 0) {
         html += '<br><div style="margin-top:4px; font-size:0.8rem; color:#CCD1DE;">Citations: ' + cur.citations.join(' · ') + '</div>';
+      }
+      if (currentIndex === 0) {
+        var prevDeckNotice = getPrevDeckInfo();
+        if (prevDeckNotice) {
+          html += '<div style="margin-top:14px; padding:10px 12px; background:rgba(96, 165, 250, 0.12); border:1px solid rgba(96, 165, 250, 0.4); border-radius:8px; color:#60a5fa; font-size:0.84rem; line-height:1.4;">' +
+            '<strong>⏪ CONTINUITY READY:</strong> First slide of this deck.<br>' +
+            '<span style="color:#CCD1DE;">Pressing <strong>Prev (←)</strong> will navigate Presenter Console & Projector to <strong>' + prevDeckNotice.title + '</strong>.</span>' +
+          '</div>';
+        }
       }
       if (nextIndex >= slides.length) {
         var nextDeckNotice = getNextDeckInfo();
@@ -617,9 +731,14 @@
 
     // Check initial slide from hash
     if (typeof window !== 'undefined' && window.location && window.location.hash) {
-      var hashVal = parseInt(window.location.hash.replace('#', ''), 10);
-      if (!isNaN(hashVal) && hashVal >= 0 && hashVal < slides.length) {
-        currentIndex = hashVal;
+      var rawHash = window.location.hash.replace('#', '').trim();
+      if (rawHash === 'last') {
+        currentIndex = Math.max(0, slides.length - 1);
+      } else {
+        var hashVal = parseInt(rawHash, 10);
+        if (!isNaN(hashVal) && hashVal >= 0 && hashVal < slides.length) {
+          currentIndex = hashVal;
+        }
       }
     }
 
@@ -814,7 +933,9 @@
     getSlides: function () { return slides; },
     getCurrentDeckLocation: getCurrentDeckLocation,
     getNextDeckInfo: getNextDeckInfo,
+    getPrevDeckInfo: getPrevDeckInfo,
     advanceToNextDeck: advanceToNextDeck,
+    advanceToPrevDeck: advanceToPrevDeck,
     SUITE_SEQUENCES: SUITE_SEQUENCES
   };
 

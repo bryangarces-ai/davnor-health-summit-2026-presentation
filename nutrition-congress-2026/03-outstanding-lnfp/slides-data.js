@@ -49,6 +49,15 @@
   {
     "id": 5,
     "type": "awardee",
+    "title": "CHERRY T. DEMA-ALA, MD",
+    "category": "CERTIFICATE OF RECOGNITION",
+    "subtitle": "CONTENDER: MUNICIPAL NUTRITION ACTION OFFICER",
+    "department": "Municipality of Braulio E. Dujali",
+    "categoryTag": "MNAO CONTENDER"
+  },
+  {
+    "id": 6,
+    "type": "awardee",
     "title": "JAYLEN M. GAJE",
     "category": "CERTIFICATE OF RECOGNITION",
     "subtitle": "CONTENDER: MUNICIPAL NUTRITION ACTION OFFICER",
@@ -56,7 +65,7 @@
     "categoryTag": "MNAO CONTENDER"
   },
   {
-    "id": 6,
+    "id": 7,
     "type": "awardee",
     "title": "ARTUR L. PINABUDLANG",
     "category": "CERTIFICATE OF RECOGNITION",
@@ -65,15 +74,16 @@
     "categoryTag": "MNAO CONTENDER"
   },
   {
-    "id": 7,
+    "id": 8,
     "type": "awardee",
     "title": "GUILLERMO E. OLDEN",
     "category": "PROVINCIAL OUTSTANDING CITY NUTRITION ACTION OFFICER",
     "subtitle": "Island Garden City of Samal (IGACOS)",
-    "categoryTag": "PLAQUE WINNER"
+    "categoryTag": "PLAQUE WINNER",
+    "image": "../../shared/assets/speakers/Guillermo Olden.jfif"
   },
   {
-    "id": 8,
+    "id": 9,
     "type": "awardee",
     "title": "JOEL M. ANDOY, LPT, MMPA",
     "category": "PROVINCIAL OUTSTANDING MUNICIPAL NUTRITION ACTION OFFICER",
@@ -81,7 +91,7 @@
     "categoryTag": "PLAQUE WINNER"
   },
   {
-    "id": 9,
+    "id": 10,
     "type": "awardee",
     "title": "LIZA M. LAVEGA",
     "category": "CERTIFICATE OF RECOGNITION",
@@ -90,7 +100,7 @@
     "categoryTag": "MNPC CONTENDER"
   },
   {
-    "id": 10,
+    "id": 11,
     "type": "awardee",
     "title": "MERCIDITA P. RODULFA",
     "category": "CERTIFICATE OF RECOGNITION",
@@ -99,7 +109,7 @@
     "categoryTag": "MNPC CONTENDER"
   },
   {
-    "id": 11,
+    "id": 12,
     "type": "awardee",
     "title": "CANDY MEA T. DELA CRUZ",
     "category": "CERTIFICATE OF RECOGNITION",
@@ -108,7 +118,7 @@
     "categoryTag": "MNPC CONTENDER"
   },
   {
-    "id": 12,
+    "id": 13,
     "type": "awardee",
     "title": "ANALYN SERONDO",
     "category": "CERTIFICATE OF RECOGNITION",
@@ -117,7 +127,7 @@
     "categoryTag": "MNPC CONTENDER"
   },
   {
-    "id": 13,
+    "id": 14,
     "type": "awardee",
     "title": "LOVELLA Y. FONTANILLA, RND",
     "category": "PROVINCIAL OUTSTANDING CITY NUTRITION PROGRAM COORDINATOR",
@@ -125,7 +135,7 @@
     "categoryTag": "PLAQUE WINNER"
   },
   {
-    "id": 14,
+    "id": 15,
     "type": "awardee",
     "title": "CHARISSE O. CABUSAS, RN, LPT",
     "category": "PROVINCIAL OUTSTANDING MUNICIPAL NUTRITION PROGRAM COORDINATOR",
@@ -133,7 +143,7 @@
     "categoryTag": "PLAQUE WINNER"
   },
   {
-    "id": 15,
+    "id": 16,
     "type": "awardee",
     "title": "MARY JANE M. NOVABOS",
     "category": "CERTIFICATE OF RECOGNITION",
@@ -142,7 +152,7 @@
     "categoryTag": "BNS CONTENDER (CITY)"
   },
   {
-    "id": 16,
+    "id": 17,
     "type": "awardee",
     "title": "HAZEL MAE C. FLORESCA",
     "category": "CERTIFICATE OF RECOGNITION",
@@ -151,7 +161,7 @@
     "categoryTag": "BNS CONTENDER (CITY)"
   },
   {
-    "id": 17,
+    "id": 18,
     "type": "awardee",
     "title": "ROSITA V. ADE",
     "category": "CERTIFICATE OF RECOGNITION",
@@ -160,7 +170,7 @@
     "categoryTag": "BNS CONTENDER (MUNICIPAL)"
   },
   {
-    "id": 18,
+    "id": 19,
     "type": "awardee",
     "title": "MARISSA R. PAMUNAG",
     "category": "CERTIFICATE OF RECOGNITION",
@@ -169,7 +179,7 @@
     "categoryTag": "BNS CONTENDER (MUNICIPAL)"
   },
   {
-    "id": 19,
+    "id": 20,
     "type": "awardee",
     "title": "DARLINE R. OLALO",
     "category": "CERTIFICATE OF RECOGNITION",
@@ -178,7 +188,7 @@
     "categoryTag": "BNS CONTENDER (MUNICIPAL)"
   },
   {
-    "id": 20,
+    "id": 21,
     "type": "awardee",
     "title": "LINETH M. CAMANA",
     "category": "PROVINCIAL OUTSTANDING BNS (CITY LEVEL)",
@@ -186,7 +196,7 @@
     "categoryTag": "PLAQUE WINNER"
   },
   {
-    "id": 21,
+    "id": 22,
     "type": "awardee",
     "title": "ANNA LEE J. REVITA",
     "category": "PROVINCIAL OUTSTANDING BNS (MUNICIPAL LEVEL)",
@@ -194,20 +204,20 @@
     "categoryTag": "PLAQUE WINNER"
   },
   {
-    "id": 22,
+    "id": 23,
+    "type": "closing",
+    "event": "2026 PROVINCIAL NUTRITION CONGRESS",
+    "title": "CONGRATULATIONS TO OUR LOCAL NUTRITION FOCAL POINTS!",
+    "subTitle": "Davao del Norte Champions of Health & Nutrition",
+    "citation": "Your unwavering diligence in every barangay and community transforms lives every single day."
+  },
+  {
+    "id": 24,
     "type": "awardee",
     "title": "RAFFLES AND DOOR PRIZES",
     "category": "SPECIAL FELLOWSHIP",
     "subtitle": "Exciting Prizes for our Dedicated Nutrition Workers",
     "categoryTag": "LUCKY DRAW \u00b7 BATCH 2"
-  },
-  {
-    "id": 23,
-    "type": "closing",
-    "event": "2026 PROVINCIAL NUTRITION CONGRESS",
-    "title": "SALUTE TO OUR LOCAL NUTRITION FOCAL POINTS!",
-    "subTitle": "Davao del Norte Champions of Health & Nutrition",
-    "citation": "Your unwavering diligence in every barangay and community transforms lives every single day."
   }
 ];
 

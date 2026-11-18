@@ -264,6 +264,14 @@
   },
   {
     "id": 17,
+    "type": "closing",
+    "event": "2026 PROVINCIAL NUTRITION CONGRESS",
+    "title": "CONGRATULATIONS TO OUR BNS LOYALTY AWARDEES!",
+    "subTitle": "Dungog sa Malungtarong Serbisyo Award",
+    "citation": "Saluting 94 dedicated Barangay Nutrition Scholars with 10+ years of steadfast service nourishing Davao del Norte communities."
+  },
+  {
+    "id": 18,
     "type": "awardee",
     "title": "RAFFLES AND DOOR PRIZES",
     "category": "SPECIAL FELLOWSHIP",
@@ -271,16 +279,17 @@
     "categoryTag": "LUCKY DRAW \u00b7 BATCH 4"
   },
   {
-    "id": 18,
+    "id": 19,
     "type": "awardee",
     "title": "JOSEPHINE THERESE P. PARRE\u00d1AS, RN, MD",
     "category": "CLOSING REMARKS",
     "subtitle": "Provincial Health Officer I",
     "department": "Provincial Health Office \u00b7 Province of Davao del Norte",
-    "categoryTag": "CLOSING PROGRAM"
+    "categoryTag": "CLOSING PROGRAM",
+    "image": "../../shared/assets/speakers/OSEPHINE THERESE P. PARREÑAS.png"
   },
   {
-    "id": 19,
+    "id": 20,
     "type": "awardee",
     "title": "LESLEY CADUA, RN",
     "category": "CLOSING PRAYER",
@@ -289,7 +298,7 @@
     "categoryTag": "CLOSING PROGRAM"
   },
   {
-    "id": 20,
+    "id": 21,
     "type": "awardee",
     "title": "MR. CHRISTOPHER DAN T. CARIAGA, RN",
     "category": "MASTERS OF CEREMONY",
@@ -298,7 +307,7 @@
     "categoryTag": "CEREMONY HOST"
   },
   {
-    "id": 21,
+    "id": 22,
     "type": "closing",
     "event": "2026 PROVINCIAL NUTRITION CONGRESS",
     "title": "DAGHANG SALAMAT SA TANAN!",

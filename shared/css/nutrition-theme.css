@@ -133,6 +133,54 @@ html, body {
   letter-spacing: 2px;
 }
 
+/* Section / Separation Slides */
+.section-card {
+  text-align: center !important;
+  position: relative !important;
+  padding: clamp(2.2rem, 5vw, 4rem) !important;
+}
+
+.section-title {
+  font-family: var(--font-serif) !important;
+  font-size: clamp(2.4rem, 4.2vw, 4.6rem) !important;
+  font-weight: 900 !important;
+  color: #FFF8E7 !important;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 35px rgba(250, 198, 17, 0.35) !important;
+  line-height: 1.2 !important;
+  letter-spacing: 1px !important;
+  margin: clamp(0.8rem, 1.6vh, 1.4rem) 0 !important;
+}
+
+.section-title span {
+  background: var(--nutrition-gold-grad) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.section-categories-row {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  margin-top: clamp(1rem, 2vh, 1.8rem) !important;
+}
+
+.section-category-pill {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+  font-size: clamp(0.95rem, 1.25vw, 1.25rem) !important;
+  font-weight: 800 !important;
+  color: #FFF8E7 !important;
+  background: linear-gradient(135deg, rgba(38, 18, 10, 0.95) 0%, rgba(20, 9, 4, 0.97) 100%) !important;
+  border: 1.5px solid rgba(250, 198, 17, 0.6) !important;
+  border-radius: 9999px !important;
+  padding: 10px 24px !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 223, 133, 0.25) !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+}
+
 .awardee-num-pill {
   color: #FAC611 !important;
   background: rgba(250, 198, 17, 0.16) !important;

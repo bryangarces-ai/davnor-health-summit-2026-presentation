@@ -40,7 +40,7 @@
   {
     "id": 4,
     "type": "awardee",
-    "title": "DAVAO DEL NORTE HOSPITAL IGCS ZONE",
+    "title": "DAVAO DEL NORTE HOSPITAL IGACOS ZONE",
     "number": 4,
     "category": "PLAQUE OF APPRECIATION",
     "subtitle": "Provincial Hospital Network \u00b7 Davao del Norte",
@@ -120,19 +120,19 @@
   },
   {
     "id": 13,
-    "type": "awardee",
-    "title": "RAFFLES AND DOOR PRIZES",
-    "category": "SPECIAL FELLOWSHIP",
-    "subtitle": "Exciting Prizes for our Dedicated Nutrition Workers",
-    "categoryTag": "LUCKY DRAW \u00b7 BATCH 1"
-  },
-  {
-    "id": 14,
     "type": "closing",
     "event": "2026 PROVINCIAL NUTRITION CONGRESS",
     "title": "CONGRATULATIONS TO OUR PARTNERS!",
     "subTitle": "Pangga Ko Si Sam Initiative",
     "citation": "Thank you for your invaluable commitment to ending severe acute malnutrition in our children."
+  },
+  {
+    "id": 14,
+    "type": "awardee",
+    "title": "RAFFLES AND DOOR PRIZES",
+    "category": "SPECIAL FELLOWSHIP",
+    "subtitle": "Exciting Prizes for our Dedicated Nutrition Workers",
+    "categoryTag": "LUCKY DRAW \u00b7 BATCH 1"
   }
 ];
 

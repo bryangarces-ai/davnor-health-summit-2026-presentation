@@ -130,7 +130,8 @@
     "title": "DR. JOSEPHINE THERESE P. PARREÑAS",
     "subtitle": "Provincial Health Officer I · Province of Davao del Norte",
     "category": "CLOSING REMARKS",
-    "categoryTag": "CLOSING REMARKS"
+    "categoryTag": "CLOSING REMARKS",
+    "image": "../shared/assets/speakers/OSEPHINE THERESE P. PARREÑAS.png"
   },
   {
     "id": 16,

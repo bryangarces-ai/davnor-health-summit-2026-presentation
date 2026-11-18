@@ -136,14 +136,6 @@
   },
   {
     "id": 15,
-    "type": "awardee",
-    "title": "RAFFLES AND DOOR PRIZES",
-    "category": "SPECIAL FELLOWSHIP",
-    "subtitle": "Exciting Prizes for our Dedicated Nutrition Workers",
-    "categoryTag": "LUCKY DRAW"
-  },
-  {
-    "id": 16,
     "type": "closing",
     "event": "2026 PROVINCIAL NUTRITION CONGRESS",
     "title": "PADAYON SA MALUNGTARONG NUTRISYON!",

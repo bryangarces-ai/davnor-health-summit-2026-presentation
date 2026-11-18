@@ -110,6 +110,11 @@ assert(typeof app.adjustNotesZoom === 'function', 'PresenterConsoleApp.adjustNot
 assert(typeof app.toggleBlackout === 'function', 'PresenterConsoleApp.toggleBlackout must be a function');
 assert(typeof app.getNextDeckInfo === 'function', 'PresenterConsoleApp.getNextDeckInfo must be a function');
 assert(typeof app.advanceToNextDeck === 'function', 'PresenterConsoleApp.advanceToNextDeck must be a function');
+assert(typeof app.getPrevDeckInfo === 'function', 'PresenterConsoleApp.getPrevDeckInfo must be a function');
+assert(typeof app.advanceToPrevDeck === 'function', 'PresenterConsoleApp.advanceToPrevDeck must be a function');
+
+// First deck 00 has no prev deck
+assert.strictEqual(app.getPrevDeckInfo(), null, '00-program-flow should have null prev deck info');
 
 // Test deck continuity from 00-program-flow to 01-pangga-ko-si-sam
 const nextDeck = app.getNextDeckInfo();
@@ -128,6 +133,71 @@ Object.defineProperty(consoleSandbox.window.location, 'href', {
 });
 app.next(); // Since slides has 1 item and currentIndex is 0 (last slide), next() advances to next deck
 assert.strictEqual(navigatedPresenterUrl, '../01-pangga-ko-si-sam/presenter.html#0', 'next() on last slide must navigate presenter console to next deck');
+
+// Test Deck 01 has prev deck pointing to Deck 00
+const deck01Sandbox = {
+  window: {
+    location: { pathname: '/nutrition-congress-2026/01-pangga-ko-si-sam/presenter.html', search: '', hash: '' },
+    localStorage: { getItem: () => null, setItem: () => {} },
+    setInterval: () => 1,
+    clearInterval: () => {},
+    document: {
+      getElementById: () => createMockElement(),
+      querySelectorAll: () => []
+    }
+  },
+  document: {
+    getElementById: () => createMockElement(),
+    querySelectorAll: () => [],
+    addEventListener: () => {}
+  },
+  setInterval: () => 1,
+  clearInterval: () => {}
+};
+vm.createContext(deck01Sandbox);
+vm.runInContext('window.SLIDES_DATA = [{ id: 1, title: "S1" }, { id: 2, title: "S2" }];', deck01Sandbox);
+vm.runInContext(consoleCode, deck01Sandbox);
+const appDeck01 = deck01Sandbox.window.PresenterConsoleApp;
+const prevDeck = appDeck01.getPrevDeckInfo();
+assert(prevDeck !== null, '01-pangga-ko-si-sam should have prev deck info');
+assert.strictEqual(prevDeck.folder, '00-program-flow');
+assert.strictEqual(prevDeck.presenterUrl, '../00-program-flow/presenter.html#last');
+assert.strictEqual(prevDeck.projectorUrl, '../00-program-flow/index.html?mode=projector#last');
+
+// Test prev() at slide 0 navigates to prev deck #last
+let navigatedBackUrl = null;
+Object.defineProperty(deck01Sandbox.window.location, 'href', {
+  set: (val) => { navigatedBackUrl = val; },
+  get: () => navigatedBackUrl
+});
+appDeck01.prev();
+assert.strictEqual(navigatedBackUrl, '../00-program-flow/presenter.html#last', 'prev() on first slide must navigate presenter console to prev deck #last');
+
+// Test hash #last initializes to last slide
+const hashLastSandbox = {
+  window: {
+    location: { pathname: '/nutrition-congress-2026/00-program-flow/presenter.html', search: '', hash: '#last' },
+    localStorage: { getItem: () => null, setItem: () => {} },
+    setInterval: () => 1,
+    clearInterval: () => {},
+    document: {
+      getElementById: () => createMockElement(),
+      querySelectorAll: () => []
+    }
+  },
+  document: {
+    getElementById: () => createMockElement(),
+    querySelectorAll: () => [],
+    addEventListener: () => {}
+  },
+  setInterval: () => 1,
+  clearInterval: () => {}
+};
+vm.createContext(hashLastSandbox);
+vm.runInContext('window.SLIDES_DATA = [{ id: 1, title: "S1" }, { id: 2, title: "S2" }, { id: 3, title: "S3" }];', hashLastSandbox);
+vm.runInContext(consoleCode, hashLastSandbox);
+const appHashLast = hashLastSandbox.window.PresenterConsoleApp;
+assert.strictEqual(appHashLast.getCurrentIndex(), 2, 'Initial hash #last must set currentIndex to last slide index (2)');
 
 // Test terminal deck returns null
 const finalDeckSandbox = {

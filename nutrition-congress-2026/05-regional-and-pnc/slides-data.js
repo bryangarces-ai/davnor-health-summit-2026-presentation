@@ -6,51 +6,52 @@
     "type": "title",
     "event": "2026 PROVINCIAL NUTRITION CONGRESS",
     "subEvent": "Province of Davao del Norte \u00b7 Provincial Health Office",
-    "title": "REGIONAL PARTNERS & PROVINCIAL NUTRITION COMMITTEE OFFICES",
-    "category": "APPRECIATION AWARDS",
+    "title": "AWARDING OF PLAQUES OF APPRECIATION TO NUTRITION PARTNERS",
+    "category": "PLAQUES OF APPRECIATION",
     "citation": "Expressing profound gratitude for multi-sectoral leadership, technical guidance, and institutional synergy"
   },
   {
     "id": 1,
     "type": "awardee",
-    "title": "NATIONAL NUTRITION COUNCIL",
+    "title": "NATIONAL NUTRITION COUNCIL DAVAO REGION",
     "number": 1,
-    "category": "REGIONAL APPRECIATION AWARD",
+    "category": "PLAQUE OF APPRECIATION",
     "subtitle": "National Nutrition Council - Region XI",
-    "categoryTag": "REGIONAL PARTNER"
+    "categoryTag": "NUTRITION PARTNER"
   },
   {
     "id": 2,
     "type": "awardee",
-    "title": "DEPARTMENT OF HEALTH - DAVAO REGION",
+    "title": "DEPARTMENT OF HEALTH DAVAO REGION",
     "number": 2,
-    "category": "REGIONAL APPRECIATION AWARD",
+    "category": "PLAQUE OF APPRECIATION",
     "subtitle": "DOH Center for Health Development XI",
-    "categoryTag": "REGIONAL PARTNER"
+    "categoryTag": "NUTRITION PARTNER"
   },
   {
     "id": 3,
     "type": "awardee",
-    "title": "HEALTH SYSTEM RESILIENCE PROJECT",
+    "title": "HEALTH SYSTEM RESILIENCE PROJECT DAVAO REGION",
     "number": 3,
-    "category": "REGIONAL APPRECIATION AWARD",
+    "category": "PLAQUE OF APPRECIATION",
     "subtitle": "Technical & Development Partner",
-    "categoryTag": "REGIONAL PARTNER"
+    "categoryTag": "NUTRITION PARTNER"
   },
   {
     "id": 4,
-    "type": "awardee",
-    "title": "PROVINCIAL HEALTH OFFICE",
-    "number": 1,
-    "category": "CERTIFICATE OF APPRECIATION",
-    "subtitle": "Provincial Nutrition Committee Member Office",
-    "categoryTag": "PNC MEMBER"
+    "type": "section",
+    "title": "CERTIFICATE OF APPRECIATION FOR PROVINCIAL NUTRITION COMMITTEE",
+    "categories": [
+      "PROVINCIAL NUTRITION COMMITTEE",
+      "MEMBER OFFICES"
+    ],
+    "categoryTag": "PNC MEMBER OFFICES"
   },
   {
     "id": 5,
     "type": "awardee",
-    "title": "PROVINCIAL DISASTER RISK REDUCTION AND MANAGEMENT OFFICE",
-    "number": 2,
+    "title": "PROVINCIAL DISASTER RISK REDUCTION MANAGEMENT OFFICE",
+    "number": 1,
     "category": "CERTIFICATE OF APPRECIATION",
     "subtitle": "PDRRMO \u00b7 Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
@@ -59,7 +60,7 @@
     "id": 6,
     "type": "awardee",
     "title": "PROVINCIAL ENVIRONMENT AND NATURAL RESOURCES OFFICE",
-    "number": 3,
+    "number": 2,
     "category": "CERTIFICATE OF APPRECIATION",
     "subtitle": "PENRO \u00b7 Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
@@ -68,7 +69,7 @@
     "id": 7,
     "type": "awardee",
     "title": "PROVINCIAL AGRICULTURE OFFICE",
-    "number": 4,
+    "number": 3,
     "category": "CERTIFICATE OF APPRECIATION",
     "subtitle": "PAGRO \u00b7 Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
@@ -76,8 +77,8 @@
   {
     "id": 8,
     "type": "awardee",
-    "title": "PROVINCIAL VETERINARY OFFICE",
-    "number": 5,
+    "title": "PROVINCIAL VETERARY OFFICE",
+    "number": 4,
     "category": "CERTIFICATE OF APPRECIATION",
     "subtitle": "PVET \u00b7 Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
@@ -85,8 +86,8 @@
   {
     "id": 9,
     "type": "awardee",
-    "title": "PROVINCIAL ENGINEER'S OFFICE",
-    "number": 6,
+    "title": "PROVINCIAL ENGINEER OFFICE",
+    "number": 5,
     "category": "CERTIFICATE OF APPRECIATION",
     "subtitle": "PEO \u00b7 Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
@@ -95,7 +96,7 @@
     "id": 10,
     "type": "awardee",
     "title": "PROVINCIAL PUBLIC EMPLOYMENT SERVICE OFFICE",
-    "number": 7,
+    "number": 6,
     "category": "CERTIFICATE OF APPRECIATION",
     "subtitle": "PESO \u00b7 Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
@@ -103,17 +104,17 @@
   {
     "id": 11,
     "type": "awardee",
-    "title": "PROVINCIAL SOCIAL WELFARE AND DEVELOPMENT OFFICE",
-    "number": 8,
+    "title": "PROVINCIAL HEALTH OFFICE",
+    "number": 7,
     "category": "CERTIFICATE OF APPRECIATION",
-    "subtitle": "PSWDO \u00b7 Provincial Nutrition Committee Member Office",
+    "subtitle": "PHO \u00b7 Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
   },
   {
     "id": 12,
     "type": "awardee",
-    "title": "PROVINCIAL HUMAN RESOURCE MANAGEMENT OFFICE",
-    "number": 9,
+    "title": "PROVINCIAL HUMAN RESOURCES AND MANAGEMENT OFFICE",
+    "number": 8,
     "category": "CERTIFICATE OF APPRECIATION",
     "subtitle": "PHRMO \u00b7 Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
@@ -122,7 +123,7 @@
     "id": 13,
     "type": "awardee",
     "title": "PROVINCIAL BUDGET OFFICE",
-    "number": 10,
+    "number": 9,
     "category": "CERTIFICATE OF APPRECIATION",
     "subtitle": "PBO \u00b7 Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
@@ -130,17 +131,17 @@
   {
     "id": 14,
     "type": "awardee",
-    "title": "SANGGUNIANG PANLALAWIGAN COMMITTEE ON HEALTH",
-    "number": 11,
+    "title": "PROVINCIAL SOCIAL WELFARE DEVELOPMENT OFFICE",
+    "number": 10,
     "category": "CERTIFICATE OF APPRECIATION",
-    "subtitle": "Legislative Partner \u00b7 Davao del Norte",
+    "subtitle": "PSWDO \u00b7 Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
   },
   {
     "id": 15,
     "type": "awardee",
     "title": "PROVINCIAL PLANNING AND DEVELOPMENT OFFICE",
-    "number": 12,
+    "number": 11,
     "category": "CERTIFICATE OF APPRECIATION",
     "subtitle": "PPDO \u00b7 Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
@@ -149,7 +150,7 @@
     "id": 16,
     "type": "awardee",
     "title": "PROVINCIAL INFORMATION, COMMUNICATION AND KNOWLEDGE MANAGEMENT OFFICE",
-    "number": 13,
+    "number": 12,
     "category": "CERTIFICATE OF APPRECIATION",
     "subtitle": "PIKMO \u00b7 Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
@@ -157,8 +158,8 @@
   {
     "id": 17,
     "type": "awardee",
-    "title": "PROVINCIAL DEPARTMENT OF HEALTH OFFICE",
-    "number": 14,
+    "title": "PROVINCIAL DEPAETMENT OF HEALTH OFFICE",
+    "number": 13,
     "category": "CERTIFICATE OF APPRECIATION",
     "subtitle": "PDOHO \u00b7 Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
@@ -166,17 +167,26 @@
   {
     "id": 18,
     "type": "awardee",
-    "title": "DEPARTMENT OF EDUCATION - DIVISION OF DAVAO DEL NORTE",
-    "number": 15,
+    "title": "DAVAO DEL NORTE- DEPARTMENT OF EDUCATION",
+    "number": 14,
     "category": "CERTIFICATE OF APPRECIATION",
     "subtitle": "DepEd Davao del Norte \u00b7 Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
   },
   {
     "id": 19,
+    "type": "awardee",
+    "title": "SANGGUNIANG BAYAN COMMITTE ON HEALTH",
+    "number": 15,
+    "category": "CERTIFICATE OF APPRECIATION",
+    "subtitle": "Sangguniang Bayan / Panlalawigan \u00b7 Legislative Partner \u00b7 Davao del Norte",
+    "categoryTag": "PNC MEMBER"
+  },
+  {
+    "id": 20,
     "type": "closing",
     "event": "2026 PROVINCIAL NUTRITION CONGRESS",
-    "title": "SALUTE TO OUR INSTITUTIONAL PARTNERS!",
+    "title": "CONGRATULATIONS & SALUTE TO OUR INSTITUTIONAL PARTNERS!",
     "subTitle": "Provincial Nutrition Committee",
     "citation": "Multi-sectoral unity and commitment drive sustainable nutrition for all DavNor families."
   }

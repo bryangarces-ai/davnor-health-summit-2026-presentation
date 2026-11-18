@@ -209,7 +209,8 @@
     "number": 18,
     "category": "PROGRAM MANAGER",
     "subtitle": "City Health Office of Island Garden City of Samal",
-    "categoryTag": "PROGRAM MANAGER"
+    "categoryTag": "PROGRAM MANAGER",
+    "image": "../shared/assets/speakers/Guillermo Olden.jfif"
   },
   {
     "id": 19,

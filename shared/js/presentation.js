@@ -447,7 +447,7 @@
         '  <div class="award-card section-card">',
         logosHtml,
         s.categoryTag ? '<div class="section-badge">' + escapeHtml(s.categoryTag) + '</div>' : '',
-        '    <h1 class="section-title">' + escapeHtml(s.title) + '</h1>',
+        '    <h1 class="section-title"><span>' + escapeHtml(s.title) + '</span></h1>',
         '    <div class="ceremonial-divider">',
         '      <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>',
         '    </div>',
@@ -843,7 +843,9 @@
 
     grid.innerHTML = filtered.map(function (s) {
       var numLabel = s.type === 'title' ? 'START' : (s.type === 'closing' ? 'FINALE' : (s.type === 'section' ? 'SECTION' : (s.categoryTag || 'AWARDEE')));
-      var subText = (s.categories && Array.isArray(s.categories) ? s.categories.join(' · ') : '') || s.subtitle || s.category || '';
+      var subText = (s.categories && Array.isArray(s.categories) ? s.categories.join(' · ') : '') ||
+                    (Array.isArray(s.citations) && s.citations.length > 0 && s.citations.length <= 4 ? s.citations.join(' · ') : '') ||
+                    s.subtitle || s.category || '';
       var isActive = s.id === currentIndex ? ' active' : '';
       return [
         '<div class="drawer-card' + isActive + '" onclick="window.PresentationEngine.goToSlide(' + s.id + '); window.PresentationEngine.toggleDrawer(false);">',
@@ -1324,7 +1326,10 @@
   function getInitialSlideIndex() {
     try {
       if (window.location && window.location.hash) {
-        var hash = window.location.hash.replace('#', '');
+        var hash = window.location.hash.replace('#', '').trim();
+        if (hash === 'last') {
+          return Math.max(0, slides.length - 1);
+        }
         var num = parseInt(hash, 10);
         if (!isNaN(num) && num >= 0 && num < slides.length) {
           return num;
