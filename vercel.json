@@ -1,4 +1,22 @@
 {
   "trailingSlash": true,
-  "cleanUrls": false
+  "cleanUrls": false,
+  "rewrites": [
+    {
+      "source": "/program",
+      "destination": "/nutrition-congress-2026/program/"
+    },
+    {
+      "source": "/program.pdf",
+      "destination": "/nutrition-congress-2026/program.pdf"
+    },
+    {
+      "source": "/nutrition-program",
+      "destination": "/nutrition-congress-2026/program/"
+    },
+    {
+      "source": "/nutrition-program.pdf",
+      "destination": "/nutrition-congress-2026/program.pdf"
+    }
+  ]
 }
