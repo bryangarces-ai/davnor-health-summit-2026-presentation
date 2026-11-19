@@ -40,7 +40,7 @@
   {
     "id": 4,
     "type": "awardee",
-    "title": "DAVAO DEL NORTE HOSPITAL IGACOS ZONE",
+    "title": "DAVAO DEL NORTE HOSPITAL IGCS ZONE",
     "number": 4,
     "category": "PLAQUE OF APPRECIATION",
     "subtitle": "Provincial Hospital Network \u00b7 Davao del Norte",
