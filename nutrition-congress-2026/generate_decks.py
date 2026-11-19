@@ -42,12 +42,11 @@ DECKS_CONFIG = [
             {
                 "id": 3,
                 "type": "awardee",
-                "title": "SUNSHINE ANGELIE S. BANTILAN, RND",
-                "category": "INTRODUCTION OF THE PARTICIPANTS",
-                "subtitle": "Acting Provincial Nutrition Program Coordinator",
+                "title": "DORIS S. SOBREMISANA, RN, MAN",
+                "category": "ACKNOWLEDGEMENT OF THE PARTICIPANTS",
+                "subtitle": "OIC SAO / Supervising Health Program Officer",
                 "department": "Provincial Health Office · Province of Davao del Norte",
-                "categoryTag": "PART I · 8:00 AM",
-                "image": "../../shared/assets/speakers/sunshine angelie bantilan.png"
+                "categoryTag": "PART I · 8:00 AM"
             },
             {
                 "id": 4,
@@ -98,20 +97,22 @@ DECKS_CONFIG = [
             {
                 "id": 9,
                 "type": "awardee",
+                "title": "JOSEPHINE THERESE P. PARREÑAS, RN, MD",
+                "category": "PHILHEALTH YAKAP ORIENTATION",
+                "subtitle": "Provincial Health Officer I",
+                "department": "Provincial Health Office · Province of Davao del Norte",
+                "categoryTag": "ORIENTATION",
+                "image": "../../shared/assets/speakers/JOSEPHINE THERESE P. PARRENAS.png"
+            },
+            {
+                "id": 10,
+                "type": "awardee",
                 "title": "MAYFLOR PERALTA-ESPIRITU, RND",
                 "category": "TECHNICAL SESSION",
                 "subtitle": "Empowering Communities Through Sustainable Nutrition Interventions",
                 "department": "DOH-XI Nutrition Program Manager · Nutritionist Dietitian IV",
                 "categoryTag": "KEYNOTE PRESENTATION",
                 "image": "../../shared/assets/speakers/MAYFLOR PERALTA.png"
-            },
-            {
-                "id": 10,
-                "type": "awardee",
-                "title": "INTERMISSION DANCE NUMBER",
-                "category": "PERFORMANCE",
-                "subtitle": "ST. MARY'S COLLEGE",
-                "categoryTag": "INTERMISSION NUMBER"
             },
             {
                 "id": 11,
@@ -1539,12 +1540,12 @@ DECKS_CONFIG = [
             {
                 "id": 19,
                 "type": "awardee",
-                "title": "JOSEPHINE THERESE P. PARREÑAS, RN, MD",
+                "title": "SUNSHINE ANGELIE S. BANTILAN, RND",
                 "category": "CLOSING REMARKS",
-                "subtitle": "Provincial Health Officer I",
+                "subtitle": "Acting Provincial Nutrition Program Coordinator",
                 "department": "Provincial Health Office · Province of Davao del Norte",
                 "categoryTag": "CLOSING PROGRAM",
-                "image": "../../shared/assets/speakers/OSEPHINE THERESE P. PARREÑAS.png"
+                "image": "../../shared/assets/speakers/sunshine angelie bantilan.png"
             },
             {
                 "id": 20,

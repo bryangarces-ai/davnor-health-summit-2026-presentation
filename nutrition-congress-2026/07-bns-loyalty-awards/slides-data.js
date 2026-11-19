@@ -281,12 +281,12 @@
   {
     "id": 19,
     "type": "awardee",
-    "title": "JOSEPHINE THERESE P. PARRE\u00d1AS, RN, MD",
+    "title": "SUNSHINE ANGELIE S. BANTILAN, RND",
     "category": "CLOSING REMARKS",
-    "subtitle": "Provincial Health Officer I",
+    "subtitle": "Acting Provincial Nutrition Program Coordinator",
     "department": "Provincial Health Office \u00b7 Province of Davao del Norte",
     "categoryTag": "CLOSING PROGRAM",
-    "image": "../../shared/assets/speakers/OSEPHINE THERESE P. PARREÑAS.png"
+    "image": "../../shared/assets/speakers/sunshine angelie bantilan.png"
   },
   {
     "id": 20,
