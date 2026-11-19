@@ -134,7 +134,8 @@
     "category": "PILLAR OF NUTRITION EDUCATION AWARD",
     "subtitle": "Nutrition Program Manager \u00b7 Department of Health - Davao Region (DOH-CHD XI)",
     "department": "Nutrition Education Pillar",
-    "categoryTag": "PILLAR OF EDUCATION"
+    "categoryTag": "PILLAR OF EDUCATION",
+    "image": "../../shared/assets/speakers/MAYFLOR PERALTA.png"
   },
   {
     "id": 15,

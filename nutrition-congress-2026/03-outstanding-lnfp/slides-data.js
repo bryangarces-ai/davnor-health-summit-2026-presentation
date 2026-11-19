@@ -88,7 +88,8 @@
     "title": "JOEL M. ANDOY, LPT, MMPA",
     "category": "PROVINCIAL OUTSTANDING MUNICIPAL NUTRITION ACTION OFFICER",
     "subtitle": "Municipality of Asuncion",
-    "categoryTag": "PLAQUE WINNER"
+    "categoryTag": "PLAQUE WINNER",
+    "image": "../../shared/assets/speakers/Joel M. Andoy.png"
   },
   {
     "id": 10,
@@ -132,7 +133,8 @@
     "title": "LOVELLA Y. FONTANILLA, RND",
     "category": "PROVINCIAL OUTSTANDING CITY NUTRITION PROGRAM COORDINATOR",
     "subtitle": "City of Panabo",
-    "categoryTag": "PLAQUE WINNER"
+    "categoryTag": "PLAQUE WINNER",
+    "image": "../../shared/assets/speakers/Lovella y. Fontanilla.png"
   },
   {
     "id": 15,
@@ -193,7 +195,8 @@
     "title": "LINETH M. CAMANA",
     "category": "PROVINCIAL OUTSTANDING BNS (CITY LEVEL)",
     "subtitle": "Barangay New Visayas, City of Panabo",
-    "categoryTag": "PLAQUE WINNER"
+    "categoryTag": "PLAQUE WINNER",
+    "image": "../../shared/assets/speakers/Lineth camana.png"
   },
   {
     "id": 22,
@@ -201,7 +204,8 @@
     "title": "ANNA LEE J. REVITA",
     "category": "PROVINCIAL OUTSTANDING BNS (MUNICIPAL LEVEL)",
     "subtitle": "Barangay Sto. Ni\u00f1o, Municipality of New Corella",
-    "categoryTag": "PLAQUE WINNER"
+    "categoryTag": "PLAQUE WINNER",
+    "image": "../../shared/assets/speakers/Anna lee revita.jfif"
   },
   {
     "id": 23,

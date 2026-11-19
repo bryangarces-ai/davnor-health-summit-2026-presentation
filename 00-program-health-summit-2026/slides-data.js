@@ -73,7 +73,8 @@
     "title": "DR. ALFREDO A. LACERONA",
     "subtitle": "Provincial Health Officer II · Province of Davao del Norte",
     "category": "PRESENTATION OF RESULTS FOR HEALTH SUMMIT 2026",
-    "categoryTag": "PRESENTATION"
+    "categoryTag": "PRESENTATION",
+    "image": "../shared/assets/speakers/ALFREDO A. LACERONA.png"
   },
   {
     "id": 9,

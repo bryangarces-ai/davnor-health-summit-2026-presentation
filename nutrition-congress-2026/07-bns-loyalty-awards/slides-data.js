@@ -295,7 +295,8 @@
     "category": "CLOSING PRAYER",
     "subtitle": "Nurse III",
     "department": "Provincial Health Office \u00b7 Province of Davao del Norte",
-    "categoryTag": "CLOSING PROGRAM"
+    "categoryTag": "CLOSING PROGRAM",
+    "image": "../../shared/assets/speakers/LESLEY CADUA.jfif"
   },
   {
     "id": 21,
@@ -304,7 +305,8 @@
     "category": "MASTERS OF CEREMONY",
     "subtitle": "Master of Ceremony",
     "department": "2026 Provincial Nutrition Congress & Awarding Ceremony",
-    "categoryTag": "CEREMONY HOST"
+    "categoryTag": "CEREMONY HOST",
+    "image": "../../shared/assets/speakers/HRISTOPHER DAN T. CARIAGA.png"
   },
   {
     "id": 22,

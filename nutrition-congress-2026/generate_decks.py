@@ -150,14 +150,6 @@ DECKS_CONFIG = [
             },
             {
                 "id": 15,
-                "type": "awardee",
-                "title": "RAFFLES AND DOOR PRIZES",
-                "category": "SPECIAL FELLOWSHIP",
-                "subtitle": "Exciting Prizes for our Dedicated Nutrition Workers",
-                "categoryTag": "LUCKY DRAW"
-            },
-            {
-                "id": 16,
                 "type": "closing",
                 "event": "2026 PROVINCIAL NUTRITION CONGRESS",
                 "title": "PADAYON SA MALUNGTARONG NUTRISYON!",
@@ -553,7 +545,8 @@ DECKS_CONFIG = [
                 "title": "JOEL M. ANDOY, LPT, MMPA",
                 "category": "PROVINCIAL OUTSTANDING MUNICIPAL NUTRITION ACTION OFFICER",
                 "subtitle": "Municipality of Asuncion",
-                "categoryTag": "PLAQUE WINNER"
+                "categoryTag": "PLAQUE WINNER",
+                "image": "../../shared/assets/speakers/Joel M. Andoy.png"
             },
             # 2. COORDINATORS: CONTENDERS
             {
@@ -599,7 +592,8 @@ DECKS_CONFIG = [
                 "title": "LOVELLA Y. FONTANILLA, RND",
                 "category": "PROVINCIAL OUTSTANDING CITY NUTRITION PROGRAM COORDINATOR",
                 "subtitle": "City of Panabo",
-                "categoryTag": "PLAQUE WINNER"
+                "categoryTag": "PLAQUE WINNER",
+                "image": "../../shared/assets/speakers/Lovella y. Fontanilla.png"
             },
             {
                 "id": 15,
@@ -662,7 +656,8 @@ DECKS_CONFIG = [
                 "title": "LINETH M. CAMANA",
                 "category": "PROVINCIAL OUTSTANDING BNS (CITY LEVEL)",
                 "subtitle": "Barangay New Visayas, City of Panabo",
-                "categoryTag": "PLAQUE WINNER"
+                "categoryTag": "PLAQUE WINNER",
+                "image": "../../shared/assets/speakers/Lineth camana.png"
             },
             {
                 "id": 22,
@@ -670,7 +665,8 @@ DECKS_CONFIG = [
                 "title": "ANNA LEE J. REVITA",
                 "category": "PROVINCIAL OUTSTANDING BNS (MUNICIPAL LEVEL)",
                 "subtitle": "Barangay Sto. Niño, Municipality of New Corella",
-                "categoryTag": "PLAQUE WINNER"
+                "categoryTag": "PLAQUE WINNER",
+                "image": "../../shared/assets/speakers/Anna lee revita.jfif"
             },
             {
                 "id": 23,
@@ -839,7 +835,8 @@ DECKS_CONFIG = [
                 "category": "PILLAR OF NUTRITION EDUCATION AWARD",
                 "subtitle": "Nutrition Program Manager · Department of Health - Davao Region (DOH-CHD XI)",
                 "department": "Nutrition Education Pillar",
-                "categoryTag": "PILLAR OF EDUCATION"
+                "categoryTag": "PILLAR OF EDUCATION",
+                "image": "../../shared/assets/speakers/MAYFLOR PERALTA.png"
             },
             {
                 "id": 15,
@@ -879,67 +876,66 @@ DECKS_CONFIG = [
     },
 
     # ----------------------------------------------------
-    # DECK 5: REGIONAL PARTNERS & PNC OFFICES
+    # DECK 5: REGIONAL PARTNERS & PNC
     # ----------------------------------------------------
     {
         "folder": "05-regional-and-pnc",
         "key": "nutrition-05-regional-and-pnc",
-        "title": "Regional Partners & PNC Department Offices",
-        "category": "APPRECIATION AWARDS",
-        "subTitle": "Appreciation Awards for Regional Institutions & Provincial Nutrition Committee Offices",
+        "title": "Regional Partners & PNC Committee",
+        "category": "INSTITUTIONAL PARTNERS",
+        "subTitle": "Awarding of Plaques and Certificates to Regional Partners & PNC Committee",
         "slides": [
             {
                 "id": 0,
                 "type": "title",
                 "event": "2026 PROVINCIAL NUTRITION CONGRESS",
                 "subEvent": "Province of Davao del Norte · Provincial Health Office",
-                "title": "REGIONAL PARTNERS & PROVINCIAL NUTRITION COMMITTEE OFFICES",
-                "category": "APPRECIATION AWARDS",
+                "title": "AWARDING OF PLAQUES OF APPRECIATION TO NUTRITION PARTNERS",
+                "category": "PLAQUES OF APPRECIATION",
                 "citation": "Expressing profound gratitude for multi-sectoral leadership, technical guidance, and institutional synergy"
             },
-            # Regional Partners (3 Plaques)
             {
                 "id": 1,
                 "type": "awardee",
-                "title": "NATIONAL NUTRITION COUNCIL",
+                "title": "NATIONAL NUTRITION COUNCIL DAVAO REGION",
                 "number": 1,
-                "category": "REGIONAL APPRECIATION AWARD",
+                "category": "PLAQUE OF APPRECIATION",
                 "subtitle": "National Nutrition Council - Region XI",
-                "categoryTag": "REGIONAL PARTNER"
+                "categoryTag": "NUTRITION PARTNER"
             },
             {
                 "id": 2,
                 "type": "awardee",
-                "title": "DEPARTMENT OF HEALTH - DAVAO REGION",
+                "title": "DEPARTMENT OF HEALTH DAVAO REGION",
                 "number": 2,
-                "category": "REGIONAL APPRECIATION AWARD",
+                "category": "PLAQUE OF APPRECIATION",
                 "subtitle": "DOH Center for Health Development XI",
-                "categoryTag": "REGIONAL PARTNER"
+                "categoryTag": "NUTRITION PARTNER"
             },
             {
                 "id": 3,
                 "type": "awardee",
-                "title": "HEALTH SYSTEM RESILIENCE PROJECT",
+                "title": "HEALTH SYSTEM RESILIENCE PROJECT DAVAO REGION",
                 "number": 3,
-                "category": "REGIONAL APPRECIATION AWARD",
+                "category": "PLAQUE OF APPRECIATION",
                 "subtitle": "Technical & Development Partner",
-                "categoryTag": "REGIONAL PARTNER"
+                "categoryTag": "NUTRITION PARTNER"
             },
-            # PNC Department Offices (15 Certificates)
             {
                 "id": 4,
-                "type": "awardee",
-                "title": "PROVINCIAL HEALTH OFFICE",
-                "number": 1,
-                "category": "CERTIFICATE OF APPRECIATION",
-                "subtitle": "Provincial Nutrition Committee Member Office",
-                "categoryTag": "PNC MEMBER"
+                "type": "section",
+                "title": "CERTIFICATE OF APPRECIATION FOR PROVINCIAL NUTRITION COMMITTEE",
+                "categories": [
+                    "PROVINCIAL NUTRITION COMMITTEE",
+                    "MEMBER OFFICES"
+                ],
+                "categoryTag": "PNC MEMBER OFFICES"
             },
             {
                 "id": 5,
                 "type": "awardee",
-                "title": "PROVINCIAL DISASTER RISK REDUCTION AND MANAGEMENT OFFICE",
-                "number": 2,
+                "title": "PROVINCIAL DISASTER RISK REDUCTION MANAGEMENT OFFICE",
+                "number": 1,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PDRRMO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
@@ -948,7 +944,7 @@ DECKS_CONFIG = [
                 "id": 6,
                 "type": "awardee",
                 "title": "PROVINCIAL ENVIRONMENT AND NATURAL RESOURCES OFFICE",
-                "number": 3,
+                "number": 2,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PENRO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
@@ -957,7 +953,7 @@ DECKS_CONFIG = [
                 "id": 7,
                 "type": "awardee",
                 "title": "PROVINCIAL AGRICULTURE OFFICE",
-                "number": 4,
+                "number": 3,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PAGRO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
@@ -965,8 +961,8 @@ DECKS_CONFIG = [
             {
                 "id": 8,
                 "type": "awardee",
-                "title": "PROVINCIAL VETERINARY OFFICE",
-                "number": 5,
+                "title": "PROVINCIAL VETERARY OFFICE",
+                "number": 4,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PVET · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
@@ -974,8 +970,8 @@ DECKS_CONFIG = [
             {
                 "id": 9,
                 "type": "awardee",
-                "title": "PROVINCIAL ENGINEER'S OFFICE",
-                "number": 6,
+                "title": "PROVINCIAL ENGINEER OFFICE",
+                "number": 5,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PEO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
@@ -984,7 +980,7 @@ DECKS_CONFIG = [
                 "id": 10,
                 "type": "awardee",
                 "title": "PROVINCIAL PUBLIC EMPLOYMENT SERVICE OFFICE",
-                "number": 7,
+                "number": 6,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PESO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
@@ -992,17 +988,17 @@ DECKS_CONFIG = [
             {
                 "id": 11,
                 "type": "awardee",
-                "title": "PROVINCIAL SOCIAL WELFARE AND DEVELOPMENT OFFICE",
-                "number": 8,
+                "title": "PROVINCIAL HEALTH OFFICE",
+                "number": 7,
                 "category": "CERTIFICATE OF APPRECIATION",
-                "subtitle": "PSWDO · Provincial Nutrition Committee Member Office",
+                "subtitle": "PHO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
             },
             {
                 "id": 12,
                 "type": "awardee",
-                "title": "PROVINCIAL HUMAN RESOURCE MANAGEMENT OFFICE",
-                "number": 9,
+                "title": "PROVINCIAL HUMAN RESOURCES AND MANAGEMENT OFFICE",
+                "number": 8,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PHRMO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
@@ -1011,7 +1007,7 @@ DECKS_CONFIG = [
                 "id": 13,
                 "type": "awardee",
                 "title": "PROVINCIAL BUDGET OFFICE",
-                "number": 10,
+                "number": 9,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PBO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
@@ -1019,17 +1015,17 @@ DECKS_CONFIG = [
             {
                 "id": 14,
                 "type": "awardee",
-                "title": "SANGGUNIANG PANLALAWIGAN COMMITTEE ON HEALTH",
-                "number": 11,
+                "title": "PROVINCIAL SOCIAL WELFARE DEVELOPMENT OFFICE",
+                "number": 10,
                 "category": "CERTIFICATE OF APPRECIATION",
-                "subtitle": "Legislative Partner · Davao del Norte",
+                "subtitle": "PSWDO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
             },
             {
                 "id": 15,
                 "type": "awardee",
                 "title": "PROVINCIAL PLANNING AND DEVELOPMENT OFFICE",
-                "number": 12,
+                "number": 11,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PPDO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
@@ -1038,7 +1034,7 @@ DECKS_CONFIG = [
                 "id": 16,
                 "type": "awardee",
                 "title": "PROVINCIAL INFORMATION, COMMUNICATION AND KNOWLEDGE MANAGEMENT OFFICE",
-                "number": 13,
+                "number": 12,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PIKMO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
@@ -1046,8 +1042,8 @@ DECKS_CONFIG = [
             {
                 "id": 17,
                 "type": "awardee",
-                "title": "PROVINCIAL DEPARTMENT OF HEALTH OFFICE",
-                "number": 14,
+                "title": "PROVINCIAL DEPAETMENT OF HEALTH OFFICE",
+                "number": 13,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PDOHO · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
@@ -1055,14 +1051,23 @@ DECKS_CONFIG = [
             {
                 "id": 18,
                 "type": "awardee",
-                "title": "DEPARTMENT OF EDUCATION - DIVISION OF DAVAO DEL NORTE",
-                "number": 15,
+                "title": "DAVAO DEL NORTE- DEPARTMENT OF EDUCATION",
+                "number": 14,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "DepEd Davao del Norte · Provincial Nutrition Committee Member Office",
                 "categoryTag": "PNC MEMBER"
             },
             {
                 "id": 19,
+                "type": "awardee",
+                "title": "SANGGUNIANG BAYAN COMMITTE ON HEALTH",
+                "number": 15,
+                "category": "CERTIFICATE OF APPRECIATION",
+                "subtitle": "Sangguniang Bayan / Panlalawigan · Legislative Partner · Davao del Norte",
+                "categoryTag": "PNC MEMBER"
+            },
+            {
+                "id": 20,
                 "type": "closing",
                 "event": "2026 PROVINCIAL NUTRITION CONGRESS",
                 "title": "CONGRATULATIONS & SALUTE TO OUR INSTITUTIONAL PARTNERS!",
@@ -1554,7 +1559,8 @@ DECKS_CONFIG = [
                 "category": "CLOSING PRAYER",
                 "subtitle": "Nurse III",
                 "department": "Provincial Health Office · Province of Davao del Norte",
-                "categoryTag": "CLOSING PROGRAM"
+                "categoryTag": "CLOSING PROGRAM",
+                "image": "../../shared/assets/speakers/LESLEY CADUA.jfif"
             },
             {
                 "id": 21,
@@ -1563,7 +1569,8 @@ DECKS_CONFIG = [
                 "category": "MASTERS OF CEREMONY",
                 "subtitle": "Master of Ceremony",
                 "department": "2026 Provincial Nutrition Congress & Awarding Ceremony",
-                "categoryTag": "CEREMONY HOST"
+                "categoryTag": "CEREMONY HOST",
+                "image": "../../shared/assets/speakers/HRISTOPHER DAN T. CARIAGA.png"
             },
             {
                 "id": 22,
