@@ -77,19 +77,19 @@
   {
     "id": 8,
     "type": "awardee",
-    "title": "PROVINCIAL VETERARY OFFICE",
+    "title": "PROVINCIAL VETERINARY OFFICE",
     "number": 4,
     "category": "CERTIFICATE OF APPRECIATION",
-    "subtitle": "PVET \u00b7 Provincial Nutrition Committee Member Office",
+    "subtitle": "PVET · Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
   },
   {
     "id": 9,
     "type": "awardee",
-    "title": "PROVINCIAL ENGINEER OFFICE",
+    "title": "PROVINCIAL ENGINEERING OFFICE",
     "number": 5,
     "category": "CERTIFICATE OF APPRECIATION",
-    "subtitle": "PEO \u00b7 Provincial Nutrition Committee Member Office",
+    "subtitle": "PEO · Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
   },
   {
@@ -131,10 +131,10 @@
   {
     "id": 14,
     "type": "awardee",
-    "title": "PROVINCIAL SOCIAL WELFARE DEVELOPMENT OFFICE",
+    "title": "PROVINCIAL SOCIAL WELFARE AND DEVELOPMENT OFFICE",
     "number": 10,
     "category": "CERTIFICATE OF APPRECIATION",
-    "subtitle": "PSWDO \u00b7 Provincial Nutrition Committee Member Office",
+    "subtitle": "PSWDO · Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
   },
   {
@@ -143,7 +143,7 @@
     "title": "PROVINCIAL PLANNING AND DEVELOPMENT OFFICE",
     "number": 11,
     "category": "CERTIFICATE OF APPRECIATION",
-    "subtitle": "PPDO \u00b7 Provincial Nutrition Committee Member Office",
+    "subtitle": "PPDO · Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
   },
   {
@@ -152,16 +152,16 @@
     "title": "PROVINCIAL INFORMATION, COMMUNICATION AND KNOWLEDGE MANAGEMENT OFFICE",
     "number": 12,
     "category": "CERTIFICATE OF APPRECIATION",
-    "subtitle": "PIKMO \u00b7 Provincial Nutrition Committee Member Office",
+    "subtitle": "PIKMO · Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
   },
   {
     "id": 17,
     "type": "awardee",
-    "title": "PROVINCIAL DEPAETMENT OF HEALTH OFFICE",
+    "title": "PROVINCIAL DEPARTMENT OF HEALTH OFFICE",
     "number": 13,
     "category": "CERTIFICATE OF APPRECIATION",
-    "subtitle": "PDOHO \u00b7 Provincial Nutrition Committee Member Office",
+    "subtitle": "PDOHO · Provincial Nutrition Committee Member Office",
     "categoryTag": "PNC MEMBER"
   },
   {

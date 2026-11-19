@@ -244,34 +244,34 @@ DECKS_CONFIG = [
             {
                 "id": 8,
                 "type": "awardee",
-                "title": "BEAN & BARREL & VERAX PHARMACY",
+                "title": "BEAN & BARREL",
                 "number": 8,
                 "category": "PLAQUE OF APPRECIATION",
-                "subtitle": "Private Sector Partners",
-                "categoryTag": "PANGGA KO SI SAM PARTNERS"
+                "subtitle": "Private Sector Partner",
+                "categoryTag": "PANGGA KO SI SAM PARTNER"
             },
             {
                 "id": 9,
                 "type": "awardee",
-                "title": "KAAGAPAY",
+                "title": "VERAX PHARMACY",
                 "number": 9,
                 "category": "PLAQUE OF APPRECIATION",
-                "subtitle": "Civil Society Partner · Davao del Norte",
+                "subtitle": "Private Sector Partner",
                 "categoryTag": "PANGGA KO SI SAM PARTNER"
             },
             {
                 "id": 10,
                 "type": "awardee",
-                "title": "PRINCESS M. ALCAZAR",
+                "title": "KAAGAPAY",
                 "number": 10,
                 "category": "PLAQUE OF APPRECIATION",
-                "subtitle": "Nutrition Partner & Champion",
+                "subtitle": "Civil Society Partner · Davao del Norte",
                 "categoryTag": "PANGGA KO SI SAM PARTNER"
             },
             {
                 "id": 11,
                 "type": "awardee",
-                "title": "DONNA-LI FUENTES",
+                "title": "PRINCESS M. ALCAZAR",
                 "number": 11,
                 "category": "PLAQUE OF APPRECIATION",
                 "subtitle": "Nutrition Partner & Champion",
@@ -280,7 +280,7 @@ DECKS_CONFIG = [
             {
                 "id": 12,
                 "type": "awardee",
-                "title": "CENIZA SANVICENTE",
+                "title": "DONNA-LI FUENTES",
                 "number": 12,
                 "category": "PLAQUE OF APPRECIATION",
                 "subtitle": "Nutrition Partner & Champion",
@@ -288,6 +288,15 @@ DECKS_CONFIG = [
             },
             {
                 "id": 13,
+                "type": "awardee",
+                "title": "CENIZA SANVICENTE",
+                "number": 13,
+                "category": "PLAQUE OF APPRECIATION",
+                "subtitle": "Nutrition Partner & Champion",
+                "categoryTag": "PANGGA KO SI SAM PARTNER"
+            },
+            {
+                "id": 14,
                 "type": "closing",
                 "event": "2026 PROVINCIAL NUTRITION CONGRESS",
                 "title": "CONGRATULATIONS TO OUR PARTNERS!",
@@ -295,7 +304,7 @@ DECKS_CONFIG = [
                 "citation": "Thank you for your invaluable commitment to ending severe acute malnutrition in our children."
             },
             {
-                "id": 14,
+                "id": 15,
                 "type": "awardee",
                 "title": "RAFFLES AND DOOR PRIZES",
                 "category": "SPECIAL FELLOWSHIP",
@@ -961,7 +970,7 @@ DECKS_CONFIG = [
             {
                 "id": 8,
                 "type": "awardee",
-                "title": "PROVINCIAL VETERARY OFFICE",
+                "title": "PROVINCIAL VETERINARY OFFICE",
                 "number": 4,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PVET · Provincial Nutrition Committee Member Office",
@@ -970,7 +979,7 @@ DECKS_CONFIG = [
             {
                 "id": 9,
                 "type": "awardee",
-                "title": "PROVINCIAL ENGINEER OFFICE",
+                "title": "PROVINCIAL ENGINEERING OFFICE",
                 "number": 5,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PEO · Provincial Nutrition Committee Member Office",
@@ -1015,7 +1024,7 @@ DECKS_CONFIG = [
             {
                 "id": 14,
                 "type": "awardee",
-                "title": "PROVINCIAL SOCIAL WELFARE DEVELOPMENT OFFICE",
+                "title": "PROVINCIAL SOCIAL WELFARE AND DEVELOPMENT OFFICE",
                 "number": 10,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PSWDO · Provincial Nutrition Committee Member Office",
@@ -1042,7 +1051,7 @@ DECKS_CONFIG = [
             {
                 "id": 17,
                 "type": "awardee",
-                "title": "PROVINCIAL DEPAETMENT OF HEALTH OFFICE",
+                "title": "PROVINCIAL DEPARTMENT OF HEALTH OFFICE",
                 "number": 13,
                 "category": "CERTIFICATE OF APPRECIATION",
                 "subtitle": "PDOHO · Provincial Nutrition Committee Member Office",

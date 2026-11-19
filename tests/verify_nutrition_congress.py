@@ -31,7 +31,7 @@ def test_nutrition_suite():
     # 3. Verify Decks
     expected_decks = [
         ("00-program-flow", 16),
-        ("01-pangga-ko-si-sam", 15),
+        ("01-pangga-ko-si-sam", 16),
         ("02-outstanding-lgu", 13),
         ("03-outstanding-lnfp", 25),
         ("04-special-awards", 19),
