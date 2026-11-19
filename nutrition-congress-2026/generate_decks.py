@@ -544,7 +544,8 @@ DECKS_CONFIG = [
                 "title": "JOEL M. ANDOY, LPT, MMPA",
                 "category": "PROVINCIAL OUTSTANDING MUNICIPAL NUTRITION ACTION OFFICER",
                 "subtitle": "Municipality of Asuncion",
-                "categoryTag": "PLAQUE WINNER"
+                "categoryTag": "PLAQUE WINNER",
+                "image": "../../shared/assets/speakers/Joel M. Andoy.png"
             },
             # 2. COORDINATORS: CONTENDERS
             {
