@@ -29,6 +29,16 @@
       { folder: '10-top-barangay-3-1', title: 'Deck 10 · Top Barangay (3-1)', shortTitle: 'Deck 10 · Top Barangay 3-1', deckNum: '10' },
       { folder: '11-top-tb-providers-3-1', title: 'Deck 11 · Top TB Providers (3-1)', shortTitle: 'Deck 11 · Top TB Providers', deckNum: '11' }
     ],
+    'community-health-workers-2026': [
+      { folder: '00-program-flow', title: 'Deck 00 · Program Flow & Ceremonies', shortTitle: 'Deck 00 · Program Flow', deckNum: '00' },
+      { folder: '01-top-performing-purok-nov24', title: 'Deck 01 · Top Performing Purok (Nov 24)', shortTitle: 'Deck 01 · Purok (Nov 24)', deckNum: '01' },
+      { folder: '02-top-performing-barangay-nov24', title: 'Deck 02 · Top Performing Barangay (Nov 24)', shortTitle: 'Deck 02 · Barangay (Nov 24)', deckNum: '02' },
+      { folder: '03-top-performing-lgu-nov24', title: 'Deck 03 · Top Performing LGU (Nov 24)', shortTitle: 'Deck 03 · LGU (Nov 24)', deckNum: '03' },
+      { folder: '04-zumba-performer', title: 'Deck 04 · Zumba Performer', shortTitle: 'Deck 04 · Zumba Performer', deckNum: '04' },
+      { folder: '05-top-performing-purok-nov25', title: 'Deck 05 · Top Performing Purok (Nov 25)', shortTitle: 'Deck 05 · Purok (Nov 25)', deckNum: '05' },
+      { folder: '06-top-performing-barangay-nov25', title: 'Deck 06 · Top Performing Barangay (Nov 25)', shortTitle: 'Deck 06 · Barangay (Nov 25)', deckNum: '06' },
+      { folder: '07-top-performing-lgu-nov25', title: 'Deck 07 · Top Performing LGU (Nov 25)', shortTitle: 'Deck 07 · LGU (Nov 25)', deckNum: '07' }
+    ],
     'root': [
       { folder: '00-program-health-summit-2026', title: 'Deck 00 · Health Summit Preliminaries', shortTitle: 'Deck 00 · Preliminaries', deckNum: '00' },
       { folder: '01-group-awardees', title: 'Deck 01 · Group Awardees', shortTitle: 'Deck 01 · Group Awardees', deckNum: '01' },
@@ -62,9 +72,14 @@
         suiteKey = 'tb-summit-2026';
         break;
       }
+      if (p.toLowerCase().indexOf('community-health-workers') !== -1 || p.toLowerCase().indexOf('chw') !== -1) {
+        suiteKey = 'community-health-workers-2026';
+        break;
+      }
     }
     if (path.indexOf('nutrition-congress-2026') !== -1) suiteKey = 'nutrition-congress-2026';
     else if (path.indexOf('tb-summit-2026') !== -1) suiteKey = 'tb-summit-2026';
+    else if (path.indexOf('community-health-workers-2026') !== -1 || path.indexOf('/chw') !== -1) suiteKey = 'community-health-workers-2026';
 
     return { suiteKey: suiteKey, currentFolder: currentFolder };
   }
@@ -212,6 +227,17 @@
   function getDeckKey() {
     if (typeof window !== 'undefined' && window.DECK_KEY) return window.DECK_KEY;
     var path = (typeof window !== 'undefined' && window.location && window.location.pathname) ? window.location.pathname.toLowerCase() : '';
+    if (path.indexOf('community-health-workers') !== -1 || path.indexOf('chw') !== -1) {
+      if (path.indexOf('00-program') !== -1) return 'chw-00-program-flow';
+      if (path.indexOf('01-top-performing-purok') !== -1) return 'chw-01-top-performing-purok-nov24';
+      if (path.indexOf('02-top-performing-barangay') !== -1) return 'chw-02-top-performing-barangay-nov24';
+      if (path.indexOf('03-top-performing-lgu') !== -1) return 'chw-03-top-performing-lgu-nov24';
+      if (path.indexOf('04-zumba-performer') !== -1 || path.indexOf('zumba') !== -1) return 'chw-04-zumba-performer';
+      if (path.indexOf('05-top-performing-purok') !== -1) return 'chw-05-top-performing-purok-nov25';
+      if (path.indexOf('06-top-performing-barangay') !== -1) return 'chw-06-top-performing-barangay-nov25';
+      if (path.indexOf('07-top-performing-lgu') !== -1) return 'chw-07-top-performing-lgu-nov25';
+      return 'chw-default';
+    }
     if (path.indexOf('00-program') !== -1) return '00-program';
     if (path.indexOf('01-group') !== -1) return '01-group';
     if (path.indexOf('02-individual') !== -1) return '02-individual';
@@ -662,7 +688,7 @@
   function closeSearch() {
     if (typeof document === 'undefined') return;
     var list = document.getElementById('searchResultsList');
-    var input = document.getElementById('presenterSearch');
+    var input = document.getElementById('presenterSearch') || document.getElementById('slideSearchInput');
     if (list) list.classList.remove('active');
     if (input) input.value = '';
     var clearBtn = document.getElementById('searchClearBtn');
@@ -784,7 +810,7 @@
     // Attach DOM Events
     if (typeof document === 'undefined') return;
 
-    var searchInput = document.getElementById('presenterSearch');
+    var searchInput = document.getElementById('presenterSearch') || document.getElementById('slideSearchInput');
     var clearBtn = document.getElementById('searchClearBtn');
     if (searchInput) {
       searchInput.addEventListener('input', function () {

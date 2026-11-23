@@ -356,7 +356,7 @@
     var filename = rawSrc.split('/').pop().split('\\').pop();
     var decoded = decodeURIComponent(filename);
 
-    var isNestedDeck = (typeof window !== 'undefined' && window.location && typeof window.location.pathname === 'string' && (window.location.pathname.indexOf('/tb-summit-2026/') !== -1 || window.location.pathname.indexOf('/nutrition-congress-2026/') !== -1));
+    var isNestedDeck = (typeof window !== 'undefined' && window.location && typeof window.location.pathname === 'string' && (window.location.pathname.indexOf('/tb-summit-2026/') !== -1 || window.location.pathname.indexOf('/nutrition-congress-2026/') !== -1 || window.location.pathname.indexOf('/community-health-workers-2026/') !== -1));
     var p1 = isNestedDeck ? '../../' : '../';
     var p2 = isNestedDeck ? '../' : '../../';
 
@@ -698,7 +698,7 @@
       var isLguOnly = isOnlyLguSlide(s);
       var displayImage = s.image;
 
-      var isNestedDeck = (typeof window !== 'undefined' && window.location && typeof window.location.pathname === 'string' && (window.location.pathname.indexOf('/tb-summit-2026/') !== -1 || window.location.pathname.indexOf('/nutrition-congress-2026/') !== -1));
+      var isNestedDeck = (typeof window !== 'undefined' && window.location && typeof window.location.pathname === 'string' && (window.location.pathname.indexOf('/tb-summit-2026/') !== -1 || window.location.pathname.indexOf('/nutrition-congress-2026/') !== -1 || window.location.pathname.indexOf('/community-health-workers-2026/') !== -1));
       var depthPrefix = isNestedDeck ? '../../' : '../';
 
       if (!displayImage && isLguOnly && logoInfo) {
