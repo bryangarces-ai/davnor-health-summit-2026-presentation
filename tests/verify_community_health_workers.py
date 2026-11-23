@@ -37,7 +37,7 @@ def test_chw_suite():
         ("05-top-performing-purok-nov25", 13),
         ("06-top-performing-barangay-nov25", 17),
         ("07-top-performing-lgu-nov25", 6),
-        ("08-years-of-service-awards", 95)
+        ("08-years-of-service-awards", 18)
     ]
 
     total_slides = 0
@@ -93,6 +93,10 @@ def test_chw_suite():
                     img = s.get('image')
                     if img:
                         referenced_images.add((folder, img))
+                    if s.get('lgus') and isinstance(s['lgus'], list):
+                        for l in s['lgus']:
+                            if l.get('image'):
+                                referenced_images.add((folder, l['image']))
         except Exception as e:
             errors.append(f"Error validating {folder}/slides-data.js: {e}")
 

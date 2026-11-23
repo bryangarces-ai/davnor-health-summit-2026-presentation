@@ -456,6 +456,53 @@
         '  </div>',
         '</div>'
       ].join('');
+    } else if (s.type === 'logos-grid' || (Array.isArray(s.lgus) && s.lgus.length > 0)) {
+      var lgusGridHtml = [
+        '<div class="lgu-logos-grid lgu-logos-grid--' + (s.lgus ? s.lgus.length : 6) + '">',
+        (s.lgus || []).map(function (lgu) {
+          var lguImg = lgu.image || '';
+          var lguName = lgu.name || lgu.title || '';
+          return [
+            '<div class="lgu-grid-item">',
+            '  <div class="lgu-item-logo-frame">',
+            '    <img src="' + escapeHtml(lguImg) + '" alt="' + escapeHtml(lguName) + '" class="lgu-item-logo-img" onerror="window.resolveImageFallback(this);" />',
+            '  </div>',
+            '  <div class="lgu-item-name">' + escapeHtml(lguName) + '</div>',
+            '</div>'
+          ].join('\n');
+        }).join('\n'),
+        '</div>'
+      ].join('\n');
+
+      var gridCitationsHtml = '';
+      if (Array.isArray(s.citations) && s.citations.length > 0) {
+        gridCitationsHtml = [
+          '<div class="citations-grid" style="margin-top: clamp(0.5rem, 1vh, 1rem);">',
+          s.citations.map(function (item) {
+            return '<div class="citation-pill"><span class="pill-star">✦</span><span class="pill-text">' + escapeHtml(item) + '</span></div>';
+          }).join(''),
+          '</div>'
+        ].join('');
+      }
+
+      var citationQuoteHtml = s.citation ? '<p class="title-citation" style="margin-top: clamp(0.5rem, 1vh, 1rem); max-width: 960px; margin-left: auto; margin-right: auto;">"' + escapeHtml(s.citation) + '"</p>' : '';
+
+      html = [
+        '<div class="slide active">',
+        '  <div class="award-card lgu-grid-card">',
+        logosHtml,
+        s.categoryTag ? '<div class="section-badge">' + escapeHtml(s.categoryTag) + '</div>' : '',
+        '    <h1 class="lgu-grid-title"><span>' + escapeHtml(s.title) + '</span></h1>',
+        s.subtitle ? '    <div class="awardee-subtitle" style="margin-bottom: clamp(0.3rem, 0.7vh, 0.7rem);">' + escapeHtml(s.subtitle) + '</div>' : '',
+        '    <div class="ceremonial-divider">',
+        '      <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>',
+        '    </div>',
+        lgusGridHtml,
+        gridCitationsHtml,
+        citationQuoteHtml,
+        '  </div>',
+        '</div>'
+      ].join('');
     } else if (s.type === 'image') {
       html = [
         '<div class="slide active">',
@@ -834,7 +881,10 @@
         return c.toLowerCase().indexOf(filter) !== -1;
       });
       var matchDept = s.department && s.department.toLowerCase().indexOf(filter) !== -1;
-      return matchTitle || matchSub || matchCat || matchCitations || matchDept;
+      var matchLgus = s.lgus && Array.isArray(s.lgus) && s.lgus.some(function (l) {
+        return (l.name && l.name.toLowerCase().indexOf(filter) !== -1) || (l.title && l.title.toLowerCase().indexOf(filter) !== -1);
+      });
+      return matchTitle || matchSub || matchCat || matchCitations || matchDept || matchLgus;
     });
 
     if (filtered.length === 0) {
@@ -843,8 +893,9 @@
     }
 
     grid.innerHTML = filtered.map(function (s) {
-      var numLabel = s.type === 'title' ? 'START' : (s.type === 'closing' ? 'FINALE' : (s.type === 'section' ? 'SECTION' : (s.categoryTag || 'AWARDEE')));
-      var subText = (s.categories && Array.isArray(s.categories) ? s.categories.join(' · ') : '') ||
+      var numLabel = s.type === 'title' ? 'START' : (s.type === 'closing' ? 'FINALE' : (s.type === 'section' ? 'SECTION' : (s.type === 'logos-grid' ? 'TIER' : (s.categoryTag || 'AWARDEE'))));
+      var subText = (Array.isArray(s.lgus) && s.lgus.length > 0 ? s.lgus.map(function(l){ return l.name || l.title; }).join(' · ') : '') ||
+                    (s.categories && Array.isArray(s.categories) ? s.categories.join(' · ') : '') ||
                     (Array.isArray(s.citations) && s.citations.length > 0 && s.citations.length <= 4 ? s.citations.join(' · ') : '') ||
                     s.subtitle || s.category || '';
       var isActive = s.id === currentIndex ? ' active' : '';

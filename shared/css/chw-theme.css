@@ -434,6 +434,97 @@ body.presentation-mode,
   color: #031409 !important;
 }
 
+/* Multi-LGU Logos Grid on Tier Slides */
+.lgu-grid-card {
+  max-width: 1400px !important;
+  width: 95% !important;
+  padding: clamp(1.4rem, 2.5vw, 2.6rem) clamp(1.2rem, 2.5vw, 2.8rem) !important;
+  text-align: center;
+}
+
+.lgu-grid-title {
+  color: #FFFFFF !important;
+  font-size: clamp(2rem, 3.8vw, 3.4rem) !important;
+  font-weight: 900 !important;
+  letter-spacing: 1px !important;
+  margin: 0.2rem 0 !important;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 25px rgba(255, 215, 0, 0.4) !important;
+  text-transform: uppercase !important;
+}
+
+.lgu-grid-title span {
+  color: #FFFFFF !important;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 25px rgba(255, 215, 0, 0.4) !important;
+}
+
+.lgu-logos-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+  gap: clamp(10px, 1.5vw, 20px) !important;
+  margin: clamp(0.8rem, 1.6vh, 1.4rem) auto !important;
+  max-width: 1280px !important;
+  width: 100% !important;
+}
+
+.lgu-grid-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  background: rgba(4, 20, 12, 0.8) !important;
+  border: 1.8px solid rgba(255, 215, 0, 0.5) !important;
+  border-radius: 20px !important;
+  padding: clamp(12px, 1.4vw, 18px) clamp(10px, 1.2vw, 16px) !important;
+  flex: 0 1 calc(16.666% - 18px) !important;
+  min-width: 135px !important;
+  max-width: 195px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.65), inset 0 0 15px rgba(16, 185, 129, 0.08) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+.lgu-grid-item:hover {
+  transform: translateY(-4px) !important;
+  border-color: #FFD700 !important;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.85), 0 0 22px rgba(255, 215, 0, 0.45) !important;
+}
+
+.lgu-item-logo-frame {
+  width: clamp(80px, 9.5vw, 120px) !important;
+  height: clamp(80px, 9.5vw, 120px) !important;
+  border-radius: 18px !important;
+  border: 2px solid rgba(255, 215, 0, 0.75) !important;
+  background: rgba(2, 12, 7, 0.92) !important;
+  padding: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 215, 0, 0.25) !important;
+  margin-bottom: clamp(8px, 1vh, 12px) !important;
+}
+
+.lgu-item-logo-img {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.7)) !important;
+}
+
+.lgu-item-name {
+  color: #FFFFFF !important;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(0.78rem, 1.05vw, 0.95rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.6px !important;
+  text-align: center !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95) !important;
+}
+
 /* Controls */
 .control-bar {
   background: rgba(4, 14, 9, 0.92) !important;

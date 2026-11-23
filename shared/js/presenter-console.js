@@ -350,6 +350,11 @@
         matched = true;
         score += 20;
       }
+      var lgusStr = Array.isArray(s.lgus) ? s.lgus.map(function(l){ return (l.name || '') + ' ' + (l.title || ''); }).join(' ').toLowerCase() : '';
+      if (lgusStr && lgusStr.indexOf(q) !== -1) {
+        matched = true;
+        score += 35;
+      }
 
       if (matched) {
         results.push({
@@ -623,6 +628,9 @@
       if (cur.department) html += '<br><span style="color:#D49000; font-size:0.85rem;">' + cur.department + '</span>';
       if (Array.isArray(cur.citations) && cur.citations.length > 0) {
         html += '<br><div style="margin-top:4px; font-size:0.8rem; color:#CCD1DE;">Citations: ' + cur.citations.join(' · ') + '</div>';
+      }
+      if (Array.isArray(cur.lgus) && cur.lgus.length > 0) {
+        html += '<br><div style="margin-top:6px; color:#A7F3D0; font-weight:700; font-size:0.86rem;">Participating LGUs (' + cur.lgus.length + '): ' + cur.lgus.map(function(l){ return l.name || l.title; }).join(' · ') + '</div>';
       }
       if (currentIndex === 0) {
         var prevDeckNotice = getPrevDeckInfo();
