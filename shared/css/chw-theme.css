@@ -348,6 +348,92 @@ body.presentation-mode,
   font-size: 1.15rem;
 }
 
+/* Section Slide Elements & LGU Category Pills */
+.section-card {
+  text-align: center;
+}
+
+.section-badge {
+  display: inline-block !important;
+  font-family: var(--font-display) !important;
+  font-size: clamp(0.85rem, 1.2vw, 1.15rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: 3px !important;
+  color: var(--xmas-gold) !important;
+  background: rgba(255, 215, 0, 0.12) !important;
+  border: 1.5px solid rgba(255, 215, 0, 0.55) !important;
+  padding: 6px 26px !important;
+  border-radius: 999px !important;
+  text-transform: uppercase !important;
+  margin-bottom: clamp(0.8rem, 1.6vh, 1.4rem) !important;
+  box-shadow: 0 0 16px rgba(255, 215, 0, 0.28) !important;
+}
+
+.section-title {
+  color: #FFFFFF !important;
+  font-size: clamp(2.2rem, 4.4vw, 4.2rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.15 !important;
+  letter-spacing: 1px !important;
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 215, 0, 0.3) !important;
+  text-transform: uppercase !important;
+  max-width: 1100px !important;
+  margin: 0 auto clamp(1rem, 2vh, 1.6rem) !important;
+}
+
+.section-title span {
+  color: #FFFFFF !important;
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 215, 0, 0.3) !important;
+}
+
+.section-categories-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 14px 18px !important;
+  max-width: 1100px !important;
+  margin: clamp(0.9rem, 1.8vh, 1.6rem) auto 0 !important;
+}
+
+.section-category-pill {
+  font-family: var(--font-sans) !important;
+  font-size: clamp(1.05rem, 1.55vw, 1.4rem) !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.32) 0%, rgba(3, 20, 11, 0.95) 100%) !important;
+  border: 2px solid #FFD700 !important;
+  padding: 10px 24px !important;
+  border-radius: 999px !important;
+  letter-spacing: 0.8px !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7), 0 0 16px rgba(255, 215, 0, 0.35) !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: all 0.25s ease !important;
+}
+
+.section-category-pill::before {
+  content: '✦';
+  color: #FFD700;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.section-category-pill:hover {
+  background: linear-gradient(135deg, #FFD700 0%, #FAC611 100%) !important;
+  color: #031409 !important;
+  border-color: #FFFFFF !important;
+  box-shadow: 0 8px 24px rgba(255, 215, 0, 0.6) !important;
+  text-shadow: none !important;
+}
+
+.section-category-pill:hover::before {
+  color: #031409 !important;
+}
+
 /* Controls */
 .control-bar {
   background: rgba(4, 14, 9, 0.92) !important;
