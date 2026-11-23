@@ -11,6 +11,7 @@
     if (path.indexOf('04-consolation') !== -1) return '04-consolation';
     if (path.indexOf('05-official-results') !== -1 || path.indexOf('05-results') !== -1) return '05-results';
     if (path.indexOf('special-awards') !== -1 || path.indexOf('tb-summit') !== -1) return 'tb-01-special-awards';
+    if (path.indexOf('08-years-of-service') !== -1 || path.indexOf('years-of-service') !== -1) return 'chw-08-years-of-service-awards';
     return 'default';
   }
 

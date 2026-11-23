@@ -36,7 +36,8 @@ def test_chw_suite():
         ("04-zumba-performer", 13),
         ("05-top-performing-purok-nov25", 13),
         ("06-top-performing-barangay-nov25", 17),
-        ("07-top-performing-lgu-nov25", 6)
+        ("07-top-performing-lgu-nov25", 6),
+        ("08-years-of-service-awards", 95)
     ]
 
     total_slides = 0
@@ -128,7 +129,7 @@ def test_chw_suite():
                 errors.append(f"Hub index.html missing watermark for deck {deck_num}")
         if "overflow-y: auto !important" not in hub_content:
             errors.append("CHW Hub index.html missing overflow-y: auto !important scroll style")
-        print("PASS: CHW Hub index.html has interactive background, full vertical scroll, and deck numbers 00-07.")
+        print("PASS: CHW Hub index.html has interactive background, full vertical scroll, and deck numbers 00-08.")
 
     # 4. Verify Main Ceremony Portal
     main_html = os.path.join(BASE_DIR, 'index.html')

@@ -1198,6 +1198,165 @@ DECKS_CONFIG = [
     }
 ]
 
+def build_deck_08():
+    excel_path = os.path.join(BASE_DIR, 'CONGRESS YEARS OF SERVICE BACKGROUND.xlsx')
+    if not os.path.exists(excel_path):
+        return None
+    try:
+        import openpyxl
+    except ImportError:
+        return None
+
+    LGU_MAP = {
+        'MUNICIPALITY LOGO NEW CORELLA': ('MUNICIPALITY OF NEW CORELLA', '../../shared/assets/lgu-logos/new-corella.png', 'New Corella'),
+        'CITY LOGO TAGUM': ('CITY OF TAGUM', '../../shared/assets/lgu-logos/tagum.png', 'Tagum City'),
+        'MUNICIPALITY LOGO SAWATA': ('MUNICIPALITY OF SAN ISIDRO (SAWATA)', '../../shared/assets/lgu-logos/sawata.png', 'San Isidro (Sawata)'),
+        'MUNICIPALITY LOGO KAPALONG': ('MUNICIPALITY OF KAPALONG', '../../shared/assets/lgu-logos/kapalong.png', 'Kapalong'),
+        'MUNICIPALITY LOGO ASUNCION': ('MUNICIPALITY OF ASUNCION', '../../shared/assets/lgu-logos/asuncion.png', 'Asuncion'),
+        'MUNICIPALITY LOGO TALAINGOD': ('MUNICIPALITY OF TALAINGOD', '../../shared/assets/lgu-logos/talaingod.png', 'Talaingod'),
+        'MUNICIPALITY LOGO CARMEN': ('MUNICIPALITY OF CARMEN', '../../shared/assets/lgu-logos/carmen.png', 'Carmen'),
+        'MUNICIPALITY LOGO B. E. DUJALI': ('MUNICIPALITY OF BRAULIO E. DUJALI', '../../shared/assets/lgu-logos/dujali.png', 'Braulio E. Dujali'),
+        'CITY OF PANABO': ('CITY OF PANABO', '../../shared/assets/lgu-logos/panabo.png', 'Panabo City'),
+        'MUNICIPALITY LOGO STO. TOMAS': ('MUNICIPALITY OF SANTO TOMAS', '../../shared/assets/lgu-logos/sto-tomas.png', 'Santo Tomas'),
+        'ISLAND GARDEN CITY OF SAMAL': ('ISLAND GARDEN CITY OF SAMAL', '../../shared/assets/lgu-logos/igacos.png', 'Island Garden City of Samal')
+    }
+
+    wb = openpyxl.load_workbook(excel_path, data_only=True)
+    slides = []
+    slide_id = 0
+
+    # Slide 0: Master Title Slide
+    slides.append({
+        'id': slide_id,
+        'type': 'title',
+        'event': 'COMMUNITY HEALTH WORKERS 2026',
+        'subEvent': 'Province of Davao del Norte · Provincial Health Office',
+        'title': 'RECOGNITION OF LOYALTY AWARDS',
+        'category': 'YEARS OF SERVICE',
+        'citation': 'Honoring Community Health Workers for their Decades of Dedicated Service, Selfless Commitment, and Lasting Contributions to Public Health in Davao del Norte\nNovember 24 & 25, 2026 · Carmen Gymnasium, Carmen, Davao del Norte'
+    })
+    slide_id += 1
+
+    # DAY 1: NOV 24
+    if 'NOV 24' in wb.sheetnames:
+        ws24 = wb['NOV 24']
+        slides.append({
+            'id': slide_id,
+            'type': 'section',
+            'title': 'DAY 1 · NOVEMBER 24, 2026',
+            'categoryTag': 'LOYALTY & SERVICE AWARDS',
+            'subtitle': 'New Corella · Tagum City · San Isidro (Sawata) · Kapalong · Asuncion · Talaingod'
+        })
+        slide_id += 1
+
+        current_tier = None
+        for r in range(1, ws24.max_row + 1):
+            c1 = ws24.cell(r, 1).value
+            c2 = ws24.cell(r, 2).value
+            if c1 and c1.strip() != current_tier:
+                current_tier = c1.strip()
+                slides.append({
+                    'id': slide_id,
+                    'type': 'section',
+                    'title': current_tier,
+                    'categoryTag': 'LOYALTY AWARDS · NOVEMBER 24, 2026',
+                    'subtitle': 'New Corella · Tagum City · Sawata · Kapalong · Asuncion · Talaingod'
+                })
+                slide_id += 1
+            if c2 and c2.strip() in LGU_MAP:
+                c2_clean = c2.strip()
+                title, img, short = LGU_MAP[c2_clean]
+                tier_num = current_tier.split()[0] if current_tier else ''
+                slides.append({
+                    'id': slide_id,
+                    'type': 'awardee',
+                    'title': title,
+                    'category': current_tier,
+                    'subtitle': 'Recognition of Loyalty Awards · November 24, 2026',
+                    'department': 'Province of Davao del Norte',
+                    'categoryTag': current_tier,
+                    'image': img,
+                    'isLogo': True,
+                    'citations': [
+                        f"{tier_num} Years of Dedicated Service",
+                        'Dungog sa Malungtarong Serbisyo',
+                        'Community Health Workers Congress 2026'
+                    ],
+                    'citation': f'In grateful recognition of {tier_num} years of loyal, dedicated, and invaluable service as Community Health Worker in the Province of Davao del Norte.'
+                })
+                slide_id += 1
+
+    # DAY 2: NOV 25
+    if 'NOV 25' in wb.sheetnames:
+        ws25 = wb['NOV 25']
+        slides.append({
+            'id': slide_id,
+            'type': 'section',
+            'title': 'DAY 2 · NOVEMBER 25, 2026',
+            'categoryTag': 'LOYALTY & SERVICE AWARDS',
+            'subtitle': 'Carmen · Braulio E. Dujali · Panabo City · Santo Tomas · Island Garden City of Samal'
+        })
+        slide_id += 1
+
+        current_tier = None
+        for r in range(1, ws25.max_row + 1):
+            c1 = ws25.cell(r, 1).value
+            c2 = ws25.cell(r, 2).value
+            if c1 and c1.strip() != current_tier:
+                current_tier = c1.strip()
+                slides.append({
+                    'id': slide_id,
+                    'type': 'section',
+                    'title': current_tier,
+                    'categoryTag': 'LOYALTY AWARDS · NOVEMBER 25, 2026',
+                    'subtitle': 'Carmen · Braulio E. Dujali · Panabo City · Santo Tomas · Island Garden City of Samal'
+                })
+                slide_id += 1
+            if c2 and c2.strip() in LGU_MAP:
+                c2_clean = c2.strip()
+                title, img, short = LGU_MAP[c2_clean]
+                tier_num = current_tier.split()[0] if current_tier else ''
+                slides.append({
+                    'id': slide_id,
+                    'type': 'awardee',
+                    'title': title,
+                    'category': current_tier,
+                    'subtitle': 'Recognition of Loyalty Awards · November 25, 2026',
+                    'department': 'Province of Davao del Norte',
+                    'categoryTag': current_tier,
+                    'image': img,
+                    'isLogo': True,
+                    'citations': [
+                        f"{tier_num} Years of Dedicated Service",
+                        'Dungog sa Malungtarong Serbisyo',
+                        'Community Health Workers Congress 2026'
+                    ],
+                    'citation': f'In grateful recognition of {tier_num} years of loyal, dedicated, and invaluable service as Community Health Worker in the Province of Davao del Norte.'
+                })
+                slide_id += 1
+
+    # Closing Slide
+    slides.append({
+        'id': slide_id,
+        'type': 'closing',
+        'title': 'CONGRATULATIONS & DAGHANG SALAMAT!',
+        'subtitle': 'COMMUNITY HEALTH WORKERS CONGRESS 2026',
+        'citation': 'Gipasidunggan ang inyong walay puas nga dedikasyon ug kasingkasing sa pag-alagad alang sa himsog nga Probinsya sa Davao del Norte.'
+    })
+
+    return {
+        'folder': '08-years-of-service-awards',
+        'key': 'chw-08-years-of-service-awards',
+        'title': 'Recognition of Loyalty Awards (Years of Service)',
+        'category': 'LOYALTY AWARDS',
+        'subTitle': 'Years of Service Background Presentation · November 24 & 25, 2026',
+        'slides': slides
+    }
+
+_deck_08 = build_deck_08()
+if _deck_08:
+    DECKS_CONFIG.append(_deck_08)
+
 def make_index_html(cfg):
     html_content = f"""<!DOCTYPE html>
 <html lang="en">
