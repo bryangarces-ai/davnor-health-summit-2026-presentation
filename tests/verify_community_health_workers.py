@@ -30,11 +30,11 @@ def test_chw_suite():
     # 2. Verify Decks
     expected_decks = [
         ("00-program-flow", 18),
-        ("01-top-performing-purok-nov24", 5),
+        ("01-top-performing-purok-nov24", 6),
         ("02-top-performing-barangay-nov24", 7),
         ("03-top-performing-lgu-nov24", 4),
         ("04-zumba-performer", 13),
-        ("05-top-performing-purok-nov25", 9),
+        ("05-top-performing-purok-nov25", 13),
         ("06-top-performing-barangay-nov25", 17),
         ("07-top-performing-lgu-nov25", 6)
     ]

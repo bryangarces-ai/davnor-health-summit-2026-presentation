@@ -111,19 +111,83 @@
     "type": "awardee",
     "title": "HANIELANE R. PAGCAS",
     "category": "TOP PERFORMING PUROK",
-    "subtitle": "PUROK UBAS \u00b7 Barangay Cagangohan, City of Panabo",
+    "subtitle": "PUROK UBAS · Barangay Cagangohan, City of Panabo",
     "department": "Davao del Norte Health Information Management System",
     "categoryTag": "500 AND ABOVE POPULATION",
     "image": "../../shared/assets/lgu-logos/panabo.png",
     "isLogo": true,
     "citations": [
       "100% Accomplishment Rate",
-      "Household Profiling (Jan \u2013 Oct 2026)"
+      "Household Profiling (Jan – Oct 2026)"
     ],
     "citation": "In recognition of its outstanding achievement in Household Profiling under the Davao del Norte Health Information Management System, attaining 100% Accomplishment Rate from January to October 2026."
   },
   {
     "id": 8,
+    "type": "awardee",
+    "title": "ARLENE G. LIMPIO",
+    "category": "TOP PERFORMING PUROK",
+    "subtitle": "PUROK 6 · Barangay New Katipunan, Municipality of Sto. Tomas",
+    "department": "Davao del Norte Health Information Management System",
+    "categoryTag": "500 AND ABOVE POPULATION",
+    "image": "../../shared/assets/lgu-logos/sto-tomas.png",
+    "isLogo": true,
+    "citations": [
+      "107.82% Accomplishment Rate",
+      "Household Profiling (Jan – Oct 2026)"
+    ],
+    "citation": "In recognition of its outstanding achievement in Household Profiling under the Davao del Norte Health Information Management System, attaining 107.82% Accomplishment Rate from January to October 2026."
+  },
+  {
+    "id": 9,
+    "type": "awardee",
+    "title": "EVELYN V. GALAN",
+    "category": "TOP PERFORMING PUROK",
+    "subtitle": "PUROK 1-1 · Barangay Kinamayan, Municipality of Sto. Tomas",
+    "department": "Davao del Norte Health Information Management System",
+    "categoryTag": "500 AND ABOVE POPULATION",
+    "image": "../../shared/assets/lgu-logos/sto-tomas.png",
+    "isLogo": true,
+    "citations": [
+      "102.87% Accomplishment Rate",
+      "Household Profiling (Jan – Oct 2026)"
+    ],
+    "citation": "In recognition of its outstanding achievement in Household Profiling under the Davao del Norte Health Information Management System, attaining 102.87% Accomplishment Rate from January to October 2026."
+  },
+  {
+    "id": 10,
+    "type": "awardee",
+    "title": "AVELINA K. SALVADOR",
+    "category": "TOP PERFORMING PUROK",
+    "subtitle": "PUROK 6A · Barangay Tibal-og, Municipality of Sto. Tomas",
+    "department": "Davao del Norte Health Information Management System",
+    "categoryTag": "500 AND ABOVE POPULATION",
+    "image": "../../shared/assets/lgu-logos/sto-tomas.png",
+    "isLogo": true,
+    "citations": [
+      "101.51% Accomplishment Rate",
+      "Household Profiling (Jan – Oct 2026)"
+    ],
+    "citation": "In recognition of its outstanding achievement in Household Profiling under the Davao del Norte Health Information Management System, attaining 101.51% Accomplishment Rate from January to October 2026."
+  },
+  {
+    "id": 11,
+    "type": "awardee",
+    "title": "MILA O. OMANDAC",
+    "category": "TOP PERFORMING PUROK",
+    "subtitle": "PUROK 5 · Barangay Southern Davao, City of Panabo",
+    "department": "Davao del Norte Health Information Management System",
+    "categoryTag": "500 AND ABOVE POPULATION",
+    "image": "../../shared/assets/lgu-logos/panabo.png",
+    "isLogo": true,
+    "citations": [
+      "101.04% Accomplishment Rate",
+      "Household Profiling (Jan – Oct 2026)"
+    ],
+    "citation": "In recognition of its outstanding achievement in Household Profiling under the Davao del Norte Health Information Management System, attaining 101.04% Accomplishment Rate from January to October 2026."
+  },
+  {
+    "id": 12,
     "type": "closing",
     "title": "CONGRATULATIONS TO ALL TOP PERFORMING PUROKS!",
     "subtitle": "COMMUNITY HEALTH VOLUNTEERS CONGRESS 2026",

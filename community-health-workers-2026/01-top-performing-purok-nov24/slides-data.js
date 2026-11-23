@@ -60,6 +60,22 @@
   },
   {
     "id": 4,
+    "type": "awardee",
+    "title": "ROCELYN O. LAGROSAS",
+    "category": "TOP PERFORMING PUROK",
+    "subtitle": "PUROK 10C-1B \u00b7 Barangay Maniki, Municipality of Kapalong",
+    "department": "Davao del Norte Health Information Management System",
+    "categoryTag": "500 AND ABOVE POPULATION",
+    "image": "../../shared/assets/lgu-logos/kapalong.png",
+    "isLogo": true,
+    "citations": [
+      "100.64% Accomplishment Rate",
+      "Household Profiling (Jan \u2013 Oct 2026)"
+    ],
+    "citation": "In recognition of its outstanding achievement in Household Profiling under the Davao del Norte Health Information Management System, attaining 100.64% Accomplishment Rate from January to October 2026."
+  },
+  {
+    "id": 5,
     "type": "closing",
     "title": "CONGRATULATIONS TO ALL TOP PERFORMING PUROKS!",
     "subtitle": "COMMUNITY HEALTH VOLUNTEERS CONGRESS 2026",
