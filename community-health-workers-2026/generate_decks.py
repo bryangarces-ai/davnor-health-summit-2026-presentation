@@ -560,7 +560,7 @@ DECKS_CONFIG = [
             {
                 "id": 8,
                 "type": "awardee",
-                "title": "MUNICIPALITY OF SAN ISIDRO (SAWATA)",
+                "title": "MUNICIPALITY OF SAWATA",
                 "category": "ZUMBA DANCE COMPETITION",
                 "subtitle": "Community Health Workers Dance Contingent",
                 "department": "Province of Davao del Norte",
@@ -1202,7 +1202,7 @@ def build_deck_08():
     NOV_24_LGUS = [
         {'name': 'NEW CORELLA', 'title': 'MUNICIPALITY OF NEW CORELLA', 'image': '../../shared/assets/lgu-logos/new-corella.png'},
         {'name': 'TAGUM CITY', 'title': 'CITY OF TAGUM', 'image': '../../shared/assets/lgu-logos/tagum.png'},
-        {'name': 'SAN ISIDRO', 'title': 'MUNICIPALITY OF SAN ISIDRO (SAWATA)', 'image': '../../shared/assets/lgu-logos/sawata.png'},
+        {'name': 'SAWATA', 'title': 'MUNICIPALITY OF SAWATA', 'image': '../../shared/assets/lgu-logos/sawata.png'},
         {'name': 'KAPALONG', 'title': 'MUNICIPALITY OF KAPALONG', 'image': '../../shared/assets/lgu-logos/kapalong.png'},
         {'name': 'ASUNCION', 'title': 'MUNICIPALITY OF ASUNCION', 'image': '../../shared/assets/lgu-logos/asuncion.png'},
         {'name': 'TALAINGOD', 'title': 'MUNICIPALITY OF TALAINGOD', 'image': '../../shared/assets/lgu-logos/talaingod.png'}
@@ -1247,7 +1247,7 @@ def build_deck_08():
         'type': 'section',
         'title': 'DAY 1 · NOVEMBER 24, 2026',
         'categoryTag': 'LOYALTY & SERVICE AWARDS',
-        'subtitle': 'New Corella · Tagum City · San Isidro (Sawata) · Kapalong · Asuncion · Talaingod'
+        'subtitle': 'New Corella · Tagum City · Sawata · Kapalong · Asuncion · Talaingod'
     })
     slide_id += 1
 

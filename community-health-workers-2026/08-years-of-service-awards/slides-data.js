@@ -15,7 +15,7 @@
     "type": "section",
     "title": "DAY 1 \u00b7 NOVEMBER 24, 2026",
     "categoryTag": "LOYALTY & SERVICE AWARDS",
-    "subtitle": "New Corella \u00b7 Tagum City \u00b7 San Isidro (Sawata) \u00b7 Kapalong \u00b7 Asuncion \u00b7 Talaingod"
+    "subtitle": "New Corella \u00b7 Tagum City \u00b7 Sawata \u00b7 Kapalong \u00b7 Asuncion \u00b7 Talaingod"
   },
   {
     "id": 2,
@@ -37,8 +37,8 @@
         "image": "../../shared/assets/lgu-logos/tagum.png"
       },
       {
-        "name": "SAN ISIDRO",
-        "title": "MUNICIPALITY OF SAN ISIDRO (SAWATA)",
+        "name": "SAWATA",
+        "title": "MUNICIPALITY OF SAWATA",
         "image": "../../shared/assets/lgu-logos/sawata.png"
       },
       {
@@ -84,8 +84,8 @@
         "image": "../../shared/assets/lgu-logos/tagum.png"
       },
       {
-        "name": "SAN ISIDRO",
-        "title": "MUNICIPALITY OF SAN ISIDRO (SAWATA)",
+        "name": "SAWATA",
+        "title": "MUNICIPALITY OF SAWATA",
         "image": "../../shared/assets/lgu-logos/sawata.png"
       },
       {
@@ -131,8 +131,8 @@
         "image": "../../shared/assets/lgu-logos/tagum.png"
       },
       {
-        "name": "SAN ISIDRO",
-        "title": "MUNICIPALITY OF SAN ISIDRO (SAWATA)",
+        "name": "SAWATA",
+        "title": "MUNICIPALITY OF SAWATA",
         "image": "../../shared/assets/lgu-logos/sawata.png"
       },
       {
@@ -178,8 +178,8 @@
         "image": "../../shared/assets/lgu-logos/tagum.png"
       },
       {
-        "name": "SAN ISIDRO",
-        "title": "MUNICIPALITY OF SAN ISIDRO (SAWATA)",
+        "name": "SAWATA",
+        "title": "MUNICIPALITY OF SAWATA",
         "image": "../../shared/assets/lgu-logos/sawata.png"
       },
       {
@@ -225,8 +225,8 @@
         "image": "../../shared/assets/lgu-logos/tagum.png"
       },
       {
-        "name": "SAN ISIDRO",
-        "title": "MUNICIPALITY OF SAN ISIDRO (SAWATA)",
+        "name": "SAWATA",
+        "title": "MUNICIPALITY OF SAWATA",
         "image": "../../shared/assets/lgu-logos/sawata.png"
       },
       {
@@ -272,8 +272,8 @@
         "image": "../../shared/assets/lgu-logos/tagum.png"
       },
       {
-        "name": "SAN ISIDRO",
-        "title": "MUNICIPALITY OF SAN ISIDRO (SAWATA)",
+        "name": "SAWATA",
+        "title": "MUNICIPALITY OF SAWATA",
         "image": "../../shared/assets/lgu-logos/sawata.png"
       },
       {
@@ -319,8 +319,8 @@
         "image": "../../shared/assets/lgu-logos/tagum.png"
       },
       {
-        "name": "SAN ISIDRO",
-        "title": "MUNICIPALITY OF SAN ISIDRO (SAWATA)",
+        "name": "SAWATA",
+        "title": "MUNICIPALITY OF SAWATA",
         "image": "../../shared/assets/lgu-logos/sawata.png"
       },
       {

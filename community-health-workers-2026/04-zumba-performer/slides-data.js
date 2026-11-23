@@ -90,7 +90,7 @@
   {
     "id": 8,
     "type": "awardee",
-    "title": "MUNICIPALITY OF SAN ISIDRO (SAWATA)",
+    "title": "MUNICIPALITY OF SAWATA",
     "category": "ZUMBA DANCE COMPETITION",
     "subtitle": "Community Health Workers Dance Contingent",
     "department": "Province of Davao del Norte",
