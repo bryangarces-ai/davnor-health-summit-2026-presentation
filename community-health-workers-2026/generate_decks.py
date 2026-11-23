@@ -26,20 +26,6 @@ DECKS_CONFIG = [
             {
                 "id": 1,
                 "type": "awardee",
-                "title": "OPENING PRELIMINARIES",
-                "category": "ORDER OF CEREMONY",
-                "subtitle": "Official Commencement of Congress",
-                "categoryTag": "PART I · 9:00 AM",
-                "citations": [
-                    "Ecumenical Invocation & Prayer",
-                    "Philippine National Anthem (AVP)",
-                    "Davao del Norte Hymn & March",
-                    "Recognition of Delegates"
-                ]
-            },
-            {
-                "id": 2,
-                "type": "awardee",
                 "title": "CHRISTY CAROLE B. SANICO, RGC",
                 "category": "INVOCATION & PRAYER",
                 "subtitle": "Population Program Officer II",
@@ -47,7 +33,7 @@ DECKS_CONFIG = [
                 "categoryTag": "OPENING PRAYER"
             },
             {
-                "id": 3,
+                "id": 2,
                 "type": "awardee",
                 "title": "PHILIPPINE NATIONAL ANTHEM",
                 "category": "ORDER OF CEREMONY",
@@ -56,7 +42,7 @@ DECKS_CONFIG = [
                 "categoryTag": "NATIONAL ANTHEM"
             },
             {
-                "id": 4,
+                "id": 3,
                 "type": "awardee",
                 "title": "DR. ALFREDO A. LACERONA",
                 "category": "OPENING REMARKS",
@@ -66,7 +52,7 @@ DECKS_CONFIG = [
                 "image": "../../shared/assets/speakers/ALFREDO A. LACERONA.png"
             },
             {
-                "id": 5,
+                "id": 4,
                 "type": "awardee",
                 "title": "DR. VERGEL JAY T. BAUTISTA",
                 "category": "MESSAGE",
@@ -75,7 +61,7 @@ DECKS_CONFIG = [
                 "categoryTag": "SPECIAL MESSAGE"
             },
             {
-                "id": 6,
+                "id": 5,
                 "type": "awardee",
                 "title": "MS. JINKY C. ESPINO",
                 "category": "BHW PROGRAM UPDATES",
@@ -84,7 +70,7 @@ DECKS_CONFIG = [
                 "categoryTag": "BHW UPDATES"
             },
             {
-                "id": 7,
+                "id": 6,
                 "type": "awardee",
                 "title": "HON. CLARICE T. JUBAHIB",
                 "category": "GUEST SPEAKER",
@@ -94,7 +80,7 @@ DECKS_CONFIG = [
                 "image": "../../shared/assets/speakers/HON. CLARICE JUBAHIB.jpg"
             },
             {
-                "id": 8,
+                "id": 7,
                 "type": "awardee",
                 "title": "OATH TAKING OF OFFICERS",
                 "category": "CEREMONIAL SWEARING-IN",
@@ -103,7 +89,7 @@ DECKS_CONFIG = [
                 "categoryTag": "OATH OF OFFICE"
             },
             {
-                "id": 9,
+                "id": 8,
                 "type": "awardee",
                 "title": "HON. EDWIN I. JUBAHIB, MMPA",
                 "category": "GOVERNOR'S MESSAGE",
@@ -113,7 +99,7 @@ DECKS_CONFIG = [
                 "image": "../../shared/assets/speakers/edwin jubahib.png"
             },
             {
-                "id": 10,
+                "id": 9,
                 "type": "awardee",
                 "title": "RECOGNITION OF LOYALTY AWARDS",
                 "category": "LOYALTY & SERVICE AWARDS",
@@ -122,71 +108,13 @@ DECKS_CONFIG = [
                 "categoryTag": "LOYALTY AWARDS"
             },
             {
-                "id": 11,
+                "id": 10,
                 "type": "awardee",
                 "title": "MR. FLOR B. LUCAS III",
                 "category": "PRESENTATION OF CRITERIA",
                 "subtitle": "Population Program Officer IV · Top Performing in DHIMS",
                 "department": "Provincial Health Office · Province of Davao del Norte",
                 "categoryTag": "DHIMS CRITERIA"
-            },
-            {
-                "id": 12,
-                "type": "awardee",
-                "title": "AWARDING OF TOP PERFORMING DHIMS",
-                "category": "CEREMONY PROPER",
-                "subtitle": "Purok Category · Barangay Category · LGU Category",
-                "department": "Davao del Norte Health Information Management System (DHIMS)",
-                "categoryTag": "AWARDING CEREMONY",
-                "citations": [
-                    "Purok Category (<500 & ≥500 Population)",
-                    "Barangay Category (Household Profiling & Timeliness)",
-                    "LGU Category Performance Recognition"
-                ]
-            },
-            {
-                "id": 13,
-                "type": "awardee",
-                "title": "RUBY ROSAL, RMT",
-                "category": "PRESENTATION OF CRITERIA",
-                "subtitle": "Medical Technologist II · Zumba Contest Criteria",
-                "department": "Provincial Health Office · Province of Davao del Norte",
-                "categoryTag": "ZUMBA CRITERIA"
-            },
-            {
-                "id": 14,
-                "type": "awardee",
-                "title": "AWARDING OF WINNERS: ZUMBA CONTEST",
-                "category": "COMPETITION AWARDS",
-                "subtitle": "Celebration of Energy, Wellness and Teamwork",
-                "department": "Community Health Workers Congress 2026",
-                "categoryTag": "ZUMBA CHAMPIONS"
-            },
-            {
-                "id": 15,
-                "type": "awardee",
-                "title": "DR. JOSEPHINE THERESE P. PARREÑAS",
-                "category": "INSPIRATIONAL MESSAGE",
-                "subtitle": "Provincial Health Officer I",
-                "department": "Provincial Health Office · Province of Davao del Norte",
-                "categoryTag": "INSPIRATIONAL MESSAGE",
-                "image": "../../shared/assets/speakers/JOSEPHINE THERESE P. PARRENAS.png"
-            },
-            {
-                "id": 16,
-                "type": "awardee",
-                "title": "DORIS S. SOBREMISANA, RN, MAN",
-                "category": "CLOSING REMARKS",
-                "subtitle": "Supervising Health Program Officer / OIC-SAO",
-                "department": "Provincial Health Office · Province of Davao del Norte",
-                "categoryTag": "CLOSING REMARKS"
-            },
-            {
-                "id": 17,
-                "type": "closing",
-                "title": "DAGHANG SALAMAT UG MABUHAY ANG ATING MGA COMMUNITY HEALTH WORKERS!",
-                "subtitle": "COMMUNITY HEALTH WORKERS CONGRESS 2026",
-                "citation": "“Digitalisasyon ng Kalusugan: Kaagapay sa Kalinaw ug Kalamboan”\nProvince of Davao del Norte · Provincial Health Office"
             }
         ]
     },
@@ -467,6 +395,15 @@ DECKS_CONFIG = [
             {
                 "id": 1,
                 "type": "awardee",
+                "title": "RUBY ROSAL, RMT",
+                "category": "PRESENTATION OF CRITERIA",
+                "subtitle": "Medical Technologist II · Zumba Contest Criteria",
+                "department": "Provincial Health Office · Province of Davao del Norte",
+                "categoryTag": "ZUMBA CRITERIA"
+            },
+            {
+                "id": 2,
+                "type": "awardee",
                 "title": "MUNICIPALITY OF ASUNCION",
                 "category": "ZUMBA DANCE COMPETITION",
                 "subtitle": "Community Health Workers Dance Contingent",
@@ -476,7 +413,7 @@ DECKS_CONFIG = [
                 "isLogo": True
             },
             {
-                "id": 2,
+                "id": 3,
                 "type": "awardee",
                 "title": "MUNICIPALITY OF BRAULIO E. DUJALI",
                 "category": "ZUMBA DANCE COMPETITION",
@@ -487,7 +424,7 @@ DECKS_CONFIG = [
                 "isLogo": True
             },
             {
-                "id": 3,
+                "id": 4,
                 "type": "awardee",
                 "title": "MUNICIPALITY OF CARMEN",
                 "category": "ZUMBA DANCE COMPETITION",
@@ -498,7 +435,7 @@ DECKS_CONFIG = [
                 "isLogo": True
             },
             {
-                "id": 4,
+                "id": 5,
                 "type": "awardee",
                 "title": "MUNICIPALITY OF KAPALONG",
                 "category": "ZUMBA DANCE COMPETITION",
@@ -509,7 +446,7 @@ DECKS_CONFIG = [
                 "isLogo": True
             },
             {
-                "id": 5,
+                "id": 6,
                 "type": "awardee",
                 "title": "MUNICIPALITY OF NEW CORELLA",
                 "category": "ZUMBA DANCE COMPETITION",
@@ -520,7 +457,7 @@ DECKS_CONFIG = [
                 "isLogo": True
             },
             {
-                "id": 6,
+                "id": 7,
                 "type": "awardee",
                 "title": "CITY OF PANABO",
                 "category": "ZUMBA DANCE COMPETITION",
@@ -531,7 +468,7 @@ DECKS_CONFIG = [
                 "isLogo": True
             },
             {
-                "id": 7,
+                "id": 8,
                 "type": "awardee",
                 "title": "ISLAND GARDEN CITY OF SAMAL",
                 "category": "ZUMBA DANCE COMPETITION",
@@ -542,7 +479,7 @@ DECKS_CONFIG = [
                 "isLogo": True
             },
             {
-                "id": 8,
+                "id": 9,
                 "type": "awardee",
                 "title": "MUNICIPALITY OF SAN ISIDRO (SAWATA)",
                 "category": "ZUMBA DANCE COMPETITION",
@@ -553,7 +490,7 @@ DECKS_CONFIG = [
                 "isLogo": True
             },
             {
-                "id": 9,
+                "id": 10,
                 "type": "awardee",
                 "title": "MUNICIPALITY OF SANTO TOMAS",
                 "category": "ZUMBA DANCE COMPETITION",
@@ -564,7 +501,7 @@ DECKS_CONFIG = [
                 "isLogo": True
             },
             {
-                "id": 10,
+                "id": 11,
                 "type": "awardee",
                 "title": "CITY OF TAGUM",
                 "category": "ZUMBA DANCE COMPETITION",
@@ -575,7 +512,7 @@ DECKS_CONFIG = [
                 "isLogo": True
             },
             {
-                "id": 11,
+                "id": 12,
                 "type": "awardee",
                 "title": "MUNICIPALITY OF TALAINGOD",
                 "category": "ZUMBA DANCE COMPETITION",
@@ -586,7 +523,30 @@ DECKS_CONFIG = [
                 "isLogo": True
             },
             {
-                "id": 12,
+                "id": 13,
+                "type": "awardee",
+                "title": "AWARDING OF WINNERS: ZUMBA CONTEST",
+                "category": "COMPETITION AWARDS",
+                "subtitle": "Celebration of Energy, Wellness and Teamwork",
+                "department": "Community Health Workers Congress 2026",
+                "categoryTag": "ZUMBA CHAMPIONS"
+            },
+            {
+                "id": 14,
+                "type": "awardee",
+                "title": "AWARDING OF TOP PERFORMING DHIMS",
+                "category": "CEREMONY PROPER",
+                "subtitle": "Purok Category · Barangay Category · LGU Category",
+                "department": "Davao del Norte Health Information Management System (DHIMS)",
+                "categoryTag": "AWARDING CEREMONY",
+                "citations": [
+                    "Purok Category (<500 & ≥500 Population)",
+                    "Barangay Category (Household Profiling & Timeliness)",
+                    "LGU Category Performance Recognition"
+                ]
+            },
+            {
+                "id": 15,
                 "type": "closing",
                 "title": "DAGHANG SALAMAT TO ALL OUR ZUMBA PERFORMERS!",
                 "subtitle": "COMMUNITY HEALTH WORKERS CONGRESS 2026",
@@ -1113,6 +1073,54 @@ DECKS_CONFIG = [
                 "title": "CONGRATULATIONS TO OUR CHAMPION LGUs!",
                 "subtitle": "COMMUNITY HEALTH VOLUNTEERS CONGRESS 2026",
                 "citation": "Your dedication and commitment to excellence in health information management have significantly contributed to providing accurate and reliable health data for a healthier Davao del Norte."
+            }
+        ]
+    },
+
+    # ----------------------------------------------------
+    # DECK 8: CLOSING CEREMONY
+    # ----------------------------------------------------
+    {
+        "folder": "08-closing-ceremony",
+        "key": "chw-08-closing-ceremony",
+        "title": "Closing Ceremony",
+        "category": "CLOSING CEREMONY",
+        "subTitle": "Inspirational Message, Closing Remarks & Formal Adjournment",
+        "slides": [
+            {
+                "id": 0,
+                "type": "title",
+                "event": "COMMUNITY HEALTH WORKERS 2026",
+                "subEvent": "Province of Davao del Norte · Provincial Health Office",
+                "title": "COMMUNITY HEALTH WORKERS CONGRESS 2026",
+                "category": "CLOSING CEREMONY",
+                "citation": "“Digitalisasyon ng Kalusugan: Kaagapay sa Kalinaw ug Kalamboan”\nNovember 24 & 25, 2026 · Carmen Gymnasium, Carmen, Davao del Norte"
+            },
+            {
+                "id": 1,
+                "type": "awardee",
+                "title": "DR. JOSEPHINE THERESE P. PARREÑAS",
+                "category": "INSPIRATIONAL MESSAGE",
+                "subtitle": "Provincial Health Officer I",
+                "department": "Provincial Health Office · Province of Davao del Norte",
+                "categoryTag": "INSPIRATIONAL MESSAGE",
+                "image": "../../shared/assets/speakers/JOSEPHINE THERESE P. PARRENAS.png"
+            },
+            {
+                "id": 2,
+                "type": "awardee",
+                "title": "DORIS S. SOBREMISANA, RN, MAN",
+                "category": "CLOSING REMARKS",
+                "subtitle": "Supervising Health Program Officer / OIC-SAO",
+                "department": "Provincial Health Office · Province of Davao del Norte",
+                "categoryTag": "CLOSING REMARKS"
+            },
+            {
+                "id": 3,
+                "type": "closing",
+                "title": "DAGHANG SALAMAT UG MABUHAY ANG ATING MGA COMMUNITY HEALTH WORKERS!",
+                "subtitle": "COMMUNITY HEALTH WORKERS CONGRESS 2026",
+                "citation": "“Digitalisasyon ng Kalusugan: Kaagapay sa Kalinaw ug Kalamboan”\nProvince of Davao del Norte · Provincial Health Office"
             }
         ]
     }

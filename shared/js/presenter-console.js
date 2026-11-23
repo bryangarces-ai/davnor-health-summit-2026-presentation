@@ -37,7 +37,8 @@
       { folder: '04-zumba-performer', title: 'Deck 04 · Zumba Performer', shortTitle: 'Deck 04 · Zumba Performer', deckNum: '04' },
       { folder: '05-top-performing-purok-nov25', title: 'Deck 05 · Top Performing Purok (Nov 25)', shortTitle: 'Deck 05 · Purok (Nov 25)', deckNum: '05' },
       { folder: '06-top-performing-barangay-nov25', title: 'Deck 06 · Top Performing Barangay (Nov 25)', shortTitle: 'Deck 06 · Barangay (Nov 25)', deckNum: '06' },
-      { folder: '07-top-performing-lgu-nov25', title: 'Deck 07 · Top Performing LGU (Nov 25)', shortTitle: 'Deck 07 · LGU (Nov 25)', deckNum: '07' }
+      { folder: '07-top-performing-lgu-nov25', title: 'Deck 07 · Top Performing LGU (Nov 25)', shortTitle: 'Deck 07 · LGU (Nov 25)', deckNum: '07' },
+      { folder: '08-closing-ceremony', title: 'Deck 08 · Closing Ceremony', shortTitle: 'Deck 08 · Closing Ceremony', deckNum: '08' }
     ],
     'root': [
       { folder: '00-program-health-summit-2026', title: 'Deck 00 · Health Summit Preliminaries', shortTitle: 'Deck 00 · Preliminaries', deckNum: '00' },
@@ -236,6 +237,7 @@
       if (path.indexOf('05-top-performing-purok') !== -1) return 'chw-05-top-performing-purok-nov25';
       if (path.indexOf('06-top-performing-barangay') !== -1) return 'chw-06-top-performing-barangay-nov25';
       if (path.indexOf('07-top-performing-lgu') !== -1) return 'chw-07-top-performing-lgu-nov25';
+      if (path.indexOf('08-closing-ceremony') !== -1 || path.indexOf('closing-ceremony') !== -1) return 'chw-08-closing-ceremony';
       return 'chw-default';
     }
     if (path.indexOf('00-program') !== -1) return '00-program';

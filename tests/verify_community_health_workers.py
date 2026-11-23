@@ -29,14 +29,15 @@ def test_chw_suite():
 
     # 2. Verify Decks
     expected_decks = [
-        ("00-program-flow", 18),
+        ("00-program-flow", 11),
         ("01-top-performing-purok-nov24", 5),
         ("02-top-performing-barangay-nov24", 7),
         ("03-top-performing-lgu-nov24", 4),
-        ("04-zumba-performer", 13),
+        ("04-zumba-performer", 16),
         ("05-top-performing-purok-nov25", 9),
         ("06-top-performing-barangay-nov25", 17),
-        ("07-top-performing-lgu-nov25", 6)
+        ("07-top-performing-lgu-nov25", 6),
+        ("08-closing-ceremony", 4)
     ]
 
     total_slides = 0
@@ -81,11 +82,38 @@ def test_chw_suite():
 
                 # Verify removed slides do not exist in 00-program-flow
                 if folder == "00-program-flow":
-                    removed_titles = ["ARRIVAL OF PARTICIPANTS", "RECOGNITION OF STAKEHOLDERS", "LUNCH BREAK & FELLOWSHIP", "RESUMPTION OF PROGRAM PROPER"]
+                    removed_titles = [
+                        "OPENING PRELIMINARIES",
+                        "AWARDING OF TOP PERFORMING DHIMS",
+                        "RUBY ROSAL, RMT",
+                        "AWARDING OF WINNERS: ZUMBA CONTEST",
+                        "DAGHANG SALAMAT UG MABUHAY ANG ATING MGA COMMUNITY HEALTH WORKERS!",
+                        "DR. JOSEPHINE THERESE P. PARREÑAS",
+                        "DORIS S. SOBREMISANA, RN, MAN",
+                        "ARRIVAL OF PARTICIPANTS",
+                        "RECOGNITION OF STAKEHOLDERS",
+                        "LUNCH BREAK & FELLOWSHIP",
+                        "RESUMPTION OF PROGRAM PROPER"
+                    ]
                     for s in slides:
                         if s.get("title") in removed_titles:
                             errors.append(f"Found unwanted slide '{s.get('title')}' in 00-program-flow")
                     print("PASS: Verified removed slides are absent from 00-program-flow.")
+
+                if folder == "04-zumba-performer":
+                    titles = [s.get("title") for s in slides]
+                    if "RUBY ROSAL, RMT" not in titles:
+                        errors.append("Deck 04 missing 'RUBY ROSAL, RMT' slide")
+                    else:
+                        print("PASS: Verified 'RUBY ROSAL, RMT' is present in 04-zumba-performer.")
+                    if "AWARDING OF WINNERS: ZUMBA CONTEST" not in titles:
+                        errors.append("Deck 04 missing 'AWARDING OF WINNERS: ZUMBA CONTEST' slide")
+                    else:
+                        print("PASS: Verified 'AWARDING OF WINNERS: ZUMBA CONTEST' is present in 04-zumba-performer.")
+                    if "AWARDING OF TOP PERFORMING DHIMS" not in titles:
+                        errors.append("Deck 04 missing 'AWARDING OF TOP PERFORMING DHIMS' slide")
+                    else:
+                        print("PASS: Verified 'AWARDING OF TOP PERFORMING DHIMS' is present in 04-zumba-performer.")
 
                 # Collect and check image references (speakers & logos only)
                 for s in slides:
@@ -128,7 +156,7 @@ def test_chw_suite():
                 errors.append(f"Hub index.html missing watermark for deck {deck_num}")
         if "overflow-y: auto !important" not in hub_content:
             errors.append("CHW Hub index.html missing overflow-y: auto !important scroll style")
-        print("PASS: CHW Hub index.html has interactive background, full vertical scroll, and deck numbers 00-07.")
+        print("PASS: CHW Hub index.html has interactive background, full vertical scroll, and deck numbers 00-08.")
 
     # 4. Verify Main Ceremony Portal
     main_html = os.path.join(BASE_DIR, 'index.html')

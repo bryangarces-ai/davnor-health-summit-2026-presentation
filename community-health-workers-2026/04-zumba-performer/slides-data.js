@@ -13,6 +13,15 @@
   {
     "id": 1,
     "type": "awardee",
+    "title": "RUBY ROSAL, RMT",
+    "category": "PRESENTATION OF CRITERIA",
+    "subtitle": "Medical Technologist II \u00b7 Zumba Contest Criteria",
+    "department": "Provincial Health Office \u00b7 Province of Davao del Norte",
+    "categoryTag": "ZUMBA CRITERIA"
+  },
+  {
+    "id": 2,
+    "type": "awardee",
     "title": "MUNICIPALITY OF ASUNCION",
     "category": "ZUMBA DANCE COMPETITION",
     "subtitle": "Community Health Workers Dance Contingent",
@@ -22,7 +31,7 @@
     "isLogo": true
   },
   {
-    "id": 2,
+    "id": 3,
     "type": "awardee",
     "title": "MUNICIPALITY OF BRAULIO E. DUJALI",
     "category": "ZUMBA DANCE COMPETITION",
@@ -33,7 +42,7 @@
     "isLogo": true
   },
   {
-    "id": 3,
+    "id": 4,
     "type": "awardee",
     "title": "MUNICIPALITY OF CARMEN",
     "category": "ZUMBA DANCE COMPETITION",
@@ -44,7 +53,7 @@
     "isLogo": true
   },
   {
-    "id": 4,
+    "id": 5,
     "type": "awardee",
     "title": "MUNICIPALITY OF KAPALONG",
     "category": "ZUMBA DANCE COMPETITION",
@@ -55,7 +64,7 @@
     "isLogo": true
   },
   {
-    "id": 5,
+    "id": 6,
     "type": "awardee",
     "title": "MUNICIPALITY OF NEW CORELLA",
     "category": "ZUMBA DANCE COMPETITION",
@@ -66,7 +75,7 @@
     "isLogo": true
   },
   {
-    "id": 6,
+    "id": 7,
     "type": "awardee",
     "title": "CITY OF PANABO",
     "category": "ZUMBA DANCE COMPETITION",
@@ -77,7 +86,7 @@
     "isLogo": true
   },
   {
-    "id": 7,
+    "id": 8,
     "type": "awardee",
     "title": "ISLAND GARDEN CITY OF SAMAL",
     "category": "ZUMBA DANCE COMPETITION",
@@ -88,7 +97,7 @@
     "isLogo": true
   },
   {
-    "id": 8,
+    "id": 9,
     "type": "awardee",
     "title": "MUNICIPALITY OF SAN ISIDRO (SAWATA)",
     "category": "ZUMBA DANCE COMPETITION",
@@ -99,7 +108,7 @@
     "isLogo": true
   },
   {
-    "id": 9,
+    "id": 10,
     "type": "awardee",
     "title": "MUNICIPALITY OF SANTO TOMAS",
     "category": "ZUMBA DANCE COMPETITION",
@@ -110,7 +119,7 @@
     "isLogo": true
   },
   {
-    "id": 10,
+    "id": 11,
     "type": "awardee",
     "title": "CITY OF TAGUM",
     "category": "ZUMBA DANCE COMPETITION",
@@ -121,7 +130,7 @@
     "isLogo": true
   },
   {
-    "id": 11,
+    "id": 12,
     "type": "awardee",
     "title": "MUNICIPALITY OF TALAINGOD",
     "category": "ZUMBA DANCE COMPETITION",
@@ -132,7 +141,30 @@
     "isLogo": true
   },
   {
-    "id": 12,
+    "id": 13,
+    "type": "awardee",
+    "title": "AWARDING OF WINNERS: ZUMBA CONTEST",
+    "category": "COMPETITION AWARDS",
+    "subtitle": "Celebration of Energy, Wellness and Teamwork",
+    "department": "Community Health Workers Congress 2026",
+    "categoryTag": "ZUMBA CHAMPIONS"
+  },
+  {
+    "id": 14,
+    "type": "awardee",
+    "title": "AWARDING OF TOP PERFORMING DHIMS",
+    "category": "CEREMONY PROPER",
+    "subtitle": "Purok Category \u00b7 Barangay Category \u00b7 LGU Category",
+    "department": "Davao del Norte Health Information Management System (DHIMS)",
+    "categoryTag": "AWARDING CEREMONY",
+    "citations": [
+      "Purok Category (<500 & \u2265500 Population)",
+      "Barangay Category (Household Profiling & Timeliness)",
+      "LGU Category Performance Recognition"
+    ]
+  },
+  {
+    "id": 15,
     "type": "closing",
     "title": "DAGHANG SALAMAT TO ALL OUR ZUMBA PERFORMERS!",
     "subtitle": "COMMUNITY HEALTH WORKERS CONGRESS 2026",

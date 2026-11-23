@@ -13,20 +13,6 @@
   {
     "id": 1,
     "type": "awardee",
-    "title": "OPENING PRELIMINARIES",
-    "category": "ORDER OF CEREMONY",
-    "subtitle": "Official Commencement of Congress",
-    "categoryTag": "PART I \u00b7 9:00 AM",
-    "citations": [
-      "Ecumenical Invocation & Prayer",
-      "Philippine National Anthem (AVP)",
-      "Davao del Norte Hymn & March",
-      "Recognition of Delegates"
-    ]
-  },
-  {
-    "id": 2,
-    "type": "awardee",
     "title": "CHRISTY CAROLE B. SANICO, RGC",
     "category": "INVOCATION & PRAYER",
     "subtitle": "Population Program Officer II",
@@ -34,7 +20,7 @@
     "categoryTag": "OPENING PRAYER"
   },
   {
-    "id": 3,
+    "id": 2,
     "type": "awardee",
     "title": "PHILIPPINE NATIONAL ANTHEM",
     "category": "ORDER OF CEREMONY",
@@ -43,7 +29,7 @@
     "categoryTag": "NATIONAL ANTHEM"
   },
   {
-    "id": 4,
+    "id": 3,
     "type": "awardee",
     "title": "DR. ALFREDO A. LACERONA",
     "category": "OPENING REMARKS",
@@ -53,7 +39,7 @@
     "image": "../../shared/assets/speakers/ALFREDO A. LACERONA.png"
   },
   {
-    "id": 5,
+    "id": 4,
     "type": "awardee",
     "title": "DR. VERGEL JAY T. BAUTISTA",
     "category": "MESSAGE",
@@ -62,7 +48,7 @@
     "categoryTag": "SPECIAL MESSAGE"
   },
   {
-    "id": 6,
+    "id": 5,
     "type": "awardee",
     "title": "MS. JINKY C. ESPINO",
     "category": "BHW PROGRAM UPDATES",
@@ -71,7 +57,7 @@
     "categoryTag": "BHW UPDATES"
   },
   {
-    "id": 7,
+    "id": 6,
     "type": "awardee",
     "title": "HON. CLARICE T. JUBAHIB",
     "category": "GUEST SPEAKER",
@@ -81,7 +67,7 @@
     "image": "../../shared/assets/speakers/HON. CLARICE JUBAHIB.jpg"
   },
   {
-    "id": 8,
+    "id": 7,
     "type": "awardee",
     "title": "OATH TAKING OF OFFICERS",
     "category": "CEREMONIAL SWEARING-IN",
@@ -90,7 +76,7 @@
     "categoryTag": "OATH OF OFFICE"
   },
   {
-    "id": 9,
+    "id": 8,
     "type": "awardee",
     "title": "HON. EDWIN I. JUBAHIB, MMPA",
     "category": "GOVERNOR'S MESSAGE",
@@ -100,7 +86,7 @@
     "image": "../../shared/assets/speakers/edwin jubahib.png"
   },
   {
-    "id": 10,
+    "id": 9,
     "type": "awardee",
     "title": "RECOGNITION OF LOYALTY AWARDS",
     "category": "LOYALTY & SERVICE AWARDS",
@@ -109,71 +95,13 @@
     "categoryTag": "LOYALTY AWARDS"
   },
   {
-    "id": 11,
+    "id": 10,
     "type": "awardee",
     "title": "MR. FLOR B. LUCAS III",
     "category": "PRESENTATION OF CRITERIA",
     "subtitle": "Population Program Officer IV \u00b7 Top Performing in DHIMS",
     "department": "Provincial Health Office \u00b7 Province of Davao del Norte",
     "categoryTag": "DHIMS CRITERIA"
-  },
-  {
-    "id": 12,
-    "type": "awardee",
-    "title": "AWARDING OF TOP PERFORMING DHIMS",
-    "category": "CEREMONY PROPER",
-    "subtitle": "Purok Category \u00b7 Barangay Category \u00b7 LGU Category",
-    "department": "Davao del Norte Health Information Management System (DHIMS)",
-    "categoryTag": "AWARDING CEREMONY",
-    "citations": [
-      "Purok Category (<500 & \u2265500 Population)",
-      "Barangay Category (Household Profiling & Timeliness)",
-      "LGU Category Performance Recognition"
-    ]
-  },
-  {
-    "id": 13,
-    "type": "awardee",
-    "title": "RUBY ROSAL, RMT",
-    "category": "PRESENTATION OF CRITERIA",
-    "subtitle": "Medical Technologist II \u00b7 Zumba Contest Criteria",
-    "department": "Provincial Health Office \u00b7 Province of Davao del Norte",
-    "categoryTag": "ZUMBA CRITERIA"
-  },
-  {
-    "id": 14,
-    "type": "awardee",
-    "title": "AWARDING OF WINNERS: ZUMBA CONTEST",
-    "category": "COMPETITION AWARDS",
-    "subtitle": "Celebration of Energy, Wellness and Teamwork",
-    "department": "Community Health Workers Congress 2026",
-    "categoryTag": "ZUMBA CHAMPIONS"
-  },
-  {
-    "id": 15,
-    "type": "awardee",
-    "title": "DR. JOSEPHINE THERESE P. PARRE\u00d1AS",
-    "category": "INSPIRATIONAL MESSAGE",
-    "subtitle": "Provincial Health Officer I",
-    "department": "Provincial Health Office \u00b7 Province of Davao del Norte",
-    "categoryTag": "INSPIRATIONAL MESSAGE",
-    "image": "../../shared/assets/speakers/JOSEPHINE THERESE P. PARRENAS.png"
-  },
-  {
-    "id": 16,
-    "type": "awardee",
-    "title": "DORIS S. SOBREMISANA, RN, MAN",
-    "category": "CLOSING REMARKS",
-    "subtitle": "Supervising Health Program Officer / OIC-SAO",
-    "department": "Provincial Health Office \u00b7 Province of Davao del Norte",
-    "categoryTag": "CLOSING REMARKS"
-  },
-  {
-    "id": 17,
-    "type": "closing",
-    "title": "DAGHANG SALAMAT UG MABUHAY ANG ATING MGA COMMUNITY HEALTH WORKERS!",
-    "subtitle": "COMMUNITY HEALTH WORKERS CONGRESS 2026",
-    "citation": "\u201cDigitalisasyon ng Kalusugan: Kaagapay sa Kalinaw ug Kalamboan\u201d\nProvince of Davao del Norte \u00b7 Provincial Health Office"
   }
 ];
 
