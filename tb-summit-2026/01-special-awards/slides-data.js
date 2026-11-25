@@ -1,5 +1,5 @@
 (function () {
-  // Source: TB SUMMIT LIST OF AWARDS.xlsx (DAVNOR TB Summit 2026)
+  // Source: DAVNOR END TB SUMMIT 2026 (Technical Cue Guide & Awards Catalog)
   var data = [
   {
     "id": 0,
@@ -40,7 +40,7 @@
   {
     "id": 4,
     "type": "awardee",
-    "title": "JORDAN F. KINTANAR, RMT",
+    "title": "JORDAN V. KINTANAR, RMT",
     "number": 4,
     "category": "SPECIAL AWARD",
     "subtitle": "NTP Med Tech Coordinator · DOH-DCHD XI",
@@ -75,7 +75,7 @@
   {
     "id": 7,
     "type": "awardee",
-    "title": "GLENN A. PONO, MD FPCP, FPCCP",
+    "title": "GLENN A. PONO, MD, FPCP, FPCCP",
     "number": 7,
     "category": "SPECIAL AWARD",
     "subtitle": "Internal Medicine / Pulmonologist · Davao del Norte TB Consultant",
@@ -93,75 +93,71 @@
   {
     "id": 9,
     "type": "awardee",
-    "title": "MARIA VICTORIA L. LEGASPI, MD & JEORGIE ARVIN S. LEGASPI, MD",
+    "title": "MARIA VICTORIA L. LEGASPI, MD, FPCP, FPCCP, FCCP",
     "number": 9,
     "category": "SPECIAL AWARD",
-    "subtitle": "Specialist Consultants · Davao del Norte TB Consultants",
-    "citations": [
-      "Internal Medicine / Pulmonologist (FPCP, FPCCP, FCCP)",
-      "Internal Medicine / Occupational Medicine (DPCOM, FPSMS, MAHA)"
-    ],
+    "subtitle": "Internal Medicine / Pulmonologist · Davao del Norte TB Consultant",
     "categoryTag": "SPECIAL AWARD"
   },
   {
     "id": 10,
     "type": "awardee",
-    "title": "JOEBELLE MAY GALANG-DELA CRUZ, MD, MPM, FPAFP",
+    "title": "JEORGIE ARVIN S. LEGASPI, DPCOM, FPSMS, MAHA",
     "number": 10,
     "category": "SPECIAL AWARD",
-    "subtitle": "Vice Chairperson · Davao del Norte TB Medical Advisory Committee · DRMC",
+    "subtitle": "Internal Medicine / Occupational Medicine · Davao del Norte TB Consultant",
     "categoryTag": "SPECIAL AWARD"
   },
   {
     "id": 11,
     "type": "awardee",
-    "title": "VIKKI DARL R. RODRIGUEZ, MD, FPCP, DPSMID",
+    "title": "JOEBELLE MAY GALANG-DELA CRUZ, MD, MPM, FPAFP",
     "number": 11,
     "category": "SPECIAL AWARD",
-    "subtitle": "Member · Davao del Norte TB Medical Advisory Committee · DRMC",
+    "subtitle": "Vice Chairperson · Davao del Norte TB Medical Advisory Committee · DRMC",
     "categoryTag": "SPECIAL AWARD"
   },
   {
     "id": 12,
     "type": "awardee",
-    "title": "LOUELYN H. EXALA, MD, DBCOM",
+    "title": "VIKKI DARL R. RODRIGUEZ, MD, FPCP, DPSMID",
     "number": 12,
     "category": "SPECIAL AWARD",
-    "subtitle": "Member · Davao del Norte TB Medical Advisory Committee · RHU Kapalong",
+    "subtitle": "Member · Davao del Norte TB Medical Advisory Committee · DRMC",
     "categoryTag": "SPECIAL AWARD"
   },
   {
     "id": 13,
     "type": "awardee",
-    "title": "SHARIFF AMILOARI S. MANIBPEL, MD, FPCP",
+    "title": "LOUELYN H. EXALA, MD, DBCOM",
     "number": 13,
-    "category": "HIGHEST REFERRALS FOR TB MANDATORY NOTIFICATION",
-    "subtitle": "Internal Medicine / Pulmonologist · Tagum City",
+    "category": "SPECIAL AWARD",
+    "subtitle": "Member · Davao del Norte TB Medical Advisory Committee · RHU Kapalong",
     "categoryTag": "SPECIAL AWARD"
   },
   {
     "id": 14,
     "type": "awardee",
-    "title": "ERLYN D. LOPEZ, MD FPCR, FPCCP",
+    "title": "DEVELOPMENT MANAGEMENT OFFICERS (DMOS)",
     "number": 14,
-    "category": "HIGHEST REFERRALS FOR TB MANDATORY NOTIFICATION",
-    "subtitle": "Pulmonologist · Panabo City",
+    "category": "SPECIAL AWARD",
+    "subtitle": "DOH Provincial Health Team · Province of Davao del Norte",
+    "citations": [
+      "VERGEL JAY T. BAUTISTA, MD, MPM — DMO V / Provincial Health Team Leader",
+      "ENGR. LORENA M. ORILLA, MPA — Development Management Officer",
+      "JENNIFER D. HINGGO, MPA — Development Management Officer",
+      "IAN PATRICK M. VIDAL, RMT — Development Management Officer",
+      "DARLENE DOROTHY C. ARAMASA, RMT — Development Management Officer"
+    ],
     "categoryTag": "SPECIAL AWARD"
   },
   {
     "id": 15,
     "type": "awardee",
-    "title": "PROVINCIAL DEPARTMENT OF HEALTH OFFICE",
+    "title": "PROVINCIAL SOCIAL WELFARE DEVELOPMENT OFFICE",
     "number": 15,
     "category": "SPECIAL AWARD",
-    "subtitle": "Davao del Norte",
-    "citations": [
-      "VERGEL JAY T. BAUTISTA, MD, MPM — Development Management Officer V / Provincial Health Team Leader",
-      "LORENA M. ORILLA, ChE, MPA — Development Management Officer IV",
-      "JENNIFER D. HINGGO, MPA — Development Management Officer IV",
-      "IAN PATRICK M. VIDAL, RMT — Development Management Officer IV",
-      "DARLENE DOROTHY C. ARAMASA, RMT — Development Management Officer III"
-    ],
+    "subtitle": "ROSALINDA O. RAPISTA, RSW, MPA · P. G. Dept. Head",
     "categoryTag": "SPECIAL AWARD"
   },
   {
@@ -176,18 +172,27 @@
   {
     "id": 17,
     "type": "awardee",
-    "title": "PROVINCIAL SOCIAL WELFARE DEVELOPMENT OFFICE",
+    "title": "SHARIFF AMILOARI S. MANIBPEL, MD, FPCP",
     "number": 17,
-    "category": "SPECIAL AWARD",
-    "subtitle": "ROSALINDA O. RAPISTA, RSW, MPA · P. G. Dept. Head",
+    "category": "HIGHEST REFERRALS FOR TB MANDATORY NOTIFICATION",
+    "subtitle": "Internal Medicine / Pulmonologist · Tagum City",
     "categoryTag": "SPECIAL AWARD"
   },
   {
     "id": 18,
+    "type": "awardee",
+    "title": "ERLYN D. LOPEZ, MD, FPCR, FPCCP",
+    "number": 18,
+    "category": "HIGHEST REFERRALS FOR TB MANDATORY NOTIFICATION",
+    "subtitle": "Pulmonologist · Panabo City",
+    "categoryTag": "SPECIAL AWARD"
+  },
+  {
+    "id": 19,
     "type": "closing",
-    "title": "CONGRATULATIONS TO ALL AWARDEES",
-    "citation": "Thank you for your partnership and unwavering commitment to ending Tuberculosis in the Province of Davao del Norte.",
-    "subtitle": "DAVNOR TB SUMMIT 2026"
+    "title": "CONGRATULATIONS TO ALL SPECIAL AWARDEES",
+    "subtitle": "DAVNOR TB SUMMIT 2026",
+    "citation": "In grateful recognition of your invaluable dedication, technical assistance, and leadership in the elimination of Tuberculosis."
   }
 ];
 

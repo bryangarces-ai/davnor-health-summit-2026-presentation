@@ -1,5 +1,5 @@
 (function () {
-  // Source: TB SUMMIT LIST OF AWARDS.xlsx (DAVNOR TB Summit 2026)
+  // Source: DAVNOR END TB SUMMIT 2026 (Technical Cue Guide & Awards Catalog)
   var data = [
   {
     "id": 0,
@@ -8,296 +8,225 @@
     "subEvent": "Province of Davao del Norte · Provincial Health Office",
     "title": "SPECIAL AWARDS — REFERRING FACILITIES",
     "category": "DAVNOR TB SUMMIT 2026",
-    "citation": "Recognizing referring hospitals, medical clinics, and custodial facilities actively notifying TB cases in Davao del Norte"
+    "citation": "Recognizing dedicated hospitals, private medical centers, and detention facilities in presumptive TB identification and referral"
   },
   {
     "id": 1,
     "type": "awardee",
-    "title": "MEDICAL MISSION GROUP HOSPITAL & HEALTH SERVICES COOPERATIVE",
+    "title": "DAVAO DEL NORTE HOSPITAL — CARMEN ZONE",
     "number": 1,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Tagum City",
-    "citations": [
-      "RONA B. ADOL-ANG, RN — TB Nurse Coordinator"
-    ],
+    "category": "REFERRING HOSPITAL",
+    "subtitle": "Dr. Ruchille Arrocena · OIC-Chief of Hospital II",
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 2,
     "type": "awardee",
-    "title": "AQUINO MEDICAL SPECIALISTS HOSPITAL, INC.",
+    "title": "DAVAO DEL NORTE HOSPITAL — KAPALONG ZONE",
     "number": 2,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Tagum City",
-    "citations": [
-      "JOESERIL T. FRUCTOSO, RN — TB Nurse Coordinator"
-    ],
+    "category": "REFERRING HOSPITAL",
+    "subtitle": "Dr. Jessie Belga · Chief of Hospital II",
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 3,
     "type": "awardee",
-    "title": "UNITED DOCTORS HOSPITAL OF TAGUM, INC.",
+    "title": "DRMC WARD EXTENSION (INFIRMARY)",
     "number": 3,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Tagum City",
-    "citations": [
-      "KHAYE RHE P. NAVACILLA, RN — TB Nurse Coordinator"
-    ],
+    "category": "REFERRING HOSPITAL",
+    "subtitle": "Sawata, Davao del Norte",
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 4,
     "type": "awardee",
-    "title": "TAGUM GLOBAL MEDICAL CENTER, INC.",
+    "title": "JA ALEGRE MEDICAL CLINIC AND HOSPITAL",
     "number": 4,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Tagum City",
-    "citations": [
-      "NICOLLE A. CUESTAS, RN — TB Nurse Coordinator"
-    ],
+    "category": "REFERRING HOSPITAL",
+    "subtitle": "Kapalong, Davao del Norte",
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 5,
     "type": "awardee",
-    "title": "CHRIST THE KING SPECIALISTS HOSPITAL",
+    "title": "CARMEN MEDICAL CLINIC AND HOSPITAL",
     "number": 5,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Tagum City",
-    "citations": [
-      "MARI-TESSA O. SURIGAO, RN — TB Nurse Coordinator"
-    ],
+    "category": "REFERRING HOSPITAL",
+    "subtitle": "Carmen, Davao del Norte",
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 6,
     "type": "awardee",
-    "title": "CAINGLET MEDICAL HOSPITAL, INC.",
+    "title": "BUNGABONG-SANICO MEDICAL CLINIC & MATERNITY HOSPITAL",
     "number": 6,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Panabo City",
-    "citations": [
-      "CYRIAN MAE JAVIER-NAVIGAR, RN — TB Nurse Coordinator"
-    ],
+    "category": "REFERRING HOSPITAL",
+    "subtitle": "Sto. Tomas, Davao del Norte",
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 7,
     "type": "awardee",
-    "title": "GOOD SHEPHERD HOSPITAL OF PANABO CITY, INC.",
+    "title": "ESTELA MEDICAL CLINIC & PHARMACY",
     "number": 7,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Panabo City",
-    "citations": [
-      "AMABELLA C. MALIA, RN — TB Nurse Coordinator"
-    ],
+    "category": "REFERRING HOSPITAL",
+    "subtitle": "Sto. Tomas, Davao del Norte",
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 8,
     "type": "awardee",
-    "title": "TADECO HOSPITAL",
+    "title": "EMILIO B. RIVERA PRIMARY CARE CENTER, INC.",
     "number": 8,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Panabo City",
-    "citations": [
-      "JOANNE D. NOVELA, RN — TB Nurse Coordinator"
-    ],
+    "category": "REFERRING HOSPITAL",
+    "subtitle": "Sto. Tomas, Davao del Norte",
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 9,
     "type": "awardee",
-    "title": "CARMEN MEDICAL CLINIC AND HOSPITAL",
+    "title": "MATUTES MEDICAL CLINIC AND HOSPITAL",
     "number": 9,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Carmen, Davao del Norte",
-    "citations": [
-      "CHELAMAE CLAIRE P. JACOT, RN — TB Nurse Coordinator"
-    ],
+    "category": "REFERRING HOSPITAL",
+    "subtitle": "Sto. Tomas, Davao del Norte",
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 10,
     "type": "awardee",
-    "title": "DAVAO DEL NORTE HOSPITAL — CARMEN ZONE",
+    "title": "METROPOLITAN POLYMEDICA COMMUNITY AND HOSPITAL, INC.",
     "number": 10,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Carmen, Davao del Norte",
-    "citations": [
-      "RUCHILLE S. ARROCENA, MD, FPSMSI, MAHA — OIC - Chief of Hospital",
-      "KARREN MAE R. BARCENA, RN — TB Nurse Coordinator",
-      "JENNIFER R. BRECIO, RMT — RTDL Medical Technologist",
-      "Radiology Department"
-    ],
+    "category": "REFERRING HOSPITAL",
+    "subtitle": "Sto. Tomas, Davao del Norte",
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 11,
     "type": "awardee",
-    "title": "BUNGABONG-SANICO MEDICAL CLINIC & MATERNITY HOSPITAL",
+    "title": "CAINGLET MEDICAL HOSPITAL, INC.",
     "number": 11,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Davao del Norte",
-    "citations": [
-      "SHILLA MEE M. MALABAGO, RN — TB Nurse Coordinator"
-    ],
+    "category": "REFERRING HOSPITAL",
+    "subtitle": "Panabo City",
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 12,
     "type": "awardee",
-    "title": "ESTELA MEDICAL CLINIC AND HOSPITAL",
+    "title": "GOOD SHEPHERD HOSPITAL OF PANABO CITY, INC.",
     "number": 12,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Davao del Norte",
-    "citations": [
-      "NIMFA G. NACIS, RN — TB Nurse Coordinator"
-    ],
+    "category": "REFERRING HOSPITAL",
+    "subtitle": "Panabo City",
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 13,
     "type": "awardee",
-    "title": "EMILIO B. RIVERA PRIMARY CARE CENTERS, INC.",
+    "title": "TADECO HOSPITAL",
     "number": 13,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Davao del Norte",
-    "citations": [
-      "JUDITH L. DEOCAMPO, RN — TB Nurse Coordinator"
-    ],
+    "category": "REFERRING HOSPITAL",
+    "subtitle": "Panabo City",
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 14,
     "type": "awardee",
-    "title": "MATUTES MEDICAL CLINIC AND HOSPITAL",
+    "title": "AQUINO MEDICAL SPECIALISTS HOSPITAL, INC.",
     "number": 14,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Davao del Norte",
-    "citations": [
-      "JESSE MARI T. CARLON, RN — TB Nurse Coordinator"
-    ],
+    "category": "REFERRING HOSPITAL",
+    "subtitle": "Tagum City",
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 15,
     "type": "awardee",
-    "title": "METROPOLITAN POLYMEDIC COMMUNITY HOSPITAL, INC.",
+    "title": "CHRIST THE KING SPECIALISTS HOSPITAL",
     "number": 15,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Davao del Norte",
-    "citations": [
-      "RICHE A. DADULA, RN — TB Nurse Coordinator"
-    ],
+    "category": "REFERRING HOSPITAL",
+    "subtitle": "Tagum City",
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 16,
     "type": "awardee",
-    "title": "JA ALEGRE MEDICAL CLINIC AND HOSPITAL",
+    "title": "MEDICAL MISSION GROUP HOSPITAL AND SERVICES COOPERATIVE OF TAGUM",
     "number": 16,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Davao del Norte",
-    "citations": [
-      "DARYL V. TEVES, RN — TB Nurse Coordinator"
-    ],
+    "category": "REFERRING HOSPITAL",
+    "subtitle": "Tagum City",
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 17,
     "type": "awardee",
-    "title": "DAVAO DEL NORTE HOSPITAL — KAPALONG ZONE",
+    "title": "TAGUM GLOBAL MEDICAL CENTER, INC.",
     "number": 17,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Kapalong, Davao del Norte",
-    "citations": [
-      "JESSIE T. BELGA, MD, FPSMSI, MSPH-HA — Chief of Hospital II",
-      "ZHEENA MAE C. NALUPA, RN, MAN — TB Nurse Coordinator",
-      "LEONA S. OLILA, RMT — RTDL Medical Technologist",
-      "Radiology Department"
-    ],
+    "category": "REFERRING HOSPITAL",
+    "subtitle": "Tagum City",
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 18,
     "type": "awardee",
-    "title": "DRMC WARD EXTENSION (INFIRMARY)",
+    "title": "UNITED DOCTORS HOSPITAL OF TAGUM, INC.",
     "number": 18,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Davao Regional Medical Center",
-    "citations": [
-      "MYLENE V. TORCULAS, RN — TB Nurse Coordinator"
-    ],
+    "category": "REFERRING HOSPITAL",
+    "subtitle": "Tagum City",
     "categoryTag": "REFERRING FACILITY"
   },
   {
     "id": 19,
     "type": "awardee",
-    "title": "TAGUM CITY DISTRICT JAIL — MALE DORMITORY",
+    "title": "DAVAO DEL NORTE PROVINCIAL REHABILITATION CENTER",
     "number": 19,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Bureau of Jail Management and Penology",
-    "citations": [
-      "SJO4 JONATHAN D. ALMONARES, RN — TB Nurse Coordinator"
-    ],
-    "categoryTag": "REFERRING FACILITY"
+    "category": "DETENTION FACILITY",
+    "subtitle": "PS Tristan C. Agag, RN · Provincial Rehabilitation Center",
+    "categoryTag": "JAILS & CORRECTIONS"
   },
   {
     "id": 20,
     "type": "awardee",
-    "title": "TAGUM CITY DISTRICT JAIL — FEMALE DORMITORY",
+    "title": "TAGUM CITY DISTRICT JAIL — MALE DORMITORY",
     "number": 20,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Bureau of Jail Management and Penology",
-    "citations": [
-      "JO2 JENNY ANN C. MELENDREZ, RN — TB Nurse Coordinator"
-    ],
-    "categoryTag": "REFERRING FACILITY"
+    "category": "DETENTION FACILITY",
+    "subtitle": "SJO4 Jonathan D. Almonares, RN · Bureau of Jail Management and Penology",
+    "image": "../assets/photos/jail_tagum.jpg",
+    "categoryTag": "JAILS & CORRECTIONS"
   },
   {
     "id": 21,
     "type": "awardee",
-    "title": "PANABO CITY DISTRICT JAIL",
+    "title": "TAGUM CITY DISTRICT JAIL — FEMALE DORMITORY",
     "number": 21,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Bureau of Jail Management and Penology",
-    "citations": [
-      "SJO4 HENRY S. AGUISANDO, RN — TB Nurse Coordinator"
-    ],
-    "categoryTag": "REFERRING FACILITY"
+    "category": "DETENTION FACILITY",
+    "subtitle": "JO2 Jenny Ann C. Melendrez, RN · Bureau of Jail Management and Penology",
+    "image": "../assets/photos/jail_tagum.jpg",
+    "categoryTag": "JAILS & CORRECTIONS"
   },
   {
     "id": 22,
     "type": "awardee",
-    "title": "SAMAL CITY JAIL",
+    "title": "PANABO CITY DISTRICT JAIL",
     "number": 22,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Bureau of Jail Management and Penology",
-    "citations": [
-      "JO2 KARLAND DALE C. BALON, RN — TB Nurse Coordinator"
-    ],
-    "categoryTag": "REFERRING FACILITY"
+    "category": "DETENTION FACILITY",
+    "subtitle": "SJO4 Henry Aguisando, RN · Bureau of Jail Management and Penology",
+    "image": "../assets/photos/jail_panabo.jpg",
+    "categoryTag": "JAILS & CORRECTIONS"
   },
   {
     "id": 23,
     "type": "awardee",
-    "title": "DAVAO DEL NORTE PROVINCIAL REHABILITATION CENTER",
+    "title": "SAMAL CITY JAIL",
     "number": 23,
-    "category": "REFERRING FACILITY",
-    "subtitle": "Province of Davao del Norte",
-    "citations": [
-      "PS TRISTAN C. AGAG, RN — TB Nurse Coordinator"
-    ],
-    "categoryTag": "REFERRING FACILITY"
+    "category": "DETENTION FACILITY",
+    "subtitle": "JO2 Karland Dale C. Balon, RN · Bureau of Jail Management and Penology",
+    "image": "../assets/photos/jail_samal.jpg",
+    "categoryTag": "JAILS & CORRECTIONS"
   },
   {
     "id": 24,
     "type": "closing",
-    "title": "CONGRATULATIONS TO ALL REFERRING FACILITIES",
-    "citation": "Saluting your proactive patient notification and surveillance that brings TB care within reach of every community.",
-    "subtitle": "DAVNOR TB SUMMIT 2026"
+    "title": "SALUTE TO ALL REFERRING HOSPITALS & DETENTION FACILITIES",
+    "subtitle": "DAVNOR TB SUMMIT 2026",
+    "citation": "In grateful recognition of your vital role in screening, early detection, and timely referral of presumptive TB patients."
   }
 ];
 

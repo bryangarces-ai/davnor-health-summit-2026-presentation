@@ -2,3 +2,10 @@
 ~$*
 __pycache__/
 *.pyc
+*.mp4
+*.m4v
+*.mov
+*.HEIC
+*.opdownload
+cue_guide_dump.txt
+emcee_guide_dump.txt

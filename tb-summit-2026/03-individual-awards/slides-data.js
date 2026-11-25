@@ -1,14 +1,14 @@
 (function () {
-  // Source: TB SUMMIT LIST OF AWARDS.xlsx (DAVNOR TB Summit 2026)
+  // Source: DAVNOR END TB SUMMIT 2026 (Technical Cue Guide & Awards Catalog)
   var data = [
   {
     "id": 0,
     "type": "title",
     "event": "DAVNOR TB SUMMIT 2026",
     "subEvent": "Province of Davao del Norte · Provincial Health Office",
-    "title": "RECOGNITION OF INDIVIDUAL AWARDS",
+    "title": "SPECIAL AWARDS — TB HEALTH WORKFORCE",
     "category": "DAVNOR TB SUMMIT 2026",
-    "citation": "Honoring community volunteers, specimen transport riders, engagement officers, and laboratory technicians in Davao del Norte"
+    "citation": "Honoring the dedication, courage, and frontline service of our community volunteers, riders, and laboratory personnel"
   },
   {
     "id": 1,
@@ -16,7 +16,7 @@
     "title": "MIGUELITA C. AQUINO",
     "number": 1,
     "category": "TB COMMUNITY VOLUNTEER",
-    "subtitle": "Dedicated Community Frontliner",
+    "subtitle": "Tagum City",
     "categoryTag": "COMMUNITY VOLUNTEER"
   },
   {
@@ -25,7 +25,7 @@
     "title": "EVELYN J. RAZONABLE",
     "number": 2,
     "category": "TB COMMUNITY VOLUNTEER",
-    "subtitle": "Dedicated Community Frontliner",
+    "subtitle": "Tagum City",
     "categoryTag": "COMMUNITY VOLUNTEER"
   },
   {
@@ -34,7 +34,7 @@
     "title": "MA. LUNA G. AMBITO",
     "number": 3,
     "category": "TB COMMUNITY VOLUNTEER",
-    "subtitle": "Dedicated Community Frontliner",
+    "subtitle": "Tagum City",
     "categoryTag": "COMMUNITY VOLUNTEER"
   },
   {
@@ -43,7 +43,7 @@
     "title": "EVELYN M. ECHALAS",
     "number": 4,
     "category": "TB COMMUNITY VOLUNTEER",
-    "subtitle": "Dedicated Community Frontliner",
+    "subtitle": "Asuncion",
     "categoryTag": "COMMUNITY VOLUNTEER"
   },
   {
@@ -52,7 +52,7 @@
     "title": "TITING D. PAYNAG",
     "number": 5,
     "category": "TB COMMUNITY VOLUNTEER",
-    "subtitle": "Dedicated Community Frontliner",
+    "subtitle": "Kapalong",
     "categoryTag": "COMMUNITY VOLUNTEER"
   },
   {
@@ -60,35 +60,35 @@
     "type": "awardee",
     "title": "REYNALDO M. CELIS",
     "number": 6,
-    "category": "SPECIMEN TRANSPORT RIDER (STRIDER)",
-    "subtitle": "Rapid Diagnostic Specimen Courier",
-    "categoryTag": "STRIDER"
+    "category": "SPECIMEN TRANSPORT RIDER",
+    "subtitle": "Davao del Norte STRIDERS",
+    "categoryTag": "STRIDERS"
   },
   {
     "id": 7,
     "type": "awardee",
     "title": "EDWIN S. SALANG",
     "number": 7,
-    "category": "SPECIMEN TRANSPORT RIDER (STRIDER)",
-    "subtitle": "Rapid Diagnostic Specimen Courier",
-    "categoryTag": "STRIDER"
+    "category": "SPECIMEN TRANSPORT RIDER",
+    "subtitle": "Davao del Norte STRIDERS",
+    "categoryTag": "STRIDERS"
   },
   {
     "id": 8,
     "type": "awardee",
     "title": "GLADYS P. BANTILAN",
     "number": 8,
-    "category": "SPECIMEN TRANSPORT RIDER (STRIDER)",
-    "subtitle": "Rapid Diagnostic Specimen Courier",
-    "categoryTag": "STRIDER"
+    "category": "SPECIMEN TRANSPORT RIDER",
+    "subtitle": "Davao del Norte STRIDERS",
+    "categoryTag": "STRIDERS"
   },
   {
     "id": 9,
     "type": "awardee",
     "title": "JEANIZE YARI B. TURQUEZA",
     "number": 9,
-    "category": "PRIVATE SECTOR ENGAGEMENT OFFICER (PSENOS)",
-    "subtitle": "Healthcare Linkage & Engagement",
+    "category": "PRIVATE SECTOR ENGAGEMENT OFFICER",
+    "subtitle": "Davao del Norte PSENOS",
     "categoryTag": "PSENOS"
   },
   {
@@ -96,8 +96,8 @@
     "type": "awardee",
     "title": "ALTHEA A. GONZALES, RMT",
     "number": 10,
-    "category": "PRIVATE SECTOR ENGAGEMENT OFFICER (PSENOS)",
-    "subtitle": "Healthcare Linkage & Engagement",
+    "category": "PRIVATE SECTOR ENGAGEMENT OFFICER",
+    "subtitle": "Davao del Norte PSENOS",
     "categoryTag": "PSENOS"
   },
   {
@@ -105,35 +105,35 @@
     "type": "awardee",
     "title": "KRISTINE MARIE E. PANSOY",
     "number": 11,
-    "category": "INTEGRATED TB INFORMATION SYSTEM",
-    "subtitle": "Integrated TB Information System (ITIS) Project Associate",
+    "category": "ITIS PROJECT ASSOCIATE",
+    "subtitle": "Information Technology & Digital Systems Coordinator",
     "categoryTag": "ITIS ASSOCIATE"
   },
   {
     "id": 12,
     "type": "awardee",
-    "title": "ELLEN G. GERMAN, RN",
+    "title": "MANASIS M. DIAMANTE, RN",
     "number": 12,
-    "category": "DRMC — PMDT CLINICAL TEAM",
+    "category": "DRMC DR-TB NURSE",
     "subtitle": "Davao Regional Medical Center",
-    "categoryTag": "DRMC PMDT"
+    "categoryTag": "DR-TB NURSE"
   },
   {
     "id": 13,
     "type": "awardee",
-    "title": "MANASIS M. DIAMANTE, RN",
+    "title": "ELLEN G. GERMAN, RN",
     "number": 13,
-    "category": "DRMC — PMDT CLINICAL TEAM",
+    "category": "DRMC DR-TB NURSE",
     "subtitle": "Davao Regional Medical Center",
-    "categoryTag": "DRMC PMDT"
+    "categoryTag": "DR-TB NURSE"
   },
   {
     "id": 14,
     "type": "awardee",
-    "title": "JENRY KEN VINCENT I. MIBATO, RMT, MSMT, MLS(ASCPi)cm",
+    "title": "JENRY KEN VINCENT I. MIBATO, RMT, MSMT, MLS(ASCPI)cm",
     "number": 14,
     "category": "GENEXPERT TECHNICIAN",
-    "subtitle": "Molecular TB Diagnostic Specialist",
+    "subtitle": "Tagum City RTDL",
     "categoryTag": "GENEXPERT TECH"
   },
   {
@@ -142,7 +142,7 @@
     "title": "CRISTINA TIARA A. FERNANDEZ, RMT",
     "number": 15,
     "category": "GENEXPERT TECHNICIAN",
-    "subtitle": "Molecular TB Diagnostic Specialist",
+    "subtitle": "Tagum City RTDL",
     "categoryTag": "GENEXPERT TECH"
   },
   {
@@ -151,7 +151,7 @@
     "title": "LEONA S. OLILA, RMT",
     "number": 16,
     "category": "GENEXPERT TECHNICIAN",
-    "subtitle": "Molecular TB Diagnostic Specialist",
+    "subtitle": "Tagum City RTDL",
     "categoryTag": "GENEXPERT TECH"
   },
   {
@@ -160,7 +160,7 @@
     "title": "NADINE GEMMA S. EUSTAQUIO, RMT",
     "number": 17,
     "category": "GENEXPERT TECHNICIAN",
-    "subtitle": "Molecular TB Diagnostic Specialist",
+    "subtitle": "Panabo City RTDL",
     "categoryTag": "GENEXPERT TECH"
   },
   {
@@ -169,7 +169,7 @@
     "title": "ALLEN GLENN B. SORIANO, RMT",
     "number": 18,
     "category": "GENEXPERT TECHNICIAN",
-    "subtitle": "Molecular TB Diagnostic Specialist",
+    "subtitle": "Panabo City RTDL",
     "categoryTag": "GENEXPERT TECH"
   },
   {
@@ -178,7 +178,7 @@
     "title": "CHRISTINE DENNISE P. OLAYAN, RMT",
     "number": 19,
     "category": "GENEXPERT TECHNICIAN",
-    "subtitle": "Molecular TB Diagnostic Specialist",
+    "subtitle": "Talaingod RTDL",
     "categoryTag": "GENEXPERT TECH"
   },
   {
@@ -187,7 +187,7 @@
     "title": "SHARON ROSE B. LACORDA, RMT",
     "number": 20,
     "category": "GENEXPERT TECHNICIAN",
-    "subtitle": "Molecular TB Diagnostic Specialist",
+    "subtitle": "Braulio E. Dujali RTDL",
     "categoryTag": "GENEXPERT TECH"
   },
   {
@@ -196,7 +196,7 @@
     "title": "ANNALOU O. OLANDRIA, RMT",
     "number": 21,
     "category": "GENEXPERT TECHNICIAN",
-    "subtitle": "Molecular TB Diagnostic Specialist",
+    "subtitle": "Sto. Tomas RTDL",
     "categoryTag": "GENEXPERT TECH"
   },
   {
@@ -205,15 +205,15 @@
     "title": "JENNIFER R. BRECIO, RMT",
     "number": 22,
     "category": "GENEXPERT TECHNICIAN",
-    "subtitle": "Molecular TB Diagnostic Specialist",
+    "subtitle": "Carmen RTDL",
     "categoryTag": "GENEXPERT TECH"
   },
   {
     "id": 23,
     "type": "closing",
-    "title": "CONGRATULATIONS TO ALL INDIVIDUAL HEROES",
-    "citation": "Honoring the tireless riders, volunteers, officers, and laboratory technicians working on the frontlines every single day.",
-    "subtitle": "DAVNOR TB SUMMIT 2026"
+    "title": "SALUTE TO THE DEDICATED DAVAO DEL NORTE TB WORKFORCE",
+    "subtitle": "DAVNOR TB SUMMIT 2026",
+    "citation": "In grateful recognition of your tireless dedication and essential service in specimen collection, rapid molecular testing, and frontline community care."
   }
 ];
 

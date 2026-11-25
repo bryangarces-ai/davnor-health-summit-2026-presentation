@@ -140,3 +140,25 @@ html, body { background-color: #050506; color: var(--navy-text); }
 .drawer-card-num { color: #E6C766; }
 .drawer-card-title { color: #F5F1E6; }
 .drawer-card-sub { color: #9CA0A9; }
+
+/* Video player support for LED Wall Stage */
+.awardee-video-frame {
+  width: 100%;
+  max-width: 720px;
+  max-height: 48vh;
+  margin: clamp(0.5rem, 1vh, 1rem) auto;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1.5px solid rgba(212, 175, 55, 0.7);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(212, 175, 55, 0.2);
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.awardee-video-player {
+  width: 100%;
+  max-height: 48vh;
+  object-fit: contain;
+  display: block;
+}

@@ -1,33 +1,51 @@
 (function () {
-  // Source: TB SUMMIT LIST OF AWARDS.xlsx (DAVNOR TB Summit 2026)
+  // Source: DAVNOR END TB SUMMIT 2026 (Technical Cue Guide & Awards Catalog)
   var data = [
   {
     "id": 0,
     "type": "title",
     "event": "DAVNOR TB SUMMIT 2026",
     "subEvent": "Province of Davao del Norte · Provincial Health Office",
-    "title": "TOP 3–1 PERFORMING BARANGAYS",
-    "category": "DAVNOR TB SUMMIT 2026",
-    "citation": "Grand podium announcement of the Top 3, Top 2, and Champion Barangays of Davao del Norte"
+    "title": "TOP 3 OUTSTANDING BARANGAY HEALTH STATIONS",
+    "category": "GRAND PODIUM ANNOUNCEMENT",
+    "citation": "Honoring excellence in the Four TB Cascades of Care — Screening, Testing, Treatment, and Prevention — with steadfast political leadership"
   },
   {
     "id": 1,
     "type": "awardee",
-    "title": "OFFICIAL TABULATION IN PROGRESS",
+    "title": "BHS — MADAUM 1, TAGUM CITY",
     "number": 1,
-    "category": "TOP PERFORMING BARANGAY (RANK 3–1)",
-    "subtitle": "Podium Announcement Awaiting Final Official Tally",
-    "citations": [
-      "Top 3, 2, and 1 champion podium slides ready — will populate upon committee release."
-    ],
-    "categoryTag": "PODIUM FINALISTS"
+    "category": "TOP 3 OUTSTANDING BARANGAY HEALTH STATION",
+    "subtitle": "Punong Barangay: Hon. Leo C. Uy · Overall Score: 74/100",
+    "image": "../assets/photos/bhs_top3_madaum_tagum.jpg",
+    "categoryTag": "🥉 3RD PLACE"
   },
   {
     "id": 2,
+    "type": "awardee",
+    "title": "BHS — CAPUNGAGAN, KAPALONG",
+    "number": 2,
+    "category": "TOP 2 OUTSTANDING BARANGAY HEALTH STATION",
+    "subtitle": "Punong Barangay: Hon. Sergio A. Acquiatan · Overall Score: 76/100",
+    "image": "../assets/photos/bhs_top2_capungagan_kapalong.jpg",
+    "categoryTag": "🥈 2ND PLACE"
+  },
+  {
+    "id": 3,
+    "type": "awardee",
+    "title": "BHS — GUPITAN, KAPALONG",
+    "number": 3,
+    "category": "TOP 1 OUTSTANDING BARANGAY HEALTH STATION",
+    "subtitle": "Punong Barangay: Hon. Marco Antonio O. Pupa · Overall Score: 79/100",
+    "image": "../assets/photos/bhs_top1_gupitan_kapalong.jpg",
+    "categoryTag": "🥇 GRAND CHAMPION"
+  },
+  {
+    "id": 4,
     "type": "closing",
-    "title": "CONGRATULATIONS TO OUR PODIUM CHAMPION BARANGAYS!",
-    "citation": "Setting the gold standard for community health, disease eradication, and exemplary governance.",
-    "subtitle": "DAVNOR TB SUMMIT 2026"
+    "title": "CONGRATULATIONS TO OUR CHAMPION BARANGAYS!",
+    "subtitle": "DAVNOR TB SUMMIT 2026",
+    "citation": "In recognition of your outstanding performance, strong political commitment, and exemplary partnership in achieving a TB-free Davao del Norte."
   }
 ];
 

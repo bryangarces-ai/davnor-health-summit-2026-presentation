@@ -1,5 +1,5 @@
 (function () {
-  // Source: TB SUMMIT LIST OF AWARDS.xlsx (DAVNOR TB Summit 2026)
+  // Source: DAVNOR END TB SUMMIT 2026 (Technical Cue Guide & Awards Catalog)
   var data = [
   {
     "id": 0,
@@ -8,142 +8,96 @@
     "subEvent": "Province of Davao del Norte · Provincial Health Office",
     "title": "RECOGNITION AWARDS TO TB PROVIDING FACILITIES",
     "category": "DAVNOR TB SUMMIT 2026",
-    "citation": "Saluting multi-disciplinary TB DOTS, PMDT, laboratory, and hospital care teams across Davao del Norte"
+    "citation": "Commending institutional DOTS & IDOTS partners for unwavering commitment in providing high-standard TB diagnosis and treatment"
   },
   {
     "id": 1,
     "type": "awardee",
-    "title": "DAVAO REGIONAL MEDICAL CENTER — TB DOTS",
+    "title": "DAVAO REGIONAL MEDICAL CENTER",
     "number": 1,
-    "category": "TB PROVIDING FACILITY",
+    "category": "DOTS PROVIDING FACILITY",
     "subtitle": "Tagum City",
-    "citations": [
-      "JOEBELLE MAY GALANG-DELA CRUZ, MD, MPM, FPAFP — Clinical Head",
-      "EVIE Q. CERVANTES, RN — TB Nurse Coordinator",
-      "MARIE TESS T. BASMAYOR, RMT — Medical Technologist - TML"
-    ],
-    "categoryTag": "TB PROVIDER"
+    "categoryTag": "TB PROVIDING FACILITY"
   },
   {
     "id": 2,
     "type": "awardee",
-    "title": "DAVAO REGIONAL MEDICAL CENTER — PMDT",
+    "title": "DAVAO REGIONAL MEDICAL CENTER — IDOTS",
     "number": 2,
-    "category": "TB PROVIDING FACILITY",
+    "category": "DOTS PROVIDING FACILITY",
     "subtitle": "Tagum City",
-    "citations": [
-      "JOEBELLE MAY GALANG-DELA CRUZ, MD, MPM, FPAFP — Clinical Head",
-      "MANASIS M. DIAMANTE, RN — PMDT Nurse",
-      "JENRY KEN VINCENT I. MIBATO, RMT, MSMT, MLS(ASCPi)cm — RTDL Medical Technologist"
-    ],
-    "categoryTag": "TB PROVIDER"
+    "categoryTag": "TB PROVIDING FACILITY"
   },
   {
     "id": 3,
     "type": "awardee",
-    "title": "PHILIPPINE TUBERCULOSIS SOCIETY INC. — TAGUM",
+    "title": "DAVAO DEL NORTE HOSPITAL — SAMAL ZONE",
     "number": 3,
-    "category": "TB PROVIDING FACILITY",
-    "subtitle": "Tagum City Branch",
-    "citations": [
-      "GLADYS P. PASCUA, RN — Branch Manager / TB Nurse Coordinator",
-      "MARICRIS C. ARPAFO, RN — TB Nurse",
-      "MICAELA MARIE KIANA C. CUEVAS, RR — Radiology Technician",
-      "CHARMAINE Q. VILLANUEVA — Laboratory Technician",
-      "JHUNDEY L. HALASAN — ITIS Encoder"
-    ],
-    "categoryTag": "TB PROVIDER"
+    "category": "DOTS PROVIDING FACILITY",
+    "subtitle": "Island Garden City of Samal",
+    "categoryTag": "TB PROVIDING FACILITY"
   },
   {
     "id": 4,
     "type": "awardee",
-    "title": "TAGUM DOCTORS HOSPITAL, INC.",
+    "title": "DAVAO PRISON AND PENAL FARM INFIRMARY",
     "number": 4,
-    "category": "TB PROVIDING FACILITY",
-    "subtitle": "Tagum City",
-    "citations": [
-      "KHAYRONIZA P. DIUDA, RN — TB Nurse Coordinator",
-      "JOHN ANTHONY S. HALOG, RMT — TB Med Tech Coordinator"
-    ],
-    "categoryTag": "TB PROVIDER"
+    "category": "DOTS PROVIDING FACILITY",
+    "subtitle": "DAPECOL · B.E. Dujali / Panabo City",
+    "categoryTag": "TB PROVIDING FACILITY"
   },
   {
     "id": 5,
     "type": "awardee",
-    "title": "DAVAO PRISON AND PENAL FARM INFIRMARY",
+    "title": "PHILIPPINE TUBERCULOSIS SOCIETY, INC. — TAGUM",
     "number": 5,
-    "category": "TB PROVIDING FACILITY",
-    "subtitle": "Bureau of Corrections",
-    "citations": [
-      "CTSINSP GALILEO C. MASCARINA JR., MD — TB Medical Coordinator",
-      "CO1 RIEZA R. CUDAL, RN — TB Nurse Coordinator",
-      "CO1 CHAREN LEE O. GUMANID, RMT — TB Med Tech Coordinator",
-      "CO2 DARYL MARK A. MANAWATAO, RN — HIV Coordinator",
-      "CO1 AIZZA GRACE S. PADILLA, RRT — ITIS Encoder",
-      "CO1 KEITH PAUL L. ACEBEDO, RRT — Radiology Technician"
-    ],
-    "categoryTag": "TB PROVIDER"
+    "category": "DOTS PROVIDING FACILITY",
+    "subtitle": "Tagum City",
+    "image": "../assets/photos/ptsi_tagum.jpg",
+    "categoryTag": "TB PROVIDING FACILITY"
   },
   {
     "id": 6,
     "type": "awardee",
-    "title": "DAVAO DEL NORTE HOSPITAL — SAMAL ZONE",
+    "title": "TAGUM DOCTORS HOSPITAL, INC.",
     "number": 6,
-    "category": "TB PROVIDING FACILITY",
-    "subtitle": "Island Garden City of Samal",
-    "citations": [
-      "DR. CATHERINE MANCIO-VALERA, MD, FPOGS — Chief of Hospital II",
-      "GIBB ANTHONY C. APAT, RN, MAN — TB Nurse Coordinator",
-      "ALLEN GLENN B. SORIANO, RMT — RTDL Medical Technologist",
-      "Radiology Department"
-    ],
-    "categoryTag": "TB PROVIDER"
+    "category": "DOTS PROVIDING FACILITY",
+    "subtitle": "Tagum City",
+    "categoryTag": "TB PROVIDING FACILITY"
   },
   {
     "id": 7,
     "type": "awardee",
-    "title": "RIVERA MEDICAL CENTER, INC.",
+    "title": "TAGUM MEDICAL CITY",
     "number": 7,
-    "category": "TB PROVIDING FACILITY",
-    "subtitle": "Panabo City",
-    "citations": [
-      "MAYCHEAL A. CRAMPATANTA, RN — TB Nurse Coordinator",
-      "JAPHETH G. ANGANA, RMT — TB Med Tech Coordinator"
-    ],
-    "categoryTag": "TB PROVIDER"
+    "category": "DOTS PROVIDING FACILITY",
+    "subtitle": "Tagum City",
+    "categoryTag": "TB PROVIDING FACILITY"
   },
   {
     "id": 8,
     "type": "awardee",
-    "title": "PANABO POLYMEDIC HOSPITAL, INC.",
+    "title": "RIVERA MEDICAL CENTER, INC.",
     "number": 8,
-    "category": "TB PROVIDING FACILITY",
+    "category": "DOTS PROVIDING FACILITY",
     "subtitle": "Panabo City",
-    "citations": [
-      "LETECIA L. PAHAMOTANG, RN — TB Nurse Coordinator",
-      "YASMIN S. ODASAN, RMT, MLS(ASCPi) — TB Med Tech Coordinator"
-    ],
-    "categoryTag": "TB PROVIDER"
+    "categoryTag": "TB PROVIDING FACILITY"
   },
   {
     "id": 9,
     "type": "awardee",
-    "title": "TAGUM MEDICAL CITY",
+    "title": "PANABO POLYMEDIC HOSPITAL, INC.",
     "number": 9,
-    "category": "TB PROVIDING FACILITY",
-    "subtitle": "Tagum City",
-    "citations": [
-      "GIRLY B. SEVILLA, RN — TB Nurse Coordinator",
-      "PRINCESS NATHALIE B. PANLILIO, RMT — TB Med Tech Coordinator"
-    ],
-    "categoryTag": "TB PROVIDER"
+    "category": "DOTS PROVIDING FACILITY",
+    "subtitle": "Panabo City",
+    "categoryTag": "TB PROVIDING FACILITY"
   },
   {
     "id": 10,
     "type": "closing",
-    "title": "CONGRATULATIONS TO ALL PROVIDING FACILITIES",
-    "citation": "Saluting the multi-disciplinary healthcare teams delivering patient-centered, life-saving TB care.",
-    "subtitle": "DAVNOR TB SUMMIT 2026"
+    "title": "SALUTE TO OUR DEDICATED TB PROVIDING FACILITIES",
+    "subtitle": "DAVNOR TB SUMMIT 2026",
+    "citation": "In grateful recognition of your sustained excellence in providing quality DOTS services and advancing patient-centered tuberculosis care."
   }
 ];
 

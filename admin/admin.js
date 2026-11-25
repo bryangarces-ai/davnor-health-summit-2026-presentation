@@ -8,6 +8,7 @@
     { key: '03-top-program', name: '03 · Top Program Managers', path: '../03-top-program-managers/', file: 'slides-data.js' },
     { key: '04-consolation', name: '04 · Consolation & Winners', path: '../04-consolation-and-winners/', file: 'slides-data.js' },
     { key: '05-results', name: '05 · Official Scorecards', path: '../05-official-results/', file: 'slides-data.js' },
+    { key: 'tb-00-program-flow', name: 'TB 00 · Program & Opening', path: '../tb-summit-2026/00-program-flow/', file: 'slides-data.js' },
     { key: 'tb-01-special-awards', name: 'TB 01 · Special Awards', path: '../tb-summit-2026/01-special-awards/', file: 'slides-data.js' },
     { key: 'tb-02-referring-facilities', name: 'TB 02 · Referring Facilities', path: '../tb-summit-2026/02-referring-facilities/', file: 'slides-data.js' },
     { key: 'tb-03-individual-awards', name: 'TB 03 · Individual Awards', path: '../tb-summit-2026/03-individual-awards/', file: 'slides-data.js' },

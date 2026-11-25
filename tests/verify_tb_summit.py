@@ -31,17 +31,18 @@ def test_tb_summit_suite():
 
     # 3. Verify Decks
     expected_decks = [
-        ("01-special-awards", 19),
+        ("00-program-flow", 34),
+        ("01-special-awards", 20),
         ("02-referring-facilities", 25),
         ("03-individual-awards", 24),
         ("04-tb-providers", 11),
         ("05-top-health-centers", 16),
-        ("06-top-bhw-10-4", 3),
-        ("07-top-barangay-10-4", 3),
-        ("08-consolation-tb-providers", 12),
-        ("09-top-bhw-3-1", 3),
-        ("10-top-barangay-3-1", 3),
-        ("11-top-tb-providers-3-1", 7)
+        ("06-top-bhw-10-4", 10),
+        ("07-top-barangay-10-4", 10),
+        ("08-consolation-tb-providers", 13),
+        ("09-top-bhw-3-1", 5),
+        ("10-top-barangay-3-1", 5),
+        ("11-top-tb-providers-3-1", 9)
     ]
 
     total_slides = 0
@@ -97,6 +98,23 @@ def test_tb_summit_suite():
         print("PASS: TB Summit index.html contains all deck stage and presenter links.")
 
     # 5. Verify Content Specifics
+    # Deck 00 checks
+    d00_js = os.path.join(TB_DIR, '00-program-flow', 'slides-data.js')
+    with open(d00_js, 'r', encoding='utf-8') as f:
+        d00_text = f.read()
+    if "DR. ALFREDO A. LACERONA" not in d00_text:
+        errors.append("Deck 00 missing Dr. Lacerona welcome remarks")
+    # Verify Dr. Lacerona welcome remarks has no image (NAME ONLY – NO PICTURES)
+    match_lac = re.search(r'\{\s*"id":\s*22,.*?\}', d00_text, re.DOTALL)
+    if match_lac and '"image":' in match_lac.group(0):
+        errors.append("Deck 00 Dr. Lacerona slide violated rule: must be NAME ONLY – NO PICTURES")
+    else:
+        print("PASS: Deck 00 Dr. Lacerona conforms to (NAME ONLY – NO PICTURES).")
+    if "PLEDGE OF COMMITMENT" not in d00_text or "STYLE SPOTLIGHT AWARDS" not in d00_text:
+        errors.append("Deck 00 missing Pledge of Commitment or Style Spotlight Awards")
+    else:
+        print("PASS: Deck 00 contains Pledge of Commitment and Style Spotlight Awards.")
+
     # Deck 05 checks
     d05_js = os.path.join(TB_DIR, '05-top-health-centers', 'slides-data.js')
     with open(d05_js, 'r', encoding='utf-8') as f:
@@ -105,10 +123,10 @@ def test_tb_summit_suite():
         errors.append("Deck 05 missing updated Sawata 97% cure rate award")
     else:
         print("PASS: Deck 05 contains updated Sawata 97% cure rate award.")
-    if "3,369 Presumptive" not in d05_text or "DAVAO REGIONAL MEDICAL CENTER" not in d05_text:
-        errors.append("Deck 05 missing newly added RTDL awards")
+    if "3,389 Presumptive" not in d05_text or "DAVAO REGIONAL MEDICAL CENTER" not in d05_text:
+        errors.append("Deck 05 missing updated RTDL awards (3,389 Presumptive)")
     else:
-        print("PASS: Deck 05 contains all 5 newly added awards.")
+        print("PASS: Deck 05 contains all RTDL awards matching cue guide.")
 
     # Deck 08 checks
     d08_js = os.path.join(TB_DIR, '08-consolation-tb-providers', 'slides-data.js')
@@ -122,9 +140,9 @@ def test_tb_summit_suite():
         "MUNICIPAL HEALTH OFFICE OF ASUNCION",
         "MUNICIPAL HEALTH OFFICE OF SAWATA",
         "MUNICIPAL HEALTH OFFICE OF TALAINGOD",
-        "BABAK DISTRICT HEALTH OFFICE",
-        "KAPUTIAN DISTRICT HEALTH OFFICE",
-        "SAMAL DISTRICT HEALTH OFFICE"
+        "DISTRICT HEALTH OFFICE OF BABAK",
+        "DISTRICT HEALTH OFFICE OF KAPUTIAN",
+        "DISTRICT HEALTH OFFICE OF SAMAL"
     ]:
         if fac not in d08_text:
             errors.append(f"Deck 08 missing facility: {fac}")

@@ -371,7 +371,11 @@
       p1 + 'shared/assets/speakers/' + decoded,
       p1 + 'images/' + decoded,
       p2 + 'shared/assets/speakers/' + decoded,
-      p2 + 'images/' + decoded
+      p2 + 'images/' + decoded,
+      p1 + 'assets/photos/' + decoded,
+      p1 + 'tb-summit-2026/assets/photos/' + decoded,
+      p2 + 'tb-summit-2026/assets/photos/' + decoded,
+      '../assets/photos/' + decoded
     ];
 
     if (step < fallbacks.length) {
@@ -763,6 +767,15 @@
       var gridClass = 'citations-grid ' + (isMany ? 'citations-grid--2col' : 'citations-grid--1col');
       var categoryTag = s.category ? '<div class="awardee-category-tag">' + escapeHtml(s.category) + '</div>' : '';
 
+      var videoHtml = '';
+      if (s.video) {
+        videoHtml = [
+          '<div class="awardee-video-frame">',
+          '  <video src="' + escapeHtml(s.video) + '" class="awardee-video-player" controls autoplay loop muted playsinline></video>',
+          '</div>'
+        ].join('');
+      }
+
       var photoHtml = '';
       if (displayImage) {
         var frameClass = isLogo ? 'awardee-photo-frame awardee-logo-frame' : 'awardee-photo-frame';
@@ -816,6 +829,7 @@
           logosHtml,
           categoryTag,
           photoHtml,
+          videoHtml,
           '    <h1 class="awardee-name">' + escapeHtml(s.title) + '</h1>',
           '    <div class="ceremonial-divider">',
           '      <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>',
@@ -838,6 +852,7 @@
           '      <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>',
           '    </div>',
           photoHtml,
+          videoHtml,
           subHtml,
           deptHtml,
           contentHtml,
